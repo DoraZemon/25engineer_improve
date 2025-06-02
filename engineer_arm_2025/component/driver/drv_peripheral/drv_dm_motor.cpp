@@ -11,6 +11,7 @@
 
 #include "drv_dm_motor.h"
 #include "user_lib.h"
+
 void dm_motor_device::init(CAN_HandleTypeDef *hcan,
                            uint32_t slaveId,
                            uint16_t masterId,
@@ -65,6 +66,22 @@ void dm_motor_device::init(CAN_HandleTypeDef *hcan,
             basic_info.kd_min = DM_J4310_2EC_KD_MIN;
             basic_info.kd_max = DM_J4310_2EC_KD_MAX;
             break;
+        case DM_J8009P_2EC:basic_info.v_max = DM_J8009P_2EC_V_MAX;
+            basic_info.p_max = DM_J8009P_2EC_P_MAX;
+            basic_info.t_max = DM_J8009P_2EC_T_MAX;
+            basic_info.kp_min = DM_J8009P_2EC_KP_MIN;
+            basic_info.kp_max = DM_J8009P_2EC_KP_MAX;
+            basic_info.kd_min = DM_J8009P_2EC_KD_MIN;
+            basic_info.kd_max = DM_J8009P_2EC_KD_MAX;
+            break;
+        case DM_J10010L_2EC:basic_info.v_max = DM_J10010L_2EC_V_MAX;
+            basic_info.p_max = DM_J10010L_2EC_P_MAX;
+            basic_info.t_max = DM_J10010L_2EC_T_MAX;
+            basic_info.kp_min = DM_J10010L_2EC_KP_MIN;
+            basic_info.kp_max = DM_J10010L_2EC_KP_MAX;
+            basic_info.kd_min = DM_J10010L_2EC_KD_MIN;
+            basic_info.kd_max = DM_J10010L_2EC_KD_MAX;
+            break;
     }
     set_motor_enable();
 }
@@ -111,6 +128,7 @@ void dm_motor_device::set_motor_disable() {
     ctrl_data.kp = 0;
     ctrl_data.kd = 0;
 }
+
 void dm_motor_device::set_motor_save_zero_offset() {
     can_device.tx_member.buf_data[0] = 0xff;
     can_device.tx_member.buf_data[1] = 0xff;
@@ -144,6 +162,7 @@ void dm_motor_device::set_motor_clear_error() {
         osDelay(2);
     }
 }
+
 //不断调用
 void dm_motor_device::set_ctrl_to_can_tx_buff() {
     uint16_t pos_tmp, vel_tmp, kp_tmp, kd_tmp, tor_tmp;
@@ -195,7 +214,7 @@ bool dm_motor_device::recover_the_motor() {
         set_motor_disable();
         set_motor_enable();
         return true;
-    }else if((dm_motor_state_enum)raw_data.err == Disabled){
+    } else if ((dm_motor_state_enum) raw_data.err == Disabled) {
         motor_state = (dm_motor_state_enum) raw_data.err;
         set_motor_enable();
         return true;
@@ -256,6 +275,7 @@ void dm_motor_device::MIT_ctrl_position_and_torque(float pos, float torque, floa
     ctrl_data.kp = kp;
     ctrl_data.kd = 0.4f;//0.3或0.4
 }
+
 // --------------------- PV --------------------- //
 void dm_motor_device::PV_inter_set_motor_total_rounds(float total_rounds, float speed) {//30*0.2f = 6
     ABS_LIMIT(total_rounds, basic_info.p_max);
@@ -416,13 +436,15 @@ void dm_motor_device::update_data(uint8_t *can_rx_data) {
 
     //torque
     ptr->fb_torque_current = uint_to_float(raw->torque, -basic_info.t_max, basic_info.t_max, 12); // (-10.0,10.0);
-    if (ABS(ptr->fb_torque_current) > ABS(data.stall_torque_max) && ABS(ptr->current_speed) < ABS(data.stall_speed_max)) {
+    if (ABS(ptr->fb_torque_current) > ABS(data.stall_torque_max) &&
+        ABS(ptr->current_speed) < ABS(data.stall_speed_max)) {
         data.stall_cnt++;
     } else {
         data.stall_cnt = 0;
     }
 
 }
+
 void dm_motor_device::send_can_msg() {
     set_ctrl_to_can_tx_buff();
     this->can_device.send_msg();
@@ -449,6 +471,7 @@ void dm_motor_device::set_vel(float set_vel) {
     }
 
 }
+
 void dm_motor_device::set_pos(float set_pos) {
     if (mode == DM_MIT) {
         if (mit_mode == DM_MIT_Torque) {

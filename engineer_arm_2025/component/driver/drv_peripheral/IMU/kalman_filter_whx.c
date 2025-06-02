@@ -297,6 +297,7 @@ void Kalman_Filter_PminusUpdate(KalmanFilter_t *kf) {
         kf->MatStatus = Matrix_Add(&kf->temp_matrix, &kf->Q, &kf->Pminus);
     }
 }
+
 void Kalman_Filter_SetK(KalmanFilter_t *kf) {
     if (!kf->SkipEq3) {
         kf->MatStatus = Matrix_Transpose(&kf->H, &kf->HT); // z|x => x|z
@@ -316,6 +317,7 @@ void Kalman_Filter_SetK(KalmanFilter_t *kf) {
         kf->MatStatus = Matrix_Multiply(&kf->temp_matrix, &kf->temp_matrix1, &kf->K);
     }
 }
+
 void Kalman_Filter_xhatUpdate(KalmanFilter_t *kf) {
     if (!kf->SkipEq4) {
         kf->temp_vector.numRows = kf->H.numRows;
@@ -332,6 +334,7 @@ void Kalman_Filter_xhatUpdate(KalmanFilter_t *kf) {
         kf->MatStatus = Matrix_Add(&kf->xhatminus, &kf->temp_vector, &kf->xhat);
     }
 }
+
 void Kalman_Filter_P_Update(KalmanFilter_t *kf) {
     if (!kf->SkipEq5) {
         kf->temp_matrix.numRows = kf->K.numRows;

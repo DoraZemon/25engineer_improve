@@ -33,9 +33,13 @@ float IMU_QuaternionEKF_K[18];
 float IMU_QuaternionEKF_H[18];
 
 static float invSqrt(float x);
+
 static void IMU_QuaternionEKF_Observe(KalmanFilter_t *kf);
+
 static void IMU_QuaternionEKF_F_Linearization_P_Fading(KalmanFilter_t *kf);
+
 static void IMU_QuaternionEKF_SetH(KalmanFilter_t *kf);
+
 static void IMU_QuaternionEKF_xhatUpdate(KalmanFilter_t *kf);
 
 /**
@@ -146,23 +150,23 @@ void IMU_QuaternionEKF_Update(float gx, float gy, float gz, float ax, float ay, 
         QEKF_INS.Accel[2] = az;
     }
     QEKF_INS.Accel[0] = QEKF_INS.Accel[0] * QEKF_INS.accLPFcoef / (QEKF_INS.dt + QEKF_INS.accLPFcoef)
-        + ax * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
+                        + ax * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
     QEKF_INS.Accel[1] = QEKF_INS.Accel[1] * QEKF_INS.accLPFcoef / (QEKF_INS.dt + QEKF_INS.accLPFcoef)
-        + ay * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
+                        + ay * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
     QEKF_INS.Accel[2] = QEKF_INS.Accel[2] * QEKF_INS.accLPFcoef / (QEKF_INS.dt + QEKF_INS.accLPFcoef)
-        + az * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
+                        + az * QEKF_INS.dt / (QEKF_INS.dt + QEKF_INS.accLPFcoef);
 
     // set z,单位化重力加速度向量
     accelInvNorm = invSqrt(QEKF_INS.Accel[0] * QEKF_INS.Accel[0] + QEKF_INS.Accel[1] * QEKF_INS.Accel[1]
-                               + QEKF_INS.Accel[2] * QEKF_INS.Accel[2]);
+                           + QEKF_INS.Accel[2] * QEKF_INS.Accel[2]);
     for (uint8_t i = 0; i < 3; i++) {
         QEKF_INS.IMU_QuaternionEKF.MeasuredVector[i] = QEKF_INS.Accel[i] * accelInvNorm; // 用加速度向量更新量测值
     }
 
     // get body state
     QEKF_INS.gyro_norm = 1.0f / invSqrt(QEKF_INS.Gyro[0] * QEKF_INS.Gyro[0] +
-        QEKF_INS.Gyro[1] * QEKF_INS.Gyro[1] +
-        QEKF_INS.Gyro[2] * QEKF_INS.Gyro[2]);
+                                        QEKF_INS.Gyro[1] * QEKF_INS.Gyro[1] +
+                                        QEKF_INS.Gyro[2] * QEKF_INS.Gyro[2]);
     QEKF_INS.accl_norm = 1.0f / accelInvNorm;
 
     // 如果角速度小于阈值且加速度处于设定范围内,认为运动稳定,加速度可以用于修正角速度
@@ -199,10 +203,10 @@ void IMU_QuaternionEKF_Update(float gx, float gy, float gz, float ax, float ay, 
     // 利用四元数反解欧拉角
     QEKF_INS.Yaw = atan2f(2.0f * (QEKF_INS.q[0] * QEKF_INS.q[3] + QEKF_INS.q[1] * QEKF_INS.q[2]),
                           2.0f * (QEKF_INS.q[0] * QEKF_INS.q[0] + QEKF_INS.q[1] * QEKF_INS.q[1]) - 1.0f)
-        * 57.295779513f;
+                   * 57.295779513f;
     QEKF_INS.Roll = atan2f(2.0f * (QEKF_INS.q[0] * QEKF_INS.q[1] + QEKF_INS.q[2] * QEKF_INS.q[3]),
                            2.0f * (QEKF_INS.q[0] * QEKF_INS.q[0] + QEKF_INS.q[3] * QEKF_INS.q[3]) - 1.0f)
-        * 57.295779513f;
+                    * 57.295779513f;
     QEKF_INS.Pitch = asinf(-2.0f * (QEKF_INS.q[1] * QEKF_INS.q[3] - QEKF_INS.q[0] * QEKF_INS.q[2])) * 57.295779513f;
 
     // get Yaw total, yaw数据可能会超过360,处理一下方便其他功能使用(如小陀螺)
@@ -391,7 +395,7 @@ static void IMU_QuaternionEKF_xhatUpdate(KalmanFilter_t *kf) {
         // scale adaptive,rk越小则增益越大,否则更相信预测值
         if (QEKF_INS.ChiSquare_Data[0] > 0.1f * QEKF_INS.ChiSquareTestThreshold && QEKF_INS.ConvergeFlag) {
             QEKF_INS.AdaptiveGainScale = (QEKF_INS.ChiSquareTestThreshold - QEKF_INS.ChiSquare_Data[0])
-                / (0.9f * QEKF_INS.ChiSquareTestThreshold);
+                                         / (0.9f * QEKF_INS.ChiSquareTestThreshold);
         } else {
             QEKF_INS.AdaptiveGainScale = 1;
         }

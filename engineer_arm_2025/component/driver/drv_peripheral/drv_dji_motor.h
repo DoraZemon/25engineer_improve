@@ -104,19 +104,29 @@ class dji_motor_device {
   bool is_using_external_speed;
  public:
   dji_motor_device();
+
   void init(CAN_HandleTypeDef *_hcan,
             bool reverse_flag,
             uint32_t _id,
             enum DJI_MOTOR_TYPE type,
             osSemaphoreId_t rx_sem, float stall_current = 1.0f, float stall_speed = 0.03f, float offset_current = 0.0f);
+
   void update_ready();
+
   bool check_ready() const;
+
   void set_free();
+
   void set_current_zero();
+
   void reset_total_rounds_zero_offset(float total_rounds);
+
   void set_reverse();
+
   void set_forward();
+
   void send_can_msg();
+
   void set_current_to_can_tx_buff() const;
 
   void set_pid(pid_param pospid, pid_param velpid);
@@ -126,21 +136,28 @@ class dji_motor_device {
   void set_low_pass_alpha(float alpha);
 
   void update_data(uint8_t *rx_data);
+
   void check_motor_for_stall();//判断电机是否堵转
 
  public:
   float get_speed(); // 返回电机转子速度 rpm 实际值，不做归一化处理
   float get_total_rounds() const; // 返回电机转子的圈数 实际值，不做归一化处理
   float get_current_round();
+
   float get_speed_without_external();
 
   void set_current(float current); // 归一化
   void set_vel(float set_vel); // 归一化
   void set_pos(float set_pos);// 归一化
   bool check_lost() const;
+
   void check_motor_for_loss();
+
   bool check_reverse() const;
+
   bool check_stall() const;
+
   void set_stall_parameter(int16_t _stall_current_max, float _stall_speed_min);
 };
+
 #endif //DRV_DJI_MOTOR_H_

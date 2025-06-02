@@ -4,12 +4,14 @@
 
 #ifndef INFANTRYGIMBALC_KALMAN_FILTER_WHX_H
 #define INFANTRYGIMBALC_KALMAN_FILTER_WHX_H
+
 #include "stm32f427xx.h"
 #include "arm_math.h"
 //#include "dsp/matrix_functions.h"
 #include "math.h"
 #include "stdint.h"
 #include "stdlib.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -70,11 +72,17 @@ typedef struct kf_t {
 
   // 用户定义函数,可以替换或扩展基准KF的功能
   void (*User_Func0_f)(struct kf_t *kf);
+
   void (*User_Func1_f)(struct kf_t *kf);
+
   void (*User_Func2_f)(struct kf_t *kf);
+
   void (*User_Func3_f)(struct kf_t *kf);
+
   void (*User_Func4_f)(struct kf_t *kf);
+
   void (*User_Func5_f)(struct kf_t *kf);
+
   void (*User_Func6_f)(struct kf_t *kf);
 
   // 矩阵存储空间指针
@@ -94,13 +102,21 @@ typedef struct kf_t {
 extern uint16_t sizeof_float, sizeof_double;
 
 void Kalman_Filter_Init(KalmanFilter_t *kf, uint8_t xhatSize, uint8_t uSize, uint8_t zSize);
+
 void Kalman_Filter_Measure(KalmanFilter_t *kf);
+
 void Kalman_Filter_xhatMinusUpdate(KalmanFilter_t *kf);
+
 void Kalman_Filter_PminusUpdate(KalmanFilter_t *kf);
+
 void Kalman_Filter_SetK(KalmanFilter_t *kf);
+
 void Kalman_Filter_xhatUpdate(KalmanFilter_t *kf);
+
 void Kalman_Filter_P_Update(KalmanFilter_t *kf);
+
 float *Kalman_Filter_Update(KalmanFilter_t *kf);
+
 #ifdef __cplusplus
 }
 #endif

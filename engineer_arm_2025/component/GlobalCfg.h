@@ -16,6 +16,20 @@ extern "C" {
 #endif
 //C
 #define CAN_SEND        1
+#define DRAW_UI        1
+
+#define ARM_REMOTE_CONTROL_PROTECT 0 //臂架遥控器保护
+
+#define RC_UART        huart1
+#define JUDGEMENT_POWER_UART  huart6
+#define JUDGEMENT_TRANSFER_UART huart8
+
+const uint8_t PC_Normal_Frame_Head = 0x55; //PC正常通信帧头
+const uint8_t PC_Controller_Frame_Head = 0x66; //PC控制器通信帧头
+const uint8_t PC_Rx_Frame_Head = 0x55; //PC接收数据帧头
+const uint8_t PC_Frame_Tail = 0xAA; //PC正常通信帧尾
+
+
 
 #ifdef __cplusplus
 }

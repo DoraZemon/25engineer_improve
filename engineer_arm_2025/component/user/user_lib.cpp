@@ -46,13 +46,12 @@ uint32_t get_time_us() {
     return TIM7->CNT;
 }
 
-uint32_t get_time_ms(void)
-{
+uint32_t get_time_ms(void) {
     return HAL_GetTick();
 }
 
 float get_time_ms_us() {
-    return ((float)get_time_ms() + (float)get_time_us()/1000.0f);
+    return ((float) get_time_ms() + (float) get_time_us() / 1000.0f);
 }
 
 uint16_t unsigned_16(uint8_t *p) {
@@ -74,7 +73,7 @@ float limited_val(float val, float min, float max) {
 }
 
 
-void low_pass(float &target,float current,float alpha){
+void low_pass(float &target, float current, float alpha) {
     float tmp = current - target;
     target = target + alpha * tmp;
 }

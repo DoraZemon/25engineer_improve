@@ -24,6 +24,23 @@ extern osMessageQueueId_t CAN2SendQueueHandle;
 extern osSemaphoreId_t CAN1CountingSemHandle;
 extern osSemaphoreId_t CAN2CountingSemHandle;
 
+
+extern osSemaphoreId_t ArmMotor1UpdateBinarySemHandle;
+extern osSemaphoreId_t ArmMotor2UpdateBinarySemHandle;
+extern osSemaphoreId_t ArmMotor3UpdateBinarySemHandle;
+extern osSemaphoreId_t ArmMotor4UpdateBinarySemHandle;
+extern osSemaphoreId_t ArmMotor5UpdateBinarySemHandle;
+extern osSemaphoreId_t ArmMotor6UpdateBinarySemHandle;
+extern osSemaphoreId_t RCUpdateBinarySemHandle;
+extern osSemaphoreId_t PCUpdateBinarySemHandle;
+
+extern osSemaphoreId_t CustomBinarySemHandle;
+extern osSemaphoreId_t judgementInitBinarySemHandle;
+extern osSemaphoreId_t customRxBinarySemHandle;//判断自定义控制器是否更新
+
+extern osEventFlagsId_t refereeEventHandle;
+extern osEventFlagsId_t RefereeEventHandle;
+
 #ifdef __cplusplus
 }
 #endif

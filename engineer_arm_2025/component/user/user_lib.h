@@ -30,7 +30,7 @@ uint32_t get_time_us();
 uint32_t get_time_ms(void);
 float get_time_ms_us();
 uint16_t unsigned_16(uint8_t *p);
-void low_pass(float &target,float current,float alpha);
+void low_pass(float &target, float current, float alpha);
 #ifdef __cplusplus
 }
 #endif
@@ -87,7 +87,7 @@ void low_pass(float &target,float current,float alpha);
 float limited_val(float val, float min, float max);
 
 
-int float_to_uint(float x_float, float x_min, float x_max, int bits) ;
+int float_to_uint(float x_float, float x_min, float x_max, int bits);
 
 float uint_to_float(int x_int, float x_min, float x_max, int bits);
 

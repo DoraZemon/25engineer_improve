@@ -27,6 +27,8 @@ extern "C" {
 enum DM_MOTOR_TYPE {
   DM_J3507_2EC = 0, //默认为
   DM_J4310_2EC = 1,
+  DM_J8009P_2EC,
+  DM_J10010L_2EC,
 };
 
 #define RAD2ROUND   (1.0f/(2.0f*PI))
@@ -43,13 +45,33 @@ const float DM_J4310_2EC_KD_MAX = 5.0f;
 
 ///DM3507
 const float DM_J3507_2EC_V_MAX = 30.0f;//速度
-const float DM_J3507_2EC_P_MAX = 3.1415f;//位置
+const float DM_J3507_2EC_P_MAX = 3.141593f;//位置
 const float DM_J3507_2EC_T_MAX = 10.0f;//力矩
 
 const float DM_J3507_2EC_KP_MIN = 0.0f;
 const float DM_J3507_2EC_KP_MAX = 500.0f;
 const float DM_J3507_2EC_KD_MIN = 0.0f;
 const float DM_J3507_2EC_KD_MAX = 5.0f;
+
+///DM8009P
+const float DM_J8009P_2EC_V_MAX = 30.0f;//速度
+const float DM_J8009P_2EC_P_MAX = 3.141593f;//位置
+const float DM_J8009P_2EC_T_MAX = 54.0f;//力矩
+
+const float DM_J8009P_2EC_KP_MIN = 0.0f;
+const float DM_J8009P_2EC_KP_MAX = 500.0f;
+const float DM_J8009P_2EC_KD_MIN = 0.0f;
+const float DM_J8009P_2EC_KD_MAX = 5.0f;
+
+///DM10010L
+const float DM_J10010L_2EC_V_MAX = 30.0f;//速度
+const float DM_J10010L_2EC_P_MAX = 3.141593f;//位置
+const float DM_J10010L_2EC_T_MAX = 200.0f;//力矩
+
+const float DM_J10010L_2EC_KP_MIN = 0.0f;
+const float DM_J10010L_2EC_KP_MAX = 500.0f;
+const float DM_J10010L_2EC_KD_MIN = 0.0f;
+const float DM_J10010L_2EC_KD_MAX = 5.0f;
 
 #pragma pack(1)
 typedef struct {
@@ -151,6 +173,7 @@ struct dm_motor_basic_info_t {
   float kd_min;
   float kd_max;
 };
+
 class dm_motor_device {
  private:
   bool is_reverse;
@@ -196,6 +219,7 @@ class dm_motor_device {
   bool is_using_external_speed;
  public:
   dm_motor_device() = default;
+
   void init(CAN_HandleTypeDef *hcan,
             uint32_t slaveId,
             uint16_t masterId,
@@ -205,16 +229,25 @@ class dm_motor_device {
             osSemaphoreId_t rxSem);
 
   void set_motor_enable();
+
   void set_motor_disable();
+
   void set_motor_clear_error();
+
   void set_motor_save_zero_offset();
+
   bool recover_the_motor();
+
   void set_ctrl_to_can_tx_buff();
 
   void MIT_inter_set_motor_round(float rounds);
+
   void MIT_inter_set_motor_speed(float speed);
+
   void MIT_inter_set_motor_normalization_torque(float torque);
+
   void MIT_outer_set_motor_total_rounds(float total_rounds);
+
   void MIT_outer_set_motor_speed(float speed);
 
   void MIT_ctrl_position_and_torque(float pos, float torque, float kp);
@@ -224,14 +257,19 @@ class dm_motor_device {
   void VO_inter_set_motor_speed(float speed);
 
   void update_ready();
+
   bool check_ready() const;
 
   void set_offset_current(float current);
 
   void reset_total_rounds_zero_offset(float total_rounds);
+
   void set_reverse();
+
   void set_forward();
+
   void set_toggle();
+
   void send_can_msg();
 
   void change_speed_source(float *speed);
@@ -245,6 +283,7 @@ class dm_motor_device {
  public:
   float get_speed(); // 返回电机转子速度 rpm
   float get_speed_without_external();
+
   float get_total_rounds() const; // 返回电机转子的圈数 实际值
   float get_total_rounds_without_offset() const; // 返回电机转子的圈数 实际值
   float get_current_round();
@@ -252,9 +291,14 @@ class dm_motor_device {
   void set_vel(float set_vel); // 归一化
   void set_pos(float set_pos);// 归一化
   bool check_lost() const;
+
   void check_motor_for_loss();
+
   bool check_reverse() const;
+
   bool check_stall() const;
+
   void set_stall_parameter(float _stall_current_max, float _stall_speed_max);
 };
+
 #endif //DRV_DM_MOTOR_H_

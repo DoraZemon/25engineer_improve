@@ -107,22 +107,39 @@ class imu_device {
   SPI_HandleTypeDef *hspi;
  public:
   uint8_t init(SPI_HandleTypeDef *hspi, uint8_t calibrate);
+
   void update_data();
+
   void update_temperature_control();
+
   void update_ready();
+
   void set_current_as_offset();
+
   void enable();
+
   void disable();
+
   void get_euler_whx();
+
   void ahrs_update();
+
   void attitude_update();
+
   void get_data();
+
   void set_lost();
+
   void set_connected();
+
   bool check_enable();
+
   bool check_lost();
+
   bool check_zero_offset();
+
   float get_yaw_total_rounds();
+
  private:
   void update_euler();
 

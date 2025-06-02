@@ -95,6 +95,7 @@ class dm_imu_device {
   uint32_t msg_cnt = 0;
 
   void update_data(uint8_t *rx_data);
+
   void init(CAN_HandleTypeDef *hcan_, uint32_t canid, uint32_t master_id, osSemaphoreId_t rxsem);
 
   void update_accel(uint8_t *pdata);
@@ -110,15 +111,20 @@ class dm_imu_device {
   void request_imu_data();
 
   float get_pitch_raw();
+
   float get_roll();
+
   float get_yaw();
 
   float get_gyro_x();
+
   float get_gyro_y();
+
   float get_gyro_z();
 
   void check_imu_for_loss();
 
   bool check_lost();
 };
+
 #endif //DRV_DM_IMU_H_

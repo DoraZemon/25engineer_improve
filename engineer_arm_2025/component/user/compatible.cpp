@@ -11,6 +11,7 @@
 
 #include "compatible.h"
 #include "can.h"
+
 void bsp_can_init() {//记得放进main函数
     HAL_CAN_Start(&hcan1);
     HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING | CAN_IT_TX_MAILBOX_EMPTY);

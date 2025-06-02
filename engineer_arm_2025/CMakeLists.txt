@@ -56,13 +56,13 @@ include_directories(Core/Inc USB_DEVICE/App USB_DEVICE/Target Drivers/STM32F4xx_
  component/driver
  component/task
  component/algorithm
- component/drivers/drv_peripheral
- component/drivers/drv_peripheral/IMU
- component/drivers/drv_function
+ component/driver/drv_peripheral
+ component/driver/drv_peripheral/IMU
+ component/driver/drv_function
  component/user
  component/rm_official
- component/tasks/tasks_peripheral
- component/tasks/tasks_function
+ component/task/task_peripheral
+ component/task/task_function
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F427xx)

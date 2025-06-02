@@ -22,7 +22,8 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "GlobalCfg.h"
+#include "rtos_inc.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,7 +95,7 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-
+extern uint8_t pc_raw_data[64];
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -263,6 +264,13 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+
+  if(Buf[0] == PC_Rx_Frame_Head && Buf[*Len-1] == PC_Frame_Tail)
+  {
+    memcpy(pc_raw_data, Buf, *Len);
+    osSemaphoreRelease(PCUpdateBinarySemHandle);
+  }
+
   return (USBD_OK);
   /* USER CODE END 6 */
 }

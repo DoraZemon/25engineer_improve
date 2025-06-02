@@ -35,6 +35,7 @@ uint8_t mpu_buff[14];                          /* buffer to save imu raw data */
 uint8_t ist_buff[6];                           /* buffer to save IST8310 raw data */
 float gyroDiff[3], gNormDiff;
 uint32_t INS_DWT_Count = 0;
+
 /**
   * @brief  fast inverse square-root, to calculate 1/Sqrt(x)
   * @param  x: the number need to be calculated
@@ -387,8 +388,8 @@ void mpu_get_offset(imu_data_t *data) {
             mpu6500_raw_temp = (int16_t) (mpu_buff[4] << 8 | mpu_buff[5]);
             data->accel[2] = mpu6500_raw_temp * MPU6500_ACCEL_8G_SEN;
             gNormTemp = sqrtf(data->accel[0] * data->accel[0] +
-                data->accel[1] * data->accel[1] +
-                data->accel[2] * data->accel[2]);
+                              data->accel[1] * data->accel[1] +
+                              data->accel[2] * data->accel[2]);
             data->gNorm += gNormTemp;
 
             mpu6500_raw_temp = (int16_t) (mpu_buff[8] << 8 | mpu_buff[9]);
@@ -447,13 +448,13 @@ void mpu_get_offset(imu_data_t *data) {
         data->TempWhenCali = mpu6500_raw_temp * MPU6500_TEMP_FACTOR + MPU6500_TEMP_OFFSET;
 
     } while (gNormDiff > 0.5f ||
-        fabsf(data->gNorm - 9.8f) > 0.5f ||
-        gyroDiff[0] > 0.15f ||
-        gyroDiff[1] > 0.15f ||
-        gyroDiff[2] > 0.15f ||
-        fabsf(data->gyro_offset[0]) > 0.02f ||
-        fabsf(data->gyro_offset[1]) > 0.02f ||
-        fabsf(data->gyro_offset[2]) > 0.02f);
+             fabsf(data->gNorm - 9.8f) > 0.5f ||
+             gyroDiff[0] > 0.15f ||
+             gyroDiff[1] > 0.15f ||
+             gyroDiff[2] > 0.15f ||
+             fabsf(data->gyro_offset[0]) > 0.02f ||
+             fabsf(data->gyro_offset[1]) > 0.02f ||
+             fabsf(data->gyro_offset[2]) > 0.02f);
 
     // 根据标定结果校准加速度计标度因数
     data->AccelScale = 9.81f / data->gNorm;
@@ -725,7 +726,7 @@ uint8_t imu_device::init(SPI_HandleTypeDef *hspi, uint8_t calibrate) {
     this->offset_cnt = 0;
     mpu_device_init();
     init_quaternion(&this->data);
-    this->temppid.pid_reset(9500.0f, 9000.0f, 1600.0f, 0.2f, 0.0f,0.0f, 0.0f, 0.0f);
+    this->temppid.pid_reset(9500.0f, 9000.0f, 1600.0f, 0.2f, 0.0f, 0.0f, 0.0f, 0.0f);
     HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
     if (calibrate) {
         mpu_get_offset(&this->data);
@@ -740,10 +741,12 @@ uint8_t imu_device::init(SPI_HandleTypeDef *hspi, uint8_t calibrate) {
         return 0;
     }
 }
+
 #if MAHONY
 
 uint32_t mahony_offset = false;
 #endif
+
 void imu_device::update_data() {
     taskENTER_CRITICAL();
     if (this->lost_flag) {
@@ -809,7 +812,7 @@ void imu_device::update_euler() {
     }
     euler->Roll.total_degree =
         (euler->Roll.round_cnt * IMU_ROLL_RANGE * 2 + euler->Roll.current_deg - euler->Roll.zero_offset_deg) /
-            360.0f;
+        360.0f;
 }
 
 void imu_device::update_temperature_control() {
