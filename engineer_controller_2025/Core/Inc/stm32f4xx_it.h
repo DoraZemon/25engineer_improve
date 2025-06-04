@@ -55,6 +55,7 @@ void DebugMon_Handler(void);
 void DMA1_Stream1_IRQHandler(void);
 void CAN1_TX_IRQHandler(void);
 void CAN1_RX0_IRQHandler(void);
+void USART1_IRQHandler(void);
 void USART3_IRQHandler(void);
 void TIM7_IRQHandler(void);
 void DMA2_Stream0_IRQHandler(void);
@@ -65,7 +66,7 @@ void CAN2_TX_IRQHandler(void);
 void CAN2_RX1_IRQHandler(void);
 void OTG_FS_IRQHandler(void);
 void DMA2_Stream5_IRQHandler(void);
-void DMA2_Stream6_IRQHandler(void);
+void DMA2_Stream7_IRQHandler(void);
 void USART6_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 

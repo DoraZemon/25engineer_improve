@@ -30,7 +30,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "compatible.h"
+#include "bsp_dwt.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,7 +75,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+    __HAL_RCC_SYSCLK_CONFIG(RCC_SYSCLKSOURCE_HSI);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -104,8 +105,10 @@ int main(void)
   MX_TIM10_Init();
   MX_USART6_UART_Init();
   MX_IWDG_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+    DWT_Init(168);
+    bsp_can_init();
   /* USER CODE END 2 */
 
   /* Init scheduler */

@@ -41,12 +41,22 @@ void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & c
     normal_tx_data.frame_tail = PC_Frame_Tail;
 
     controller_tx_data.frame_head = PC_Controller_Frame_Head;
-    controller_tx_data.joint1 = controller.raw_data.joint1;
-    controller_tx_data.joint2 = controller.raw_data.joint2;
-    controller_tx_data.joint3 = controller.raw_data.joint3;
-    controller_tx_data.joint4 = controller.raw_data.joint4;
-    controller_tx_data.joint5 = controller.raw_data.joint5;
-    controller_tx_data.joint6 = controller.raw_data.joint6;
+    controller_tx_data.is_controller_valid = controller.raw_data.is_data_valid && !controller.check_lost();
+    if(controller.raw_data.is_data_valid && !controller.check_lost()){//通信协议中加入控制器有效性判断
+        controller_tx_data.joint1 = controller.raw_data.joint1;
+        controller_tx_data.joint2 = controller.raw_data.joint2;
+        controller_tx_data.joint3 = controller.raw_data.joint3;
+        controller_tx_data.joint4 = controller.raw_data.joint4;
+        controller_tx_data.joint5 = controller.raw_data.joint5;
+        controller_tx_data.joint6 = controller.raw_data.joint6;
+    }else{
+        controller_tx_data.joint1 = 0.0f;
+        controller_tx_data.joint2 = 0.0f;
+        controller_tx_data.joint3 = 0.0f;
+        controller_tx_data.joint4 = 0.0f;
+        controller_tx_data.joint5 = 0.0f;
+        controller_tx_data.joint6 = 0.0f;
+    }
     controller_tx_data.frame_tail = PC_Frame_Tail;
 
     arm.set_joint1_target(rx_data.joint1);
@@ -55,6 +65,7 @@ void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & c
     arm.set_joint4_target(rx_data.joint4);
     arm.set_joint5_target(rx_data.joint5);
     arm.set_joint6_target(rx_data.joint6);
+    arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
 }
 
 

@@ -25,14 +25,15 @@ extern "C" {
 
 #pragma pack(1)
 typedef struct {
-  float joint1;
-  float joint2;
-  float joint3;
-  float joint4;
-  float joint5;
-  float joint6;
-  float reserve_1;
-  uint16_t reserve_2;
+  uint8_t is_data_valid; //数据是否有效
+  float joint1; //关节1角度
+  float joint2; //关节2角度
+  float joint3; //关节3角度
+  float joint4; //关节4角度
+  float joint5; //关节5角度
+  float joint6; //关节6角度
+  float reserve_1; //保留
+  uint8_t reserve_2; //保留
 } custom_judge_raw_msg;
 
 #pragma pack()
@@ -44,6 +45,7 @@ struct controller_raw_data_t{
     float joint4;
     float joint5;
     float joint6;
+    bool is_data_valid = false; //数据是否有效
 };
 
 

@@ -39,6 +39,7 @@ bool controller_device::judge_transfer_rx_callback(custom_judge_raw_msg *judge_r
     raw_data.joint4 = judge_raw_msg->joint4;
     raw_data.joint5 = judge_raw_msg->joint5;
     raw_data.joint6 = judge_raw_msg->joint6;
+    raw_data.is_data_valid = judge_raw_msg->is_data_valid;
 
     return true;
 }

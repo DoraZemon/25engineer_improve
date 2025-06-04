@@ -21,8 +21,8 @@ extern "C" {
 #define ARM_REMOTE_CONTROL_PROTECT 0 //臂架遥控器保护
 
 #define RC_UART        huart1
-#define JUDGEMENT_POWER_UART  huart6
-#define JUDGEMENT_TRANSFER_UART huart8
+#define JUDGEMENT_POWER_UART  huart8
+#define JUDGEMENT_TRANSFER_UART huart6
 
 const uint8_t PC_Normal_Frame_Head = 0x55; //PC正常通信帧头
 const uint8_t PC_Controller_Frame_Head = 0x66; //PC控制器通信帧头

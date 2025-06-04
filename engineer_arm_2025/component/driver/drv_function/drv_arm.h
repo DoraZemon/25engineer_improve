@@ -21,6 +21,7 @@ extern "C" {
 #endif
 //C++
 #include "drv_dm_motor.h"
+#include "median_filter.h"
 
 constexpr float Arm_Motor1_Offset = 0.1679f; //电机1偏置
 constexpr float Arm_Motor2_Offset = 0.500f; //电机2偏置
@@ -73,6 +74,25 @@ constexpr float Arm_Joint5_Max = 1.5707f; //关节5最大角度
 constexpr float Arm_Joint6_Min = -6.28f; //关节6最小角度
 constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 
+constexpr float Arm_Motor1_Pos_Max = Arm_Joint1_Max/(2*PI); //电机1最大角度
+constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min/(2*PI); //电机1最小角度
+
+constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max/(2*PI); //电机2最大角度
+constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min/(2*PI); //电机2最小角度
+
+constexpr float Arm_Motor3_Pos_Max = Arm_Joint3_Max/(2*PI) + Arm_Joint2_Max/(2*PI); //电机3最大角度
+constexpr float Arm_Motor3_Pos_Min = Arm_Joint3_Min/(2*PI) + Arm_Joint2_Min/(2*PI); //电机3最小角度
+
+constexpr float Arm_Motor4_Pos_Max = Arm_Joint4_Max/(2*PI); //电机4最大角度
+constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min/(2*PI); //电机4最小角度
+
+constexpr float Arm_Motor5_Pos_Max = Arm_Joint5_Max/(2*PI); //电机5最大角度
+constexpr float Arm_Motor5_Pos_Min = Arm_Joint5_Min/(2*PI); //电机5最小角度
+
+constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max/(2*PI); //电机6最大角度
+constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min/(2*PI); //电机6最小角度
+
+
 constexpr float Arm_Motor1_Torque_Compensation = 0.0f; //电机1力矩补偿`
 constexpr float Arm_Motor2_Torque_Compensation = 0.0f; //电机2力矩补偿
 constexpr float Arm_Motor3_Torque_Compensation = -0.04f; //电机3力矩补偿
@@ -119,7 +139,7 @@ class arm_device {
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
  public:
-  arm_device() = default;
+  arm_device() ;
 
   void init();
 
@@ -141,11 +161,16 @@ class arm_device {
 
   void set_joint6_target(float set);
 
+  void set_arm_ctrl_enable(bool is_enable);
+
   void check_motor_loss();
+
+  void limit_motor_pos();
 
   struct {
     joint_t joint_states;
     joint_t joint_target; //关节目标角度
+    joint_t joint_filtered_target; //关节滤波角度
     motor_t motor_offset;
     motor_t motor_pos_get;
     motor_t motor_pos_set;
@@ -155,7 +180,19 @@ class arm_device {
       joint_t min;
       joint_t max; //关节角度限制
     } joint_limit;
+
+    struct {
+      motor_t min;
+        motor_t max; //电机位置限制
+    }motor_pos_limit;
   } data;
+
+  MedianFilter joint1_filter;
+    MedianFilter joint2_filter;
+    MedianFilter joint3_filter;
+    MedianFilter joint4_filter;
+    MedianFilter joint5_filter;
+    MedianFilter joint6_filter;
 };
 
 #endif //DRV_ARM_H_

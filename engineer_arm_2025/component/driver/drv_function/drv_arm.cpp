@@ -12,6 +12,9 @@
 #include "drv_arm.h"
 #include "rtos_inc.h"
 
+arm_device::arm_device() : joint1_filter(5), joint2_filter(5), joint3_filter(5), joint4_filter(5), joint5_filter(5),
+                           joint6_filter(5){}
+
 void arm_device::init() {
     motor.motor1.init(&Arm_Motor1_Can,
                       Arm_Motor1_Slave_Id,
@@ -74,6 +77,11 @@ void arm_device::init() {
         {Arm_Joint1_Min, Arm_Joint2_Min, Arm_Joint3_Min, Arm_Joint4_Min, Arm_Joint5_Min, Arm_Joint6_Min},
         {Arm_Joint1_Max, Arm_Joint2_Max, Arm_Joint3_Max, Arm_Joint4_Max, Arm_Joint5_Max, Arm_Joint6_Max}};
 
+    data.motor_pos_limit = {
+        {Arm_Motor1_Pos_Min, Arm_Motor2_Pos_Min, Arm_Motor3_Pos_Min, Arm_Motor4_Pos_Min, Arm_Motor5_Pos_Min, Arm_Motor6_Pos_Min},
+        {Arm_Motor1_Pos_Max, Arm_Motor2_Pos_Max, Arm_Motor3_Pos_Max, Arm_Motor4_Pos_Max, Arm_Motor5_Pos_Max, Arm_Motor6_Pos_Max}
+    };
+
     data.motor_torque_compensation = {
         Arm_Motor1_Torque_Compensation,
         Arm_Motor2_Torque_Compensation,
@@ -135,6 +143,10 @@ void arm_device::set_joint6_target(float set) {
     VAL_LIMIT(data.joint_target.joint6, data.joint_limit.min.joint6, data.joint_limit.max.joint6);
 }
 
+void arm_device::set_arm_ctrl_enable(bool is_enable) {
+    is_ctrl_enable = is_enable;
+}
+
 void arm_device::update_data() {
     data.motor_pos_get.motor1 = motor.motor1.get_total_rounds();
     data.motor_pos_get.motor2 = motor.motor2.get_total_rounds();
@@ -162,17 +174,27 @@ void arm_device::update_control(bool is_enable) {
 
     is_enable_last = is_enable;
 
+    data.joint_filtered_target.joint1 = joint1_filter.addData(data.joint_target.joint1);
+    data.joint_filtered_target.joint2 = joint2_filter.addData(data.joint_target.joint2);
+    data.joint_filtered_target.joint3 = joint3_filter.addData(data.joint_target.joint3);
+    data.joint_filtered_target.joint4 = joint4_filter.addData(data.joint_target.joint4);
+    data.joint_filtered_target.joint5 = joint5_filter.addData(data.joint_target.joint5);
+    data.joint_filtered_target.joint6 = joint6_filter.addData(data.joint_target.joint6);
+
     if (is_enable) {//遥控器在线
-        data.motor_pos_set.motor1 = data.joint_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
-        data.motor_pos_set.motor2 = data.joint_target.joint2 / (2 * PI);
-        data.motor_pos_set.motor3 = data.joint_target.joint3 / (2 * PI) + data.motor_pos_set.motor2;
-        data.motor_pos_set.motor4 = data.joint_target.joint4 / (2 * PI);
-        data.motor_pos_set.motor5 = data.joint_target.joint5 / (2 * PI);
-        data.motor_pos_set.motor6 = data.joint_target.joint6 / (2 * PI);
+        data.motor_pos_set.motor1 = data.joint_filtered_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
+        data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI);
+        data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.motor_pos_set.motor2;
+        data.motor_pos_set.motor4 = data.joint_filtered_target.joint4 / (2 * PI);
+        data.motor_pos_set.motor5 = data.joint_filtered_target.joint5 / (2 * PI);
+        data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI);
     }
 #if  ARM_REMOTE_CONTROL_PROTECT
     is_ctrl_enable = is_enable;
 #endif
+
+    limit_motor_pos();//限制电机位置
+
     if (is_ctrl_enable) {
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
         motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(motor.motor2.get_total_rounds() * 2 * PI + data.motor_compensation_angle_offset.motor2/180.f * PI) + (data.motor_torque_compensation.motor3 * cosf(motor.motor3.get_total_rounds() * 2 * PI)) * (-1));
@@ -245,4 +267,38 @@ void arm_device::check_motor_loss() {
     motor.motor4.check_motor_for_loss();
     motor.motor5.check_motor_for_loss();
     motor.motor6.check_motor_for_loss();
+}
+
+
+void arm_device::limit_motor_pos() {
+    if(isnan(data.motor_pos_set.motor1)){
+        data.motor_pos_set.motor1 = data.motor_pos_get.motor1;
+    }
+
+    if(isnan(data.motor_pos_set.motor2)){
+        data.motor_pos_set.motor2 = data.motor_pos_get.motor2;
+    }
+
+    if(isnan(data.motor_pos_set.motor3)){
+        data.motor_pos_set.motor3 = data.motor_pos_get.motor3;
+    }
+
+    if(isnan(data.motor_pos_set.motor4)){
+        data.motor_pos_set.motor4 = data.motor_pos_get.motor4;
+    }
+
+    if(isnan(data.motor_pos_set.motor5)){
+        data.motor_pos_set.motor5 = data.motor_pos_get.motor5;
+    }
+
+    if(isnan(data.motor_pos_set.motor6)){
+        data.motor_pos_set.motor6 = data.motor_pos_get.motor6;
+    }
+
+    VAL_LIMIT(data.motor_pos_set.motor1, data.motor_pos_limit.min.motor1, data.motor_pos_limit.max.motor1);
+    VAL_LIMIT(data.motor_pos_set.motor2, data.motor_pos_limit.min.motor2, data.motor_pos_limit.max.motor2);
+    VAL_LIMIT(data.motor_pos_set.motor3, data.motor_pos_limit.min.motor3, data.motor_pos_limit.max.motor3);
+    VAL_LIMIT(data.motor_pos_set.motor4, data.motor_pos_limit.min.motor4, data.motor_pos_limit.max.motor4);
+    VAL_LIMIT(data.motor_pos_set.motor5, data.motor_pos_limit.min.motor5, data.motor_pos_limit.max.motor5);
+    VAL_LIMIT(data.motor_pos_set.motor6, data.motor_pos_limit.min.motor6, data.motor_pos_limit.max.motor6);
 }

@@ -37,10 +37,10 @@ struct pc_normal_tx_data_t {
   float joint4;
   float joint5;
   float joint6;
-  float uplift_joint;
-  float extend_joint;
-  float pitch_joint;
   float chassis_gyro_total_rounds;
+  uint8_t is_arm_pump_holding_on;
+  uint8_t is_left_pump_holding_on;
+  uint8_t is_right_pump_holding_on;
   uint8_t error_code;
   uint8_t frame_tail; //帧尾
 };
@@ -61,16 +61,12 @@ struct pc_controller_tx_data_t {
   int8_t left_button_down; //左键按下
   int8_t right_button_down; //右键按下
   uint16_t keyboard_value;
-  uint8_t is_arm_pump_holding_on;
-  uint8_t is_left_pump_holding_on;
-  uint8_t is_right_pump_holding_on;
-  uint8_t is_excuting_small_island;
+  uint8_t is_controller_valid;
   float reserve_1; //保留
   float reserve_2; //保留
   float reserve_3; //保留
-  float reserve_4; //保留
-  float reserve_5; //保留
-  uint8_t reserve_6; //保留
+  uint16_t reserve_4; //保留
+  uint8_t reserve_5; //保留
   uint8_t frame_tail; //帧尾
 };
 
@@ -90,9 +86,7 @@ struct pc_rx_data_t {
   int16_t chassis_x;
   int16_t chassis_y;
   uint8_t camera_dir;
-  uint8_t is_start_small_island; //是否开始小岛
-  uint8_t reset_affiliates;
-  uint8_t affiliates_high_mode;
+  uint8_t arm_ctrl_enable; //机械臂使能
   uint8_t magic_flag;
   uint8_t frame_tail; //帧尾
 };
