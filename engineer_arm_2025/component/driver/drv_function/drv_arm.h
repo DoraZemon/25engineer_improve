@@ -126,18 +126,11 @@ class arm_device {
     float motor6; //电机6角度
   };
 
-  struct {
-    dm_motor_device motor1; //关节1电机
-    dm_motor_device motor2; //关节2电机
-    dm_motor_device motor3; //关节3电机
-    dm_motor_device motor4; //关节4电机
-    dm_motor_device motor5; //关节5电机
-    dm_motor_device motor6; //关节6电机
-  } motor;
-
   bool is_ctrl_enable = true;
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
+
+  bool is_lost = false;
  public:
   arm_device() ;
 
@@ -167,6 +160,8 @@ class arm_device {
 
   void limit_motor_pos();
 
+  bool check_lost();
+
   struct {
     joint_t joint_states;
     joint_t joint_target; //关节目标角度
@@ -193,6 +188,14 @@ class arm_device {
     MedianFilter joint4_filter;
     MedianFilter joint5_filter;
     MedianFilter joint6_filter;
+  struct {
+    dm_motor_device motor1; //关节1电机
+    dm_motor_device motor2; //关节2电机
+    dm_motor_device motor3; //关节3电机
+    dm_motor_device motor4; //关节4电机
+    dm_motor_device motor5; //关节5电机
+    dm_motor_device motor6; //关节6电机
+  } motor;
 };
 
 #endif //DRV_ARM_H_

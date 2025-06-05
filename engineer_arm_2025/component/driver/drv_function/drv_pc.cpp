@@ -25,7 +25,22 @@ bool pc_device::check_lost() {
     return is_lost;
 }
 
-void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & controller) {
+void pc_device::update_data(rc_device& rc,arm_device & arm,controller_device & controller,communicate_device & communicate,dm_imu_device & imu) {
+    error.remote = rc.check_lost();
+    error.pc = is_lost;
+    error.communicate = communicate.check_lost();
+    error.imu = imu.check_lost();
+    error.arm_motor1 = arm.motor.motor1.check_lost();
+    error.arm_motor2 = arm.motor.motor2.check_lost();
+    error.arm_motor3 = arm.motor.motor3.check_lost();
+    error.arm_motor4 = arm.motor.motor4.check_lost();
+    error.arm_motor5 = arm.motor.motor5.check_lost();
+    error.arm_motor6 = arm.motor.motor6.check_lost();
+    error.chassis_motor1 = communicate.data.is_chassis_motor1_error;
+    error.chassis_motor2 = communicate.data.is_chassis_motor2_error;
+    error.chassis_motor3 = communicate.data.is_chassis_motor3_error;
+    error.chassis_motor4 = communicate.data.is_chassis_motor4_error;
+
     normal_tx_data.frame_head = PC_Normal_Frame_Head;
     normal_tx_data.is_rc_online = rc.check_ready();
 //    normal_tx_data.is_rc_online = true;
@@ -37,7 +52,11 @@ void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & c
     normal_tx_data.joint4 = arm.data.joint_states.joint4;
     normal_tx_data.joint5 = arm.data.joint_states.joint5;
     normal_tx_data.joint6 = arm.data.joint_states.joint6;
-    //todo 其它待完善
+    normal_tx_data.chassis_gyro_total_rounds = imu.get_yaw();
+    normal_tx_data.is_arm_pump_holding_on = communicate.check_arm_pump_holding();
+    normal_tx_data.is_left_pump_holding_on = communicate.check_left_pump_holding();
+    normal_tx_data.is_right_pump_holding_on = communicate.check_right_pump_holding();
+    normal_tx_data.error_code = error.code;
     normal_tx_data.frame_tail = PC_Frame_Tail;
 
     controller_tx_data.frame_head = PC_Controller_Frame_Head;
@@ -50,12 +69,12 @@ void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & c
         controller_tx_data.joint5 = controller.raw_data.joint5;
         controller_tx_data.joint6 = controller.raw_data.joint6;
     }else{
-        controller_tx_data.joint1 = 0.0f;
-        controller_tx_data.joint2 = 0.0f;
-        controller_tx_data.joint3 = 0.0f;
-        controller_tx_data.joint4 = 0.0f;
-        controller_tx_data.joint5 = 0.0f;
-        controller_tx_data.joint6 = 0.0f;
+        controller_tx_data.joint1 = controller.last_valid_raw_data.joint1;
+        controller_tx_data.joint2 = controller.last_valid_raw_data.joint2;
+        controller_tx_data.joint3 = controller.last_valid_raw_data.joint3;
+        controller_tx_data.joint4 = controller.last_valid_raw_data.joint4;
+        controller_tx_data.joint5 = controller.last_valid_raw_data.joint5;
+        controller_tx_data.joint6 = controller.last_valid_raw_data.joint6;
     }
     controller_tx_data.frame_tail = PC_Frame_Tail;
 
@@ -66,6 +85,13 @@ void pc_device::update_data(rc_device &rc, arm_device &arm,controller_device & c
     arm.set_joint5_target(rx_data.joint5);
     arm.set_joint6_target(rx_data.joint6);
     arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
+
+    communicate.set_pump_ctrl(rx_data.is_arm_pump_on,
+                              rx_data.is_left_pump_on,
+                              rx_data.is_right_pump_on);
+
+    communicate.set_chassis_ctrl(rx_data.is_chassis_vel_control,rx_data.chassis_x,
+                                 rx_data.chassis_y,rx_data.chassis_spin);
 }
 
 

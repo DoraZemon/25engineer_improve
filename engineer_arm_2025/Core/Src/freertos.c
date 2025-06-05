@@ -132,6 +132,20 @@ const osThreadAttr_t controllertask_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for imutask */
+osThreadId_t imutaskHandle;
+const osThreadAttr_t imutask_attributes = {
+  .name = "imutask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for communicatetask */
+osThreadId_t communicatetaskHandle;
+const osThreadAttr_t communicatetask_attributes = {
+  .name = "communicatetask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -202,6 +216,16 @@ osSemaphoreId_t customRxBinarySemHandle;
 const osSemaphoreAttr_t customRxBinarySem_attributes = {
   .name = "customRxBinarySem"
 };
+/* Definitions for CommunicateUpdateBinarySem */
+osSemaphoreId_t CommunicateUpdateBinarySemHandle;
+const osSemaphoreAttr_t CommunicateUpdateBinarySem_attributes = {
+  .name = "CommunicateUpdateBinarySem"
+};
+/* Definitions for IMUUpdateBinarySem */
+osSemaphoreId_t IMUUpdateBinarySemHandle;
+const osSemaphoreAttr_t IMUUpdateBinarySem_attributes = {
+  .name = "IMUUpdateBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -240,6 +264,8 @@ void receiveCtrl_task(void *argument);
 void updateUIData_task(void *argument);
 void judgeCtrl_task(void *argument);
 void controller_task(void *argument);
+void imu_task(void *argument);
+void communicate_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -291,6 +317,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of customRxBinarySem */
   customRxBinarySemHandle = osSemaphoreNew(1, 0, &customRxBinarySem_attributes);
+
+  /* creation of CommunicateUpdateBinarySem */
+  CommunicateUpdateBinarySemHandle = osSemaphoreNew(1, 0, &CommunicateUpdateBinarySem_attributes);
+
+  /* creation of IMUUpdateBinarySem */
+  IMUUpdateBinarySemHandle = osSemaphoreNew(1, 0, &IMUUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -356,6 +388,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of controllertask */
   controllertaskHandle = osThreadNew(controller_task, NULL, &controllertask_attributes);
+
+  /* creation of imutask */
+  imutaskHandle = osThreadNew(imu_task, NULL, &imutask_attributes);
+
+  /* creation of communicatetask */
+  communicatetaskHandle = osThreadNew(communicate_task, NULL, &communicatetask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -591,6 +629,42 @@ __weak void controller_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END controller_task */
+}
+
+/* USER CODE BEGIN Header_imu_task */
+/**
+* @brief Function implementing the imutask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_imu_task */
+__weak void imu_task(void *argument)
+{
+  /* USER CODE BEGIN imu_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END imu_task */
+}
+
+/* USER CODE BEGIN Header_communicate_task */
+/**
+* @brief Function implementing the communicatetask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_communicate_task */
+__weak void communicate_task(void *argument)
+{
+  /* USER CODE BEGIN communicate_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END communicate_task */
 }
 
 /* Private application code --------------------------------------------------*/

@@ -12,7 +12,6 @@ extern "C" {
 #include "cmsis_os.h"
 #include "user_lib.h"
 #include "rtos_inc.h"
-#include "globalcfg.h"
 #include "pid.h"
 #include "QuaternionEKF.h"
 #include "bsp_dwt.h"

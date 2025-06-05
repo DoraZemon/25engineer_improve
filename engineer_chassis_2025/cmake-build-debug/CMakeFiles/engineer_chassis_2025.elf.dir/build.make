@@ -686,6 +686,258 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\timers.c -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.s
 
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_can.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_can.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_can.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_can.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.c
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_dwt.c
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_dwt.c > CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_dwt.c -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_usart.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_usart.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_usart.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_usart.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/crc.c
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\crc.c
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\crc.c > CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\crc.c -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/mecanum.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\mecanum.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\mecanum.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\mecanum.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/spd_plan.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\spd_plan.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\spd_plan.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\spd_plan.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_chassis.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_chassis.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_chassis.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_chassis.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_communicate.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_communicate.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_communicate.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_communicate.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_pump.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_pump.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_pump.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_pump.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dji_motor.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dji_motor.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dji_motor.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dji_motor.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_imu.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_imu.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_imu.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_imu.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_motor.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_motor.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_motor.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_motor.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/chassis_task.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\chassis_task.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\chassis_task.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\chassis_task.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/communicate_task.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\communicate_task.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\communicate_task.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\communicate_task.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/pump_task.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\pump_task.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\pump_task.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\pump_task.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_peripheral/lost_check_task.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_peripheral\lost_check_task.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_peripheral\lost_check_task.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_peripheral\lost_check_task.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/compatible.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\compatible.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\compatible.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\compatible.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.s
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/user_lib.cpp
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\user_lib.cpp
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\user_lib.cpp > CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\user_lib.cpp -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.s
+
 # Object files for target engineer_chassis_2025.elf
 engineer_chassis_2025_elf_OBJECTS = \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/adc.c.obj" \
@@ -731,7 +983,25 @@ engineer_chassis_2025_elf_OBJECTS = \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" \
-"CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+"CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj"
 
 # External object files for target engineer_chassis_2025.elf
 engineer_chassis_2025_elf_EXTERNAL_OBJECTS =
@@ -780,9 +1050,28 @@ engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/build.make
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/objects1.rsp
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking C executable engineer_chassis_2025.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable engineer_chassis_2025.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\engineer_chassis_2025.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/cmake-build-debug/engineer_chassis_2025.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/cmake-build-debug/engineer_chassis_2025.bin"

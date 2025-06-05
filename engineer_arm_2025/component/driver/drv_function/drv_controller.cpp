@@ -41,5 +41,9 @@ bool controller_device::judge_transfer_rx_callback(custom_judge_raw_msg *judge_r
     raw_data.joint6 = judge_raw_msg->joint6;
     raw_data.is_data_valid = judge_raw_msg->is_data_valid;
 
+    if(raw_data.is_data_valid){
+        last_valid_raw_data = raw_data; //保存上一次接收到的数据
+    }
+
     return true;
 }

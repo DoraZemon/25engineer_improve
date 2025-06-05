@@ -16,6 +16,8 @@ uint8_t pc_raw_data[64];
 extern rc_device g_rc;
 extern controller_device g_controller;
 extern arm_device g_arm;
+extern communicate_device g_communicate;
+extern dm_imu_device g_imu;
 
 pc_device g_pc;
 void pc_receive_task(void *argument) {
@@ -36,7 +38,7 @@ void pc_receive_task(void *argument) {
 void pc_transmit_task(void *argument) {
     osDelay(1000);
     for (;;) {
-        g_pc.update_data(g_rc,g_arm,g_controller);
+        g_pc.update_data(g_rc,g_arm,g_controller,g_communicate,g_imu);
         g_pc.transmit_data();
         osDelay(1); // Delay for demonstration purposes
     }

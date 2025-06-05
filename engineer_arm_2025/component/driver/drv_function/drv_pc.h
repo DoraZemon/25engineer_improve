@@ -24,6 +24,51 @@ extern "C" {
 #include "drv_arm.h"
 #include "drv_rc.h"
 #include "drv_controller.h"
+#include "drv_communicate.h"
+#include "drv_dm_Imu.h"
+
+
+
+enum robot_error_type{
+  remote= 0,
+  pc,
+  communicate,
+  arm_motor1,
+  arm_motor2,
+    arm_motor3,
+    arm_motor4,
+    arm_motor5,
+    arm_motor6,
+    imu,
+    chassis_motor1,
+    chassis_motor2,
+    chassis_motor3,
+    chassis_motor4,
+  none,
+};
+#pragma pack(1)
+union robot_error_u{
+  uint32_t code;
+  struct {
+    uint32_t remote:1;
+    uint32_t pc:1;
+    uint32_t communicate:1;
+    uint32_t arm_motor1:1;
+    uint32_t arm_motor2:1;
+    uint32_t arm_motor3:1;
+    uint32_t arm_motor4:1;
+    uint32_t arm_motor5:1;
+    uint32_t arm_motor6:1;
+    uint32_t imu:1;
+    uint32_t chassis_motor1:1;
+    uint32_t chassis_motor2:1;
+    uint32_t chassis_motor3:1;
+    uint32_t chassis_motor4:1;
+    uint32_t reserve:18; //保留位
+  };
+};
+
+#pragma pack()
 
 #pragma pack(1)
 struct pc_normal_tx_data_t {
@@ -41,7 +86,7 @@ struct pc_normal_tx_data_t {
   uint8_t is_arm_pump_holding_on;
   uint8_t is_left_pump_holding_on;
   uint8_t is_right_pump_holding_on;
-  uint8_t error_code;
+  uint32_t error_code;
   uint8_t frame_tail; //帧尾
 };
 
@@ -66,7 +111,7 @@ struct pc_controller_tx_data_t {
   float reserve_2; //保留
   float reserve_3; //保留
   uint16_t reserve_4; //保留
-  uint8_t reserve_5; //保留
+  uint32_t reserve_5; //保留
   uint8_t frame_tail; //帧尾
 };
 
@@ -101,7 +146,9 @@ class pc_device {
   pc_controller_tx_data_t controller_tx_data; //PC控制器通信发送数据
   pc_rx_data_t rx_data; //PC接收数据
 
-  void update_data(rc_device& rc,arm_device & arm,controller_device & controller); //更新数据
+  robot_error_u error;
+
+  void update_data(rc_device& rc,arm_device & arm,controller_device & controller,communicate_device & communicate,dm_imu_device & imu); //更新数据
   void transmit_data(); //发送数据到PC
   void set_lost();
   void set_connected();

@@ -1175,6 +1175,438 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/timers.c.s
 
+bsp/bsp_can.obj: bsp/bsp_can.cpp.obj
+.PHONY : bsp/bsp_can.obj
+
+# target to build an object file
+bsp/bsp_can.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj
+.PHONY : bsp/bsp_can.cpp.obj
+
+bsp/bsp_can.i: bsp/bsp_can.cpp.i
+.PHONY : bsp/bsp_can.i
+
+# target to preprocess a source file
+bsp/bsp_can.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.i
+.PHONY : bsp/bsp_can.cpp.i
+
+bsp/bsp_can.s: bsp/bsp_can.cpp.s
+.PHONY : bsp/bsp_can.s
+
+# target to generate assembly for a file
+bsp/bsp_can.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.s
+.PHONY : bsp/bsp_can.cpp.s
+
+bsp/bsp_dwt.obj: bsp/bsp_dwt.c.obj
+.PHONY : bsp/bsp_dwt.obj
+
+# target to build an object file
+bsp/bsp_dwt.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj
+.PHONY : bsp/bsp_dwt.c.obj
+
+bsp/bsp_dwt.i: bsp/bsp_dwt.c.i
+.PHONY : bsp/bsp_dwt.i
+
+# target to preprocess a source file
+bsp/bsp_dwt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.i
+.PHONY : bsp/bsp_dwt.c.i
+
+bsp/bsp_dwt.s: bsp/bsp_dwt.c.s
+.PHONY : bsp/bsp_dwt.s
+
+# target to generate assembly for a file
+bsp/bsp_dwt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.s
+.PHONY : bsp/bsp_dwt.c.s
+
+bsp/bsp_usart.obj: bsp/bsp_usart.cpp.obj
+.PHONY : bsp/bsp_usart.obj
+
+# target to build an object file
+bsp/bsp_usart.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj
+.PHONY : bsp/bsp_usart.cpp.obj
+
+bsp/bsp_usart.i: bsp/bsp_usart.cpp.i
+.PHONY : bsp/bsp_usart.i
+
+# target to preprocess a source file
+bsp/bsp_usart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.i
+.PHONY : bsp/bsp_usart.cpp.i
+
+bsp/bsp_usart.s: bsp/bsp_usart.cpp.s
+.PHONY : bsp/bsp_usart.s
+
+# target to generate assembly for a file
+bsp/bsp_usart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.s
+.PHONY : bsp/bsp_usart.cpp.s
+
+component/algorithm/crc.obj: component/algorithm/crc.c.obj
+.PHONY : component/algorithm/crc.obj
+
+# target to build an object file
+component/algorithm/crc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj
+.PHONY : component/algorithm/crc.c.obj
+
+component/algorithm/crc.i: component/algorithm/crc.c.i
+.PHONY : component/algorithm/crc.i
+
+# target to preprocess a source file
+component/algorithm/crc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.i
+.PHONY : component/algorithm/crc.c.i
+
+component/algorithm/crc.s: component/algorithm/crc.c.s
+.PHONY : component/algorithm/crc.s
+
+# target to generate assembly for a file
+component/algorithm/crc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.s
+.PHONY : component/algorithm/crc.c.s
+
+component/algorithm/mecanum.obj: component/algorithm/mecanum.cpp.obj
+.PHONY : component/algorithm/mecanum.obj
+
+# target to build an object file
+component/algorithm/mecanum.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj
+.PHONY : component/algorithm/mecanum.cpp.obj
+
+component/algorithm/mecanum.i: component/algorithm/mecanum.cpp.i
+.PHONY : component/algorithm/mecanum.i
+
+# target to preprocess a source file
+component/algorithm/mecanum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.i
+.PHONY : component/algorithm/mecanum.cpp.i
+
+component/algorithm/mecanum.s: component/algorithm/mecanum.cpp.s
+.PHONY : component/algorithm/mecanum.s
+
+# target to generate assembly for a file
+component/algorithm/mecanum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.s
+.PHONY : component/algorithm/mecanum.cpp.s
+
+component/algorithm/spd_plan.obj: component/algorithm/spd_plan.cpp.obj
+.PHONY : component/algorithm/spd_plan.obj
+
+# target to build an object file
+component/algorithm/spd_plan.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj
+.PHONY : component/algorithm/spd_plan.cpp.obj
+
+component/algorithm/spd_plan.i: component/algorithm/spd_plan.cpp.i
+.PHONY : component/algorithm/spd_plan.i
+
+# target to preprocess a source file
+component/algorithm/spd_plan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.i
+.PHONY : component/algorithm/spd_plan.cpp.i
+
+component/algorithm/spd_plan.s: component/algorithm/spd_plan.cpp.s
+.PHONY : component/algorithm/spd_plan.s
+
+# target to generate assembly for a file
+component/algorithm/spd_plan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.s
+.PHONY : component/algorithm/spd_plan.cpp.s
+
+component/driver/drv_function/drv_chassis.obj: component/driver/drv_function/drv_chassis.cpp.obj
+.PHONY : component/driver/drv_function/drv_chassis.obj
+
+# target to build an object file
+component/driver/drv_function/drv_chassis.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj
+.PHONY : component/driver/drv_function/drv_chassis.cpp.obj
+
+component/driver/drv_function/drv_chassis.i: component/driver/drv_function/drv_chassis.cpp.i
+.PHONY : component/driver/drv_function/drv_chassis.i
+
+# target to preprocess a source file
+component/driver/drv_function/drv_chassis.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.i
+.PHONY : component/driver/drv_function/drv_chassis.cpp.i
+
+component/driver/drv_function/drv_chassis.s: component/driver/drv_function/drv_chassis.cpp.s
+.PHONY : component/driver/drv_function/drv_chassis.s
+
+# target to generate assembly for a file
+component/driver/drv_function/drv_chassis.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.s
+.PHONY : component/driver/drv_function/drv_chassis.cpp.s
+
+component/driver/drv_function/drv_communicate.obj: component/driver/drv_function/drv_communicate.cpp.obj
+.PHONY : component/driver/drv_function/drv_communicate.obj
+
+# target to build an object file
+component/driver/drv_function/drv_communicate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj
+.PHONY : component/driver/drv_function/drv_communicate.cpp.obj
+
+component/driver/drv_function/drv_communicate.i: component/driver/drv_function/drv_communicate.cpp.i
+.PHONY : component/driver/drv_function/drv_communicate.i
+
+# target to preprocess a source file
+component/driver/drv_function/drv_communicate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.i
+.PHONY : component/driver/drv_function/drv_communicate.cpp.i
+
+component/driver/drv_function/drv_communicate.s: component/driver/drv_function/drv_communicate.cpp.s
+.PHONY : component/driver/drv_function/drv_communicate.s
+
+# target to generate assembly for a file
+component/driver/drv_function/drv_communicate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.s
+.PHONY : component/driver/drv_function/drv_communicate.cpp.s
+
+component/driver/drv_function/drv_pump.obj: component/driver/drv_function/drv_pump.cpp.obj
+.PHONY : component/driver/drv_function/drv_pump.obj
+
+# target to build an object file
+component/driver/drv_function/drv_pump.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj
+.PHONY : component/driver/drv_function/drv_pump.cpp.obj
+
+component/driver/drv_function/drv_pump.i: component/driver/drv_function/drv_pump.cpp.i
+.PHONY : component/driver/drv_function/drv_pump.i
+
+# target to preprocess a source file
+component/driver/drv_function/drv_pump.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.i
+.PHONY : component/driver/drv_function/drv_pump.cpp.i
+
+component/driver/drv_function/drv_pump.s: component/driver/drv_function/drv_pump.cpp.s
+.PHONY : component/driver/drv_function/drv_pump.s
+
+# target to generate assembly for a file
+component/driver/drv_function/drv_pump.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.s
+.PHONY : component/driver/drv_function/drv_pump.cpp.s
+
+component/driver/drv_peripheral/drv_dji_motor.obj: component/driver/drv_peripheral/drv_dji_motor.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.obj
+
+# target to build an object file
+component/driver/drv_peripheral/drv_dji_motor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.cpp.obj
+
+component/driver/drv_peripheral/drv_dji_motor.i: component/driver/drv_peripheral/drv_dji_motor.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.i
+
+# target to preprocess a source file
+component/driver/drv_peripheral/drv_dji_motor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.cpp.i
+
+component/driver/drv_peripheral/drv_dji_motor.s: component/driver/drv_peripheral/drv_dji_motor.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.s
+
+# target to generate assembly for a file
+component/driver/drv_peripheral/drv_dji_motor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dji_motor.cpp.s
+
+component/driver/drv_peripheral/drv_dm_imu.obj: component/driver/drv_peripheral/drv_dm_imu.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.obj
+
+# target to build an object file
+component/driver/drv_peripheral/drv_dm_imu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.cpp.obj
+
+component/driver/drv_peripheral/drv_dm_imu.i: component/driver/drv_peripheral/drv_dm_imu.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.i
+
+# target to preprocess a source file
+component/driver/drv_peripheral/drv_dm_imu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.cpp.i
+
+component/driver/drv_peripheral/drv_dm_imu.s: component/driver/drv_peripheral/drv_dm_imu.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.s
+
+# target to generate assembly for a file
+component/driver/drv_peripheral/drv_dm_imu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dm_imu.cpp.s
+
+component/driver/drv_peripheral/drv_dm_motor.obj: component/driver/drv_peripheral/drv_dm_motor.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.obj
+
+# target to build an object file
+component/driver/drv_peripheral/drv_dm_motor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.cpp.obj
+
+component/driver/drv_peripheral/drv_dm_motor.i: component/driver/drv_peripheral/drv_dm_motor.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.i
+
+# target to preprocess a source file
+component/driver/drv_peripheral/drv_dm_motor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.cpp.i
+
+component/driver/drv_peripheral/drv_dm_motor.s: component/driver/drv_peripheral/drv_dm_motor.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.s
+
+# target to generate assembly for a file
+component/driver/drv_peripheral/drv_dm_motor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_dm_motor.cpp.s
+
+component/task/task_function/chassis_task.obj: component/task/task_function/chassis_task.cpp.obj
+.PHONY : component/task/task_function/chassis_task.obj
+
+# target to build an object file
+component/task/task_function/chassis_task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj
+.PHONY : component/task/task_function/chassis_task.cpp.obj
+
+component/task/task_function/chassis_task.i: component/task/task_function/chassis_task.cpp.i
+.PHONY : component/task/task_function/chassis_task.i
+
+# target to preprocess a source file
+component/task/task_function/chassis_task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.i
+.PHONY : component/task/task_function/chassis_task.cpp.i
+
+component/task/task_function/chassis_task.s: component/task/task_function/chassis_task.cpp.s
+.PHONY : component/task/task_function/chassis_task.s
+
+# target to generate assembly for a file
+component/task/task_function/chassis_task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.s
+.PHONY : component/task/task_function/chassis_task.cpp.s
+
+component/task/task_function/communicate_task.obj: component/task/task_function/communicate_task.cpp.obj
+.PHONY : component/task/task_function/communicate_task.obj
+
+# target to build an object file
+component/task/task_function/communicate_task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj
+.PHONY : component/task/task_function/communicate_task.cpp.obj
+
+component/task/task_function/communicate_task.i: component/task/task_function/communicate_task.cpp.i
+.PHONY : component/task/task_function/communicate_task.i
+
+# target to preprocess a source file
+component/task/task_function/communicate_task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.i
+.PHONY : component/task/task_function/communicate_task.cpp.i
+
+component/task/task_function/communicate_task.s: component/task/task_function/communicate_task.cpp.s
+.PHONY : component/task/task_function/communicate_task.s
+
+# target to generate assembly for a file
+component/task/task_function/communicate_task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.s
+.PHONY : component/task/task_function/communicate_task.cpp.s
+
+component/task/task_function/pump_task.obj: component/task/task_function/pump_task.cpp.obj
+.PHONY : component/task/task_function/pump_task.obj
+
+# target to build an object file
+component/task/task_function/pump_task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj
+.PHONY : component/task/task_function/pump_task.cpp.obj
+
+component/task/task_function/pump_task.i: component/task/task_function/pump_task.cpp.i
+.PHONY : component/task/task_function/pump_task.i
+
+# target to preprocess a source file
+component/task/task_function/pump_task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.i
+.PHONY : component/task/task_function/pump_task.cpp.i
+
+component/task/task_function/pump_task.s: component/task/task_function/pump_task.cpp.s
+.PHONY : component/task/task_function/pump_task.s
+
+# target to generate assembly for a file
+component/task/task_function/pump_task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.s
+.PHONY : component/task/task_function/pump_task.cpp.s
+
+component/task/task_peripheral/lost_check_task.obj: component/task/task_peripheral/lost_check_task.cpp.obj
+.PHONY : component/task/task_peripheral/lost_check_task.obj
+
+# target to build an object file
+component/task/task_peripheral/lost_check_task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj
+.PHONY : component/task/task_peripheral/lost_check_task.cpp.obj
+
+component/task/task_peripheral/lost_check_task.i: component/task/task_peripheral/lost_check_task.cpp.i
+.PHONY : component/task/task_peripheral/lost_check_task.i
+
+# target to preprocess a source file
+component/task/task_peripheral/lost_check_task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.i
+.PHONY : component/task/task_peripheral/lost_check_task.cpp.i
+
+component/task/task_peripheral/lost_check_task.s: component/task/task_peripheral/lost_check_task.cpp.s
+.PHONY : component/task/task_peripheral/lost_check_task.s
+
+# target to generate assembly for a file
+component/task/task_peripheral/lost_check_task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.s
+.PHONY : component/task/task_peripheral/lost_check_task.cpp.s
+
+component/user/compatible.obj: component/user/compatible.cpp.obj
+.PHONY : component/user/compatible.obj
+
+# target to build an object file
+component/user/compatible.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj
+.PHONY : component/user/compatible.cpp.obj
+
+component/user/compatible.i: component/user/compatible.cpp.i
+.PHONY : component/user/compatible.i
+
+# target to preprocess a source file
+component/user/compatible.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.i
+.PHONY : component/user/compatible.cpp.i
+
+component/user/compatible.s: component/user/compatible.cpp.s
+.PHONY : component/user/compatible.s
+
+# target to generate assembly for a file
+component/user/compatible.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.s
+.PHONY : component/user/compatible.cpp.s
+
+component/user/user_lib.obj: component/user/user_lib.cpp.obj
+.PHONY : component/user/user_lib.obj
+
+# target to build an object file
+component/user/user_lib.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj
+.PHONY : component/user/user_lib.cpp.obj
+
+component/user/user_lib.i: component/user/user_lib.cpp.i
+.PHONY : component/user/user_lib.i
+
+# target to preprocess a source file
+component/user/user_lib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.i
+.PHONY : component/user/user_lib.cpp.i
+
+component/user/user_lib.s: component/user/user_lib.cpp.s
+.PHONY : component/user/user_lib.s
+
+# target to generate assembly for a file
+component/user/user_lib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_chassis_2025.elf.dir\build.make CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.s
+.PHONY : component/user/user_lib.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1315,6 +1747,60 @@ help:
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.obj
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.i
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/timers.s
+	@echo ... bsp/bsp_can.obj
+	@echo ... bsp/bsp_can.i
+	@echo ... bsp/bsp_can.s
+	@echo ... bsp/bsp_dwt.obj
+	@echo ... bsp/bsp_dwt.i
+	@echo ... bsp/bsp_dwt.s
+	@echo ... bsp/bsp_usart.obj
+	@echo ... bsp/bsp_usart.i
+	@echo ... bsp/bsp_usart.s
+	@echo ... component/algorithm/crc.obj
+	@echo ... component/algorithm/crc.i
+	@echo ... component/algorithm/crc.s
+	@echo ... component/algorithm/mecanum.obj
+	@echo ... component/algorithm/mecanum.i
+	@echo ... component/algorithm/mecanum.s
+	@echo ... component/algorithm/spd_plan.obj
+	@echo ... component/algorithm/spd_plan.i
+	@echo ... component/algorithm/spd_plan.s
+	@echo ... component/driver/drv_function/drv_chassis.obj
+	@echo ... component/driver/drv_function/drv_chassis.i
+	@echo ... component/driver/drv_function/drv_chassis.s
+	@echo ... component/driver/drv_function/drv_communicate.obj
+	@echo ... component/driver/drv_function/drv_communicate.i
+	@echo ... component/driver/drv_function/drv_communicate.s
+	@echo ... component/driver/drv_function/drv_pump.obj
+	@echo ... component/driver/drv_function/drv_pump.i
+	@echo ... component/driver/drv_function/drv_pump.s
+	@echo ... component/driver/drv_peripheral/drv_dji_motor.obj
+	@echo ... component/driver/drv_peripheral/drv_dji_motor.i
+	@echo ... component/driver/drv_peripheral/drv_dji_motor.s
+	@echo ... component/driver/drv_peripheral/drv_dm_imu.obj
+	@echo ... component/driver/drv_peripheral/drv_dm_imu.i
+	@echo ... component/driver/drv_peripheral/drv_dm_imu.s
+	@echo ... component/driver/drv_peripheral/drv_dm_motor.obj
+	@echo ... component/driver/drv_peripheral/drv_dm_motor.i
+	@echo ... component/driver/drv_peripheral/drv_dm_motor.s
+	@echo ... component/task/task_function/chassis_task.obj
+	@echo ... component/task/task_function/chassis_task.i
+	@echo ... component/task/task_function/chassis_task.s
+	@echo ... component/task/task_function/communicate_task.obj
+	@echo ... component/task/task_function/communicate_task.i
+	@echo ... component/task/task_function/communicate_task.s
+	@echo ... component/task/task_function/pump_task.obj
+	@echo ... component/task/task_function/pump_task.i
+	@echo ... component/task/task_function/pump_task.s
+	@echo ... component/task/task_peripheral/lost_check_task.obj
+	@echo ... component/task/task_peripheral/lost_check_task.i
+	@echo ... component/task/task_peripheral/lost_check_task.s
+	@echo ... component/user/compatible.obj
+	@echo ... component/user/compatible.i
+	@echo ... component/user/compatible.s
+	@echo ... component/user/user_lib.obj
+	@echo ... component/user/user_lib.i
+	@echo ... component/user/user_lib.s
 .PHONY : help
 
 

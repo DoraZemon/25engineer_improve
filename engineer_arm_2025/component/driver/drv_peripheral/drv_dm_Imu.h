@@ -22,6 +22,13 @@ extern "C" {
 //C++
 #include "bsp_can.h"
 
+#define IMU_CAN         (hcan2)
+
+#define IMU_SLAVE_ID 0x05
+#define IMU_MASTER_ID 0x05
+
+
+
 #define ACCEL_CAN_MAX (58.8f)
 #define ACCEL_CAN_MIN    (-58.8f)
 #define GYRO_CAN_MAX    (34.88f)

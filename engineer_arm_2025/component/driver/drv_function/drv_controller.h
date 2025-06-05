@@ -52,6 +52,7 @@ struct controller_raw_data_t{
 class controller_device {
  public:
     controller_raw_data_t raw_data;
+    controller_raw_data_t last_valid_raw_data; //上一次接收到的数据
     bool is_lost = true;
   bool judge_transfer_rx_callback(custom_judge_raw_msg *judge_raw_msg);
 

@@ -18,7 +18,7 @@ const float deg2round = (float) (1 / 360.0);
 
 void dm_imu_device::init(CAN_HandleTypeDef *hcan_, uint32_t canid, uint32_t master_id, osSemaphoreId_t rxsem) {
     is_using_quaternion = false;
-    is_using_accel = true;
+    is_using_accel = false;
     can_device.init_rx(hcan_, master_id, std::bind(&dm_imu_device::update_data, this, std::placeholders::_1), rxsem);
     can_device.init_tx(hcan_, 4, 0x6FF, cmd);
     hcan = hcan_;
@@ -32,6 +32,7 @@ void dm_imu_device::update_data(uint8_t *rx_data) {
         case Gyro:update_gyro(rx_data);
             break;
         case Euler:update_euler(rx_data);
+        update_euler_cnt();
             break;
         case Quaternion:update_quaternion(rx_data);
             break;

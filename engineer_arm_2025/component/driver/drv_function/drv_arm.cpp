@@ -11,6 +11,7 @@
 
 #include "drv_arm.h"
 #include "rtos_inc.h"
+#include "GlobalCfg.h"
 
 arm_device::arm_device() : joint1_filter(5), joint2_filter(5), joint3_filter(5), joint4_filter(5), joint5_filter(5),
                            joint6_filter(5){}
@@ -72,6 +73,10 @@ void arm_device::init() {
     motor.motor4.lqr.reset_lqr(15.0, 1.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor5.lqr.reset_lqr(30.0, 1.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor6.lqr.reset_lqr(30.0, 0.1, 0.0, 0.0, 0.0, 1.0);
+
+//    motor.motor1.set_low_pass_alpha(0.05);
+//    motor.motor2.set_low_pass_alpha(0.05);
+//    motor.motor3.set_low_pass_alpha(0.05);
 
     data.joint_limit = {
         {Arm_Joint1_Min, Arm_Joint2_Min, Arm_Joint3_Min, Arm_Joint4_Min, Arm_Joint5_Min, Arm_Joint6_Min},
@@ -148,6 +153,10 @@ void arm_device::set_arm_ctrl_enable(bool is_enable) {
 }
 
 void arm_device::update_data() {
+    is_lost = motor.motor1.check_lost() || motor.motor2.check_lost() ||
+              motor.motor3.check_lost() || motor.motor4.check_lost() ||
+              motor.motor5.check_lost() || motor.motor6.check_lost();
+
     data.motor_pos_get.motor1 = motor.motor1.get_total_rounds();
     data.motor_pos_get.motor2 = motor.motor2.get_total_rounds();
     data.motor_pos_get.motor3 = motor.motor3.get_total_rounds();
@@ -182,14 +191,17 @@ void arm_device::update_control(bool is_enable) {
     data.joint_filtered_target.joint6 = joint6_filter.addData(data.joint_target.joint6);
 
     if (is_enable) {//遥控器在线
+#if ARM_DEBUG_MODE
+#else
         data.motor_pos_set.motor1 = data.joint_filtered_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
         data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI);
         data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.motor_pos_set.motor2;
         data.motor_pos_set.motor4 = data.joint_filtered_target.joint4 / (2 * PI);
         data.motor_pos_set.motor5 = data.joint_filtered_target.joint5 / (2 * PI);
         data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI);
+#endif
     }
-#if  ARM_REMOTE_CONTROL_PROTECT
+#if ARM_REMOTE_CONTROL_PROTECT
     is_ctrl_enable = is_enable;
 #endif
 
@@ -301,4 +313,9 @@ void arm_device::limit_motor_pos() {
     VAL_LIMIT(data.motor_pos_set.motor4, data.motor_pos_limit.min.motor4, data.motor_pos_limit.max.motor4);
     VAL_LIMIT(data.motor_pos_set.motor5, data.motor_pos_limit.min.motor5, data.motor_pos_limit.max.motor5);
     VAL_LIMIT(data.motor_pos_set.motor6, data.motor_pos_limit.min.motor6, data.motor_pos_limit.max.motor6);
+}
+
+
+bool arm_device::check_lost() {
+    return is_lost;
 }

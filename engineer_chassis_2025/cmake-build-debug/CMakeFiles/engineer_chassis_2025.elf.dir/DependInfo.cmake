@@ -14,6 +14,9 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_ASM
+  "ARM_MATH_CM4"
+  "ARM_MATH_MATRIX_CHECK"
+  "ARM_MATH_ROUNDING"
   "DEBUG"
   "STM32F407xx"
   "USE_HAL_DRIVER"
@@ -29,6 +32,17 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/CMSIS/Include"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/ST/ARM/DSP/Inc"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_peripheral"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function"
   )
 
 # The set of dependency files which are needed:
@@ -76,6 +90,24 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
   "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/timers.c" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.c" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/crc.c" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_can.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_usart.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/mecanum.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/spd_plan.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_chassis.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_communicate.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_pump.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dji_motor.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_imu.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_motor.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/chassis_task.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/communicate_task.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/pump_task.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_peripheral/lost_check_task.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/compatible.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj.d"
+  "D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/user_lib.cpp" "CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj" "gcc" "CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

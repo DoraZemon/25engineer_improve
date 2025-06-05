@@ -38,6 +38,9 @@ extern osSemaphoreId_t CustomBinarySemHandle;
 extern osSemaphoreId_t judgementInitBinarySemHandle;
 extern osSemaphoreId_t customRxBinarySemHandle;//判断自定义控制器是否更新
 
+extern osSemaphoreId_t IMUUpdateBinarySemHandle;
+extern osSemaphoreId_t CommunicateUpdateBinarySemHandle;
+
 extern osEventFlagsId_t refereeEventHandle;
 extern osEventFlagsId_t RefereeEventHandle;
 

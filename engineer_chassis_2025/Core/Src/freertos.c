@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "compatible.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,10 +54,10 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for adctask */
-osThreadId_t adctaskHandle;
-const osThreadAttr_t adctask_attributes = {
-  .name = "adctask",
+/* Definitions for pumptask */
+osThreadId_t pumptaskHandle;
+const osThreadAttr_t pumptask_attributes = {
+  .name = "pumptask",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -75,25 +75,25 @@ const osThreadAttr_t CAN2SendTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityHigh,
 };
-/* Definitions for lefttofTask */
-osThreadId_t lefttofTaskHandle;
-const osThreadAttr_t lefttofTask_attributes = {
-  .name = "lefttofTask",
-  .stack_size = 128 * 4,
+/* Definitions for chassistask */
+osThreadId_t chassistaskHandle;
+const osThreadAttr_t chassistask_attributes = {
+  .name = "chassistask",
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for righttofTask */
-osThreadId_t righttofTaskHandle;
-const osThreadAttr_t righttofTask_attributes = {
-  .name = "righttofTask",
-  .stack_size = 128 * 4,
+/* Definitions for lostcheck_task */
+osThreadId_t lostcheck_taskHandle;
+const osThreadAttr_t lostcheck_task_attributes = {
+  .name = "lostcheck_task",
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for tofsendTask */
-osThreadId_t tofsendTaskHandle;
-const osThreadAttr_t tofsendTask_attributes = {
-  .name = "tofsendTask",
-  .stack_size = 128 * 4,
+/* Definitions for communicatetask */
+osThreadId_t communicatetaskHandle;
+const osThreadAttr_t communicatetask_attributes = {
+  .name = "communicatetask",
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for CAN1SendQueue */
@@ -111,15 +111,35 @@ osSemaphoreId_t adcUpdateBinarySemHandle;
 const osSemaphoreAttr_t adcUpdateBinarySem_attributes = {
   .name = "adcUpdateBinarySem"
 };
-/* Definitions for LeftTofUpdateBinarySem */
-osSemaphoreId_t LeftTofUpdateBinarySemHandle;
-const osSemaphoreAttr_t LeftTofUpdateBinarySem_attributes = {
-  .name = "LeftTofUpdateBinarySem"
+/* Definitions for ChassisMotor1UpdateBinarySem */
+osSemaphoreId_t ChassisMotor1UpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisMotor1UpdateBinarySem_attributes = {
+  .name = "ChassisMotor1UpdateBinarySem"
 };
-/* Definitions for RightTofUpdateBinarySem */
-osSemaphoreId_t RightTofUpdateBinarySemHandle;
-const osSemaphoreAttr_t RightTofUpdateBinarySem_attributes = {
-  .name = "RightTofUpdateBinarySem"
+/* Definitions for ChassisMotor2UpdateBinarySem */
+osSemaphoreId_t ChassisMotor2UpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisMotor2UpdateBinarySem_attributes = {
+  .name = "ChassisMotor2UpdateBinarySem"
+};
+/* Definitions for ChassisMotor3UpdateBinarySem */
+osSemaphoreId_t ChassisMotor3UpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisMotor3UpdateBinarySem_attributes = {
+  .name = "ChassisMotor3UpdateBinarySem"
+};
+/* Definitions for ChassisMotor4UpdateBinarySem */
+osSemaphoreId_t ChassisMotor4UpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisMotor4UpdateBinarySem_attributes = {
+  .name = "ChassisMotor4UpdateBinarySem"
+};
+/* Definitions for IMUUpdateBinarySem */
+osSemaphoreId_t IMUUpdateBinarySemHandle;
+const osSemaphoreAttr_t IMUUpdateBinarySem_attributes = {
+  .name = "IMUUpdateBinarySem"
+};
+/* Definitions for CommunicateUpdateBinarySem */
+osSemaphoreId_t CommunicateUpdateBinarySemHandle;
+const osSemaphoreAttr_t CommunicateUpdateBinarySem_attributes = {
+  .name = "CommunicateUpdateBinarySem"
 };
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
@@ -138,12 +158,12 @@ const osSemaphoreAttr_t CAN2CountingSem_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void adc_task(void *argument);
+void pump_task(void *argument);
 void CAN1Send_Task(void *argument);
 void CAN2Send_Task(void *argument);
-void left_tof_task(void *argument);
-void right_tof_task(void *argument);
-void tof_send_task(void *argument);
+void chassis_task(void *argument);
+void lost_check_task(void *argument);
+void communicate_task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -165,11 +185,23 @@ void MX_FREERTOS_Init(void) {
   /* creation of adcUpdateBinarySem */
   adcUpdateBinarySemHandle = osSemaphoreNew(1, 0, &adcUpdateBinarySem_attributes);
 
-  /* creation of LeftTofUpdateBinarySem */
-  LeftTofUpdateBinarySemHandle = osSemaphoreNew(1, 0, &LeftTofUpdateBinarySem_attributes);
+  /* creation of ChassisMotor1UpdateBinarySem */
+  ChassisMotor1UpdateBinarySemHandle = osSemaphoreNew(1, 0, &ChassisMotor1UpdateBinarySem_attributes);
 
-  /* creation of RightTofUpdateBinarySem */
-  RightTofUpdateBinarySemHandle = osSemaphoreNew(1, 0, &RightTofUpdateBinarySem_attributes);
+  /* creation of ChassisMotor2UpdateBinarySem */
+  ChassisMotor2UpdateBinarySemHandle = osSemaphoreNew(1, 0, &ChassisMotor2UpdateBinarySem_attributes);
+
+  /* creation of ChassisMotor3UpdateBinarySem */
+  ChassisMotor3UpdateBinarySemHandle = osSemaphoreNew(1, 0, &ChassisMotor3UpdateBinarySem_attributes);
+
+  /* creation of ChassisMotor4UpdateBinarySem */
+  ChassisMotor4UpdateBinarySemHandle = osSemaphoreNew(1, 0, &ChassisMotor4UpdateBinarySem_attributes);
+
+  /* creation of IMUUpdateBinarySem */
+  IMUUpdateBinarySemHandle = osSemaphoreNew(1, 0, &IMUUpdateBinarySem_attributes);
+
+  /* creation of CommunicateUpdateBinarySem */
+  CommunicateUpdateBinarySemHandle = osSemaphoreNew(1, 0, &CommunicateUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -200,8 +232,8 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-  /* creation of adctask */
-  adctaskHandle = osThreadNew(adc_task, NULL, &adctask_attributes);
+  /* creation of pumptask */
+  pumptaskHandle = osThreadNew(pump_task, NULL, &pumptask_attributes);
 
   /* creation of CAN1SendTask */
   CAN1SendTaskHandle = osThreadNew(CAN1Send_Task, NULL, &CAN1SendTask_attributes);
@@ -209,14 +241,14 @@ void MX_FREERTOS_Init(void) {
   /* creation of CAN2SendTask */
   CAN2SendTaskHandle = osThreadNew(CAN2Send_Task, NULL, &CAN2SendTask_attributes);
 
-  /* creation of lefttofTask */
-  lefttofTaskHandle = osThreadNew(left_tof_task, NULL, &lefttofTask_attributes);
+  /* creation of chassistask */
+  chassistaskHandle = osThreadNew(chassis_task, NULL, &chassistask_attributes);
 
-  /* creation of righttofTask */
-  righttofTaskHandle = osThreadNew(right_tof_task, NULL, &righttofTask_attributes);
+  /* creation of lostcheck_task */
+  lostcheck_taskHandle = osThreadNew(lost_check_task, NULL, &lostcheck_task_attributes);
 
-  /* creation of tofsendTask */
-  tofsendTaskHandle = osThreadNew(tof_send_task, NULL, &tofsendTask_attributes);
+  /* creation of communicatetask */
+  communicatetaskHandle = osThreadNew(communicate_task, NULL, &communicatetask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -246,22 +278,22 @@ void StartDefaultTask(void *argument)
   /* USER CODE END StartDefaultTask */
 }
 
-/* USER CODE BEGIN Header_adc_task */
+/* USER CODE BEGIN Header_pump_task */
 /**
-* @brief Function implementing the adctask thread.
+* @brief Function implementing the pumptask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_adc_task */
-__weak void adc_task(void *argument)
+/* USER CODE END Header_pump_task */
+__weak void pump_task(void *argument)
 {
-  /* USER CODE BEGIN adc_task */
+  /* USER CODE BEGIN pump_task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END adc_task */
+  /* USER CODE END pump_task */
 }
 
 /* USER CODE BEGIN Header_CAN1Send_Task */
@@ -300,58 +332,58 @@ __weak void CAN2Send_Task(void *argument)
   /* USER CODE END CAN2Send_Task */
 }
 
-/* USER CODE BEGIN Header_left_tof_task */
+/* USER CODE BEGIN Header_chassis_task */
 /**
-* @brief Function implementing the lefttofTask thread.
+* @brief Function implementing the chassistask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_left_tof_task */
-__weak void left_tof_task(void *argument)
+/* USER CODE END Header_chassis_task */
+__weak void chassis_task(void *argument)
 {
-  /* USER CODE BEGIN left_tof_task */
+  /* USER CODE BEGIN chassis_task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END left_tof_task */
+  /* USER CODE END chassis_task */
 }
 
-/* USER CODE BEGIN Header_right_tof_task */
+/* USER CODE BEGIN Header_lost_check_task */
 /**
-* @brief Function implementing the righttofTask thread.
+* @brief Function implementing the lostcheck_task thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_right_tof_task */
-__weak void right_tof_task(void *argument)
+/* USER CODE END Header_lost_check_task */
+__weak void lost_check_task(void *argument)
 {
-  /* USER CODE BEGIN right_tof_task */
+  /* USER CODE BEGIN lost_check_task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END right_tof_task */
+  /* USER CODE END lost_check_task */
 }
 
-/* USER CODE BEGIN Header_tof_send_task */
+/* USER CODE BEGIN Header_communicate_task */
 /**
-* @brief Function implementing the tofsendTask thread.
+* @brief Function implementing the communicatetask thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_tof_send_task */
-__weak void tof_send_task(void *argument)
+/* USER CODE END Header_communicate_task */
+__weak void communicate_task(void *argument)
 {
-  /* USER CODE BEGIN tof_send_task */
+  /* USER CODE BEGIN communicate_task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END tof_send_task */
+  /* USER CODE END communicate_task */
 }
 
 /* Private application code --------------------------------------------------*/
