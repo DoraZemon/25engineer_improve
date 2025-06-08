@@ -14,7 +14,7 @@
 #include "GlobalCfg.h"
 
 arm_device::arm_device() : joint1_filter(5), joint2_filter(5), joint3_filter(5), joint4_filter(5), joint5_filter(5),
-                           joint6_filter(5){}
+                           joint6_filter(5) {}
 
 void arm_device::init() {
     motor.motor1.init(&Arm_Motor1_Can,
@@ -83,8 +83,10 @@ void arm_device::init() {
         {Arm_Joint1_Max, Arm_Joint2_Max, Arm_Joint3_Max, Arm_Joint4_Max, Arm_Joint5_Max, Arm_Joint6_Max}};
 
     data.motor_pos_limit = {
-        {Arm_Motor1_Pos_Min, Arm_Motor2_Pos_Min, Arm_Motor3_Pos_Min, Arm_Motor4_Pos_Min, Arm_Motor5_Pos_Min, Arm_Motor6_Pos_Min},
-        {Arm_Motor1_Pos_Max, Arm_Motor2_Pos_Max, Arm_Motor3_Pos_Max, Arm_Motor4_Pos_Max, Arm_Motor5_Pos_Max, Arm_Motor6_Pos_Max}
+        {Arm_Motor1_Pos_Min, Arm_Motor2_Pos_Min, Arm_Motor3_Pos_Min, Arm_Motor4_Pos_Min, Arm_Motor5_Pos_Min,
+         Arm_Motor6_Pos_Min},
+        {Arm_Motor1_Pos_Max, Arm_Motor2_Pos_Max, Arm_Motor3_Pos_Max, Arm_Motor4_Pos_Max, Arm_Motor5_Pos_Max,
+         Arm_Motor6_Pos_Max}
     };
 
     data.motor_torque_compensation = {
@@ -166,7 +168,7 @@ void arm_device::update_data() {
 
     data.joint_states.joint1 = data.motor_pos_get.motor1 * 2 * PI;
     data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI;
-    data.joint_states.joint3 = (data.motor_pos_get.motor3-data.motor_pos_get.motor2) * 2 * PI;
+    data.joint_states.joint3 = (data.motor_pos_get.motor3 - data.motor_pos_get.motor2) * 2 * PI;
     data.joint_states.joint4 = data.motor_pos_get.motor4 * 2 * PI;
     data.joint_states.joint5 = data.motor_pos_get.motor5 * 2 * PI;
     data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI;
@@ -209,8 +211,12 @@ void arm_device::update_control(bool is_enable) {
 
     if (is_ctrl_enable) {
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
-        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(motor.motor2.get_total_rounds() * 2 * PI + data.motor_compensation_angle_offset.motor2/180.f * PI) + (data.motor_torque_compensation.motor3 * cosf(motor.motor3.get_total_rounds() * 2 * PI)) * (-1));
-        motor.motor3.set_offset_current(data.motor_torque_compensation.motor3 * cosf(motor.motor3.get_total_rounds() * 2 * PI));
+        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
+            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
+                                        (data.motor_torque_compensation.motor3 *
+                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
+        motor.motor3.set_offset_current(
+            data.motor_torque_compensation.motor3 * cosf(data.joint_states.joint3 * 2 * PI));
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
         motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
@@ -220,25 +226,25 @@ void arm_device::update_control(bool is_enable) {
                                                                                          data.motor_pos_set.motor1,
                                                                                          0.001));
         motor.motor2.MIT_inter_set_motor_normalization_torque(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
-                                                                                            motor.motor2.get_speed(),
-                                                                                            data.motor_pos_set.motor2,
-                                                                                            0.001));
+                                                                                         motor.motor2.get_speed(),
+                                                                                         data.motor_pos_set.motor2,
+                                                                                         0.001));
         motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
-                                                                                            motor.motor3.get_speed(),
-                                                                                            data.motor_pos_set.motor3,
-                                                                                            0.001));
+                                                                                         motor.motor3.get_speed(),
+                                                                                         data.motor_pos_set.motor3,
+                                                                                         0.001));
         motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
-                                                                                            motor.motor4.get_speed(),
-                                                                                            data.motor_pos_set.motor4,
-                                                                                            0.001));
+                                                                                         motor.motor4.get_speed(),
+                                                                                         data.motor_pos_set.motor4,
+                                                                                         0.001));
         motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
-                                                                                            motor.motor5.get_speed(),
-                                                                                            data.motor_pos_set.motor5,
-                                                                                            0.001));
+                                                                                         motor.motor5.get_speed(),
+                                                                                         data.motor_pos_set.motor5,
+                                                                                         0.001));
         motor.motor6.MIT_inter_set_motor_normalization_torque(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
-                                                                                            motor.motor6.get_speed(),
-                                                                                            data.motor_pos_set.motor6,
-                                                                                            0.001));
+                                                                                         motor.motor6.get_speed(),
+                                                                                         data.motor_pos_set.motor6,
+                                                                                         0.001));
 
 
     } else {
@@ -283,27 +289,27 @@ void arm_device::check_motor_loss() {
 
 
 void arm_device::limit_motor_pos() {
-    if(isnan(data.motor_pos_set.motor1)){
+    if (isnan(data.motor_pos_set.motor1)) {
         data.motor_pos_set.motor1 = data.motor_pos_get.motor1;
     }
 
-    if(isnan(data.motor_pos_set.motor2)){
+    if (isnan(data.motor_pos_set.motor2)) {
         data.motor_pos_set.motor2 = data.motor_pos_get.motor2;
     }
 
-    if(isnan(data.motor_pos_set.motor3)){
+    if (isnan(data.motor_pos_set.motor3)) {
         data.motor_pos_set.motor3 = data.motor_pos_get.motor3;
     }
 
-    if(isnan(data.motor_pos_set.motor4)){
+    if (isnan(data.motor_pos_set.motor4)) {
         data.motor_pos_set.motor4 = data.motor_pos_get.motor4;
     }
 
-    if(isnan(data.motor_pos_set.motor5)){
+    if (isnan(data.motor_pos_set.motor5)) {
         data.motor_pos_set.motor5 = data.motor_pos_get.motor5;
     }
 
-    if(isnan(data.motor_pos_set.motor6)){
+    if (isnan(data.motor_pos_set.motor6)) {
         data.motor_pos_set.motor6 = data.motor_pos_get.motor6;
     }
 

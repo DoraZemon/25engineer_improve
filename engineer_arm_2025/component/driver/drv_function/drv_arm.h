@@ -74,23 +74,23 @@ constexpr float Arm_Joint5_Max = 1.5707f; //关节5最大角度
 constexpr float Arm_Joint6_Min = -6.28f; //关节6最小角度
 constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 
-constexpr float Arm_Motor1_Pos_Max = Arm_Joint1_Max/(2*PI); //电机1最大角度
-constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min/(2*PI); //电机1最小角度
+constexpr float Arm_Motor1_Pos_Max = Arm_Joint1_Max / (2 * PI); //电机1最大角度
+constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min / (2 * PI); //电机1最小角度
 
-constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max/(2*PI); //电机2最大角度
-constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min/(2*PI); //电机2最小角度
+constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max / (2 * PI); //电机2最大角度
+constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min / (2 * PI); //电机2最小角度
 
-constexpr float Arm_Motor3_Pos_Max = Arm_Joint3_Max/(2*PI) + Arm_Joint2_Max/(2*PI); //电机3最大角度
-constexpr float Arm_Motor3_Pos_Min = Arm_Joint3_Min/(2*PI) + Arm_Joint2_Min/(2*PI); //电机3最小角度
+constexpr float Arm_Motor3_Pos_Max = Arm_Joint3_Max / (2 * PI) + Arm_Joint2_Max / (2 * PI); //电机3最大角度
+constexpr float Arm_Motor3_Pos_Min = Arm_Joint3_Min / (2 * PI) + Arm_Joint2_Min / (2 * PI); //电机3最小角度
 
-constexpr float Arm_Motor4_Pos_Max = Arm_Joint4_Max/(2*PI); //电机4最大角度
-constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min/(2*PI); //电机4最小角度
+constexpr float Arm_Motor4_Pos_Max = Arm_Joint4_Max / (2 * PI); //电机4最大角度
+constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min / (2 * PI); //电机4最小角度
 
-constexpr float Arm_Motor5_Pos_Max = Arm_Joint5_Max/(2*PI); //电机5最大角度
-constexpr float Arm_Motor5_Pos_Min = Arm_Joint5_Min/(2*PI); //电机5最小角度
+constexpr float Arm_Motor5_Pos_Max = Arm_Joint5_Max / (2 * PI); //电机5最大角度
+constexpr float Arm_Motor5_Pos_Min = Arm_Joint5_Min / (2 * PI); //电机5最小角度
 
-constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max/(2*PI); //电机6最大角度
-constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min/(2*PI); //电机6最小角度
+constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max / (2 * PI); //电机6最大角度
+constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI); //电机6最小角度
 
 
 constexpr float Arm_Motor1_Torque_Compensation = 0.0f; //电机1力矩补偿`
@@ -132,7 +132,7 @@ class arm_device {
 
   bool is_lost = false;
  public:
-  arm_device() ;
+  arm_device();
 
   void init();
 
@@ -178,16 +178,16 @@ class arm_device {
 
     struct {
       motor_t min;
-        motor_t max; //电机位置限制
-    }motor_pos_limit;
+      motor_t max; //电机位置限制
+    } motor_pos_limit;
   } data;
 
   MedianFilter joint1_filter;
-    MedianFilter joint2_filter;
-    MedianFilter joint3_filter;
-    MedianFilter joint4_filter;
-    MedianFilter joint5_filter;
-    MedianFilter joint6_filter;
+  MedianFilter joint2_filter;
+  MedianFilter joint3_filter;
+  MedianFilter joint4_filter;
+  MedianFilter joint5_filter;
+  MedianFilter joint6_filter;
   struct {
     dm_motor_device motor1; //关节1电机
     dm_motor_device motor2; //关节2电机
@@ -196,6 +196,7 @@ class arm_device {
     dm_motor_device motor5; //关节5电机
     dm_motor_device motor6; //关节6电机
   } motor;
+
 };
 
 #endif //DRV_ARM_H_

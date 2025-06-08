@@ -8,6 +8,7 @@
 #include "user_lib.h"
 
 #include "task_communicate.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -51,19 +52,30 @@ class ui_device {
   ext_student_interactive_header_data_t student_interactive_header;
  public:
   ui_device();
+
   void update_data_send();
+
   void update_data();
 
 
   void add();
+
   void update();
+
   void send();
+
   void clear_all_UI();
+
   void draw_bead(enum ui_operation _operation);
+
   void character_update(ext_client_custom_character_t *_character);
+
   void character_init(ext_client_custom_character_t *_character);
+
   void ClearAll();
+
   void ClearLayer(uint32_t _layer);
+
   void show_line(graphic_data_struct_t *_graphic,
                  const char *name,
                  enum ui_operation _operation,
@@ -74,6 +86,7 @@ class ui_device {
                  uint32_t start_y,
                  uint32_t end_x,
                  uint32_t end_y);
+
   void show_rectangle(graphic_data_struct_t *_graphic,
                       const char *name,
                       enum ui_operation _operation,
@@ -84,6 +97,7 @@ class ui_device {
                       uint32_t start_y,
                       uint32_t end_x,
                       uint32_t end_y);
+
   void show_circle(graphic_data_struct_t *_graphic,
                    const char *name,
                    enum ui_operation _operation,
@@ -93,6 +107,7 @@ class ui_device {
                    uint32_t center_x,
                    uint32_t center_y,
                    uint32_t _radius);
+
   void show_oval(graphic_data_struct_t *_graphic,
                  const char *name,
                  enum ui_operation _operation,
@@ -103,6 +118,7 @@ class ui_device {
                  uint32_t center_y,
                  uint32_t x_axis_len,
                  uint32_t y_axis_len);
+
   void show_arc(graphic_data_struct_t *_graphic,
                 const char *name,
                 enum ui_operation _operation,
@@ -115,6 +131,7 @@ class ui_device {
                 uint32_t end_ang,
                 uint32_t x_axis_len,
                 uint32_t y_axis_len);
+
   void show_floating(graphic_data_struct_t *_graphic,
                      const char *name,
                      enum ui_operation _operation,
@@ -126,6 +143,7 @@ class ui_device {
                      uint32_t font_size,
                      uint32_t signi_digits,
                      float num);
+
   void show_integer(graphic_data_struct_t *_graphic,
                     const char *name,
                     enum ui_operation _operation,
@@ -136,6 +154,7 @@ class ui_device {
                     uint32_t start_y,
                     uint32_t font_size,
                     int32_t num);
+
   void character_config(graphic_data_struct_t *_character,
                         const char *name,
                         enum ui_operation _operation,
@@ -148,4 +167,5 @@ class ui_device {
                         uint32_t start_y);
 
 };
+
 #endif //ENGINEER_CHASSIS_2024_DRV_UI_H

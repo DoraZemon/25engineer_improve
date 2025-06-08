@@ -20,6 +20,7 @@ extern communicate_device g_communicate;
 extern dm_imu_device g_imu;
 
 pc_device g_pc;
+
 void pc_receive_task(void *argument) {
     static osStatus_t pc_status;
     osSemaphoreAcquire(PCUpdateBinarySemHandle, 0);
@@ -35,10 +36,11 @@ void pc_receive_task(void *argument) {
         osDelay(1);
     }
 }
+
 void pc_transmit_task(void *argument) {
     osDelay(1000);
     for (;;) {
-        g_pc.update_data(g_rc,g_arm,g_controller,g_communicate,g_imu);
+        g_pc.update_data(g_rc, g_arm, g_controller, g_communicate, g_imu);
         g_pc.transmit_data();
         osDelay(1); // Delay for demonstration purposes
     }

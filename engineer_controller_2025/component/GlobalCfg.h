@@ -17,7 +17,6 @@ extern "C" {
 //C
 #define CAN_SEND        1
 
-#define ARM_REMOTE_CONTROL_PROTECT 0 //臂架遥控器保护
 
 #define JUDGEMENT_UART  (huart1)
 

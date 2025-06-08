@@ -68,14 +68,14 @@ constexpr float Arm_Joint6_Min = -6.28f; //关节6最小角度
 constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 
 constexpr float Arm_Motor1_Torque_Compensation = 0.0f; //电机1力矩补偿`
-constexpr float Arm_Motor2_Torque_Compensation = 0.0f; //电机2力矩补偿
-constexpr float Arm_Motor3_Torque_Compensation = -0.04f; //电机3力矩补偿
+constexpr float Arm_Motor2_Torque_Compensation = 0.2f; //电机2力矩补偿
+constexpr float Arm_Motor3_Torque_Compensation = -0.1f; //电机3力矩补偿
 constexpr float Arm_Motor4_Torque_Compensation = 0.0f; //电机4力矩补偿
 constexpr float Arm_Motor5_Torque_Compensation = 0.0f; //电机5力矩补偿
 constexpr float Arm_Motor6_Torque_Compensation = 0.0f; //电机6力矩补偿
 
 constexpr float Arm_Motor1_Compensation_Angle_Offset = 0.0f; //电机1补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor2_Compensation_Angle_Offset = 22.0f; //电机2补偿角度偏置（即水平面角度差值）
+constexpr float Arm_Motor2_Compensation_Angle_Offset = 19.0f; //电机2补偿角度偏置（即水平面角度差值）
 constexpr float Arm_Motor3_Compensation_Angle_Offset = 0.0f; //电机3补偿角度偏置（即水平面角度差值）
 constexpr float Arm_Motor4_Compensation_Angle_Offset = 0.0f; //电机4补偿角度偏置（即水平面角度差值）
 constexpr float Arm_Motor5_Compensation_Angle_Offset = 0.0f; //电机5补偿角度偏置（即水平面角度差值）
@@ -92,7 +92,7 @@ struct arm_controller_tx_data_t{
     float joint5; //关节5角度
     float joint6; //关节6角度
     float reserve_1; //保留
-  uint8_t reserve_2; //保留
+  uint8_t life_flag; //保留
 };
 #pragma pack()
 

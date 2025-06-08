@@ -21,4 +21,5 @@ void communicate_task(void *argument);
 #endif
 //C++
 #include "drv_communicate.h"
+
 #endif //COMMUNICATE_TASK_H_

@@ -92,8 +92,8 @@ typedef enum {
   RFID_STATUS_ID = 0X0209,        //机器人 RFID 状态1Hz，发送范围：单一机器人。
   DART_CMD_ID = 0X020A,        //飞镖机器人客户端指令数据：0x020A。发送频率：10Hz，发送范围：单一机器人。
   GROUND_ROBOT_CMD_ID = 0x20B, //地面机器人位置数据，固定以1hz频率发送，服务器发送至哨兵
-  RADAR_MARK_DATA_ID                = 0X020C,        //雷达标记进度数据，1Hz
-  SENTRY_DECISION_DATA_ID = 0x020D , //哨兵自主决策信息同步，固定以1hz频率发送，服务器发送至己方哨兵机器人
+  RADAR_MARK_DATA_ID = 0X020C,        //雷达标记进度数据，1Hz
+  SENTRY_DECISION_DATA_ID = 0x020D, //哨兵自主决策信息同步，固定以1hz频率发送，服务器发送至己方哨兵机器人
   RADAR_DECISION_DATA_ID = 0x020E,//雷达自主决策信息同步，固定以1hz频率发送，服务器发送至己方雷达机器人
 
   CUSTOM_CONTROLLER_ID = 0X0302,        //自定义控制器交互数据接口，客户端触发发送
@@ -568,18 +568,18 @@ typedef struct __packed {
   * 雷达站发送的坐标信息可以被所有己方操作手在第一视角小地图看到
   */
 typedef struct __packed {
-    float hero_position_x;
-    float hero_position_y;
-    float engineer_position_x;
-    float engineer_position_y;
-    float infantry3_position_x;
-    float infantry3_position_y;
-    float infantry4_position_x;
-    float infantry4_position_y;
-    float infantry5_position_x;
-    float infantry5_position_y;
-    float sentry_position_x;
-    float sentry_position_y;
+  float hero_position_x;
+  float hero_position_y;
+  float engineer_position_x;
+  float engineer_position_y;
+  float infantry3_position_x;
+  float infantry3_position_y;
+  float infantry4_position_x;
+  float infantry4_position_y;
+  float infantry5_position_x;
+  float infantry5_position_y;
+  float sentry_position_x;
+  float sentry_position_y;
 } ext_client_map_command_t;
 
 /** 图传

@@ -28,12 +28,12 @@ void arm_device::init() {
                          Arm_Motor5_Offset,
                          Arm_Motor6_Offset};
 
-    motor.motor1.lqr.reset_lqr(8.0, 3.2, 0.05, 0.0, 0.01, 1.0);
-    motor.motor2.lqr.reset_lqr(8.0, 3.0, 0.05, 0.0, 0.01, 1.0);
-    motor.motor3.lqr.reset_lqr(3.0, 3.0, 0.05, 0.0, 0.01, 1.0);
-    motor.motor4.lqr.reset_lqr(15.0, 1.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor5.lqr.reset_lqr(30.0, 1.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor6.lqr.reset_lqr(30.0, 0.1, 0.0, 0.0, 0.0, 1.0);
+    motor.motor1.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor2.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor3.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor4.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor5.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor6.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
     data.joint_limit = {
         {Arm_Joint1_Min, Arm_Joint2_Min, Arm_Joint3_Min, Arm_Joint4_Min, Arm_Joint5_Min, Arm_Joint6_Min},
@@ -128,14 +128,13 @@ void arm_device::update_data() {
     controller_tx_data.joint3 = data.joint_states.joint3;
     controller_tx_data.joint4 = data.joint_states.joint4;
     controller_tx_data.joint5 = data.joint_states.joint5;
-    controller_tx_data.joint6 = data.joint_states.joint6;
     controller_tx_data.is_data_valid = motor.motor1.check_ready() &&
                                        motor.motor2.check_ready() &&
                                        motor.motor3.check_ready() &&
                                        motor.motor4.check_ready() &&
                                        motor.motor5.check_ready() &&
                                        motor.motor6.check_ready();
-
+    controller_tx_data.life_flag = (HAL_GetTick()/10 )%10; //生命检测标志位，每10ms变化一次
 }
 
 void arm_device::update_control(bool is_enable) {
@@ -156,15 +155,13 @@ void arm_device::update_control(bool is_enable) {
         data.motor_pos_set.motor5 = data.joint_target.joint5 / (2 * PI);
         data.motor_pos_set.motor6 = data.joint_target.joint6 / (2 * PI);
     }
-#if  ARM_REMOTE_CONTROL_PROTECT
-    is_ctrl_enable = is_enable;
-#endif
+
     if (is_ctrl_enable) {
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
         motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
-            motor.motor2.get_total_rounds() * 2 * PI + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
+            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
                                         (data.motor_torque_compensation.motor3 *
-                                         cosf(motor.motor3.get_total_rounds() * 2 * PI)) * (1));
+                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
         motor.motor3.set_offset_current(
             data.motor_torque_compensation.motor3 * cosf(motor.motor3.get_total_rounds() * 2 * PI));
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);

@@ -32,7 +32,7 @@ void dm_imu_device::update_data(uint8_t *rx_data) {
         case Gyro:update_gyro(rx_data);
             break;
         case Euler:update_euler(rx_data);
-        update_euler_cnt();
+            update_euler_cnt();
             break;
         case Quaternion:update_quaternion(rx_data);
             break;

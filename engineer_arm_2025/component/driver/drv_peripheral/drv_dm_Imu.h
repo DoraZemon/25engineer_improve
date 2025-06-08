@@ -28,7 +28,6 @@ extern "C" {
 #define IMU_MASTER_ID 0x05
 
 
-
 #define ACCEL_CAN_MAX (58.8f)
 #define ACCEL_CAN_MIN    (-58.8f)
 #define GYRO_CAN_MAX    (34.88f)

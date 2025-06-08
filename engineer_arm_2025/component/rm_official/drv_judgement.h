@@ -88,23 +88,33 @@ class judgement_device {
             osEventFlagsId_t event,
             const osMutexAttr_t *rx_attr,
             const osMutexAttr_t *tx_attr);
+
   void data_handler(uint8_t *p_frame);
+
   void unpack_fifo_data(unpack_data_t *p_obj, uint8_t sof);
+
   void dma_buffer_to_unpack_buffer(uart_dma_rxdata_t *dma_obj, uart_it_type_e it_type);
+
   uint8_t *protocol_packet_pack(uint16_t cmd_id, uint8_t *p_data, uint16_t len, uint8_t *_tx_buf,
                                 ext_student_interactive_header_data_t _student_interactive_header);
+
   uint32_t send_packed_fifo_data(fifo_s_t *pfifo, uint8_t sof);
+
   void data_packet_pack(uint16_t cmd_id, uint8_t *p_data, uint16_t len,
                         ext_student_interactive_header_data_t _student_interactive_header);
 
   // ----------------------------------------- 雷达数据打包 ----------------------------------------- //
   uint8_t *lidar_protocol_packet_pack(uint16_t cmd_id, lidar_send_struct lidar_data, uint8_t *_tx_buf,
                                       ext_student_interactive_header_data_t _student_interactive_header);
+
   void lidar_data_pack(uint16_t cmd_id, lidar_send_struct lidar_data,
                        ext_student_interactive_header_data_t _student_interactive_header);
+
   void robot_communicate_send_data(uint16_t data_cmd_id, uint16_t sender_ID, uint16_t receiver_ID, uint8_t *_p_data,
                                    uint16_t _len);
+
   void robot_communicate_init();
+
   void lidar_send_init();
 
   void usart_rx_processed(uint16_t Size);//接受串口原始数据

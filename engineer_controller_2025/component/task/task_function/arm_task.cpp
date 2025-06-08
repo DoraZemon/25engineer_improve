@@ -17,8 +17,8 @@ arm_device g_arm;
 void arm_task(void *argument) {
     g_arm.init();
     for (;;) {
-        g_arm.update_control(false);
-//        g_arm.send_msg();
-        osDelay(1);
+        g_arm.update_control(true);
+        g_arm.send_msg();
+        osDelay(10);
     }
 }

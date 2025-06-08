@@ -28,43 +28,42 @@ extern "C" {
 #include "drv_dm_Imu.h"
 
 
-
-enum robot_error_type{
-  remote= 0,
+enum robot_error_type {
+  remote = 0,
   pc,
   communicate,
   arm_motor1,
   arm_motor2,
-    arm_motor3,
-    arm_motor4,
-    arm_motor5,
-    arm_motor6,
-    imu,
-    chassis_motor1,
-    chassis_motor2,
-    chassis_motor3,
-    chassis_motor4,
+  arm_motor3,
+  arm_motor4,
+  arm_motor5,
+  arm_motor6,
+  imu,
+  chassis_motor1,
+  chassis_motor2,
+  chassis_motor3,
+  chassis_motor4,
   none,
 };
 #pragma pack(1)
-union robot_error_u{
+union robot_error_u {
   uint32_t code;
   struct {
-    uint32_t remote:1;
-    uint32_t pc:1;
-    uint32_t communicate:1;
-    uint32_t arm_motor1:1;
-    uint32_t arm_motor2:1;
-    uint32_t arm_motor3:1;
-    uint32_t arm_motor4:1;
-    uint32_t arm_motor5:1;
-    uint32_t arm_motor6:1;
-    uint32_t imu:1;
-    uint32_t chassis_motor1:1;
-    uint32_t chassis_motor2:1;
-    uint32_t chassis_motor3:1;
-    uint32_t chassis_motor4:1;
-    uint32_t reserve:18; //保留位
+    uint32_t remote: 1;
+    uint32_t pc: 1;
+    uint32_t communicate: 1;
+    uint32_t arm_motor1: 1;
+    uint32_t arm_motor2: 1;
+    uint32_t arm_motor3: 1;
+    uint32_t arm_motor4: 1;
+    uint32_t arm_motor5: 1;
+    uint32_t arm_motor6: 1;
+    uint32_t imu: 1;
+    uint32_t chassis_motor1: 1;
+    uint32_t chassis_motor2: 1;
+    uint32_t chassis_motor3: 1;
+    uint32_t chassis_motor4: 1;
+    uint32_t reserve: 18; //保留位
   };
 };
 
@@ -140,6 +139,7 @@ struct pc_rx_data_t {
 class pc_device {
  public:
   pc_device() = default;
+
   uint16_t normal_counter = 0;   // 100Hz发送计数器
   uint16_t controller_counter = 0; // 30Hz发送计数器
   pc_normal_tx_data_t normal_tx_data; //PC正常通信发送数据
@@ -148,11 +148,18 @@ class pc_device {
 
   robot_error_u error;
 
-  void update_data(rc_device& rc,arm_device & arm,controller_device & controller,communicate_device & communicate,dm_imu_device & imu); //更新数据
+  void update_data(rc_device &rc,
+                   arm_device &arm,
+                   controller_device &controller,
+                   communicate_device &communicate,
+                   dm_imu_device &imu); //更新数据
   void transmit_data(); //发送数据到PC
   void set_lost();
+
   void set_connected();
+
   bool check_lost();
+
  private:
   bool is_lost = true;
 };

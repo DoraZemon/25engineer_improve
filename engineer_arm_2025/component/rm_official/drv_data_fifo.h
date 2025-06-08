@@ -11,6 +11,7 @@ extern "C" {
 
 #include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
+
 #define ASSERT(x) do {while(!(x));} while(0)
 
 #define MUTEX_WAIT() \
@@ -36,27 +37,37 @@ typedef struct {
 } fifo_s_t;
 
 fifo_s_t *fifo_s_create(uint32_t unit_cnt, osMutexId mutex);
+
 void fifo_s_destory(fifo_s_t *pfifo);
 
 int32_t fifo_s_init(fifo_s_t *pfifo, void *base_addr, uint32_t unit_cnt, osMutexId mutex);
 
 int32_t fifo_s_put(fifo_s_t *pfifo, uint8_t element);
+
 int32_t fifo_s_puts(fifo_s_t *pfifo, uint8_t *psource, uint32_t number);
+
 int32_t fifo_s_puts_no_mutex(fifo_s_t *pfifo, uint8_t *psource, uint32_t number);
 
 uint8_t fifo_s_get(fifo_s_t *pfifo);
+
 uint8_t fifo_s_get_no_mutex(fifo_s_t *pfifo);
 
 uint16_t fifo_s_gets(fifo_s_t *pfifo, uint8_t *source, uint8_t len);
+
 uint16_t fifo_s_gets_no_mutex(fifo_s_t *pfifo, uint8_t *source, uint8_t len);
 
 uint8_t fifo_s_pre_read(fifo_s_t *pfifo, uint8_t offset);
 
 uint8_t fifo_is_empty(fifo_s_t *pfifo);
+
 uint8_t fifo_is_full(fifo_s_t *pfifo);
+
 uint32_t fifo_used_count(fifo_s_t *pfifo);
+
 uint32_t fifo_free_count(fifo_s_t *pfifo);
+
 uint8_t fifo_flush(fifo_s_t *pfifo);
+
 #ifdef __cplusplus
 }
 #endif

@@ -12,9 +12,11 @@
 #include "lost_check_task.h"
 #include "drv_dm_Imu.h"
 #include "drv_communicate.h"
+
 extern arm_device g_arm;
 extern dm_imu_device g_imu;
 extern communicate_device g_communicate;
+
 void lost_check_task(void *argument) {
     osDelay(200);
     for (;;) {

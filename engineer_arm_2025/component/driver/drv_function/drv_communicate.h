@@ -22,7 +22,7 @@ extern "C" {
 //C++
 #include "bsp_can.h"
 #include "drv_rc.h"
-
+#include "drv_dji_motor.h"
 
 #define COMMUNICATE_FRAME_HEAD 0x55 //通信帧头
 #define COMMUNICATE_CAN         (hcan2)
@@ -74,6 +74,8 @@ class communicate_device {
 
   can_device_t can_device; //CAN设备
 
+  dji_motor_device pump_motor; //泵电机
+
   bool is_lost = true; //是否丢失
   uint32_t lost_num = 0;
   struct {
@@ -100,7 +102,7 @@ class communicate_device {
 
   void init(CAN_HandleTypeDef *hcan_, uint32_t tx_id, uint32_t rx_id, osSemaphoreId_t rxsem);
 
-  void update(rc_device& rc);
+  void update(rc_device &rc);
 
   void check_for_loss();
 
@@ -109,9 +111,9 @@ class communicate_device {
 
   void update_rx_data(uint8_t *rx_data);
 
-  void set_chassis_ctrl(bool is_chassis_vel_ctrl,int16_t speed_x, int16_t speed_y, int8_t speed_spin) ;
+  void set_chassis_ctrl(bool is_chassis_vel_ctrl, int16_t speed_x, int16_t speed_y, int8_t speed_spin);
 
-  void set_pump_ctrl(bool is_arm_pump_open, bool is_left_pump_open, bool is_right_pump_open) ;
+  void set_pump_ctrl(bool is_arm_pump_open, bool is_left_pump_open, bool is_right_pump_open);
 
   bool check_arm_pump_holding();
 
@@ -119,8 +121,9 @@ class communicate_device {
 
   bool check_right_pump_holding();
 
-    bool check_chassis_error();
+  bool check_chassis_error();
 
-    bool check_lost();
+  bool check_lost();
 };
+
 #endif //DRV_COMMUNICATE_H_

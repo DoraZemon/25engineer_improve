@@ -12,16 +12,24 @@
 #include "drv_communicate.h"
 
 
-
 void communicate_device::init(CAN_HandleTypeDef *hcan_, uint32_t tx_id, uint32_t rx_id, osSemaphoreId_t rxsem) {
     this->hcan = hcan_;
     can_device.init_rx(hcan, rx_id, std::bind(&communicate_device::update_rx_data, this, std::placeholders::_1), rxsem);
     can_device.init_tx(hcan, 8, tx_id, (uint8_t *) &tx_data);
+    pump_motor.init(&hcan2, true, 1, DJI_M3508, NULL);
+    pump_motor.velpid.pid_reset(0.9f, 0, 7, 0, 0, 0, 0, 0);
 }
 
 
-void communicate_device::update(rc_device & rc) {
-data.is_rc_online = rc.check_ready();
+void communicate_device::update(rc_device &rc) {
+    data.is_rc_online = rc.check_ready();
+
+    if (data.is_arm_pump_open) {
+        pump_motor.set_vel(0.38);
+    } else {
+        pump_motor.set_vel(0);
+    }
+
 
 }
 
@@ -39,7 +47,7 @@ void communicate_device::update_rx_data(uint8_t *rx_data) {
     data.is_chassis_motor4_error = raw_data->chassis_motor4_error;
 
     data.chassis_error = data.is_chassis_motor1_error || data.is_chassis_motor2_error ||
-           data.is_chassis_motor3_error || data.is_chassis_motor4_error;
+                         data.is_chassis_motor3_error || data.is_chassis_motor4_error;
 }
 
 void communicate_device::check_for_loss() {
