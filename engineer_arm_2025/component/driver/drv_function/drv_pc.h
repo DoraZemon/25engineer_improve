@@ -122,6 +122,12 @@ struct pc_rx_data_t {
   float joint4; //关节4
   float joint5; //关节5
   float joint6; //关节6
+  float joint1_compensation;// 关节1补偿力矩
+  float joint2_compensation; //关节2补偿力矩
+  float joint3_compensation; //关节3补偿力矩
+  float joint4_compensation; //关节4补偿力矩
+  float joint5_compensation; //关节5补偿力矩
+  float joint6_compensation; //关节6补偿力矩
   uint8_t is_arm_pump_on; //机械臂泵是否开启
   uint8_t is_left_pump_on; //左泵是否开启
   uint8_t is_right_pump_on; //右泵是否开启

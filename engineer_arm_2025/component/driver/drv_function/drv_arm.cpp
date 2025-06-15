@@ -150,6 +150,37 @@ void arm_device::set_joint6_target(float set) {
     VAL_LIMIT(data.joint_target.joint6, data.joint_limit.min.joint6, data.joint_limit.max.joint6);
 }
 
+void arm_device::set_joint1_compensation(float set) {
+    data.motor_torque_compensation.motor1 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -50, 50);// 限制力矩补偿范围
+}
+
+void arm_device::set_joint2_compensation(float set) {
+    data.motor_torque_compensation.motor2 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -50, 50);// 限制力矩补偿范围
+}
+
+void arm_device::set_joint3_compensation(float set) {
+    data.motor_torque_compensation.motor3 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -50, 50);// 限制力矩补偿范围
+}
+
+void arm_device::set_joint4_compensation(float set) {
+    data.motor_torque_compensation.motor4 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -5, 5);// 限制力矩补偿范围
+}
+
+void arm_device::set_joint5_compensation(float set) {
+    data.motor_torque_compensation.motor5 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -5, 5);// 限制力矩补偿范围
+}
+
+void arm_device::set_joint6_compensation(float set) {
+    data.motor_torque_compensation.motor6 = set;
+    VAL_LIMIT(data.motor_torque_compensation.motor1, -5, 5);// 限制力矩补偿范围
+}
+
+
 void arm_device::set_arm_ctrl_enable(bool is_enable) {
     is_ctrl_enable = is_enable;
 }
@@ -210,16 +241,22 @@ void arm_device::update_control(bool is_enable) {
     limit_motor_pos();//限制电机位置
 
     if (is_ctrl_enable) {
-        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
-        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
-            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
-                                        (data.motor_torque_compensation.motor3 *
-                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
-        motor.motor3.set_offset_current(
-            data.motor_torque_compensation.motor3 * cosf(data.joint_states.joint3 * 2 * PI));
-        motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
-        motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
-        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
+//        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
+//        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
+//            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
+//                                        (data.motor_torque_compensation.motor3 *
+//                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
+//        motor.motor3.set_offset_current(
+//            data.motor_torque_compensation.motor3 * cosf(data.joint_states.joint3 * 2 * PI));
+//        motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
+//        motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
+//        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
+        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1 / motor.motor1.basic_info.t_max);
+        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 / motor.motor2.basic_info.t_max);
+        motor.motor3.set_offset_current(data.motor_torque_compensation.motor3 / motor.motor3.basic_info.t_max);
+        motor.motor4.set_offset_current(data.motor_torque_compensation.motor4 / motor.motor4.basic_info.t_max);
+        motor.motor5.set_offset_current(data.motor_torque_compensation.motor5 / motor.motor5.basic_info.t_max);
+        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6 / motor.motor6.basic_info.t_max);
 
         motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
                                                                                          motor.motor1.get_speed(),
@@ -245,6 +282,13 @@ void arm_device::update_control(bool is_enable) {
                                                                                          motor.motor6.get_speed(),
                                                                                          data.motor_pos_set.motor6,
                                                                                          0.001));
+//
+//        motor.motor1.MIT_inter_set_motor_normalization_torque(0);
+//        motor.motor2.MIT_inter_set_motor_normalization_torque(0);
+//        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
+//        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
+//        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
+//        motor.motor6.MIT_inter_set_motor_normalization_torque(0);
 
 
     } else {

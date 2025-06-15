@@ -45,7 +45,7 @@ bool controller_device::judge_transfer_rx_callback(custom_judge_raw_msg *judge_r
         last_valid_raw_data = raw_data; //保存上一次接收到的数据
     }
 
-    if(ABS(raw_data.life_flag - last_life_flag) < 1) {
+    if (ABS(raw_data.life_flag - last_life_flag) < 1) {
         last_life_flag = raw_data.life_flag; //更新生命检测标志位
         return false; //数据没有变化
     }

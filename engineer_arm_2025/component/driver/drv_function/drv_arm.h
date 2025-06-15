@@ -154,6 +154,18 @@ class arm_device {
 
   void set_joint6_target(float set);
 
+  void set_joint1_compensation(float set);
+
+  void set_joint2_compensation(float set);
+
+  void set_joint3_compensation(float set);
+
+  void set_joint4_compensation(float set);
+
+  void set_joint5_compensation(float set);
+
+  void set_joint6_compensation(float set);
+
   void set_arm_ctrl_enable(bool is_enable);
 
   void check_motor_loss();

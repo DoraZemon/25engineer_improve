@@ -128,6 +128,7 @@ void arm_device::update_data() {
     controller_tx_data.joint3 = data.joint_states.joint3;
     controller_tx_data.joint4 = data.joint_states.joint4;
     controller_tx_data.joint5 = data.joint_states.joint5;
+    controller_tx_data.joint6 = data.joint_states.joint6;
     controller_tx_data.is_data_valid = motor.motor1.check_ready() &&
                                        motor.motor2.check_ready() &&
                                        motor.motor3.check_ready() &&
