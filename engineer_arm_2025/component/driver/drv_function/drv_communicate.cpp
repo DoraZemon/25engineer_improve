@@ -16,19 +16,11 @@ void communicate_device::init(CAN_HandleTypeDef *hcan_, uint32_t tx_id, uint32_t
     this->hcan = hcan_;
     can_device.init_rx(hcan, rx_id, std::bind(&communicate_device::update_rx_data, this, std::placeholders::_1), rxsem);
     can_device.init_tx(hcan, 8, tx_id, (uint8_t *) &tx_data);
-    pump_motor.init(&hcan2, true, 1, DJI_M3508, NULL);
-    pump_motor.velpid.pid_reset(0.9f, 0, 7, 0, 0, 0, 0, 0);
 }
 
 
 void communicate_device::update(rc_device &rc) {
     data.is_rc_online = rc.check_ready();
-
-    if (data.is_arm_pump_open) {
-        pump_motor.set_vel(0.38);
-    } else {
-        pump_motor.set_vel(0);
-    }
 
 
 }
@@ -52,7 +44,7 @@ void communicate_device::update_rx_data(uint8_t *rx_data) {
 
 void communicate_device::check_for_loss() {
     osStatus_t stat;
-    stat = osSemaphoreAcquire(this->can_device.rx_sem, 50);
+    stat = osSemaphoreAcquire(this->can_device.rx_sem, 500);
     if (stat != osOK) {
         lost_num++;
         this->is_lost = true;

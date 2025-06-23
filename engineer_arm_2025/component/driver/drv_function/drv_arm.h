@@ -41,11 +41,11 @@ constexpr float Arm_Motor6_Offset = 0.3184f; //电机6偏置
 constexpr uint32_t Arm_Motor1_Master_Id = 0x03;
 constexpr uint32_t Arm_Motor1_Slave_Id = 0x03;
 
-constexpr uint32_t Arm_Motor2_Master_Id = 0x01;
-constexpr uint32_t Arm_Motor2_Slave_Id = 0x01;
+constexpr uint32_t Arm_Motor2_Master_Id = 0x04;
+constexpr uint32_t Arm_Motor2_Slave_Id = 0x04;
 
-constexpr uint32_t Arm_Motor3_Master_Id = 0x02;
-constexpr uint32_t Arm_Motor3_Slave_Id = 0x02;
+constexpr uint32_t Arm_Motor3_Master_Id = 0x05;
+constexpr uint32_t Arm_Motor3_Slave_Id = 0x05;
 
 constexpr uint32_t Arm_Motor4_Master_Id = 0x01;
 constexpr uint32_t Arm_Motor4_Slave_Id = 0x01;

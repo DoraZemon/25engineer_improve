@@ -26,7 +26,6 @@ void communicate_task(void *argument) {
 #else
         g_communicate.send_msg();
 #endif
-        g_communicate.pump_motor.send_can_msg();
         osDelay(3);
     }
 }

@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 //C
-
+void communicate_task(void *argument);
 #ifdef __cplusplus
 }
 #endif

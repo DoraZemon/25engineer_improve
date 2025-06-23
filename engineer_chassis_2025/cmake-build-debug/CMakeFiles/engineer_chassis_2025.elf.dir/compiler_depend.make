@@ -292,6 +292,9 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj: D:/robomaster/25_s
   D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
   D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.h \
+  D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/compatible.h \
+  D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/rtos_inc.h \
   D:/programing/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
   D:/programing/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
   D:/programing/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
@@ -4344,6 +4347,8 @@ D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Inc/gpio.h:
 
 D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Inc/usart.h:
 
+D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.h:
+
 D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/stm32f4xx_hal_msp.c:
 
 D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/stm32f4xx_hal_timebase_tim.c:
@@ -4641,8 +4646,6 @@ D:/programing/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/10.3.1/tr
 D:/programing/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/10.3.1/unordered_map:
 
 D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.c:
-
-D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.h:
 
 D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_usart.h:
 

@@ -24,8 +24,8 @@ extern "C" {
 
 #define IMU_CAN         (hcan2)
 
-#define IMU_SLAVE_ID 0x05
-#define IMU_MASTER_ID 0x05
+#define IMU_SLAVE_ID 0x20
+#define IMU_MASTER_ID 0x30
 
 
 #define ACCEL_CAN_MAX (58.8f)

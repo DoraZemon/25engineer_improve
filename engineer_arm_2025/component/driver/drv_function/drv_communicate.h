@@ -74,8 +74,6 @@ class communicate_device {
 
   can_device_t can_device; //CAN设备
 
-  dji_motor_device pump_motor; //泵电机
-
   bool is_lost = true; //是否丢失
   uint32_t lost_num = 0;
   struct {

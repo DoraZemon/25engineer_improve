@@ -22,8 +22,8 @@ extern "C" {
 #define CHASSIS_CAN         (hcan1)
 #define IMU_CAN         (hcan2)
 
-#define IMU_SLAVE_ID 0x05
-#define IMU_MASTER_ID 0x05
+#define IMU_SLAVE_ID 0x20
+#define IMU_MASTER_ID 0x30
 
 #define COMMUNICATE_FRAME_HEAD 0x55 //通信帧头
 #define COMMUNICATE_CAN         (hcan2)

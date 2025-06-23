@@ -31,9 +31,9 @@ void communicate_device::update(chassis_device &chassis, pump_device &pump) {
     data.is_chassis_motor4_error = chassis.wheel[3].lost_flag;
 
 
-    pump.set_arm_pump_open_state(data.is_arm_pump_open);
-    pump.set_left_pump_open_state(data.is_left_pump_open);
-    pump.set_right_pump_open_state(data.is_right_pump_open);
+//    pump.set_arm_pump_open_state(data.is_arm_pump_open);
+//    pump.set_left_pump_open_state(data.is_left_pump_open);
+//    pump.set_right_pump_open_state(data.is_right_pump_open);
 
     if(data.is_chassis_vel_ctrl){
         chassis.open_speed_control();
@@ -65,14 +65,14 @@ void communicate_device::update_rx_data(uint8_t *rx_data) {
     data.is_rc_online = raw_data->is_rc_online;
     data.is_chassis_vel_ctrl = raw_data->is_chassis_vel_ctrl;
 
-    data.speed_x = raw_data->speed_x / powf(2.0,15);
-    data.speed_y = raw_data->speed_y / powf(2.0,15);
-    data.speed_spin = raw_data->speed_spin / powf(2.0,7);
+    data.speed_x = float(raw_data->speed_x) / powf(2.0,15);
+    data.speed_y = float(raw_data->speed_y) / powf(2.0,15);
+    data.speed_spin = float(raw_data->speed_spin) / powf(2.0,7);
 }
 
 void communicate_device::check_for_loss() {
     osStatus_t stat;
-    stat = osSemaphoreAcquire(this->can_device.rx_sem, 50);
+    stat = osSemaphoreAcquire(this->can_device.rx_sem, 500);
     if (stat != osOK) {
         lost_num++;
         this->is_lost = true;
