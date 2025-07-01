@@ -56,8 +56,7 @@ struct communicate_tx_data_t {
   uint8_t is_left_pump_open: 1;
   uint8_t is_right_pump_open: 1;
   uint8_t is_rc_online: 1; //遥控器是否在线
-  uint8_t is_chassis_vel_ctrl: 1; //底盘速度控制
-  uint8_t reserve_1: 3; //保留
+  uint8_t reserve_1: 4; //保留
   int16_t speed_x;
   int16_t speed_y;
   int8_t speed_spin;
@@ -81,7 +80,6 @@ class communicate_device {
     bool is_left_pump_open;
     bool is_right_pump_open;
     bool is_rc_online; //遥控器是否在线
-    bool is_chassis_vel_ctrl; //底盘速度控制
     int16_t speed_x; //速度X
     int16_t speed_y; //速度Y
     int8_t speed_spin; //旋转速度
@@ -109,7 +107,7 @@ class communicate_device {
 
   void update_rx_data(uint8_t *rx_data);
 
-  void set_chassis_ctrl(bool is_chassis_vel_ctrl, int16_t speed_x, int16_t speed_y, int8_t speed_spin);
+  void set_chassis_ctrl( int16_t speed_x, int16_t speed_y, int8_t speed_spin);
 
   void set_pump_ctrl(bool is_arm_pump_open, bool is_left_pump_open, bool is_right_pump_open);
 

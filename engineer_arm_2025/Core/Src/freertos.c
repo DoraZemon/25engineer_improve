@@ -146,6 +146,20 @@ const osThreadAttr_t communicatetask_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for servo_ctrltask */
+osThreadId_t servo_ctrltaskHandle;
+const osThreadAttr_t servo_ctrltask_attributes = {
+  .name = "servo_ctrltask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for gimbaltask */
+osThreadId_t gimbaltaskHandle;
+const osThreadAttr_t gimbaltask_attributes = {
+  .name = "gimbaltask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -226,6 +240,11 @@ osSemaphoreId_t IMUUpdateBinarySemHandle;
 const osSemaphoreAttr_t IMUUpdateBinarySem_attributes = {
   .name = "IMUUpdateBinarySem"
 };
+/* Definitions for servoctrlTxBinarySem */
+osSemaphoreId_t servoctrlTxBinarySemHandle;
+const osSemaphoreAttr_t servoctrlTxBinarySem_attributes = {
+  .name = "servoctrlTxBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -266,6 +285,8 @@ void judgeCtrl_task(void *argument);
 void controller_task(void *argument);
 void imu_task(void *argument);
 void communicate_task(void *argument);
+void servo_ctrl_task(void *argument);
+void gimbal_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -323,6 +344,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of IMUUpdateBinarySem */
   IMUUpdateBinarySemHandle = osSemaphoreNew(1, 0, &IMUUpdateBinarySem_attributes);
+
+  /* creation of servoctrlTxBinarySem */
+  servoctrlTxBinarySemHandle = osSemaphoreNew(1, 1, &servoctrlTxBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -394,6 +418,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of communicatetask */
   communicatetaskHandle = osThreadNew(communicate_task, NULL, &communicatetask_attributes);
+
+  /* creation of servo_ctrltask */
+  servo_ctrltaskHandle = osThreadNew(servo_ctrl_task, NULL, &servo_ctrltask_attributes);
+
+  /* creation of gimbaltask */
+  gimbaltaskHandle = osThreadNew(gimbal_task, NULL, &gimbaltask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -665,6 +695,42 @@ __weak void communicate_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END communicate_task */
+}
+
+/* USER CODE BEGIN Header_servo_ctrl_task */
+/**
+* @brief Function implementing the servo_ctrltask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_servo_ctrl_task */
+__weak void servo_ctrl_task(void *argument)
+{
+  /* USER CODE BEGIN servo_ctrl_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END servo_ctrl_task */
+}
+
+/* USER CODE BEGIN Header_gimbal_task */
+/**
+* @brief Function implementing the gimbaltask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_gimbal_task */
+__weak void gimbal_task(void *argument)
+{
+  /* USER CODE BEGIN gimbal_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END gimbal_task */
 }
 
 /* Private application code --------------------------------------------------*/

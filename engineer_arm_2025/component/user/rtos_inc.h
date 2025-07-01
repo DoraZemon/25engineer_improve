@@ -19,6 +19,7 @@ extern "C" {
 
 extern osMessageQueueId_t CAN1SendQueueHandle;
 extern osMessageQueueId_t CAN2SendQueueHandle;
+extern osMessageQueueId_t ServoCtrlQueueHandle;
 /* --------------信号量-------------------*/
 
 extern osSemaphoreId_t CAN1CountingSemHandle;
@@ -40,6 +41,9 @@ extern osSemaphoreId_t customRxBinarySemHandle;//判断自定义控制器是否�
 
 extern osSemaphoreId_t IMUUpdateBinarySemHandle;
 extern osSemaphoreId_t CommunicateUpdateBinarySemHandle;
+
+extern osSemaphoreId_t servoctrlTxBinarySemHandle;
+
 
 extern osEventFlagsId_t refereeEventHandle;
 extern osEventFlagsId_t RefereeEventHandle;

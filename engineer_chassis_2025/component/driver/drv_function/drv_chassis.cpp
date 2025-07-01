@@ -16,7 +16,6 @@
 
 chassis_device::chassis_device()
     : enable_flag(true), lost_flag(true), ready_flag(false),
-      controlType(Speed),
       velocity({0, 0, 0}), super_rotate_flag(
         false) {}
 
@@ -55,9 +54,6 @@ __RAM_FUNC void chassis_device::update_speed_control() {
 }
 
 
-void chassis_device::update_data(float yaw_total) {
-    chassis_yaw_total_angle = yaw_total;
-}
 
 bool chassis_device::check_init_completely() {
     if (this->wheel[0].is_zero_offset && this->wheel[1].is_zero_offset && this->wheel[2].is_zero_offset
@@ -111,9 +107,6 @@ void chassis_device::set_free() {
     this->wheel[1].set_free();
     this->wheel[2].set_free();
     this->wheel[3].set_free();
-
-    this->clean_speed_control();
-    this->clean_position_control();
 }
 
 void chassis_device::set_speed_x(float x) {
@@ -147,61 +140,6 @@ void chassis_device::add_speed_spin(float delta_spin) {
 }
 
 
-void chassis_device::set_position_x(float x) {
-    this->position.positionX = x;
-}
-
-void chassis_device::set_position_y(float y) {
-    this->position.positionY = y;
-}
-
-void chassis_device::set_position_spin(float spin) {
-    this->position.positionSpin = spin;
-}
-
-void chassis_device::add_position_x(float delta_x) {
-    this->position.positionX += delta_x;
-}
-
-void chassis_device::add_position_y(float delta_y) {
-    this->position.positionY += delta_y;
-}
-
-void chassis_device::add_position_spin(float delta_spin) {
-    this->position.positionSpin += delta_spin;
-    VAL_LIMIT(this->position.positionSpin, -30, 30);
-}
-
-
-void chassis_device::clean_speed_control() {
-    this->close_yaw_spin();
-
-    this->velocity.speedX = 0;
-    this->velocity.speedY = 0;
-    this->velocity.speedSpin = 0;
-
-    this->wheel[0].reset_total_rounds_zero_offset(0);
-    this->wheel[1].reset_total_rounds_zero_offset(0);
-    this->wheel[2].reset_total_rounds_zero_offset(0);
-    this->wheel[3].reset_total_rounds_zero_offset(0);
-}
-
-void chassis_device::clean_position_control() {
-    this->position.positionX = 0;
-    this->position.positionY = 0;
-    this->position.positionSpin = 0;
-}
-
-__RAM_FUNC  void chassis_device::update_position_control() {
-
-    this->add_position_spin(2 * PI * this->pos_rot_pid.pid_calculate(this->pos_yaw_angle,
-                                                                     chassis_yaw_total_angle -
-                                                                     chassis_yaw_total_angle_offset));
-    chassisMotorPositionSolverSet(this->wheel,
-                                  this->position.positionX,
-                                  this->position.positionY,
-                                  this->position.positionSpin);
-}
 
 
 void chassis_device::disable() {
@@ -212,29 +150,7 @@ void chassis_device::enable() {
     this->enable_flag = true;
 }
 
-bool chassis_device::check_position_control() {
-    return this->controlType == Position;
-}
 
-bool chassis_device::check_speed_control() {
-    return this->controlType == Speed;
-}
-
-void chassis_device::open_speed_control() {
-    if (!this->check_speed_control()) {
-        this->controlType = Speed;
-        this->clean_position_control();
-    }
-}
-
-void chassis_device::open_position_control() {
-    if (!this->check_position_control()) {
-        this->controlType = Position;
-        this->clean_speed_control();
-        this->pos_yaw_angle = 0.f;
-        chassis_yaw_total_angle_offset = chassis_yaw_total_angle;
-    }
-}
 
 bool chassis_device::check_super_rotate() const {
     return this->super_rotate_flag;
@@ -246,10 +162,6 @@ bool chassis_device::check_ready() const {
 
 bool chassis_device::check_enable() const {
     return this->enable_flag;
-}
-
-enum chassis_control_type chassis_device::check_control_type() {
-    return this->controlType;
 }
 
 

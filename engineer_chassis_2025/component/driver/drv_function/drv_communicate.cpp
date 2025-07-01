@@ -31,26 +31,13 @@ void communicate_device::update(chassis_device &chassis, pump_device &pump) {
     data.is_chassis_motor4_error = chassis.wheel[3].lost_flag;
 
 
-//    pump.set_arm_pump_open_state(data.is_arm_pump_open);
-//    pump.set_left_pump_open_state(data.is_left_pump_open);
-//    pump.set_right_pump_open_state(data.is_right_pump_open);
+    pump.set_arm_pump_open_state(data.is_arm_pump_open);
+    pump.set_left_pump_open_state(data.is_left_pump_open);
+    pump.set_right_pump_open_state(data.is_right_pump_open);
 
-    if(data.is_chassis_vel_ctrl){
-        chassis.open_speed_control();
-    }else{
-        chassis.open_position_control();
-    }
-
-    if(data.is_chassis_vel_ctrl){
         chassis.set_speed_x(data.speed_x);
         chassis.set_speed_y(data.speed_y);
         chassis.set_speed_spin(data.speed_spin);
-    }else{
-        chassis.set_position_x(data.speed_x);
-        chassis.set_position_y(data.speed_y);
-        chassis.set_position_spin(data.speed_spin);
-    }
-
 
 }
 
@@ -63,7 +50,6 @@ void communicate_device::update_rx_data(uint8_t *rx_data) {
     data.is_left_pump_open = raw_data->is_left_pump_open;
     data.is_right_pump_open = raw_data->is_right_pump_open;
     data.is_rc_online = raw_data->is_rc_online;
-    data.is_chassis_vel_ctrl = raw_data->is_chassis_vel_ctrl;
 
     data.speed_x = float(raw_data->speed_x) / powf(2.0,15);
     data.speed_y = float(raw_data->speed_y) / powf(2.0,15);

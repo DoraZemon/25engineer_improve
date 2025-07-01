@@ -47,7 +47,6 @@ else ()
     message(STATUS "Minimal optimization, debug info included")
     add_compile_options(-Og -g)
 endif ()
-
 include_directories(${includes}
  bsp
  component
@@ -78,6 +77,7 @@ link_libraries(libarm_cortexM4lf_math.a)
 
 #Eigen
 include_directories(/)
+
 
 set(LINKER_SCRIPT $${CMAKE_SOURCE_DIR}/${linkerScript})
 

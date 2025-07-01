@@ -29,7 +29,7 @@ void pc_device::update_data(rc_device &rc,
                             arm_device &arm,
                             controller_device &controller,
                             communicate_device &communicate,
-                            dm_imu_device &imu) {
+                            dm_imu_device &imu ,gimbal_device & gimbal) {
     error.remote = rc.check_lost();
     error.pc = is_lost;
     error.arm_motor1 = arm.motor.motor1.check_lost();
@@ -116,7 +116,7 @@ void pc_device::update_data(rc_device &rc,
                               rx_data.is_left_pump_on,
                               rx_data.is_right_pump_on);
 
-    communicate.set_chassis_ctrl(rx_data.is_chassis_vel_control, rx_data.chassis_x,
+    communicate.set_chassis_ctrl(rx_data.chassis_x,
                                  rx_data.chassis_y, rx_data.chassis_spin);
 }
 

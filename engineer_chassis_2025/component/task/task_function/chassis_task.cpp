@@ -30,20 +30,9 @@ void chassis_task(void *argument) {
     }
     for (;;) {
         g_chassis.update_ready();
-        if (g_imu.check_lost()) {
-            g_chassis.update_data(0.0);
-        } else {
-            g_chassis.update_data(g_imu.get_yaw());//陀螺仪丢失
-        }
         if (g_communicate.check_is_rc_online() && g_chassis.check_enable()) {
             if (g_chassis.check_can_use()) {//仅开机做一次自检，后续只管offset
-                switch (g_chassis.check_control_type()) {
-                    case Position:g_chassis.update_position_control();
-                        break;
-                    case Speed:g_chassis.update_speed_control();
-                        break;
-                    default:g_chassis.set_free();
-                }
+                g_chassis.update_speed_control();
             } else {
                 continue;
             }

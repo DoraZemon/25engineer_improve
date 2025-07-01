@@ -26,7 +26,7 @@ extern "C" {
 #include "drv_controller.h"
 #include "drv_communicate.h"
 #include "drv_dm_Imu.h"
-
+#include "drv_gimbal.h"
 
 enum robot_error_type {
   remote = 0,
@@ -131,13 +131,12 @@ struct pc_rx_data_t {
   uint8_t is_arm_pump_on; //机械臂泵是否开启
   uint8_t is_left_pump_on; //左泵是否开启
   uint8_t is_right_pump_on; //右泵是否开启
-  uint8_t is_chassis_vel_control;
   int8_t chassis_spin;
   int16_t chassis_x;
   int16_t chassis_y;
-  uint8_t camera_dir;
   uint8_t arm_ctrl_enable; //机械臂使能
-  uint8_t magic_flag;
+  int16_t gimbal_yaw;
+  int16_t gimbal_pitch;
   uint8_t frame_tail; //帧尾
 };
 #pragma pack()
@@ -158,7 +157,7 @@ class pc_device {
                    arm_device &arm,
                    controller_device &controller,
                    communicate_device &communicate,
-                   dm_imu_device &imu); //更新数据
+                   dm_imu_device &imu,gimbal_device & gimbal); //更新数据
   void transmit_data(); //发送数据到PC
   void set_lost();
 

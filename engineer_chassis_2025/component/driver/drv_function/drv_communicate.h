@@ -51,8 +51,7 @@ struct communicate_rx_data_t {
   uint8_t is_left_pump_open: 1;
   uint8_t is_right_pump_open: 1;
   uint8_t is_rc_online: 1; //遥控器是否在线
-  uint8_t is_chassis_vel_ctrl: 1; //底盘速度控制
-  uint8_t reserve_1: 3; //保留
+  uint8_t reserve_1: 4; //保留
   int16_t speed_x;
   int16_t speed_y;
   int8_t speed_spin;
@@ -76,7 +75,6 @@ class communicate_device {
     bool is_left_pump_open;
     bool is_right_pump_open;
     bool is_rc_online; //遥控器是否在线
-    bool is_chassis_vel_ctrl; //底盘速度控制
     float speed_x; //速度X
     float speed_y; //速度Y
     float speed_spin; //旋转速度

@@ -62,7 +62,6 @@ void communicate_device::send_msg() {
     tx_data.is_left_pump_open = data.is_left_pump_open;
     tx_data.is_right_pump_open = data.is_right_pump_open;
     tx_data.is_rc_online = data.is_rc_online;
-    tx_data.is_chassis_vel_ctrl = data.is_chassis_vel_ctrl;
     tx_data.speed_x = data.speed_x;
     tx_data.speed_y = data.speed_y;
     tx_data.speed_spin = data.speed_spin;
@@ -71,11 +70,9 @@ void communicate_device::send_msg() {
 }
 
 
-void communicate_device::set_chassis_ctrl(bool is_chassis_vel_ctrl,
-                                          int16_t speed_x,
+void communicate_device::set_chassis_ctrl(int16_t speed_x,
                                           int16_t speed_y,
                                           int8_t speed_spin) {
-    data.is_chassis_vel_ctrl = is_chassis_vel_ctrl;
     data.speed_x = speed_x;
     data.speed_y = speed_y;
     data.speed_spin = speed_spin;
