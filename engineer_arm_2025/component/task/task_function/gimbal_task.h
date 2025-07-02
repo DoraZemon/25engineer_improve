@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 //C
-
+void gimbal_task(void *argument);
 #ifdef __cplusplus
 }
 #endif

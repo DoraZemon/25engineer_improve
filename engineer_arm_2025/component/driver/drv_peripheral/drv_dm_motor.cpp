@@ -491,7 +491,7 @@ bool dm_motor_device::check_lost() const {
 
 void dm_motor_device::check_motor_for_loss() {
     osStatus_t stat;
-    stat = osSemaphoreAcquire(this->can_device.rx_sem, 50);
+    stat = osSemaphoreAcquire(this->can_device.rx_sem, 500);
     if (stat != osOK) {
         lost_num++;
         this->lost_flag = true;

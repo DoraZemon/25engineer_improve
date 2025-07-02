@@ -12,7 +12,7 @@
 #include "drv_gimbal.h"
 
 
-gimbal_device::gimbal_device() : data({ GIMBAL_SERVO_PITCH_HORIZONTAL_1000, GIMBAL_SERVO_YAW_FORWARD_1000}),
+gimbal_device::gimbal_device() : data({GIMBAL_SERVO_PITCH_HORIZONTAL_1000, GIMBAL_SERVO_YAW_FORWARD_1000}),
                                  pitch_servo(&SERVO_UART, GIMBAL_PITCH_SERVO_ID),
                                  yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID) {}
 

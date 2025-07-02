@@ -107,7 +107,7 @@ class communicate_device {
 
   void update_rx_data(uint8_t *rx_data);
 
-  void set_chassis_ctrl( int16_t speed_x, int16_t speed_y, int8_t speed_spin);
+  void set_chassis_ctrl(int16_t speed_x, int16_t speed_y, int8_t speed_spin);
 
   void set_pump_ctrl(bool is_arm_pump_open, bool is_left_pump_open, bool is_right_pump_open);
 

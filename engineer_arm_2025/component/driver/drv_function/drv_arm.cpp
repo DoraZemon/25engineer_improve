@@ -28,7 +28,7 @@ void arm_device::init() {
                       Arm_Motor2_Slave_Id,
                       Arm_Motor2_Master_Id,
                       DM_MIT,
-                      false,
+                      true,
                       DM_J10010L_2EC,
                       ArmMotor2UpdateBinarySemHandle);
     motor.motor3.init(&Arm_Motor3_Can,
@@ -53,11 +53,9 @@ void arm_device::init() {
                       DM_J4310_2EC,
                       ArmMotor5UpdateBinarySemHandle);
     motor.motor6.init(&Arm_Motor6_Can,
-                      Arm_Motor6_Slave_Id,
-                      Arm_Motor6_Master_Id,
-                      DM_MIT,
-                      false,
-                      DM_J4310_2EC,
+                      true,
+                      Arm_Motor6_Id,
+                      DJI_M2006,
                       ArmMotor6UpdateBinarySemHandle);
 
     data.motor_offset = {Arm_Motor1_Offset,
@@ -67,16 +65,16 @@ void arm_device::init() {
                          Arm_Motor5_Offset,
                          Arm_Motor6_Offset};
 
-    motor.motor1.lqr.reset_lqr(8.0, 3.2, 0.05, 0.0, 0.01, 1.0);
-    motor.motor2.lqr.reset_lqr(8.0, 3.0, 0.05, 0.0, 0.01, 1.0);
-    motor.motor3.lqr.reset_lqr(3.0, 3.0, 0.05, 0.0, 0.01, 1.0);
-    motor.motor4.lqr.reset_lqr(15.0, 1.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor5.lqr.reset_lqr(30.0, 1.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor6.lqr.reset_lqr(30.0, 0.1, 0.0, 0.0, 0.0, 1.0);
+    motor.motor1.lqr.reset_lqr(15.0, 15.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor2.lqr.reset_lqr(8.0, 5.0, 0.1, 0.0, 0.1, 1.0);
+    motor.motor3.lqr.reset_lqr(8.0, 4.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor4.lqr.reset_lqr(30.0, 3.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor5.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor6.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
-//    motor.motor1.set_low_pass_alpha(0.05);
-//    motor.motor2.set_low_pass_alpha(0.05);
-//    motor.motor3.set_low_pass_alpha(0.05);
+    motor.motor1.set_low_pass_alpha(0.01);
+    motor.motor2.set_low_pass_alpha(0.01);
+    motor.motor3.set_low_pass_alpha(0.01);
 
     data.joint_limit = {
         {Arm_Joint1_Min, Arm_Joint2_Min, Arm_Joint3_Min, Arm_Joint4_Min, Arm_Joint5_Min, Arm_Joint6_Min},
@@ -90,22 +88,8 @@ void arm_device::init() {
     };
 
     data.motor_torque_compensation = {
-        Arm_Motor1_Torque_Compensation,
-        Arm_Motor2_Torque_Compensation,
-        Arm_Motor3_Torque_Compensation,
-        Arm_Motor4_Torque_Compensation,
-        Arm_Motor5_Torque_Compensation,
-        Arm_Motor6_Torque_Compensation
     };
 
-    data.motor_compensation_angle_offset = {
-        Arm_Motor1_Compensation_Angle_Offset,
-        Arm_Motor2_Compensation_Angle_Offset,
-        Arm_Motor3_Compensation_Angle_Offset,
-        Arm_Motor4_Compensation_Angle_Offset,
-        Arm_Motor5_Compensation_Angle_Offset,
-        Arm_Motor6_Compensation_Angle_Offset
-    };
 
     while (!motor.motor1.is_zero_offset || !motor.motor2.is_zero_offset || !motor.motor3.is_zero_offset ||
            !motor.motor4.is_zero_offset || !motor.motor5.is_zero_offset || !motor.motor6.is_zero_offset) {
@@ -117,7 +101,7 @@ void arm_device::init() {
     motor.motor3.reset_total_rounds_zero_offset(motor.motor3.get_current_round() - data.motor_offset.motor3);
     motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
     motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
-    motor.motor6.reset_total_rounds_zero_offset(motor.motor6.get_current_round() - data.motor_offset.motor6);
+    motor.motor6.reset_total_rounds_zero_offset(0.0f);
 }
 
 void arm_device::set_joint1_target(float set) {
@@ -198,11 +182,11 @@ void arm_device::update_data() {
     data.motor_pos_get.motor6 = motor.motor6.get_total_rounds();
 
     data.joint_states.joint1 = data.motor_pos_get.motor1 * 2 * PI;
-    data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI;
-    data.joint_states.joint3 = (data.motor_pos_get.motor3 - data.motor_pos_get.motor2) * 2 * PI;
+    data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI / 3.f * 2.f;
+    data.joint_states.joint3 = data.motor_pos_get.motor3 * 2 * PI - data.joint_states.joint2;
     data.joint_states.joint4 = data.motor_pos_get.motor4 * 2 * PI;
     data.joint_states.joint5 = data.motor_pos_get.motor5 * 2 * PI;
-    data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI;
+    data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI / (36.f * 2);
 
 }
 
@@ -227,11 +211,11 @@ void arm_device::update_control(bool is_enable) {
 #if ARM_DEBUG_MODE
 #else
         data.motor_pos_set.motor1 = data.joint_filtered_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
-        data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI);
-        data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.motor_pos_set.motor2;
+        data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI) / 2.f * 3.f;
+        data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.joint_filtered_target.joint2 / (2 * PI);
         data.motor_pos_set.motor4 = data.joint_filtered_target.joint4 / (2 * PI);
         data.motor_pos_set.motor5 = data.joint_filtered_target.joint5 / (2 * PI);
-        data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI);
+        data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI) * (36.f * 2.f);
 #endif
     }
 #if ARM_REMOTE_CONTROL_PROTECT
@@ -241,54 +225,44 @@ void arm_device::update_control(bool is_enable) {
     limit_motor_pos();//限制电机位置
 
     if (is_ctrl_enable) {
-//        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
-//        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
-//            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
-//                                        (data.motor_torque_compensation.motor3 *
-//                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
-//        motor.motor3.set_offset_current(
-//            data.motor_torque_compensation.motor3 * cosf(data.joint_states.joint3 * 2 * PI));
-//        motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
-//        motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
-//        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
+
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1 / motor.motor1.basic_info.t_max);
-        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 / motor.motor2.basic_info.t_max);
+        motor.motor2.set_offset_current(
+            data.motor_torque_compensation.motor2 / motor.motor2.basic_info.t_max / 3.f * 2.f);
         motor.motor3.set_offset_current(data.motor_torque_compensation.motor3 / motor.motor3.basic_info.t_max);
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4 / motor.motor4.basic_info.t_max);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5 / motor.motor5.basic_info.t_max);
-        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6 / motor.motor6.basic_info.t_max);
 
         motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
                                                                                          motor.motor1.get_speed(),
                                                                                          data.motor_pos_set.motor1,
-                                                                                         0.001));
+                                                                                         0.002));
         motor.motor2.MIT_inter_set_motor_normalization_torque(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
                                                                                          motor.motor2.get_speed(),
                                                                                          data.motor_pos_set.motor2,
-                                                                                         0.001));
+                                                                                         0.002));
         motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
                                                                                          motor.motor3.get_speed(),
                                                                                          data.motor_pos_set.motor3,
-                                                                                         0.001));
+                                                                                         0.002));
         motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
                                                                                          motor.motor4.get_speed(),
                                                                                          data.motor_pos_set.motor4,
-                                                                                         0.001));
+                                                                                         0.002));
         motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
                                                                                          motor.motor5.get_speed(),
                                                                                          data.motor_pos_set.motor5,
-                                                                                         0.001));
-        motor.motor6.MIT_inter_set_motor_normalization_torque(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
-                                                                                         motor.motor6.get_speed(),
-                                                                                         data.motor_pos_set.motor6,
-                                                                                         0.001));
+                                                                                         0.002));
+        motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
+                                                            motor.motor6.get_speed(),
+                                                            data.motor_pos_set.motor6,
+                                                            0.002));
 //
 //        motor.motor1.MIT_inter_set_motor_normalization_torque(0);
 //        motor.motor2.MIT_inter_set_motor_normalization_torque(0);
 //        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
 //        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
 //        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
-//        motor.motor6.MIT_inter_set_motor_normalization_torque(0);
 
 
     } else {
@@ -363,6 +337,8 @@ void arm_device::limit_motor_pos() {
     VAL_LIMIT(data.motor_pos_set.motor4, data.motor_pos_limit.min.motor4, data.motor_pos_limit.max.motor4);
     VAL_LIMIT(data.motor_pos_set.motor5, data.motor_pos_limit.min.motor5, data.motor_pos_limit.max.motor5);
     VAL_LIMIT(data.motor_pos_set.motor6, data.motor_pos_limit.min.motor6, data.motor_pos_limit.max.motor6);
+
+    //todo pitch2电机限位
 }
 
 

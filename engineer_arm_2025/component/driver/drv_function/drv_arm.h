@@ -22,21 +22,22 @@ extern "C" {
 //C++
 #include "drv_dm_motor.h"
 #include "median_filter.h"
+#include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.1679f; //电机1偏置
-constexpr float Arm_Motor2_Offset = 0.500f; //电机2偏置
-constexpr float Arm_Motor3_Offset = -0.5308f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.9986f; //电机4偏置
-constexpr float Arm_Motor5_Offset = -0.4414f; //电机5偏置
-constexpr float Arm_Motor6_Offset = 0.3184f; //电机6偏置
+constexpr float Arm_Motor1_Offset = 0.9474f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.5394f; //电机2偏置
+constexpr float Arm_Motor3_Offset = -0.2276f; //电机3偏置
+constexpr float Arm_Motor4_Offset = 0.2413f; //电机4偏置
+constexpr float Arm_Motor5_Offset = -0.5805f; //电机5偏置
+constexpr float Arm_Motor6_Offset = 0.f; //电机6偏置
 
 #define Arm_Motor1_Can (hcan1)
-#define Arm_Motor2_Can (hcan1)
-#define Arm_Motor3_Can (hcan1)
+#define Arm_Motor2_Can (hcan2)
+#define Arm_Motor3_Can (hcan2)
 
-#define Arm_Motor4_Can (hcan2)
-#define Arm_Motor5_Can (hcan2)
-#define Arm_Motor6_Can (hcan2)
+#define Arm_Motor4_Can (hcan1)
+#define Arm_Motor5_Can (hcan1)
+#define Arm_Motor6_Can (hcan1)
 
 constexpr uint32_t Arm_Motor1_Master_Id = 0x03;
 constexpr uint32_t Arm_Motor1_Slave_Id = 0x03;
@@ -47,20 +48,19 @@ constexpr uint32_t Arm_Motor2_Slave_Id = 0x04;
 constexpr uint32_t Arm_Motor3_Master_Id = 0x05;
 constexpr uint32_t Arm_Motor3_Slave_Id = 0x05;
 
-constexpr uint32_t Arm_Motor4_Master_Id = 0x01;
-constexpr uint32_t Arm_Motor4_Slave_Id = 0x01;
+constexpr uint32_t Arm_Motor4_Master_Id = 0x02;
+constexpr uint32_t Arm_Motor4_Slave_Id = 0x02;
 
-constexpr uint32_t Arm_Motor5_Master_Id = 0x02;
-constexpr uint32_t Arm_Motor5_Slave_Id = 0x02;
+constexpr uint32_t Arm_Motor5_Master_Id = 0x01;
+constexpr uint32_t Arm_Motor5_Slave_Id = 0x01;
 
-constexpr uint32_t Arm_Motor6_Master_Id = 0x03;
-constexpr uint32_t Arm_Motor6_Slave_Id = 0x03;
+constexpr uint32_t Arm_Motor6_Id = 2;
 
-constexpr float Arm_Joint1_Min = -2.9110f; //关节1最小角度
-constexpr float Arm_Joint1_Max = 2.9110f; //关节1最大角度
+constexpr float Arm_Joint1_Min = -2.98f; //关节1最小角度
+constexpr float Arm_Joint1_Max = 2.98f; //关节1最大角度
 
 constexpr float Arm_Joint2_Min = 0.0f; //关节2最小角度
-constexpr float Arm_Joint2_Max = 3.0635f; //关节2最大角度
+constexpr float Arm_Joint2_Max = 2.47f; //关节2最大角度
 
 constexpr float Arm_Joint3_Min = -2.15419f; //关节3最小角度
 constexpr float Arm_Joint3_Max = 0.0f; //关节3最大角度
@@ -80,8 +80,8 @@ constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min / (2 * PI); //电机1最小�
 constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max / (2 * PI); //电机2最大角度
 constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min / (2 * PI); //电机2最小角度
 
-constexpr float Arm_Motor3_Pos_Max = Arm_Joint3_Max / (2 * PI) + Arm_Joint2_Max / (2 * PI); //电机3最大角度
-constexpr float Arm_Motor3_Pos_Min = Arm_Joint3_Min / (2 * PI) + Arm_Joint2_Min / (2 * PI); //电机3最小角度
+constexpr float Arm_Motor3_Pos_Max = 0.0; //电机3最大角度
+constexpr float Arm_Motor3_Pos_Min = (-40.f / (2 * PI)); //电机3最小角度
 
 constexpr float Arm_Motor4_Pos_Max = Arm_Joint4_Max / (2 * PI); //电机4最大角度
 constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min / (2 * PI); //电机4最小角度
@@ -92,20 +92,6 @@ constexpr float Arm_Motor5_Pos_Min = Arm_Joint5_Min / (2 * PI); //电机5最小�
 constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max / (2 * PI); //电机6最大角度
 constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI); //电机6最小角度
 
-
-constexpr float Arm_Motor1_Torque_Compensation = 0.0f; //电机1力矩补偿`
-constexpr float Arm_Motor2_Torque_Compensation = 0.0f; //电机2力矩补偿
-constexpr float Arm_Motor3_Torque_Compensation = -0.04f; //电机3力矩补偿
-constexpr float Arm_Motor4_Torque_Compensation = 0.0f; //电机4力矩补偿
-constexpr float Arm_Motor5_Torque_Compensation = 0.0f; //电机5力矩补偿
-constexpr float Arm_Motor6_Torque_Compensation = 0.0f; //电机6力矩补偿
-
-constexpr float Arm_Motor1_Compensation_Angle_Offset = 0.0f; //电机1补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor2_Compensation_Angle_Offset = 22.0f; //电机2补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor3_Compensation_Angle_Offset = 0.0f; //电机3补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor4_Compensation_Angle_Offset = 0.0f; //电机4补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor5_Compensation_Angle_Offset = 0.0f; //电机5补偿角度偏置（即水平面角度差值）
-constexpr float Arm_Motor6_Compensation_Angle_Offset = 0.0f; //电机6补偿角度偏置（即水平面角度差值）
 
 class arm_device {
   struct joint_t {
@@ -182,7 +168,6 @@ class arm_device {
     motor_t motor_pos_get;
     motor_t motor_pos_set;
     motor_t motor_torque_compensation; //电机力矩补偿
-    motor_t motor_compensation_angle_offset; //电机补偿角度偏置（即水平面角度差值）
     struct {
       joint_t min;
       joint_t max; //关节角度限制
@@ -206,7 +191,7 @@ class arm_device {
     dm_motor_device motor3; //关节3电机
     dm_motor_device motor4; //关节4电机
     dm_motor_device motor5; //关节5电机
-    dm_motor_device motor6; //关节6电机
+    dji_motor_device motor6; //关节6电机
   } motor;
 
 };

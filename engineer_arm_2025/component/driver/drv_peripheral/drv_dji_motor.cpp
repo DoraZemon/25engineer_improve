@@ -275,7 +275,7 @@ void dji_motor_device::set_current_to_can_tx_buff() const {
 
 void dji_motor_device::set_free() {
     this->msg_cnt = 0;
-    this->is_zero_offset = false;
+//    this->is_zero_offset = false;
     this->current_set = 0;
     this->set_current_to_can_tx_buff();
 }

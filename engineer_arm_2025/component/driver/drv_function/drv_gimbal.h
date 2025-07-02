@@ -37,27 +37,28 @@ extern "C" {
 #define GIMBAL_YAW_1000_MIN                    (00.0f)
 
 
-class gimbal_device{
+class gimbal_device {
  private:
-   struct {
+  struct {
 
-     int16_t servo_set_pitch_1000;
-     int16_t servo_set_yaw_1000;
-   }data;
+    int16_t servo_set_pitch_1000;
+    int16_t servo_set_yaw_1000;
+  } data;
 
 
   servo_device pitch_servo; //云台俯仰舵机
-    servo_device yaw_servo; //云台偏航舵机
+  servo_device yaw_servo; //云台偏航舵机
 
-  public:
-    gimbal_device();
+ public:
+  gimbal_device();
 
-    void update_control();
+  void update_control();
 
-    void set_pitch_target(int16_t set);
-    void set_yaw_target(int16_t set);
+  void set_pitch_target(int16_t set);
 
-    void send_ctrl();
+  void set_yaw_target(int16_t set);
+
+  void send_ctrl();
 
 
 };

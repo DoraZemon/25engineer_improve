@@ -18,10 +18,10 @@ extern "C" {
 #define CAN_SEND        1
 #define DRAW_UI        1
 #define DM_IMU         1
-#define SERVO         1
+#define SERVO         0
 
 #define ARM_REMOTE_CONTROL_PROTECT 1 //臂架遥控器保护
-#define ARM_DEBUG_MODE 0
+#define ARM_DEBUG_MODE 1
 #define NO_CHASSIS_COMMUNICATE  0
 
 #define RC_UART        huart1
