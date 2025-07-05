@@ -97,8 +97,7 @@ void pc_device::update_data(rc_device &rc,
     controller_tx_data.frame_tail = PC_Frame_Tail;
 
 
-#if ARM_DEBUG_MODE
-#else
+
     arm.set_joint1_target(rx_data.joint1);
     arm.set_joint2_target(rx_data.joint2);
     arm.set_joint3_target(rx_data.joint3);
@@ -107,8 +106,8 @@ void pc_device::update_data(rc_device &rc,
     arm.set_joint6_target(rx_data.joint6);
 
 
-    arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
-#endif
+//    arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
+
     arm.set_joint1_compensation(rx_data.joint1_compensation);
     arm.set_joint2_compensation(rx_data.joint2_compensation);
     arm.set_joint3_compensation(rx_data.joint3_compensation);

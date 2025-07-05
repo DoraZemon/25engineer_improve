@@ -26,7 +26,7 @@ void pc_receive_task(void *argument) {
     static osStatus_t pc_status;
     osSemaphoreAcquire(PCUpdateBinarySemHandle, 0);
     for (;;) {
-        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 50);
+        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 100);
 
         if (pc_status == osOK) {
             g_pc.set_connected();

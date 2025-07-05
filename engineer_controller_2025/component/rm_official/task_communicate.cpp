@@ -3,7 +3,6 @@
 //
 #include "task_communicate.h"
 #include "drv_arm.h"
-#include "GlobalCfg.h"
 const osMutexAttr_t judge_power_rxdata_mutex_attr = {
     .name = "judge_power_rxdata_mutex"
 };
@@ -23,7 +22,7 @@ extern arm_device g_arm;
 void judgeCtrl_task(void *argument) {
     uint32_t event;
     /* config & open judge uart receive and transmit it */
-    g_judgement_power.init(&JUDGEMENT_UART,
+    g_judgement_power.init(&huart1,
                            refereeEventHandle,
                            &judge_power_rxdata_mutex_attr,
                            &judge_power_txdata_mutex_attr);

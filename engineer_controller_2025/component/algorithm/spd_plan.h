@@ -1,20 +1,12 @@
-/**
-  ******************************************************************************
-  * @file           : spd_plan.h
-  * @author         : 34147
-  * @brief          : None
-  * @attention      : None
-  * @date           : 25-5-31
-  ******************************************************************************
-  */
+//
+// Created by 34147 on 2023/11/23.
+//
 
-
-#ifndef SPD_PLAN_H_
-#define SPD_PLAN_H_
+#ifndef ENGINEER_CHASSIS_SPD_PLAN_H
+#define ENGINEER_CHASSIS_SPD_PLAN_H
 #ifdef __cplusplus
 extern "C" {
 #endif
-//C
 #include "user_lib.h"
 typedef struct {
   float out;//输出
@@ -43,9 +35,8 @@ float get_slope_speed(slope_speed_t *slope_plan);
 void update_slope_spd(slope_speed_t *slope, float acc, float dec, float out_max);
 void sigmoid_speed_init(sigmoid_speed_t *sigmoid_plan, uint16_t len, uint8_t flexible, uint32_t cnt);
 float get_sigmoid_speed(sigmoid_speed_t *sigmoid_plan, uint32_t total_time_ms);
+
 #ifdef __cplusplus
 }
 #endif
-//C++
-
-#endif //SPD_PLAN_H_
+#endif //ENGINEER_CHASSIS_SPD_PLAN_H

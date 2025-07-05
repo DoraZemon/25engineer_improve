@@ -1,27 +1,23 @@
-/**
-  ******************************************************************************
-  * @file           : pid.h
-  * @author         : 34147
-  * @brief          : None
-  * @attention      : None
-  * @date           : 25-5-31
-  ******************************************************************************
-  */
+//
+// Created by 34147 on 2024/1/25.
+//
 
-
-#ifndef PID_H_
-#define PID_H_
+#ifndef ENGINEER_CHASSIS_2024_PID_H
+#define ENGINEER_CHASSIS_2024_PID_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 //C
 
+#include "math.h"
+#include "user_lib.h"
 #ifdef __cplusplus
 }
 #endif
 //C++
-#include "math.h"
-#include "user_lib.h"
+
+
+
 
 
 struct pid_param {
@@ -48,86 +44,15 @@ class pid {
       float kd = 0.5,
       float ap = 0,
       float bp = 0,
-      float cp = 0) : param{kp, ki, kd, ap, bp, cp, 0, max_out_, integral_limit, -integral_limit},//结构体初始化格式
-                      enable(true),
-                      set(0), get(0),
-                      err(0), last_err(0), penultimate_err(0),
-                      pout(0), iout(0), dout(0), out(0) {}
+      float cp = 0);
 
-  float pid_calculate(float set_, float get_) {
-      get = get_;
-      set = set_;
-      err = set - get;
-      // if (fabsf(param.input_max_err) > 0.0)
-      //     abs_limit(&err, param.input_max_err);
-//    v->Kp = v->Ap + v->Bp * (1- exp(-v->Cp * fabs(v->Err)));
-      if (fabsf(param.ap) >= 0.001 && fabsf(param.cp) >= 0)
-          param.p = param.ap + param.bp * (1 - exp(-param.cp * fabs(err)));
-      pout = param.p * err;
-      iout += param.i * err;
-//    pid->iout += pid->param.i * abs_zero(pid->err,0.1);
-      dout = param.d * (err - last_err);
+  float pid_calculate(float set_, float get_);
 
-//    abs_limit(&(pid->iout), pid->param.integral_limit);
-      val_limit(&iout, param.integral_lower_limit, param.integral_higher_limit);
-      out = pout + iout + dout;
-      abs_limit(&out, param.max_out);
-      last_err = err;
+  float pid_calculate_for_iout(float set_, float get_);
 
-      if (enable == 0) {
-          out = 0;
-      }
-      return (out);
-  }
+  void pid_reset(float max_out, float integral_limit, float kp, float ki, float kd, float ap, float bp, float cp);
 
-  float pid_calculate_for_iout(float set_, float get_) {
-      get = get_;
-      set = set_;
-      err = set - get;
-      if (fabsf(err) > 0.07)//为了ioutput只给极小范围的振动使用
-          err = 0;
-      pout = param.p * err;
-      iout += param.i * err;
-      //    pid->iout += pid->param.i * abs_zero(pid->err,0.1);
-      dout = param.d * (err - last_err);
-
-      //    abs_limit(&(pid->iout), pid->param.integral_limit);
-      val_limit(&iout, param.integral_lower_limit, param.integral_higher_limit);
-      out = pout + iout + dout;
-      abs_limit(&out, param.max_out);
-      last_err = err;
-
-      if (enable == 0) {
-          iout = 0;
-      }
-      return (iout);
-  }
-
-  void pid_reset(float max_out, float integral_limit, float kp, float ki, float kd, float ap, float bp, float cp) {
-      if (kp >= 0)param.p = kp;
-      if (fabsf(ki) <= 1e-9) {
-          param.i = 0;
-          iout = 0;
-      } else if (ki > 0)
-          param.i = ki;
-      if (kd >= 0)param.d = kd;
-      param.ap = ap;
-      param.bp = bp;
-      param.cp = cp;
-      if (max_out > 0) param.max_out = max_out;
-      if (integral_limit > 0) {
-          param.integral_higher_limit = integral_limit;
-          param.integral_lower_limit = -integral_limit;
-      } else {
-          param.integral_higher_limit = -integral_limit;
-          param.integral_lower_limit = integral_limit;
-      }
-
-  }
-
-  void pid_clear() {
-      iout = 0;
-  }
+  void pid_clear();
 
  protected:
 
@@ -150,4 +75,4 @@ class pid {
 
 };
 
-#endif //PID_H_
+#endif //ENGINEER_CHASSIS_2024_PID_H

@@ -62,7 +62,7 @@ constexpr float Arm_Joint1_Max = 2.98f; //关节1最大角度
 constexpr float Arm_Joint2_Min = 0.0f; //关节2最小角度
 constexpr float Arm_Joint2_Max = 2.47f; //关节2最大角度
 
-constexpr float Arm_Joint3_Min = -2.15419f; //关节3最小角度
+constexpr float Arm_Joint3_Min = -1.65f; //关节3最小角度
 constexpr float Arm_Joint3_Max = 0.0f; //关节3最大角度
 
 constexpr float Arm_Joint4_Min = -6.28f; //关节4最小角度
@@ -77,11 +77,11 @@ constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 constexpr float Arm_Motor1_Pos_Max = Arm_Joint1_Max / (2 * PI); //电机1最大角度
 constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min / (2 * PI); //电机1最小角度
 
-constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max / (2 * PI); //电机2最大角度
-constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min / (2 * PI); //电机2最小角度
+constexpr float Arm_Motor2_Pos_Max = Arm_Joint2_Max / (2 * PI) / 2.f * 3.f; //电机2最大角度
+constexpr float Arm_Motor2_Pos_Min = Arm_Joint2_Min / (2 * PI) / 2.f * 3.f ; //电机2最小角度
 
-constexpr float Arm_Motor3_Pos_Max = 0.0; //电机3最大角度
-constexpr float Arm_Motor3_Pos_Min = (-40.f / (2 * PI)); //电机3最小角度
+constexpr float Arm_Motor3_Pos_Max = (130 / 360.f); //电机3最大角度
+constexpr float Arm_Motor3_Pos_Min = (-40.f /360.f); //电机3最小角度
 
 constexpr float Arm_Motor4_Pos_Max = Arm_Joint4_Max / (2 * PI); //电机4最大角度
 constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min / (2 * PI); //电机4最小角度
@@ -89,8 +89,8 @@ constexpr float Arm_Motor4_Pos_Min = Arm_Joint4_Min / (2 * PI); //电机4最小�
 constexpr float Arm_Motor5_Pos_Max = Arm_Joint5_Max / (2 * PI); //电机5最大角度
 constexpr float Arm_Motor5_Pos_Min = Arm_Joint5_Min / (2 * PI); //电机5最小角度
 
-constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max / (2 * PI); //电机6最大角度
-constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI); //电机6最小角度
+constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max / (2 * PI) * (36.f * 2.f); //电机6最大角度
+constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI) * (36.f * 2.f); //电机6最小角度
 
 
 class arm_device {

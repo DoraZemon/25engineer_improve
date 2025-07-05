@@ -1,16 +1,8 @@
-/**
-  ******************************************************************************
-  * @file           : user_lib.cpp
-  * @author         : 34147
-  * @brief          : None
-  * @attention      : None
-  * @date           : 25-5-31
-  ******************************************************************************
-  */
-
+//
+// Created by 34147 on 2023/11/13.
+//
 
 #include "user_lib.h"
-
 
 /**
  * @brief 将输入变量x的值限制在min和max之间，改变其原值
@@ -76,19 +68,4 @@ float limited_val(float val, float min, float max) {
 void low_pass(float &target, float current, float alpha) {
     float tmp = current - target;
     target = target + alpha * tmp;
-}
-
-
-int float_to_uint(float x_float, float x_min, float x_max, int bits) {
-    /// Converts a float to an unsigned int, given range and number of bits ///
-    float span = x_max - x_min;
-    float offset = x_min;
-    return (int) ((x_float - offset) * ((float) ((1 << bits) - 1)) / span);
-}
-
-float uint_to_float(int x_int, float x_min, float x_max, int bits) {
-    /// converts unsigned int to float, given range and number of bits ///
-    float span = x_max - x_min;
-    float offset = x_min;
-    return ((float) x_int) * span / ((float) ((1 << bits) - 1)) + offset;
 }
