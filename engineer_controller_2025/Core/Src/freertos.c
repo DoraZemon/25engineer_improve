@@ -318,7 +318,7 @@ void StartDefaultTask(void *argument)
 
 /* USER CODE BEGIN Header_FDCAN1Send_Task */
 /**
-* @brief Function implementing the FDCAN1_Send_Tas thread.
+* @brief Function implementing th/e FDCAN1_Send_Tas thread.
 * @param argument: Not used
 * @retval None
 */

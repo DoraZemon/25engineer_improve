@@ -33,11 +33,10 @@ void pump_device::start_dma() {
 
 void pump_device::update_data() {
     for (int i = 0; i < 3; i++) {
-        filtered_buff[i] = uint16_t(float(adc_buff[i]) * 0.2f + float(last_buff[i]) * 0.8f);
+        filtered_buff[i] = uint16_t(float(adc_buff[i]) * 0.05f + float(last_buff[i]) * 0.95f);
         last_buff[i] = filtered_buff[i];
     }
 
-    //todo 判断泵是否吸住
     judge_pump_holding(arm_pump_judge_holding, filtered_buff[2], data.pump_open_state.arm);
     judge_pump_holding(left_pump_judge_holding, filtered_buff[1], data.pump_open_state.left);
     judge_pump_holding(right_pump_judge_holding, filtered_buff[0], data.pump_open_state.right);

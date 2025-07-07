@@ -26,7 +26,7 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 }
 #endif
 //C++
-#define MAX_CAN_DEVICE_NUM (8)//与cube 中fdcan的配置有关,fifo个数
+#define MAX_CAN_DEVICE_NUM (16)//与cube 中fdcan的配置有关,fifo个数
 
 #include <functional>
 #include "compatible.h"
@@ -34,8 +34,8 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 
 class fdcan_device_t {
  public:
-  static fdcan_device_t *can_device_list[3][MAX_CAN_DEVICE_NUM];
-  static uint32_t can_device_num[3];
+  static fdcan_device_t *can_device_list[2][MAX_CAN_DEVICE_NUM];
+  static uint32_t can_device_num[2];
   static FDCAN_FilterTypeDef FDCAN_FilterInitStructure;
 
   std::function<void(uint8_t *)> rx_callback;

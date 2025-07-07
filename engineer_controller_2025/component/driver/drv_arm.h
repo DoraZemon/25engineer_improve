@@ -24,22 +24,22 @@ extern "C" {
 #include "drv_dji_motor.h"
 #include "drv_lh_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.7548f; //电机1偏置
-constexpr float Arm_Motor2_Offset = 0.7938f; //电机2偏置
-constexpr float Arm_Motor3_Offset = 0.3850f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.9986f; //电机4偏置
-constexpr float Arm_Motor5_Offset = -0.4414f; //电机5偏置
-constexpr float Arm_Motor6_Offset = 0.3184f; //电机6偏置
+constexpr float Arm_Motor1_Offset = 0.3350f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.1577f; //电机2偏置
+constexpr float Arm_Motor3_Offset = 0.f; //电机3偏置
+constexpr float Arm_Motor4_Offset = 0.2648f; //电机4偏置
+constexpr float Arm_Motor5_Offset = 0.0634f; //电机5偏置
+constexpr float Arm_Motor6_Offset = -0.0975f; //电机6偏置
 
 #define Arm_Motor1_Can (hfdcan1)
 
 #define Arm_Motor2_Can (hfdcan2)
 #define Arm_Motor3_Can (hfdcan2)
 #define Arm_Motor4_Can (hfdcan2)
-#define Arm_Motor5_Can (hfdcan2)
-#define Arm_Motor6_Can (hfdcan2)
+#define Arm_Motor5_Can (hfdcan3)
+#define Arm_Motor6_Can (hfdcan3)
 
-constexpr uint32_t Arm_Motor1_Id = 2;
+constexpr uint32_t Arm_Motor1_Id = 4;
 
 constexpr uint32_t Arm_Motor2_Id = 0x01;
 

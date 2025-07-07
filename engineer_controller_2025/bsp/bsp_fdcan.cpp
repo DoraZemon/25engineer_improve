@@ -15,13 +15,13 @@
 
 #define CAN_SEND 1
 
-fdcan_device_t *fdcan_device_t::can_device_list[3][MAX_CAN_DEVICE_NUM] = {0};
+fdcan_device_t *fdcan_device_t::can_device_list[2][MAX_CAN_DEVICE_NUM] = {0};
 
 FDCAN_FilterTypeDef fdcan_device_t::FDCAN_FilterInitStructure = {
     .FilterType = FDCAN_FILTER_MASK,
 };
 
-uint32_t fdcan_device_t::can_device_num[3] = {0};
+uint32_t fdcan_device_t::can_device_num[2] = {0};
 
 
 void fdcan_device_t::init_tx(FDCAN_HandleTypeDef *hfdcan_, uint32_t len, uint32_t id, uint8_t *buff) {
@@ -87,7 +87,6 @@ void FDCAN2Send_Task(void *argument) {
     tx_header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
     tx_header.MessageMarker = 0;
     for (;;) {
-//        taskENTER_CRITICAL();
 //        osSemaphoreAcquire(FDCAN2CountingSemHandle, osWaitForever);
         while (HAL_FDCAN_GetTxFifoFreeLevel(&hfdcan2) == 0) {
             osDelay(1); // 等待FDCAN2的发送FIFO有空余空间
@@ -96,7 +95,6 @@ void FDCAN2Send_Task(void *argument) {
         tx_header.Identifier = msg.id;
         tx_header.DataLength = msg.len;
         HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan2, &tx_header, msg.buf_data);//加入到tx_fifo准备发送
-//        taskEXIT_CRITICAL();
     }
 }
 
@@ -104,11 +102,11 @@ void FDCAN3Send_Task(void *argument) {
     fdcan_device_transmit_member msg;
     uint32_t tx_mailbox;
     FDCAN_TxHeaderTypeDef tx_header;
-    tx_header.IdType = FDCAN_STANDARD_ID;
+    tx_header.IdType = FDCAN_EXTENDED_ID;
     tx_header.TxFrameType = FDCAN_DATA_FRAME;
     tx_header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-    tx_header.BitRateSwitch = FDCAN_BRS_OFF;
-    tx_header.FDFormat = FDCAN_CLASSIC_CAN;
+    tx_header.BitRateSwitch = FDCAN_BRS_ON;
+    tx_header.FDFormat = FDCAN_FD_CAN;
     tx_header.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
     tx_header.MessageMarker = 0;
     for (;;) {
@@ -171,16 +169,11 @@ void fdcan_device_t::init_rx(FDCAN_HandleTypeDef *hfdcan_,
         flag = true;
         FDCAN_FilterInitStructure.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
         FDCAN_FilterInitStructure.IdType = FDCAN_STANDARD_ID;
-    } else if (hfdcan == &hfdcan2) {
+    } else if (hfdcan == &hfdcan2 || hfdcan == &hfdcan3) {
         channel = 1;
         flag = true;
         FDCAN_FilterInitStructure.FilterConfig = FDCAN_FILTER_TO_RXFIFO1;
         FDCAN_FilterInitStructure.IdType = FDCAN_EXTENDED_ID;
-    } else if (hfdcan == &hfdcan3) {
-        channel = 2;
-        flag = true;
-        FDCAN_FilterInitStructure.FilterConfig = FDCAN_FILTER_TO_RXFIFO1;// FDCAN3 只使用 RX FIFO1 todo
-        FDCAN_FilterInitStructure.IdType = FDCAN_STANDARD_ID;
     }
 
     if (can_device_num[channel] < MAX_CAN_DEVICE_NUM && flag) {
@@ -196,6 +189,8 @@ void fdcan_device_t::init_rx(FDCAN_HandleTypeDef *hfdcan_,
         }else if(FDCAN_FilterInitStructure.IdType == FDCAN_EXTENDED_ID){
             FDCAN_FilterInitStructure.FilterID1 = rx_id;
             FDCAN_FilterInitStructure.FilterID2 = 0x1FFFFFFF;
+//            FDCAN_FilterInitStructure.FilterID2 = 0x000000;
+
         }
 //        FDCAN_FilterInitStructure.FilterID1 = this->rx_id << 5;//mask模式下只允许过滤这一个目标ID每一个过滤器
 //        FDCAN_FilterInitStructure.FilterID1 = 0000;//mask模式下只允许过滤这一个目标ID每一个过滤器
@@ -250,13 +245,14 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     if (hfdcan == &hfdcan3) {
 
         uint32_t index = rx_header.FilterIndex;
-        fdcan_device_t *device = fdcan_device_t::can_device_list[2][index];
+        fdcan_device_t *device = fdcan_device_t::can_device_list[1][index];
         if (device && device->rx_callback) {
             device->rx_callback(rx_data);
             osSemaphoreRelease(device->rx_sem);
         }
 
     }
+//    HAL_FDCAN_ActivateNotification(hfdcan, FDCAN_IT_RX_FIFO1_NEW_MESSAGE, 0);
 
 }
 

@@ -65,7 +65,7 @@ void arm_device::init() {
                          Arm_Motor5_Offset,
                          Arm_Motor6_Offset};
 
-    motor.motor1.lqr.reset_lqr(10.0, 10.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor1.lqr.reset_lqr(45.0, 20.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor2.lqr.reset_lqr(8.0, 5.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor3.lqr.reset_lqr(8.0, 4.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor4.lqr.reset_lqr(30.0, 3.0, 0.0, 0.0, 0.0, 1.0);
@@ -166,7 +166,7 @@ void arm_device::set_joint6_compensation(float set) {
 
 
 void arm_device::set_arm_ctrl_enable(bool is_enable) {
-    is_ctrl_enable = is_enable;
+    is_ctrl_enable_from_pc = is_enable;
 }
 
 void arm_device::update_data() {
@@ -219,12 +219,12 @@ void arm_device::update_control(bool is_enable) {
 #endif
     }
 #if ARM_REMOTE_CONTROL_PROTECT
-    is_ctrl_enable = is_enable;
+    is_ctrl_enable = is_enable ;
 #endif
 
     limit_motor_pos();//限制电机位置
 
-    if (is_ctrl_enable) {
+    if (is_ctrl_enable && is_ctrl_enable_from_pc) {
 
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1 / motor.motor1.basic_info.t_max);
         motor.motor2.set_offset_current(

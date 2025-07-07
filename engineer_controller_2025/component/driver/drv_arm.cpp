@@ -28,12 +28,18 @@ void arm_device::init() {
                          Arm_Motor5_Offset,
                          Arm_Motor6_Offset};
 
-    motor.motor1.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor2.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor3.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor4.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor5.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    motor.motor6.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor1.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor2.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor3.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor4.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor5.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+//    motor.motor6.lqr.reset_lqr(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+
+    motor.motor2.velpid.pid_reset(0.3f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,0.0f,0.0f);
+    motor.motor3.velpid.pid_reset(1.f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,0.0f,0.0f);
+    motor.motor4.velpid.pid_reset(1.f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,0.0f,0.0f);
+    motor.motor5.velpid.pid_reset(1.f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,0.0f,0.0f);
+    motor.motor6.velpid.pid_reset(0.27f, 0.0f, -0.07f, 0.0f, 0.0f, 0.0f,0.0f,0.0f);
 
 
     data.motor_torque_compensation = {
@@ -54,8 +60,30 @@ void arm_device::init() {
         Arm_Motor6_Compensation_Angle_Offset
     };
 
-    while (!motor.motor1.is_zero_offset || !motor.motor2.is_zero_offset || !motor.motor3.is_zero_offset ||
-           !motor.motor4.is_zero_offset || !motor.motor5.is_zero_offset || !motor.motor6.is_zero_offset) {
+//    while (!motor.motor1.is_zero_offset || !motor.motor2.is_zero_offset || !motor.motor3.is_zero_offset ||
+//           !motor.motor4.is_zero_offset || !motor.motor5.is_zero_offset || !motor.motor6.is_zero_offset) {
+//        osDelay(10);
+//    }
+
+    motor.motor2.disable();
+    motor.motor3.disable();
+    motor.motor4.disable();
+    motor.motor5.disable();
+    motor.motor6.disable();
+
+    for(int i = 0; i < 15; i++) {
+        send_msg();
+        osDelay(10);
+    }
+
+    motor.motor2.enable();
+    motor.motor3.enable();
+    motor.motor4.enable();
+    motor.motor5.enable();
+    motor.motor6.enable();
+
+    for(int i = 0; i < 15; i++) {
+        send_msg();
         osDelay(10);
     }
 
@@ -64,7 +92,7 @@ void arm_device::init() {
     motor.motor3.reset_total_rounds_zero_offset(motor.motor3.get_current_round() - data.motor_offset.motor3);
     motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
     motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
-    motor.motor6.reset_total_rounds_zero_offset(motor.motor6.get_current_round() - data.motor_offset.motor6);
+    motor.motor6.reset_total_rounds_zero_offset(0.f);
 
 }
 
@@ -78,11 +106,11 @@ void arm_device::update_data() {
     data.motor_pos_get.motor6 = motor.motor6.get_total_rounds();
 
     data.joint_states.joint1 = data.motor_pos_get.motor1 * 2 * PI;
-    data.joint_states.joint2 = data.motor_pos_get.motor2 / 180.f * PI;
-    data.joint_states.joint3 = data.motor_pos_get.motor3 / 180.f * PI;
-    data.joint_states.joint4 = data.motor_pos_get.motor4 / 180.f * PI;
-    data.joint_states.joint5 = data.motor_pos_get.motor5 / 180.f * PI;
-    data.joint_states.joint6 = data.motor_pos_get.motor6 / 180.f * PI;
+    data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI;
+    data.joint_states.joint3 = data.motor_pos_get.motor3 * 2 * PI;
+    data.joint_states.joint4 = data.motor_pos_get.motor4 * 2 * PI;
+    data.joint_states.joint5 = data.motor_pos_get.motor5 * 2 * PI;
+    data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI;
 
     motor.motor1.update_ready();
     motor.motor2.update_ready();
@@ -160,12 +188,40 @@ void arm_device::update_control(bool is_enable) {
 }
 
 void arm_device::send_msg() {
-    motor.motor1.send_can_msg();
-    motor.motor2.send_control();
-    motor.motor3.send_control();
-    motor.motor4.send_control();
-    motor.motor5.send_control();
-    motor.motor6.send_control();
+//    motor.motor1.send_can_msg();
+
+
+    static uint32_t hfdcan2_send_cnt = 0;
+
+    static uint32_t hfdcan3_send_cnt = 0;
+
+    if(hfdcan2_send_cnt % 3 == 0){
+        motor.motor2.request_feedback();
+        motor.motor2.send_control();
+    }else if(hfdcan2_send_cnt % 3 == 1) {
+        motor.motor3.request_feedback();
+        motor.motor3.send_control();
+    }else{
+        motor.motor4.request_feedback();
+        motor.motor4.send_control();
+    }
+
+    hfdcan2_send_cnt ++;
+    hfdcan2_send_cnt = hfdcan2_send_cnt % 15; //每10次发送一次
+
+
+    if(hfdcan3_send_cnt % 2 == 0){
+        motor.motor5.send_control();
+        motor.motor5.request_feedback();
+
+    }else {
+        motor.motor6.send_control();
+        motor.motor6.request_feedback();
+    }
+
+    hfdcan3_send_cnt ++;
+    hfdcan3_send_cnt = hfdcan2_send_cnt % 10; //每10次发送一次
+
 }
 
 

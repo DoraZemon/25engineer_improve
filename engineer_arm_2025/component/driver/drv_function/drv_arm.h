@@ -24,7 +24,7 @@ extern "C" {
 #include "median_filter.h"
 #include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.9474f; //电机1偏置
+constexpr float Arm_Motor1_Offset = 0.97081f; //电机1偏置
 constexpr float Arm_Motor2_Offset = -0.5394f; //电机2偏置
 constexpr float Arm_Motor3_Offset = -0.2276f; //电机3偏置
 constexpr float Arm_Motor4_Offset = 0.2413f; //电机4偏置
@@ -113,6 +113,8 @@ class arm_device {
   };
 
   bool is_ctrl_enable = true;
+
+  bool is_ctrl_enable_from_pc = true;
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
 

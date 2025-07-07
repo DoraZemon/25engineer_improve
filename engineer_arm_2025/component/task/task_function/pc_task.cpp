@@ -26,11 +26,13 @@ void pc_receive_task(void *argument) {
     static osStatus_t pc_status;
     osSemaphoreAcquire(PCUpdateBinarySemHandle, 0);
     for (;;) {
-        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 100);
+        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 500);
 
         if (pc_status == osOK) {
             g_pc.set_connected();
             memcpy(&g_pc.rx_data, pc_raw_data, sizeof(g_pc.rx_data));
+            g_pc.update_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
+
         } else {
             g_pc.set_lost();
         }
@@ -41,8 +43,7 @@ void pc_receive_task(void *argument) {
 void pc_transmit_task(void *argument) {
     osDelay(1000);
     for (;;) {
-        g_pc.update_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
-        g_pc.transmit_data();
+        g_pc.transmit_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
         osDelay(1); // Delay for demonstration purposes
     }
 }

@@ -76,13 +76,13 @@ class communicate_device {
   bool is_lost = true; //是否丢失
   uint32_t lost_num = 0;
   struct {
-    bool is_arm_pump_open;
-    bool is_left_pump_open;
-    bool is_right_pump_open;
+    bool is_arm_pump_open = false;
+    bool is_left_pump_open = false;
+    bool is_right_pump_open = false;
     bool is_rc_online; //遥控器是否在线
-    int16_t speed_x; //速度X
-    int16_t speed_y; //速度Y
-    int8_t speed_spin; //旋转速度
+    int16_t speed_x = 0; //速度X
+    int16_t speed_y = 0; //速度Y
+    int8_t speed_spin = 0; //旋转速度
 
     bool is_arm_pump_holding;
     bool is_left_pump_holding;

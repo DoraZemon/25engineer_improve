@@ -35,9 +35,9 @@ void communicate_device::update(chassis_device &chassis, pump_device &pump) {
     pump.set_left_pump_open_state(data.is_left_pump_open);
     pump.set_right_pump_open_state(data.is_right_pump_open);
 
-        chassis.set_speed_x(data.speed_x);
-        chassis.set_speed_y(data.speed_y);
-        chassis.set_speed_spin(data.speed_spin);
+    chassis.set_speed_x(data.speed_x);
+    chassis.set_speed_y(data.speed_y);
+    chassis.set_speed_spin(data.speed_spin);
 
 }
 

@@ -17,12 +17,13 @@
 void lh_motor_device::init(FDCAN_HandleTypeDef *hfdcan_,
                            uint32_t id_,
                            bool is_reverse_,
-                           lh_motor_device::control_mode_e control_mode,
+                           lh_motor_device::control_mode_e control_mode_,
                            osSemaphoreId_t rx_sem_) {
     hfdcan = hfdcan_;
     id = id_;
     is_reverse = is_reverse_;
-    motor_state = ENABLED;
+    motor_state = DISABLED;
+    control_mode = control_mode_;
     this->fdcan_device.init_rx(hfdcan_,
                                id_ + FEEDBACK_OFFSET + REQUEST_FEEDBACK,
                                std::bind(&lh_motor_device::update_data, this, std::placeholders::_1),
@@ -86,6 +87,10 @@ void lh_motor_device::update_data(uint8_t *can_rx_data) {
     data.total_rounds_without_offset =
         (float) data.round_cnt * 360.f + data.current_round;
 
+    data.current_round /= 360.f;
+    data.total_rounds /= 360.f;
+    data.total_rounds_without_offset /= 360.f;
+
     data.fb_torque_current = raw_data.current;
     data.fb_voltage = raw_data.voltage / 10.f;
     data.temperature = raw_data.temperature / 10.f;
@@ -94,14 +99,14 @@ void lh_motor_device::update_data(uint8_t *can_rx_data) {
 void lh_motor_device::check_motor_for_loss() {
 
     osStatus_t stat;
-    stat = osSemaphoreAcquire(fdcan_device.rx_sem, 50);
+    stat = osSemaphoreAcquire(fdcan_device.rx_sem, 1000);
     if (stat != osOK) {
         // 超时，认为电机丢失
         is_lost = true;
     } else {
-        if(is_lost){
+//        if(is_lost){
             is_lost = false;
-        }
+//        }
     }
 
 }

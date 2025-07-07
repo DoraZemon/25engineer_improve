@@ -74,10 +74,10 @@ class communicate_device {
     bool is_arm_pump_open;
     bool is_left_pump_open;
     bool is_right_pump_open;
-    bool is_rc_online; //遥控器是否在线
-    float speed_x; //速度X
-    float speed_y; //速度Y
-    float speed_spin; //旋转速度
+    bool is_rc_online = false; //遥控器是否在线
+    float speed_x = 0.f; //速度X
+    float speed_y = 0.f; //速度Y
+    float speed_spin = 0.f; //旋转速度
 
     bool is_arm_pump_holding;
     bool is_left_pump_holding;

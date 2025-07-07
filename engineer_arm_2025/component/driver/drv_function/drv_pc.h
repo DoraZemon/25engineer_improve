@@ -158,7 +158,11 @@ class pc_device {
                    controller_device &controller,
                    communicate_device &communicate,
                    dm_imu_device &imu, gimbal_device &gimbal); //更新数据
-  void transmit_data(); //发送数据到PC
+  void transmit_data(rc_device &rc,
+                     arm_device &arm,
+                     controller_device &controller,
+                     communicate_device &communicate,
+                     dm_imu_device &imu, gimbal_device &gimbal); //发送数据到PC
   void set_lost();
 
   void set_connected();

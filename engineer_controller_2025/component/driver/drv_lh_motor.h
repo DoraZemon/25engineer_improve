@@ -189,7 +189,6 @@ class lh_motor_device {
       ctrl_data.pos = 0.0f;
       ctrl_data.vel = 0.0f;
       ctrl_data.current = 0.0f;
-      send_control();
   }
 
   void enable() {
@@ -197,7 +196,6 @@ class lh_motor_device {
       ctrl_data.pos = 0.0f;
       ctrl_data.vel = 0.0f;
       ctrl_data.current = 0.0f;
-      send_control();
   }
 
   void set_control_mode(control_mode_e mode) {

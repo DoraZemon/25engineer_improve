@@ -1084,6 +1084,7 @@
 			<member name="item1042" type="CObject_ptr">ObjId2596</member>
 			<member name="item1043" type="CObject_ptr">ObjId2597</member>
 			<member name="item1044" type="CObject_ptr">ObjId2598</member>
+			<member name="item1045" type="CObject_ptr">ObjId2780</member>
 		</object>
 		<object name="ObjId0828" type="CVariable">
 			<member name="name" type="string">g_controller.raw_data.joint1</member>
@@ -49502,7 +49503,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_arm.is_lost</member>
-			<member name="last_addr" type="uint32">0x20023F6A</member>
+			<member name="last_addr" type="uint32">0x20023F6B</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -49600,7 +49601,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_arm.is_enable_last</member>
-			<member name="last_addr" type="uint32">0x20023F69</member>
+			<member name="last_addr" type="uint32">0x20023F6A</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -50391,7 +50392,7 @@
 			<member name="virtual" type="sint32">0</member>
 			<member name="virtual_default" type="string">0</member>
 			<member name="treat_as" type="sint32">2</member>
-			<member name="type_fmt" type="string"/>
+			<member name="type_fmt" type="string">IEEE floating point</member>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -50400,7 +50401,7 @@
 			<member name="enum_default_val" type="string">unknown</member>
 			<member name="enum_num_with_default" type="sint32">1</member>
 			<member name="enum" type="string"/>
-			<member name="show_as" type="sint32">0</member>
+			<member name="show_as" type="sint32">4</member>
 			<member name="show_val" type="sint32">1</member>
 			<member name="show_max" type="sint32">0</member>
 			<member name="show_min" type="sint32">0</member>
@@ -50415,9 +50416,9 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
-			<member name="modif_set_mode" type="sint32">0</member>
+			<member name="modif_set_mode" type="sint32">1</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
 			<member name="modif_auto_hide" type="sint32">1</member>
 			<member name="modif_predefs_modes" type="uint32">0x1</member>
@@ -52290,6 +52291,55 @@
 			<member name="modif_address" type="string"/>
 			<member name="modif_last_addr" type="uint32">0x0</member>
 		</object>
+		<object name="ObjId2780" type="CVariable">
+			<member name="name" type="string">g_pc.rx_data.arm_ctrl_enable</member>
+			<member name="unit" type="string">unit</member>
+			<member name="period" type="sint32">1000</member>
+			<member name="address" type="string">g_pc.rx_data.arm_ctrl_enable</member>
+			<member name="last_addr" type="uint32">0x20024EE7</member>
+			<member name="byte_size" type="sint32">1</member>
+			<member name="description" type="string"/>
+			<member name="comment" type="string"/>
+			<member name="virtual" type="sint32">0</member>
+			<member name="virtual_default" type="string">0</member>
+			<member name="treat_as" type="sint32">0</member>
+			<member name="type_fmt" type="string"/>
+			<member name="bit_shift" type="sint32">0</member>
+			<member name="bit_mask" type="string">no mask (-1)</member>
+			<member name="value_trf" type="CObject_ptr">NULL</member>
+			<member name="enum_enabled" type="sint32">0</member>
+			<member name="enum_num_always" type="sint32">0</member>
+			<member name="enum_default_val" type="string">unknown</member>
+			<member name="enum_num_with_default" type="sint32">1</member>
+			<member name="enum" type="string"/>
+			<member name="show_as" type="sint32">0</member>
+			<member name="show_val" type="sint32">1</member>
+			<member name="show_max" type="sint32">0</member>
+			<member name="show_min" type="sint32">0</member>
+			<member name="show_num_fixed_digs" type="sint32">2147483647</member>
+			<member name="show_num_lzero_fill" type="sint32">0</member>
+			<member name="show_num_afp_digs" type="sint32">2147483647</member>
+			<member name="show_num_exp" type="sint32">0</member>
+			<member name="show_ascii_zterm" type="sint32">0</member>
+			<member name="show_ascii_rev" type="sint32">0</member>
+			<member name="show_ascii_hex" type="sint32">1</member>
+			<member name="show_ascii_chwdt" type="sint32">1</member>
+			<member name="filt_enabled" type="sint32">0</member>
+			<member name="filt_reset_onmod" type="sint32">1</member>
+			<member name="filt_time" type="uint32">0x1388</member>
+			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_edit_mode" type="sint32">2</member>
+			<member name="modif_set_mode" type="sint32">0</member>
+			<member name="modif_auto_fin" type="sint32">1</member>
+			<member name="modif_auto_hide" type="sint32">1</member>
+			<member name="modif_predefs_modes" type="uint32">0x1</member>
+			<member name="modif_predefs_other" type="string"/>
+			<member name="modif_set_min" type="string"/>
+			<member name="modif_set_max" type="string"/>
+			<member name="modif_set_step" type="string"/>
+			<member name="modif_address" type="string"/>
+			<member name="modif_last_addr" type="uint32">0x0</member>
+		</object>
 		<object name="ObjId0970" type="CObList"/>
 		<object name="ObjId0971" type="CObList"/>
 		<object name="ObjId0972" type="CMapWordToOb"/>
@@ -52391,6 +52441,7 @@
 			<member name="item3" type="CObject_ptr">ObjId0871</member>
 			<member name="item4" type="CObject_ptr">ObjId0869</member>
 			<member name="item5" type="CObject_ptr">ObjId0874</member>
+			<member name="item6" type="CObject_ptr">ObjId2780</member>
 		</object>
 		<object name="ObjId0988" type="CObList"/>
 		<object name="ObjId0989" type="CObList">
@@ -52584,33 +52635,33 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId1004" type="CObArray" length="5">
-			<member name="index0" type="CObject_ptr">ObjId1235</member>
-			<member name="index1" type="CObject_ptr">ObjId1236</member>
-			<member name="index2" type="CObject_ptr">ObjId1237</member>
-			<member name="index3" type="CObject_ptr">ObjId1238</member>
-			<member name="index4" type="CObject_ptr">ObjId1239</member>
+			<member name="index0" type="CObject_ptr">ObjId2781</member>
+			<member name="index1" type="CObject_ptr">ObjId2782</member>
+			<member name="index2" type="CObject_ptr">ObjId2783</member>
+			<member name="index3" type="CObject_ptr">ObjId2784</member>
+			<member name="index4" type="CObject_ptr">ObjId2785</member>
 		</object>
-		<object name="ObjId1235" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2781" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">205</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId1236" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2782" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId1237" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2783" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId1238" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2784" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">70</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
-		<object name="ObjId1239" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2785" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">200</member>
 			<member name="column_ix" type="sint32">4</member>
@@ -52628,6 +52679,8 @@
 			<member name="value4" type="CObject_ptr">ObjId1248</member>
 			<member name="key5" type="CObject_ptr">ObjId0874</member>
 			<member name="value5" type="CObject_ptr">ObjId1250</member>
+			<member name="key6" type="CObject_ptr">ObjId2780</member>
+			<member name="value6" type="CObject_ptr">ObjId2786</member>
 		</object>
 		<object name="ObjId1240" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
@@ -52659,6 +52712,11 @@
 			<member name="row_cell_formats" type="CObArrayEx">ObjId1251</member>
 		</object>
 		<object name="ObjId1251" type="CObArray" length="0"/>
+		<object name="ObjId2786" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId2787</member>
+		</object>
+		<object name="ObjId2787" type="CObArray" length="0"/>
 		<object name="ObjId1878" type="CPrjItemScope">
 			<member name="parent_item" type="CObject_ptr">ObjId0982</member>
 			<member name="tree_expand" type="sint32">1</member>
@@ -53329,6 +53387,7 @@
 			<member name="item10" type="CObject_ptr">ObjId2160</member>
 			<member name="item11" type="CObject_ptr">ObjId2174</member>
 			<member name="item12" type="CObject_ptr">ObjId2168</member>
+			<member name="item13" type="CObject_ptr">ObjId2554</member>
 		</object>
 		<object name="ObjId1074" type="CObList"/>
 		<object name="ObjId1075" type="CObList">
@@ -53353,19 +53412,20 @@
 			<member name="graph_x_max" type="real64">1.00000000000000000000e+002</member>
 			<member name="graph_x_min_auto" type="sint32">1</member>
 			<member name="graph_x_max_auto" type="sint32">1</member>
-			<member name="graph_var_count" type="sint32">4</member>
-			<member name="var_count" type="sint32">4</member>
+			<member name="graph_var_count" type="sint32">5</member>
+			<member name="var_count" type="sint32">5</member>
 			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId1077</member>
 			<member name="var1_info" type="CPrjItemRS_VarInfo">ObjId1078</member>
 			<member name="var2_info" type="CPrjItemRS_VarInfo">ObjId2599</member>
 			<member name="var3_info" type="CPrjItemRS_VarInfo">ObjId2600</member>
+			<member name="var4_info" type="CPrjItemRS_VarInfo">ObjId2772</member>
 			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId1079</member>
 			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId1080</member>
 			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId1081</member>
 			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId1082</member>
 			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId1083</member>
 			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId1084</member>
-			<member name="scope_period" type="real64">1.00000000000000010000e-001</member>
+			<member name="scope_period" type="real64">0.00000000000000000000e+000</member>
 			<member name="scope_x_autoscale" type="sint32">1</member>
 			<member name="scope_x_width" type="real64">1.00000000000000000000e+001</member>
 			<member name="scope_ignore_duplicity" type="sint32">0</member>
@@ -53399,6 +53459,12 @@
 			<member name="visible" type="sint32">1</member>
 			<member name="y_block" type="sint32">1</member>
 			<member name="color" type="uint32">0x227DF3</member>
+		</object>
+		<object name="ObjId2772" type="CPrjItemRS_VarInfo">
+			<member name="variable" type="CObject_ptr">ObjId0883</member>
+			<member name="visible" type="sint32">1</member>
+			<member name="y_block" type="sint32">1</member>
+			<member name="color" type="uint32">0x912C66</member>
 		</object>
 		<object name="ObjId1079" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">0</member>
@@ -53508,33 +53574,33 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId1086" type="CObArray" length="5">
-			<member name="index0" type="CObject_ptr">ObjId2601</member>
-			<member name="index1" type="CObject_ptr">ObjId2602</member>
-			<member name="index2" type="CObject_ptr">ObjId2603</member>
-			<member name="index3" type="CObject_ptr">ObjId2604</member>
-			<member name="index4" type="CObject_ptr">ObjId2605</member>
+			<member name="index0" type="CObject_ptr">ObjId2773</member>
+			<member name="index1" type="CObject_ptr">ObjId2774</member>
+			<member name="index2" type="CObject_ptr">ObjId2775</member>
+			<member name="index3" type="CObject_ptr">ObjId2776</member>
+			<member name="index4" type="CObject_ptr">ObjId2777</member>
 		</object>
-		<object name="ObjId2601" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2773" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">334</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId2602" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2774" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId2603" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2775" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId2604" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2776" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">70</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
-		<object name="ObjId2605" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId2777" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">200</member>
 			<member name="column_ix" type="sint32">4</member>
@@ -53566,6 +53632,8 @@
 			<member name="value11" type="CObject_ptr">ObjId2465</member>
 			<member name="key12" type="CObject_ptr">ObjId2447</member>
 			<member name="value12" type="CObject_ptr">ObjId2628</member>
+			<member name="key13" type="CObject_ptr">ObjId2554</member>
+			<member name="value13" type="CObject_ptr">ObjId2778</member>
 		</object>
 		<object name="ObjId2606" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
@@ -53632,6 +53700,11 @@
 			<member name="row_cell_formats" type="CObArrayEx">ObjId2629</member>
 		</object>
 		<object name="ObjId2629" type="CObArray" length="0"/>
+		<object name="ObjId2778" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId2779</member>
+		</object>
+		<object name="ObjId2779" type="CObArray" length="0"/>
 		<object name="ObjId1093" type="CPrjItemBlock">
 			<member name="parent_item" type="CObject_ptr">ObjId1068</member>
 			<member name="tree_expand" type="sint32">1</member>

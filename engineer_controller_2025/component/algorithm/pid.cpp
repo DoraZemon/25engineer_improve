@@ -71,7 +71,7 @@ float pid::pid_calculate_for_iout(float set_, float get_) {
 }
 
 void pid::pid_reset(float max_out, float integral_limit, float kp, float ki, float kd, float ap, float bp, float cp) {
-    if (kp >= 0)param.p = kp;
+    param.p = kp;
     if (fabsf(ki) <= 1e-9) {
         param.i = 0;
         iout = 0;

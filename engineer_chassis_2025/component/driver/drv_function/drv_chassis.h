@@ -40,9 +40,9 @@ extern "C" {
 
 
 struct chassis_velocity_t {
-  float speedX;
-  float speedY;
-  float speedSpin;
+  float speedX = 0.0f;
+  float speedY = 0.0f;
+  float speedSpin = 0.0f;
 };
 
 
