@@ -26,6 +26,6 @@ void communicate_task(void *argument) {
 #else
         g_communicate.send_msg();
 #endif
-        osDelay(3);
+        osDelay(9);
     }
 }

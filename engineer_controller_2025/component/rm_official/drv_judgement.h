@@ -119,9 +119,12 @@ class judgement_device {
 
   //图传链路
   uint8_t *protocol_packet_pack_image_tran_chain(uint16_t cmd_id, uint8_t *p_data, uint16_t len, uint8_t *_tx_buf);
+
   void data_packet_pack_image_tran_chain(uint16_t cmd_id, uint8_t *p_data, uint16_t len);
+
   uint8_t *protocol_packet_pack_conventional_chain(uint16_t cmd_id, uint8_t *p_data, uint16_t len, uint8_t *_tx_buf,
                                                    ext_student_interactive_header_data_t _student_interactive_header);
+
   void data_packet_pack_conventional_chain(uint16_t cmd_id, uint8_t *p_data, uint16_t len,
                                            ext_student_interactive_header_data_t _student_interactive_header);
 

@@ -24,14 +24,61 @@ extern "C" {
 #endif
 //C++
 
+#include "drv_pc.h"
 typedef struct {
+  struct{
+    float joint1;
+    float joint2;
+    float joint3;
+    float joint4;
+    float joint5;
+    float joint6;
+  }joint_states;
 
+  struct{
+    bool is_arm_pump_on;
+    bool is_left_pump_on;
+    bool is_right_pump_on;
+    bool is_arm_pump_holding;
+    bool is_left_pump_holding;
+    bool is_right_pump_holding;
+  }pump_states;
+
+  robot_error_u error;
+  robot_auto_situation_e auto_situation ;
 
 } ui_data_t;
 
 class ui_device {
  private:
   judgement_device *judgement;
+
+  const std::string error_types[none + 1] = {
+      "remote" ,
+      "pc",
+      "comm",
+      "arm1",
+      "arm2",
+      "arm3",
+      "arm4",
+      "arm5",
+      "arm6",
+      "imu",
+      "chas1",
+      "chas2",
+      "chas3",
+      "chas4",
+      "none",};
+
+  const std::string auto_situations[arm_homing + 1] = {
+      "NO",
+      "SI",
+      "BI",
+      "EX",
+      "CT",
+      "GM",
+      "AH"
+  };
 
  public:
 /*----------------------------------绘制UI所需要的数据---------------------------*/
@@ -55,8 +102,17 @@ class ui_device {
 
   void update_data_send();
 
-  void update_data();
+  void update_data(pc_device & pc);
 
+  robot_error_type get_error_type() ;
+
+  void ptr_init(judgement_device *judgement_ptr);
+
+  void draw_arm(ui_operation operation_);
+
+  void draw_assistant(ui_operation operation_);
+
+  void draw_pump(ui_operation operation_);
 
   void add();
 
@@ -65,8 +121,6 @@ class ui_device {
   void send();
 
   void clear_all_UI();
-
-  void draw_bead(enum ui_operation _operation);
 
   void character_update(ext_client_custom_character_t *_character);
 

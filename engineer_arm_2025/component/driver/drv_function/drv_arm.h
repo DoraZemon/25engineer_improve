@@ -24,7 +24,7 @@ extern "C" {
 #include "median_filter.h"
 #include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.97081f; //电机1偏置
+constexpr float Arm_Motor1_Offset = 0.1519f; //电机1偏置
 constexpr float Arm_Motor2_Offset = -0.5394f; //电机2偏置
 constexpr float Arm_Motor3_Offset = -0.2276f; //电机3偏置
 constexpr float Arm_Motor4_Offset = 0.2413f; //电机4偏置
@@ -62,7 +62,7 @@ constexpr float Arm_Joint1_Max = 2.98f; //关节1最大角度
 constexpr float Arm_Joint2_Min = 0.0f; //关节2最小角度
 constexpr float Arm_Joint2_Max = 2.47f; //关节2最大角度
 
-constexpr float Arm_Joint3_Min = -1.65f; //关节3最小角度
+constexpr float Arm_Joint3_Min = -1.91f; //关节3最小角度
 constexpr float Arm_Joint3_Max = 0.0f; //关节3最大角度
 
 constexpr float Arm_Joint4_Min = -6.28f; //关节4最小角度

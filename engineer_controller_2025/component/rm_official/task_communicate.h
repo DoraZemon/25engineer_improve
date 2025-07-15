@@ -21,6 +21,7 @@ void judge_power_UartTxCpltCallBack(UART_HandleTypeDef *huart);
 #include "drv_data_fifo.h"
 #include "drv_judgement.h"
 #include "judgement.h"
+#include "globalcfg.h"
 
 #define UART_TX_SIGNAL      ( 1 << 2 )
 #define UART_IDLE_SIGNAL    ( 1 << 1 )

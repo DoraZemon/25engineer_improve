@@ -45,6 +45,18 @@ enum robot_error_type {
   chassis_motor4,
   none,
 };
+
+enum robot_auto_situation_e{
+  auto_none = 0, //无自动
+  small_island, //小岛
+    big_island, //大岛
+    exchange,
+    controller,
+    ground_mine,
+    arm_homing,
+};
+
+
 #pragma pack(1)
 union robot_error_u {
   uint32_t code;
@@ -137,6 +149,7 @@ struct pc_rx_data_t {
   uint8_t arm_ctrl_enable; //机械臂使能
   int16_t gimbal_yaw;
   int16_t gimbal_pitch;
+  uint8_t auto_situation; //自动情况
   uint8_t frame_tail; //帧尾
 };
 #pragma pack()
@@ -152,6 +165,7 @@ class pc_device {
   pc_rx_data_t rx_data; //PC接收数据
 
   robot_error_u error;
+  robot_auto_situation_e auto_situation ;
 
   void update_data(rc_device &rc,
                    arm_device &arm,

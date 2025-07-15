@@ -21,18 +21,19 @@ extern dm_imu_device g_imu;
 extern gimbal_device g_gimbal;
 
 pc_device g_pc;
+uint32_t flag;
 
 void pc_receive_task(void *argument) {
     static osStatus_t pc_status;
     osSemaphoreAcquire(PCUpdateBinarySemHandle, 0);
     for (;;) {
-        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 500);
+        pc_status = osSemaphoreAcquire(PCUpdateBinarySemHandle, 10000);
 
         if (pc_status == osOK) {
             g_pc.set_connected();
             memcpy(&g_pc.rx_data, pc_raw_data, sizeof(g_pc.rx_data));
             g_pc.update_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
-
+            flag++;
         } else {
             g_pc.set_lost();
         }

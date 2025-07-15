@@ -3,8 +3,10 @@
 //
 #include "drv_controller.h"
 #include "task_communicate.h"
-//#include "drv_ui.h"
+#include "drv_ui.h"
 #include "GlobalCfg.h"
+#include "drv_pc.h"
+
 
 const osMutexAttr_t judge_power_rxdata_mutex_attr = {
     .name = "judge_power_rxdata_mutex"
@@ -24,9 +26,11 @@ const osMutexAttr_t judge_transfer_txdata_mutex_attr = {
 
 judgement_device g_judgement_power;//电管
 judgement_device g_judgment_transfer;//图传
-//ui_device g_ui;
+ui_device g_ui;
 
 extern controller_device g_controller;
+
+extern pc_device g_pc;
 
 //读+写（电管）
 void judgeCtrl_task(void *argument) {
@@ -81,17 +85,18 @@ void judge_power_UartTxCpltCallBack(UART_HandleTypeDef *huart) {
 #if DRAW_UI
 
 //用来存储绘制UI数据
-//void updateUIData_task(void *argument) {
-//    osDelay(1000);
-//    osSemaphoreAcquire(judgementInitBinarySemHandle, osWaitForever);//防止未初始化即进入
-//    osDelay(2000);
-//    g_ui.ptr_init(&g_robot, &g_judgement_power);
-//    for (;;) {
-//        g_ui.update_data_send();
-//        osEventFlagsSet(refereeEventHandle, UART_TX_SIGNAL);
-//        osDelay(20);
-//    }
-//}
+void updateUIData_task(void *argument) {
+    osDelay(1000);
+    osSemaphoreAcquire(judgementInitBinarySemHandle, osWaitForever);//防止未初始化即进入
+    osDelay(2000);
+    g_ui.ptr_init( &g_judgement_power);
+    for (;;) {
+        g_ui.update_data(g_pc);
+        g_ui.update_data_send();
+        osEventFlagsSet(refereeEventHandle, UART_TX_SIGNAL);
+        osDelay(20);
+    }
+}
 
 #endif
 

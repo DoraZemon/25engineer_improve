@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 #include "string.h"
-#include "stm32h7xx_hal.h"
+#include "stm32f4xx_hal.h"
 
 void crc16_update(uint16_t *currect_crc, const uint8_t *src, uint32_t len);
 

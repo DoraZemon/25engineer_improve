@@ -4,13 +4,13 @@
   * @author         : 34147
   * @brief          : None
   * @attention      : None
-  * @date           : 2025/5/5
+  * @date           : 25-5-31
   ******************************************************************************
   */
 
 
-#ifndef AERIAL_GIMBAL_2025_COMPONENT_ALGORITHM_MEDIAN_FILTER_H_
-#define AERIAL_GIMBAL_2025_COMPONENT_ALGORITHM_MEDIAN_FILTER_H_
+#ifndef MEDIAN_FILTER_H_
+#define MEDIAN_FILTER_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -20,7 +20,6 @@ extern "C" {
 }
 #endif
 //C++
-
 #include <vector>
 #include <deque>
 #include <algorithm>
@@ -68,5 +67,4 @@ class MedianFilter {
   int validSize() const { return data.size(); }
 };
 
-
-#endif //AERIAL_GIMBAL_2025_COMPONENT_ALGORITHM_MEDIAN_FILTER_H_
+#endif //MEDIAN_FILTER_H_

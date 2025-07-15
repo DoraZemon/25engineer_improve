@@ -54,8 +54,10 @@ void pc_device::update_data(rc_device &rc,
     communicate.set_chassis_ctrl(rx_data.chassis_x,
                                  rx_data.chassis_y, rx_data.chassis_spin);
 
+    auto_situation = (robot_auto_situation_e) rx_data.auto_situation;
 
-//    gimbal.set_yaw_target(500);
+    gimbal.set_yaw_target(rx_data.gimbal_yaw);
+    gimbal.set_pitch_target(rx_data.gimbal_pitch);
 }
 
 

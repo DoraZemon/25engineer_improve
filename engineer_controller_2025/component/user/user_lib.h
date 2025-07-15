@@ -1,15 +1,21 @@
-//
-// Created by 34147 on 2023/11/13.
-//
+/**
+  ******************************************************************************
+  * @file           : user_lib.h
+  * @author         : 34147
+  * @brief          : None
+  * @attention      : None
+  * @date           : 25-5-31
+  ******************************************************************************
+  */
 
-#ifndef ENGINEER_CHASSIS_USER_LIB_H
-#define ENGINEER_CHASSIS_USER_LIB_H
 
+#ifndef USER_LIB_H_
+#define USER_LIB_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
 //C
-#include "stm32h7xx_hal.h"
+#include "stm32f4xx_hal.h"
 #include "string.h"
 #include <math.h>
 
@@ -80,4 +86,10 @@ void low_pass(float &target, float current, float alpha);
 
 float limited_val(float val, float min, float max);
 
-#endif //ENGINEER_CHASSIS_USER_LIB_H
+
+int float_to_uint(float x_float, float x_min, float x_max, int bits);
+
+float uint_to_float(int x_int, float x_min, float x_max, int bits);
+
+
+#endif //USER_LIB_H_

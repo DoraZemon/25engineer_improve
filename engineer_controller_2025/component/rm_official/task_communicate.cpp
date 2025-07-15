@@ -3,16 +3,16 @@
 //
 #include "task_communicate.h"
 #include "drv_arm.h"
+#include "GlobalCfg.h"
+
 const osMutexAttr_t judge_power_rxdata_mutex_attr = {
     .name = "judge_power_rxdata_mutex"
 };
 
 
-
 const osMutexAttr_t judge_power_txdata_mutex_attr = {
     .name = "judge_power_txdata_mutex"
 };
-
 
 
 judgement_device g_judgement_power;//电管
@@ -22,7 +22,7 @@ extern arm_device g_arm;
 void judgeCtrl_task(void *argument) {
     uint32_t event;
     /* config & open judge uart receive and transmit it */
-    g_judgement_power.init(&huart1,
+    g_judgement_power.init(&JUDGEMENT_UART,
                            refereeEventHandle,
                            &judge_power_rxdata_mutex_attr,
                            &judge_power_txdata_mutex_attr);
@@ -69,13 +69,12 @@ void judge_power_UartTxCpltCallBack(UART_HandleTypeDef *huart) {
 }
 
 
-
 void refereeupdate_task(void *argument) {
     osDelay(2000);
     for (;;) {
         g_judgement_power.data_packet_pack_image_tran_chain(CUSTOM_CONTROLLER_ID,
-                                                      g_arm.get_controller_tx_data(),
-                                                      sizeof(ext_custom_interactive_data_t));
+                                                            g_arm.get_controller_tx_data(),
+                                                            sizeof(ext_custom_interactive_data_t));
         osEventFlagsSet(refereeEventHandle, UART_TX_SIGNAL);
         osDelay(35);
     }

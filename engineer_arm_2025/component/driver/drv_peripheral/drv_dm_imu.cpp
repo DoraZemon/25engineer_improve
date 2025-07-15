@@ -188,7 +188,7 @@ float dm_imu_device::get_gyro_z() {
 
 void dm_imu_device::check_imu_for_loss() {
     osStatus_t stat;
-    stat = osSemaphoreAcquire(this->can_device.rx_sem, 50);
+    stat = osSemaphoreAcquire(this->can_device.rx_sem, 500);
     if (stat != osOK) {
         lost_num++;
         this->is_lost = true;

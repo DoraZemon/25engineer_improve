@@ -21,18 +21,45 @@ void ui_device::update_data_send() {
     }
 }
 
-void ui_device::update_data() {
-
+void ui_device::ptr_init(judgement_device *judgement_ptr) {
+    this->judgement = judgement_ptr;
 }
 
+void ui_device::update_data(pc_device &pc) {
+    data.joint_states = {pc.normal_tx_data.joint1,
+                         pc.normal_tx_data.joint2,
+                         pc.normal_tx_data.joint3,
+                         pc.normal_tx_data.joint4,
+                         pc.normal_tx_data.joint5,
+                         pc.normal_tx_data.joint6};
+    data.error = pc.error;
+    data.auto_situation = pc.auto_situation;
+    data.pump_states.is_arm_pump_on = pc.rx_data.is_arm_pump_on;
+    data.pump_states.is_left_pump_on = pc.rx_data.is_left_pump_on;
+    data.pump_states.is_right_pump_on = pc.rx_data.is_right_pump_on;
+    data.pump_states.is_arm_pump_holding = pc.normal_tx_data.is_arm_pump_holding_on;
+    data.pump_states.is_left_pump_holding = pc.normal_tx_data.is_left_pump_holding_on;
+    data.pump_states.is_right_pump_holding = pc.normal_tx_data.is_right_pump_holding_on;
+}
+
+robot_error_type ui_device::get_error_type() {
+    for(int i = 0; i < none; i++) {
+        if(data.error.code >> i & 0x01) {
+            return (robot_error_type)i;
+        }
+    }
+
+    return none;
+}
 
 void ui_device::add() {
     static uint8_t _ui_add_case = 0;
 
     _ui_add_case = (_ui_add_case + 1) % 30;
     if (_ui_add_case < 6) {
+        draw_pump(ui_add);
     } else if (_ui_add_case < 12) {
-        draw_bead(ui_add);
+        draw_assistant(ui_add);
     } else if (_ui_add_case < 30) {
         this->character_init(&Character_Graph);
 
@@ -45,6 +72,7 @@ void ui_device::update() {
     static uint8_t _ui_update_case = 0;
     _ui_update_case = (_ui_update_case + 1) % 24;
     if (_ui_update_case < 6) {
+        draw_pump(ui_modify);
     } else if (_ui_update_case < 18) {
         this->character_update(&Character_Graph);
     } else {
@@ -55,7 +83,6 @@ void ui_device::update() {
 void ui_device::send() {
     static uint8_t _ui_send_case = 200;//先添加好多次,防止没添加上
 
-    this->update_data();//给ui自身数据进行update
     if (this->clear_all_flag) {
         this->clear_all_UI();
         return;
@@ -81,32 +108,19 @@ void ui_device::character_init(ext_client_custom_character_t *_character) {
     for (int i = 0; i < 30; i++)
         _character->data[i] = '\0';
 
-    _character_init_case = (_character_init_case + 1) % 15;
+    _character_init_case = (_character_init_case + 1) % 6;
 
     if (_character_init_case < 3) {//30
         character_config(&_character->grapic_data_struct, "C1", ui_add, 2, ui_cyan, 15, 9, 2, 1500, 850);
         strcat(_character->data, "Error\n\n");
         strcat(_character->data, "State\n\n");
-        strcat(_character->data, "Friction\n\n");
 
     } else if (_character_init_case < 6) {
         character_config(&_character->grapic_data_struct, "C2", ui_add, 2, ui_cyan, 15, 9, 2, 1700, 850);
         strcat(_character->data, "None\n\n");
         strcat(_character->data, "None\n\n");
-        strcat(_character->data, "Off\n");
 
-    } else if (_character_init_case < 12) {
-        character_config(&_character->grapic_data_struct, "C3", ui_add, 2, ui_cyan, 15, 9, 2, 1500, 650);
-        strcat(_character->data, "Yaw\n\n");
-        strcat(_character->data, "Pitch\n\n");
-        strcat(_character->data, "Speed\n");
-    } else if (_character_init_case < 15) {
-        character_config(&_character->grapic_data_struct, "C4", ui_add, 2, ui_cyan, 15, 9, 2, 1700, 650);
-        strcat(_character->data, "0.00\n\n");
-        strcat(_character->data, "0.00\n\n");
-        strcat(_character->data, "0.00\n\n");
     }
-
     student_interactive_header.data_cmd_id = STU_CUSTOM_CHARACTER_ID;
     judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Character_Graph, sizeof(Character_Graph),
                                 student_interactive_header);
@@ -118,18 +132,79 @@ void ui_device::character_update(ext_client_custom_character_t *_character) {
         _character->data[i] = '\0';
 
     _character_update_case = (_character_update_case + 1) % 20;
-    if (_character_update_case % 2 == 0) {
 
+//    if (_character_update_case % 2 == 0) {
 
-    } else if (_character_update_case % 2 == 1) {
+        if(data.error.code == 0){
+            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_orange, 15, 9, 2, 1700, 850);
+        }else {
+            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_yellow, 15, 9, 2, 1700, 850);
+        }
 
+        strcat(_character->data, error_types[this->get_error_type()].c_str());
+        strcat(_character->data, "\n\n");
+        strcat(_character->data, auto_situations[data.auto_situation].c_str());
+        strcat(_character->data, "\n\n");
 
-        char _str[8];
-
-    }
+//    } else if (_character_update_case % 2 == 1) {
+//
+//
+//    }
     student_interactive_header.data_cmd_id = STU_CUSTOM_CHARACTER_ID;
     judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Character_Graph, sizeof(Character_Graph),
                                 student_interactive_header);
+}
+
+void ui_device::draw_arm(ui_operation operation_) {
+
+}
+
+void ui_device::draw_pump(ui_operation operation_) {
+
+
+    if(data.pump_states.is_arm_pump_on && data.pump_states.is_arm_pump_holding) {
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_green, 1, 30, 1500, 650, 10);
+    }else if(data.pump_states.is_arm_pump_on) {
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_yellow, 1, 30, 1500, 650, 10);
+    }else{
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_black, 1, 30, 1500, 650, 10);
+    }
+
+    if(data.pump_states.is_left_pump_on && data.pump_states.is_left_pump_holding) {
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_green, 1, 30, 1600, 650, 10);
+    }else if(data.pump_states.is_left_pump_on) {
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_yellow, 1, 30, 1600, 650, 10);
+    }else{
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_black, 1, 30, 1600, 650, 10);
+    }
+
+    if(data.pump_states.is_right_pump_on && data.pump_states.is_right_pump_holding) {
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_green, 1, 30, 1700, 650, 10);
+    }else if(data.pump_states.is_right_pump_on) {
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_yellow, 1, 30, 1700, 650, 10);
+    }else{
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_black, 1, 30, 1700, 650, 10);
+    }
+
+    student_interactive_header.data_cmd_id = STU_CUSTOM_FIVE_PICTURE_ID;
+    judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Five_Graph, sizeof(Five_Graph),
+                                student_interactive_header);
+}
+
+/**
+ * @brief 绘制取矿的辅助线
+ */
+void ui_device::draw_assistant(ui_operation operation_) {
+    show_line(&Five_Graph.grapic_data_struct[0], "A1", operation_, ui_yellow, 0, 5, 1500, 850, 1500, 1000);
+    show_line(&Five_Graph.grapic_data_struct[1], "A2", operation_, ui_yellow, 0, 5, 1500, 850, 1700, 850);
+    show_line(&Five_Graph.grapic_data_struct[2], "A3", operation_, ui_yellow, 0, 5, 1500, 850, 1500, 700);
+    show_line(&Five_Graph.grapic_data_struct[3], "A4", operation_, ui_yellow, 0, 5, 1500, 850, 1300, 850);
+    show_line(&Five_Graph.grapic_data_struct[4], "A5", operation_, ui_yellow, 0, 5, 1500, 850, 1300, 850);
+
+    student_interactive_header.data_cmd_id = STU_CUSTOM_FIVE_PICTURE_ID;
+    judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Five_Graph, sizeof(Five_Graph),
+                                student_interactive_header);
+
 }
 
 
@@ -141,20 +216,6 @@ void ui_device::clear_all_UI(void) {
 }
 
 
-/**
- * @brief 绘制准星
- * @param _operation
- */
-void ui_device::draw_bead(enum ui_operation _operation) {
-    show_line(&Five_Graph.grapic_data_struct[0], "B1", _operation, ui_red_blue, 2, 2, 960, 190, 960, 540);
-    show_line(&Five_Graph.grapic_data_struct[1], "B2", _operation, ui_red_blue, 2, 2, 960 - 80, 490, 960 + 80, 490);
-    show_line(&Five_Graph.grapic_data_struct[2], "B3", _operation, ui_red_blue, 2, 2, 960 - 60, 440, 960 + 60, 440);
-    show_line(&Five_Graph.grapic_data_struct[3], "B4", _operation, ui_red_blue, 2, 2, 960 - 40, 390, 960 + 40, 390);
-    show_line(&Five_Graph.grapic_data_struct[4], "B5", _operation, ui_red_blue, 2, 2, 960 - 20, 340, 960 + 20, 340);
-    student_interactive_header.data_cmd_id = STU_CUSTOM_FIVE_PICTURE_ID;
-    judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Five_Graph, sizeof(Five_Graph),
-                                student_interactive_header);
-}
 
 /// ----------------------------------------------- 基本操作 ----------------------------------------------- ///
 void ui_device::ClearAll(void) {

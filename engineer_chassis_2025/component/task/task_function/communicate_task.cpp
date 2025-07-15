@@ -24,6 +24,6 @@ void communicate_task(void *argument) {
     for (;;) {
         g_communicate.update(g_chassis,g_pump);
         g_communicate.send_msg();
-        osDelay(3);
+        osDelay(9);
     }
 }

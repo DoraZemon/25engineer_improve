@@ -9,7 +9,7 @@ extern "C" {
 #endif
 //C
 
-#include "stm32h7xx_hal.h"
+#include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
 
 #define ASSERT(x) do {while(!(x));} while(0)

@@ -25,8 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "bsp_ws2812.h"
 #include "compatible.h"
+#include "iwdg.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,27 +52,20 @@
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for FDCAN1_Send_Tas */
-osThreadId_t FDCAN1_Send_TasHandle;
-const osThreadAttr_t FDCAN1_Send_Tas_attributes = {
-  .name = "FDCAN1_Send_Tas",
+/* Definitions for CAN1_Send_Task */
+osThreadId_t CAN1_Send_TaskHandle;
+const osThreadAttr_t CAN1_Send_Task_attributes = {
+  .name = "CAN1_Send_Task",
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityHigh,
 };
-/* Definitions for FDCAN2_Send_Tas */
-osThreadId_t FDCAN2_Send_TasHandle;
-const osThreadAttr_t FDCAN2_Send_Tas_attributes = {
-  .name = "FDCAN2_Send_Tas",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
-};
-/* Definitions for FDCAN3_Send_Tas */
-osThreadId_t FDCAN3_Send_TasHandle;
-const osThreadAttr_t FDCAN3_Send_Tas_attributes = {
-  .name = "FDCAN3_Send_Tas",
+/* Definitions for CAN2_Send_Task */
+osThreadId_t CAN2_Send_TaskHandle;
+const osThreadAttr_t CAN2_Send_Task_attributes = {
+  .name = "CAN2_Send_Task",
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityHigh,
 };
@@ -80,6 +73,20 @@ const osThreadAttr_t FDCAN3_Send_Tas_attributes = {
 osThreadId_t judgeCtrltaskHandle;
 const osThreadAttr_t judgeCtrltask_attributes = {
   .name = "judgeCtrltask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for armtask */
+osThreadId_t armtaskHandle;
+const osThreadAttr_t armtask_attributes = {
+  .name = "armtask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for refereeupdatetask */
+osThreadId_t refereeupdatetaskHandle;
+const osThreadAttr_t refereeupdatetask_attributes = {
+  .name = "refereeupdatetask",
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -90,34 +97,15 @@ const osThreadAttr_t lostchecktask_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for armtask */
-osThreadId_t armtaskHandle;
-const osThreadAttr_t armtask_attributes = {
-  .name = "armtask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+/* Definitions for CAN1SendQueue */
+osMessageQueueId_t CAN1SendQueueHandle;
+const osMessageQueueAttr_t CAN1SendQueue_attributes = {
+  .name = "CAN1SendQueue"
 };
-/* Definitions for refereeupdateta */
-osThreadId_t refereeupdatetaHandle;
-const osThreadAttr_t refereeupdateta_attributes = {
-  .name = "refereeupdateta",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for FDCAN1SendQueue */
-osMessageQueueId_t FDCAN1SendQueueHandle;
-const osMessageQueueAttr_t FDCAN1SendQueue_attributes = {
-  .name = "FDCAN1SendQueue"
-};
-/* Definitions for FDCAN2SendQueue */
-osMessageQueueId_t FDCAN2SendQueueHandle;
-const osMessageQueueAttr_t FDCAN2SendQueue_attributes = {
-  .name = "FDCAN2SendQueue"
-};
-/* Definitions for FDCAN3SendQueue */
-osMessageQueueId_t FDCAN3SendQueueHandle;
-const osMessageQueueAttr_t FDCAN3SendQueue_attributes = {
-  .name = "FDCAN3SendQueue"
+/* Definitions for CAN2SendQueue */
+osMessageQueueId_t CAN2SendQueueHandle;
+const osMessageQueueAttr_t CAN2SendQueue_attributes = {
+  .name = "CAN2SendQueue"
 };
 /* Definitions for judgementInitBinarySem */
 osSemaphoreId_t judgementInitBinarySemHandle;
@@ -154,20 +142,15 @@ osSemaphoreId_t ArmMotor6UpdateBinarySemHandle;
 const osSemaphoreAttr_t ArmMotor6UpdateBinarySem_attributes = {
   .name = "ArmMotor6UpdateBinarySem"
 };
-/* Definitions for FDCAN1CountingSem */
-osSemaphoreId_t FDCAN1CountingSemHandle;
-const osSemaphoreAttr_t FDCAN1CountingSem_attributes = {
-  .name = "FDCAN1CountingSem"
+/* Definitions for CAN1CountingSem */
+osSemaphoreId_t CAN1CountingSemHandle;
+const osSemaphoreAttr_t CAN1CountingSem_attributes = {
+  .name = "CAN1CountingSem"
 };
-/* Definitions for FDCAN2CountingSem */
-osSemaphoreId_t FDCAN2CountingSemHandle;
-const osSemaphoreAttr_t FDCAN2CountingSem_attributes = {
-  .name = "FDCAN2CountingSem"
-};
-/* Definitions for FDCAN3CountingSem */
-osSemaphoreId_t FDCAN3CountingSemHandle;
-const osSemaphoreAttr_t FDCAN3CountingSem_attributes = {
-  .name = "FDCAN3CountingSem"
+/* Definitions for CAN2CountingSem */
+osSemaphoreId_t CAN2CountingSemHandle;
+const osSemaphoreAttr_t CAN2CountingSem_attributes = {
+  .name = "CAN2CountingSem"
 };
 /* Definitions for refereeEvent */
 osEventFlagsId_t refereeEventHandle;
@@ -181,14 +164,14 @@ const osEventFlagsAttr_t refereeEvent_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void FDCAN1Send_Task(void *argument);
-void FDCAN2Send_Task(void *argument);
-void FDCAN3Send_Task(void *argument);
+void CAN1Send_Task(void *argument);
+void CAN2Send_Task(void *argument);
 void judgeCtrl_task(void *argument);
-void lost_check_task(void *argument);
 void arm_task(void *argument);
 void refereeupdate_task(void *argument);
+void lost_check_task(void *argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -227,14 +210,11 @@ void MX_FREERTOS_Init(void) {
   /* creation of ArmMotor6UpdateBinarySem */
   ArmMotor6UpdateBinarySemHandle = osSemaphoreNew(1, 0, &ArmMotor6UpdateBinarySem_attributes);
 
-  /* creation of FDCAN1CountingSem */
-  FDCAN1CountingSemHandle = osSemaphoreNew(8, 8, &FDCAN1CountingSem_attributes);
+  /* creation of CAN1CountingSem */
+  CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
 
-  /* creation of FDCAN2CountingSem */
-  FDCAN2CountingSemHandle = osSemaphoreNew(8, 8, &FDCAN2CountingSem_attributes);
-
-  /* creation of FDCAN3CountingSem */
-  FDCAN3CountingSemHandle = osSemaphoreNew(8, 8, &FDCAN3CountingSem_attributes);
+  /* creation of CAN2CountingSem */
+  CAN2CountingSemHandle = osSemaphoreNew(3, 3, &CAN2CountingSem_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -245,14 +225,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the queue(s) */
-  /* creation of FDCAN1SendQueue */
-  FDCAN1SendQueueHandle = osMessageQueueNew (16, sizeof(fdcan_device_transmit_member), &FDCAN1SendQueue_attributes);
+  /* creation of CAN1SendQueue */
+  CAN1SendQueueHandle = osMessageQueueNew (16, sizeof(can_device_transmit_member), &CAN1SendQueue_attributes);
 
-  /* creation of FDCAN2SendQueue */
-  FDCAN2SendQueueHandle = osMessageQueueNew (16, sizeof(fdcan_device_transmit_member), &FDCAN2SendQueue_attributes);
-
-  /* creation of FDCAN3SendQueue */
-  FDCAN3SendQueueHandle = osMessageQueueNew (16, sizeof(fdcan_device_transmit_member), &FDCAN3SendQueue_attributes);
+  /* creation of CAN2SendQueue */
+  CAN2SendQueueHandle = osMessageQueueNew (16, sizeof(can_device_transmit_member), &CAN2SendQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -262,26 +239,23 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-  /* creation of FDCAN1_Send_Tas */
-  FDCAN1_Send_TasHandle = osThreadNew(FDCAN1Send_Task, NULL, &FDCAN1_Send_Tas_attributes);
+  /* creation of CAN1_Send_Task */
+  CAN1_Send_TaskHandle = osThreadNew(CAN1Send_Task, NULL, &CAN1_Send_Task_attributes);
 
-  /* creation of FDCAN2_Send_Tas */
-  FDCAN2_Send_TasHandle = osThreadNew(FDCAN2Send_Task, NULL, &FDCAN2_Send_Tas_attributes);
-
-  /* creation of FDCAN3_Send_Tas */
-  FDCAN3_Send_TasHandle = osThreadNew(FDCAN3Send_Task, NULL, &FDCAN3_Send_Tas_attributes);
+  /* creation of CAN2_Send_Task */
+  CAN2_Send_TaskHandle = osThreadNew(CAN2Send_Task, NULL, &CAN2_Send_Task_attributes);
 
   /* creation of judgeCtrltask */
   judgeCtrltaskHandle = osThreadNew(judgeCtrl_task, NULL, &judgeCtrltask_attributes);
 
-  /* creation of lostchecktask */
-  lostchecktaskHandle = osThreadNew(lost_check_task, NULL, &lostchecktask_attributes);
-
   /* creation of armtask */
   armtaskHandle = osThreadNew(arm_task, NULL, &armtask_attributes);
 
-  /* creation of refereeupdateta */
-  refereeupdatetaHandle = osThreadNew(refereeupdate_task, NULL, &refereeupdateta_attributes);
+  /* creation of refereeupdatetask */
+  refereeupdatetaskHandle = osThreadNew(refereeupdate_task, NULL, &refereeupdatetask_attributes);
+
+  /* creation of lostchecktask */
+  lostchecktaskHandle = osThreadNew(lost_check_task, NULL, &lostchecktask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -306,68 +280,57 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)
   {
-      ws2812_flashing();
-//    osDelay(1);
+      HAL_IWDG_Refresh(&hiwdg);//(625-1+1)*64/32000s
+      HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_R_Pin);
+      osDelay(200);
+//      HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_G_Pin);
+//      osDelay(200);
+      HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_B_Pin);
+      osDelay(200);
   }
   /* USER CODE END StartDefaultTask */
 }
 
-/* USER CODE BEGIN Header_FDCAN1Send_Task */
+/* USER CODE BEGIN Header_CAN1Send_Task */
 /**
-* @brief Function implementing th/e FDCAN1_Send_Tas thread.
+* @brief Function implementing the CAN1_Send_Task thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_FDCAN1Send_Task */
-__weak void FDCAN1Send_Task(void *argument)
+/* USER CODE END Header_CAN1Send_Task */
+__weak void CAN1Send_Task(void *argument)
 {
-  /* USER CODE BEGIN FDCAN1Send_Task */
+  /* USER CODE BEGIN CAN1Send_Task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END FDCAN1Send_Task */
+  /* USER CODE END CAN1Send_Task */
 }
 
-/* USER CODE BEGIN Header_FDCAN2Send_Task */
+/* USER CODE BEGIN Header_CAN2Send_Task */
 /**
-* @brief Function implementing the FDCAN2_Send_Tas thread.
+* @brief Function implementing the CAN2_Send_Task thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_FDCAN2Send_Task */
-__weak void FDCAN2Send_Task(void *argument)
+/* USER CODE END Header_CAN2Send_Task */
+__weak void CAN2Send_Task(void *argument)
 {
-  /* USER CODE BEGIN FDCAN2Send_Task */
+  /* USER CODE BEGIN CAN2Send_Task */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END FDCAN2Send_Task */
-}
-
-/* USER CODE BEGIN Header_FDCAN3Send_Task */
-/**
-* @brief Function implementing the FDCAN3_Send_Tas thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_FDCAN3Send_Task */
-__weak void FDCAN3Send_Task(void *argument)
-{
-  /* USER CODE BEGIN FDCAN3Send_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END FDCAN3Send_Task */
+  /* USER CODE END CAN2Send_Task */
 }
 
 /* USER CODE BEGIN Header_judgeCtrl_task */
@@ -386,24 +349,6 @@ __weak void judgeCtrl_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END judgeCtrl_task */
-}
-
-/* USER CODE BEGIN Header_lost_check_task */
-/**
-* @brief Function implementing the lostchecktask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_lost_check_task */
-__weak void lost_check_task(void *argument)
-{
-  /* USER CODE BEGIN lost_check_task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END lost_check_task */
 }
 
 /* USER CODE BEGIN Header_arm_task */
@@ -426,7 +371,7 @@ __weak void arm_task(void *argument)
 
 /* USER CODE BEGIN Header_refereeupdate_task */
 /**
-* @brief Function implementing the refereeupdateta thread.
+* @brief Function implementing the refereeupdatetask thread.
 * @param argument: Not used
 * @retval None
 */
@@ -440,6 +385,24 @@ __weak void refereeupdate_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END refereeupdate_task */
+}
+
+/* USER CODE BEGIN Header_lost_check_task */
+/**
+* @brief Function implementing the lostchecktask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_lost_check_task */
+__weak void lost_check_task(void *argument)
+{
+  /* USER CODE BEGIN lost_check_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END lost_check_task */
 }
 
 /* Private application code --------------------------------------------------*/
