@@ -58,6 +58,8 @@ void pc_device::update_data(rc_device &rc,
 
     gimbal.set_yaw_target(rx_data.gimbal_yaw);
     gimbal.set_pitch_target(rx_data.gimbal_pitch);
+//    gimbal.set_pitch_target(500);
+//    gimbal.set_yaw_target(500);
 }
 
 

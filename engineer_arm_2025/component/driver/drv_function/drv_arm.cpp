@@ -68,7 +68,7 @@ void arm_device::init() {
     motor.motor1.lqr.reset_lqr(10.0, 10.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor2.lqr.reset_lqr(10.0, 0.0, 0.05, 0.0, 0.1, 1.0);
     motor.motor3.lqr.reset_lqr(10.0, 2.0, 0.05, 0.0, 0.1, 1.0);
-    motor.motor4.lqr.reset_lqr(30.0, 3.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor4.lqr.reset_lqr(20.0, 3.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor5.lqr.reset_lqr(20.0, 1.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor6.lqr.reset_lqr(0.5, 1.7, 0.0, 0.0, 0.0, 1.0);
 

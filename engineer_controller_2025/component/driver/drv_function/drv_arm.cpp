@@ -14,7 +14,7 @@
 
 void arm_device::init() {
     motor.motor1.init(&Arm_Motor1_Can, false, Arm_Motor1_Id, DJI_GM6020, ArmMotor1UpdateBinarySemHandle);
-    motor.motor2.init(&Arm_Motor2_Can, false, Arm_Motor2_Id, DJI_GM6020, ArmMotor2UpdateBinarySemHandle);
+    motor.motor2.init(&Arm_Motor2_Can, true, Arm_Motor2_Id, DJI_GM6020, ArmMotor2UpdateBinarySemHandle);
     motor.motor3.init(&Arm_Motor3_Can, false, Arm_Motor3_Id, DJI_GM6020, ArmMotor3UpdateBinarySemHandle);
     motor.motor4.init(&Arm_Motor4_Can,
                       Arm_Motor4_Slave_Id,
@@ -27,7 +27,7 @@ void arm_device::init() {
                       Arm_Motor5_Slave_Id,
                       Arm_Motor5_Master_Id,
                       DM_MIT,
-                      true,
+                      false,
                       DM_J3507_2EC,
                       ArmMotor5UpdateBinarySemHandle);
     motor.motor6.init(&Arm_Motor6_Can, false, Arm_Motor6_Id, DJI_M2006, ArmMotor6UpdateBinarySemHandle);
@@ -78,8 +78,8 @@ void arm_device::init() {
     motor.motor2.reset_total_rounds_zero_offset(motor.motor2.get_current_round() - data.motor_offset.motor2);
     motor.motor3.reset_total_rounds_zero_offset(motor.motor3.get_current_round() - data.motor_offset.motor3);
     //2006随机编码器
-    motor.motor4.reset_total_rounds_zero_offset(0);
-    motor.motor5.reset_total_rounds_zero_offset(0);
+    motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
+    motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
     motor.motor6.reset_total_rounds_zero_offset(0);
 }
 
@@ -123,7 +123,7 @@ void arm_device::update_data() {
 
     data.joint_states.joint1 = data.motor_pos_get.motor1 * 2 * PI;
     data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI;
-    data.joint_states.joint3 = (data.motor_pos_get.motor3 - data.motor_pos_get.motor2) * 2 * PI;
+    data.joint_states.joint3 = data.motor_pos_get.motor3 * 2 * PI;
     data.joint_states.joint4 = data.motor_pos_get.motor4 * 2 * PI;
     data.joint_states.joint5 = data.motor_pos_get.motor5 * 2 * PI;
     data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI;
@@ -147,6 +147,10 @@ void arm_device::update_data() {
                                        motor.motor4.check_ready() &&
                                        motor.motor5.check_ready() &&
                                        motor.motor6.check_ready();
+//    controller_tx_data.is_data_valid = motor.motor1.check_ready() &&
+//                                       motor.motor2.check_ready() &&
+//                                       motor.motor3.check_ready() &&
+//                                       motor.motor4.check_ready() ;
     controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
 }
 
@@ -163,7 +167,7 @@ void arm_device::update_control(bool is_enable) {
     if (is_enable) {//遥控器在线
         data.motor_pos_set.motor1 = data.joint_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
         data.motor_pos_set.motor2 = data.joint_target.joint2 / (2 * PI);
-        data.motor_pos_set.motor3 = data.joint_target.joint3 / (2 * PI) + data.motor_pos_set.motor2;
+        data.motor_pos_set.motor3 = data.joint_target.joint3 / (2 * PI);
         data.motor_pos_set.motor4 = data.joint_target.joint4 / (2 * PI);
         data.motor_pos_set.motor5 = data.joint_target.joint5 / (2 * PI);
         data.motor_pos_set.motor6 = data.joint_target.joint6 / (2 * PI);

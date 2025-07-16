@@ -18,21 +18,25 @@ gimbal_device::gimbal_device() : data({GIMBAL_SERVO_PITCH_HORIZONTAL_1000, GIMBA
 
 
 void gimbal_device::update_control() {
-    static int16_t s_pitch_last_msg = 0;
+//    static int16_t s_pitch_last_msg = 0;
+//
+//
+//    if (ABS(s_pitch_last_msg - this->data.servo_set_pitch_1000) > 0.005f) {
+//        this->pitch_servo.set_pos(this->data.servo_set_pitch_1000);
+//        s_pitch_last_msg = this->data.servo_set_pitch_1000;
+//    }
+//
+//
+//    static int16_t s_yaw_last_msg = 0;
+//
+//    if (ABS(s_yaw_last_msg - this->data.servo_set_yaw_1000) > 0.005f) {
+//        this->yaw_servo.set_pos(this->data.servo_set_yaw_1000);
+//        s_yaw_last_msg = this->data.servo_set_yaw_1000;
+//    }
 
+    this->yaw_servo.set_pos(this->data.servo_set_yaw_1000);
+    this->pitch_servo.set_pos(this->data.servo_set_pitch_1000);
 
-    if (ABS(s_pitch_last_msg - this->data.servo_set_pitch_1000) > 0.005f) {
-        this->pitch_servo.set_pos(this->data.servo_set_pitch_1000);
-        s_pitch_last_msg = this->data.servo_set_pitch_1000;
-    }
-
-
-    static int16_t s_yaw_last_msg = 0;
-
-    if (ABS(s_yaw_last_msg - this->data.servo_set_yaw_1000) > 0.005f) {
-        this->yaw_servo.set_pos(this->data.servo_set_yaw_1000);
-        s_yaw_last_msg = this->data.servo_set_yaw_1000;
-    }
 
 }
 

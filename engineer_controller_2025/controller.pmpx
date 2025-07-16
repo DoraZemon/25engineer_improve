@@ -1166,7 +1166,7 @@
 		<object name="ObjId0013" type="CVariable">
 			<member name="name" type="string">g_arm.controller_tx_data.is_data_valid</member>
 			<member name="unit" type="string">unit</member>
-			<member name="period" type="sint32">1000</member>
+			<member name="period" type="sint32">0</member>
 			<member name="address" type="string">g_arm.controller_tx_data.is_data_valid</member>
 			<member name="last_addr" type="uint32">0x20019790</member>
 			<member name="byte_size" type="sint32">1</member>
@@ -1175,7 +1175,7 @@
 			<member name="virtual" type="sint32">0</member>
 			<member name="virtual_default" type="string">0</member>
 			<member name="treat_as" type="sint32">0</member>
-			<member name="type_fmt" type="string"/>
+			<member name="type_fmt" type="string">Fixed point number</member>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -36652,7 +36652,9 @@
 			<member name="ena_inplace_params" type="sint32">1</member>
 			<member name="ena_inplace_values" type="sint32">1</member>
 		</object>
-		<object name="ObjId0700" type="CObList"/>
+		<object name="ObjId0700" type="CObList">
+			<member name="item0" type="CObject_ptr">ObjId0013</member>
+		</object>
 		<object name="ObjId0701" type="CObList"/>
 		<object name="ObjId0702" type="CObList">
 			<member name="item0" type="CObject_ptr">ObjId0703</member>
@@ -37531,38 +37533,46 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId0841" type="CObArray" length="5">
-			<member name="index0" type="CObject_ptr">ObjId0842</member>
-			<member name="index1" type="CObject_ptr">ObjId0843</member>
-			<member name="index2" type="CObject_ptr">ObjId0844</member>
-			<member name="index3" type="CObject_ptr">ObjId0845</member>
-			<member name="index4" type="CObject_ptr">ObjId0846</member>
+			<member name="index0" type="CObject_ptr">ObjId0947</member>
+			<member name="index1" type="CObject_ptr">ObjId0948</member>
+			<member name="index2" type="CObject_ptr">ObjId0949</member>
+			<member name="index3" type="CObject_ptr">ObjId0950</member>
+			<member name="index4" type="CObject_ptr">ObjId0951</member>
 		</object>
-		<object name="ObjId0842" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0947" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
+			<member name="column_width" type="sint32">313</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId0843" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0948" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId0844" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0949" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId0845" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0950" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">70</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
-		<object name="ObjId0846" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0951" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">200</member>
 			<member name="column_ix" type="sint32">4</member>
 		</object>
-		<object name="ObjId0847" type="CMapObToObEx"/>
+		<object name="ObjId0847" type="CMapObToObEx">
+			<member name="key0" type="CObject_ptr">ObjId0013</member>
+			<member name="value0" type="CObject_ptr">ObjId0952</member>
+		</object>
+		<object name="ObjId0952" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId0953</member>
+		</object>
+		<object name="ObjId0953" type="CObArray" length="0"/>
 		<object name="ObjId0848" type="CPrjItemBlock_CellFormat">
 			<member name="font_name" type="string">Tahoma</member>
 			<member name="font_set" type="uint8">0x0</member>

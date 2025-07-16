@@ -26,14 +26,14 @@ extern "C" {
 #include "GlobalCfg.h"
 
 
-#define GIMBAL_PITCH_SERVO_ID                     (1)
-#define GIMBAL_PITCH_1000_MAX                    (40.0f)
+#define GIMBAL_PITCH_SERVO_ID                     (2)
+#define GIMBAL_PITCH_1000_MAX                    (1000.0f)
 #define GIMBAL_PITCH_1000_MIN                    (0.0f)
-#define GIMBAL_SERVO_PITCH_HORIZONTAL_1000  (940)
+#define GIMBAL_SERVO_PITCH_HORIZONTAL_1000  (0)
 
-#define GIMBAL_SERVO_YAW_FORWARD_1000      (370)
-#define GIMBAL_YAW_SERVO_ID                     (2)
-#define GIMBAL_YAW_1000_MAX                    (60.0f)
+#define GIMBAL_SERVO_YAW_FORWARD_1000      (0)
+#define GIMBAL_YAW_SERVO_ID                     (1)
+#define GIMBAL_YAW_1000_MAX                    (1000.0f)
 #define GIMBAL_YAW_1000_MIN                    (00.0f)
 
 
