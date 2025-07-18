@@ -160,6 +160,13 @@ const osThreadAttr_t gimbaltask_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for hi229umtask */
+osThreadId_t hi229umtaskHandle;
+const osThreadAttr_t hi229umtask_attributes = {
+  .name = "hi229umtask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -245,6 +252,11 @@ osSemaphoreId_t servoctrlTxBinarySemHandle;
 const osSemaphoreAttr_t servoctrlTxBinarySem_attributes = {
   .name = "servoctrlTxBinarySem"
 };
+/* Definitions for hi229umRxBinarySem */
+osSemaphoreId_t hi229umRxBinarySemHandle;
+const osSemaphoreAttr_t hi229umRxBinarySem_attributes = {
+  .name = "hi229umRxBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -287,6 +299,7 @@ void imu_task(void *argument);
 void communicate_task(void *argument);
 void servo_ctrl_task(void *argument);
 void gimbal_task(void *argument);
+void hi229um_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -347,6 +360,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of servoctrlTxBinarySem */
   servoctrlTxBinarySemHandle = osSemaphoreNew(1, 1, &servoctrlTxBinarySem_attributes);
+
+  /* creation of hi229umRxBinarySem */
+  hi229umRxBinarySemHandle = osSemaphoreNew(1, 0, &hi229umRxBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -424,6 +440,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of gimbaltask */
   gimbaltaskHandle = osThreadNew(gimbal_task, NULL, &gimbaltask_attributes);
+
+  /* creation of hi229umtask */
+  hi229umtaskHandle = osThreadNew(hi229um_task, NULL, &hi229umtask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -731,6 +750,24 @@ __weak void gimbal_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END gimbal_task */
+}
+
+/* USER CODE BEGIN Header_hi229um_task */
+/**
+* @brief Function implementing the hi229umtask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_hi229um_task */
+__weak void hi229um_task(void *argument)
+{
+  /* USER CODE BEGIN hi229um_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END hi229um_task */
 }
 
 /* Private application code --------------------------------------------------*/

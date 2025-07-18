@@ -178,9 +178,9 @@ void arm_device::update_control(bool is_enable) {
         motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
             data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
                                         (data.motor_torque_compensation.motor3 *
-                                         cosf((data.joint_states.joint2 + data.joint_states.joint3) * 2 * PI)) * (-1));
+                                         cosf((-data.joint_states.joint2 - data.joint_states.joint3))) * (-1));
         motor.motor3.set_offset_current(
-            data.motor_torque_compensation.motor3 * cosf(motor.motor3.get_total_rounds() * 2 * PI));
+            data.motor_torque_compensation.motor3 * cosf(-data.joint_states.joint2 - data.joint_states.joint3));
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
         motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);

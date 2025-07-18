@@ -163,27 +163,27 @@ void ui_device::draw_pump(ui_operation operation_) {
 
 
     if(data.pump_states.is_arm_pump_on && data.pump_states.is_arm_pump_holding) {
-        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_green, 1, 30, 1500, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_green, 1, 30, 1650, 650, 10);
     }else if(data.pump_states.is_arm_pump_on) {
-        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_yellow, 1, 30, 1500, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_yellow, 1, 30, 1650, 650, 10);
     }else{
-        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_black, 1, 30, 1500, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[0], "P1", operation_, ui_black, 1, 30, 1650, 650, 10);
     }
 
     if(data.pump_states.is_left_pump_on && data.pump_states.is_left_pump_holding) {
-        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_green, 1, 30, 1600, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_green, 1, 30, 1550, 650, 10);
     }else if(data.pump_states.is_left_pump_on) {
-        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_yellow, 1, 30, 1600, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_yellow, 1, 30, 1550, 650, 10);
     }else{
-        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_black, 1, 30, 1600, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[1], "P2", operation_, ui_black, 1, 30, 1550, 650, 10);
     }
 
     if(data.pump_states.is_right_pump_on && data.pump_states.is_right_pump_holding) {
-        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_green, 1, 30, 1700, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_green, 1, 30, 1750, 650, 10);
     }else if(data.pump_states.is_right_pump_on) {
-        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_yellow, 1, 30, 1700, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_yellow, 1, 30, 1750, 650, 10);
     }else{
-        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_black, 1, 30, 1700, 650, 10);
+        show_circle(&Five_Graph.grapic_data_struct[2], "P3", operation_, ui_black, 1, 30, 1750, 650, 10);
     }
 
     student_interactive_header.data_cmd_id = STU_CUSTOM_FIVE_PICTURE_ID;
@@ -195,11 +195,13 @@ void ui_device::draw_pump(ui_operation operation_) {
  * @brief 绘制取矿的辅助线
  */
 void ui_device::draw_assistant(ui_operation operation_) {
-    show_line(&Five_Graph.grapic_data_struct[0], "A1", operation_, ui_yellow, 0, 5, 1500, 850, 1500, 1000);
-    show_line(&Five_Graph.grapic_data_struct[1], "A2", operation_, ui_yellow, 0, 5, 1500, 850, 1700, 850);
-    show_line(&Five_Graph.grapic_data_struct[2], "A3", operation_, ui_yellow, 0, 5, 1500, 850, 1500, 700);
-    show_line(&Five_Graph.grapic_data_struct[3], "A4", operation_, ui_yellow, 0, 5, 1500, 850, 1300, 850);
-    show_line(&Five_Graph.grapic_data_struct[4], "A5", operation_, ui_yellow, 0, 5, 1500, 850, 1300, 850);
+    //前三个大资源岛
+    show_line(&Five_Graph.grapic_data_struct[0], "A1", operation_, ui_purple, 0, 5, 800, 640, 1120, 640);
+    show_line(&Five_Graph.grapic_data_struct[1], "A2", operation_, ui_purple, 0, 5, 800, 640, 855, 900);
+    show_line(&Five_Graph.grapic_data_struct[2], "A3", operation_, ui_purple, 0, 5, 1120, 640, 1065, 900);
+    //下面两个过洞
+    show_line(&Five_Graph.grapic_data_struct[3], "A4", operation_, ui_yellow, 0, 5, 600, 550, 600, 250);
+    show_line(&Five_Graph.grapic_data_struct[4], "A5", operation_, ui_yellow, 0, 5, 1320, 550, 1320, 250);
 
     student_interactive_header.data_cmd_id = STU_CUSTOM_FIVE_PICTURE_ID;
     judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Five_Graph, sizeof(Five_Graph),

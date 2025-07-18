@@ -21,7 +21,7 @@ void lost_check_task(void *argument) {
     osDelay(200);
     for (;;) {
         g_arm.check_motor_loss();
-        g_imu.check_imu_for_loss();
+//        g_imu.check_imu_for_loss();
         g_communicate.check_for_loss();
         osDelay(20);
     }

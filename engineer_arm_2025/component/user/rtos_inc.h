@@ -44,6 +44,8 @@ extern osSemaphoreId_t CommunicateUpdateBinarySemHandle;
 
 extern osSemaphoreId_t servoctrlTxBinarySemHandle;
 
+extern osSemaphoreId_t hi229umRxBinarySemHandle;
+
 
 extern osEventFlagsId_t refereeEventHandle;
 extern osEventFlagsId_t RefereeEventHandle;

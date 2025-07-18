@@ -17,8 +17,8 @@ extern rc_device g_rc;
 extern controller_device g_controller;
 extern arm_device g_arm;
 extern communicate_device g_communicate;
-extern dm_imu_device g_imu;
 extern gimbal_device g_gimbal;
+extern hi229um_device g_hi229um;
 
 pc_device g_pc;
 uint32_t flag;
@@ -32,7 +32,7 @@ void pc_receive_task(void *argument) {
         if (pc_status == osOK) {
             g_pc.set_connected();
             memcpy(&g_pc.rx_data, pc_raw_data, sizeof(g_pc.rx_data));
-            g_pc.update_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
+            g_pc.update_data(g_rc, g_arm, g_controller, g_communicate,g_gimbal);
             flag++;
         } else {
             g_pc.set_lost();
@@ -44,7 +44,7 @@ void pc_receive_task(void *argument) {
 void pc_transmit_task(void *argument) {
     osDelay(1000);
     for (;;) {
-        g_pc.transmit_data(g_rc, g_arm, g_controller, g_communicate, g_imu,g_gimbal);
+        g_pc.transmit_data(g_rc, g_arm, g_controller, g_communicate, g_hi229um,g_gimbal);
         osDelay(1); // Delay for demonstration purposes
     }
 }

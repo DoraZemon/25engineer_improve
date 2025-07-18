@@ -29,7 +29,7 @@ void pc_device::update_data(rc_device &rc,
                             arm_device &arm,
                             controller_device &controller,
                             communicate_device &communicate,
-                            dm_imu_device &imu, gimbal_device &gimbal) {
+                             gimbal_device &gimbal) {
     arm.set_joint1_target(rx_data.joint1);
     arm.set_joint2_target(rx_data.joint2);
     arm.set_joint3_target(rx_data.joint3);
@@ -67,7 +67,7 @@ void pc_device::transmit_data(rc_device &rc,
                               arm_device &arm,
                               controller_device &controller,
                               communicate_device &communicate,
-                              dm_imu_device &imu, gimbal_device &gimbal) {
+                              hi229um_device &hi229, gimbal_device &gimbal) {
 
     error.remote = rc.check_lost();
     error.pc = is_lost;
@@ -92,7 +92,7 @@ void pc_device::transmit_data(rc_device &rc,
 #endif
 
 #if DM_IMU
-    error.imu = imu.check_lost();
+    error.imu = hi229.check_lost();
 #else
     error.imu = false;
 #endif
@@ -108,7 +108,7 @@ void pc_device::transmit_data(rc_device &rc,
     normal_tx_data.joint4 = arm.data.joint_states.joint4;
     normal_tx_data.joint5 = arm.data.joint_states.joint5;
     normal_tx_data.joint6 = arm.data.joint_states.joint6;
-    normal_tx_data.chassis_gyro_total_rounds = imu.get_yaw();
+    normal_tx_data.chassis_gyro_total_rounds = hi229.get_yaw_total_deg();
     normal_tx_data.is_arm_pump_holding_on = communicate.check_arm_pump_holding();
     normal_tx_data.is_left_pump_holding_on = communicate.check_left_pump_holding();
     normal_tx_data.is_right_pump_holding_on = communicate.check_right_pump_holding();
@@ -140,8 +140,8 @@ void pc_device::transmit_data(rc_device &rc,
     normal_counter++;
     controller_counter++;
 
-    // 发送normal_tx_data (100Hz)
-    if (normal_counter >= 10) {  // 1000Hz / 100Hz = 10
+    // 发送normal_tx_data (500Hz)
+    if (normal_counter >= 5) {  // 1000Hz / 100Hz = 10
         CDC_Transmit_FS((uint8_t *) (&normal_tx_data), sizeof(normal_tx_data));
         normal_counter = 0;  // 重置计数器
     }

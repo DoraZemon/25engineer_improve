@@ -312,13 +312,15 @@
 			<member name="item270" type="CObject_ptr">ObjId0366</member>
 			<member name="item271" type="CObject_ptr">ObjId0367</member>
 			<member name="item272" type="CObject_ptr">ObjId0368</member>
+			<member name="item273" type="CObject_ptr">ObjId0404</member>
+			<member name="item274" type="CObject_ptr">ObjId0405</member>
 		</object>
 		<object name="ObjId0004" type="CVariable">
 			<member name="name" type="string">g_communicate.hcan</member>
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.hcan</member>
-			<member name="last_addr" type="uint32">0x20012B84</member>
+			<member name="last_addr" type="uint32">0x20012B8C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -367,7 +369,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_id</member>
-			<member name="last_addr" type="uint32">0x20012B48</member>
+			<member name="last_addr" type="uint32">0x20012B50</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -416,7 +418,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.tx_member.len</member>
-			<member name="last_addr" type="uint32">0x20012B5C</member>
+			<member name="last_addr" type="uint32">0x20012B64</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -465,7 +467,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.tx_member.buf_data</member>
-			<member name="last_addr" type="uint32">0x20012B5D</member>
+			<member name="last_addr" type="uint32">0x20012B65</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -514,7 +516,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.tx_member.id</member>
-			<member name="last_addr" type="uint32">0x20012B58</member>
+			<member name="last_addr" type="uint32">0x20012B60</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -563,7 +565,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.index</member>
-			<member name="last_addr" type="uint32">0x20012B54</member>
+			<member name="last_addr" type="uint32">0x20012B5C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -612,7 +614,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.hcan</member>
-			<member name="last_addr" type="uint32">0x20012B4C</member>
+			<member name="last_addr" type="uint32">0x20012B54</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -661,7 +663,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_manager</member>
-			<member name="last_addr" type="uint32">0x20012B40</member>
+			<member name="last_addr" type="uint32">0x20012B48</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -710,7 +712,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_invoker</member>
-			<member name="last_addr" type="uint32">0x20012B44</member>
+			<member name="last_addr" type="uint32">0x20012B4C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -759,7 +761,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_functor._M_unused._M_function_pointer</member>
-			<member name="last_addr" type="uint32">0x20012B38</member>
+			<member name="last_addr" type="uint32">0x20012B40</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -808,7 +810,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_functor._M_unused._M_object</member>
-			<member name="last_addr" type="uint32">0x20012B38</member>
+			<member name="last_addr" type="uint32">0x20012B40</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -857,7 +859,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_functor._M_unused._M_const_object</member>
-			<member name="last_addr" type="uint32">0x20012B38</member>
+			<member name="last_addr" type="uint32">0x20012B40</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -906,7 +908,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_functor._M_unused._M_member_pointer</member>
-			<member name="last_addr" type="uint32">0x20012B38</member>
+			<member name="last_addr" type="uint32">0x20012B40</member>
 			<member name="byte_size" type="sint32">0</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -955,7 +957,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_callback._M_functor._M_pod_data[0]</member>
-			<member name="last_addr" type="uint32">0x20012B38</member>
+			<member name="last_addr" type="uint32">0x20012B40</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1004,7 +1006,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.can_device.rx_sem</member>
-			<member name="last_addr" type="uint32">0x20012B50</member>
+			<member name="last_addr" type="uint32">0x20012B58</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1053,7 +1055,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.speed_y</member>
-			<member name="last_addr" type="uint32">0x20012B34</member>
+			<member name="last_addr" type="uint32">0x20012B3C</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1102,7 +1104,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.reserve_2</member>
-			<member name="last_addr" type="uint32">0x20012B37</member>
+			<member name="last_addr" type="uint32">0x20012B3F</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1151,7 +1153,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.speed_x</member>
-			<member name="last_addr" type="uint32">0x20012B32</member>
+			<member name="last_addr" type="uint32">0x20012B3A</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1200,7 +1202,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.reserve_1</member>
-			<member name="last_addr" type="uint32">0x20012B31</member>
+			<member name="last_addr" type="uint32">0x20012B39</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1249,7 +1251,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.is_right_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B31</member>
+			<member name="last_addr" type="uint32">0x20012B39</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1298,7 +1300,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.is_arm_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B31</member>
+			<member name="last_addr" type="uint32">0x20012B39</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1347,7 +1349,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.speed_spin</member>
-			<member name="last_addr" type="uint32">0x20012B36</member>
+			<member name="last_addr" type="uint32">0x20012B3E</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1396,7 +1398,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.is_rc_online</member>
-			<member name="last_addr" type="uint32">0x20012B31</member>
+			<member name="last_addr" type="uint32">0x20012B39</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1445,7 +1447,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.is_left_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B31</member>
+			<member name="last_addr" type="uint32">0x20012B39</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1494,7 +1496,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.rx_data.frame_head</member>
-			<member name="last_addr" type="uint32">0x20012B30</member>
+			<member name="last_addr" type="uint32">0x20012B38</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1543,7 +1545,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_communicate.lost_num</member>
-			<member name="last_addr" type="uint32">0x20012B68</member>
+			<member name="last_addr" type="uint32">0x20012B70</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1592,7 +1594,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_2</member>
-			<member name="last_addr" type="uint32">0x20012B2A</member>
+			<member name="last_addr" type="uint32">0x20012B32</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1641,7 +1643,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_3</member>
-			<member name="last_addr" type="uint32">0x20012B2B</member>
+			<member name="last_addr" type="uint32">0x20012B33</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1690,7 +1692,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.is_arm_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1739,7 +1741,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_1</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1788,7 +1790,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_6</member>
-			<member name="last_addr" type="uint32">0x20012B2E</member>
+			<member name="last_addr" type="uint32">0x20012B36</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1837,7 +1839,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_7</member>
-			<member name="last_addr" type="uint32">0x20012B2F</member>
+			<member name="last_addr" type="uint32">0x20012B37</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1886,7 +1888,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_4</member>
-			<member name="last_addr" type="uint32">0x20012B2C</member>
+			<member name="last_addr" type="uint32">0x20012B34</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1935,7 +1937,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.reserve_5</member>
-			<member name="last_addr" type="uint32">0x20012B2D</member>
+			<member name="last_addr" type="uint32">0x20012B35</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -1984,7 +1986,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.chassis_motor4_error</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2033,7 +2035,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.chassis_motor3_error</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2082,7 +2084,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.chassis_motor2_error</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2131,7 +2133,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.chassis_motor1_error</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2180,7 +2182,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.is_right_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2229,7 +2231,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.is_left_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B29</member>
+			<member name="last_addr" type="uint32">0x20012B31</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2278,7 +2280,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.tx_data.frame_head</member>
-			<member name="last_addr" type="uint32">0x20012B28</member>
+			<member name="last_addr" type="uint32">0x20012B30</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2327,7 +2329,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_communicate.is_lost</member>
-			<member name="last_addr" type="uint32">0x20012B64</member>
+			<member name="last_addr" type="uint32">0x20012B6C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2376,7 +2378,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.speed_y</member>
-			<member name="last_addr" type="uint32">0x20012B74</member>
+			<member name="last_addr" type="uint32">0x20012B7C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2425,7 +2427,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.speed_x</member>
-			<member name="last_addr" type="uint32">0x20012B70</member>
+			<member name="last_addr" type="uint32">0x20012B78</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2474,7 +2476,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_arm_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B7C</member>
+			<member name="last_addr" type="uint32">0x20012B84</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2523,7 +2525,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_right_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B6E</member>
+			<member name="last_addr" type="uint32">0x20012B76</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2572,7 +2574,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_chassis_motor4_error</member>
-			<member name="last_addr" type="uint32">0x20012B82</member>
+			<member name="last_addr" type="uint32">0x20012B8A</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2621,7 +2623,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_chassis_motor3_error</member>
-			<member name="last_addr" type="uint32">0x20012B81</member>
+			<member name="last_addr" type="uint32">0x20012B89</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2670,7 +2672,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_chassis_motor2_error</member>
-			<member name="last_addr" type="uint32">0x20012B80</member>
+			<member name="last_addr" type="uint32">0x20012B88</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2719,7 +2721,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_chassis_motor1_error</member>
-			<member name="last_addr" type="uint32">0x20012B7F</member>
+			<member name="last_addr" type="uint32">0x20012B87</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2768,7 +2770,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_arm_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B6C</member>
+			<member name="last_addr" type="uint32">0x20012B74</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2817,7 +2819,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.speed_spin</member>
-			<member name="last_addr" type="uint32">0x20012B78</member>
+			<member name="last_addr" type="uint32">0x20012B80</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2866,7 +2868,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_right_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B7E</member>
+			<member name="last_addr" type="uint32">0x20012B86</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2915,7 +2917,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_rc_online</member>
-			<member name="last_addr" type="uint32">0x20012B6F</member>
+			<member name="last_addr" type="uint32">0x20012B77</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -2964,7 +2966,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_left_pump_open</member>
-			<member name="last_addr" type="uint32">0x20012B6D</member>
+			<member name="last_addr" type="uint32">0x20012B75</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3013,7 +3015,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_communicate.data.is_left_pump_holding</member>
-			<member name="last_addr" type="uint32">0x20012B7D</member>
+			<member name="last_addr" type="uint32">0x20012B85</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3062,7 +3064,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.lost_flag</member>
-			<member name="last_addr" type="uint32">0x200123C2</member>
+			<member name="last_addr" type="uint32">0x200123CA</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3111,7 +3113,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.iout</member>
-			<member name="last_addr" type="uint32">0x200123EC</member>
+			<member name="last_addr" type="uint32">0x200123F4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3160,7 +3162,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.pout</member>
-			<member name="last_addr" type="uint32">0x200123E8</member>
+			<member name="last_addr" type="uint32">0x200123F0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3209,7 +3211,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.last_err</member>
-			<member name="last_addr" type="uint32">0x200123E0</member>
+			<member name="last_addr" type="uint32">0x200123E8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3258,7 +3260,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.out</member>
-			<member name="last_addr" type="uint32">0x2001241C</member>
+			<member name="last_addr" type="uint32">0x20012424</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3307,7 +3309,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.enable</member>
-			<member name="last_addr" type="uint32">0x200123D0</member>
+			<member name="last_addr" type="uint32">0x200123D8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3356,7 +3358,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.penultimate_err</member>
-			<member name="last_addr" type="uint32">0x200123E4</member>
+			<member name="last_addr" type="uint32">0x200123EC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3405,7 +3407,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.err</member>
-			<member name="last_addr" type="uint32">0x200123DC</member>
+			<member name="last_addr" type="uint32">0x200123E4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3454,7 +3456,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.get</member>
-			<member name="last_addr" type="uint32">0x200123D8</member>
+			<member name="last_addr" type="uint32">0x200123E0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3503,7 +3505,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.dout</member>
-			<member name="last_addr" type="uint32">0x200123F0</member>
+			<member name="last_addr" type="uint32">0x200123F8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3552,7 +3554,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.p</member>
-			<member name="last_addr" type="uint32">0x200123F4</member>
+			<member name="last_addr" type="uint32">0x200123FC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3601,7 +3603,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.i</member>
-			<member name="last_addr" type="uint32">0x200123F8</member>
+			<member name="last_addr" type="uint32">0x20012400</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3650,7 +3652,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.integral_lower_limit</member>
-			<member name="last_addr" type="uint32">0x20012418</member>
+			<member name="last_addr" type="uint32">0x20012420</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3699,7 +3701,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.max_out</member>
-			<member name="last_addr" type="uint32">0x20012410</member>
+			<member name="last_addr" type="uint32">0x20012418</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3748,7 +3750,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.ap</member>
-			<member name="last_addr" type="uint32">0x20012400</member>
+			<member name="last_addr" type="uint32">0x20012408</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3797,7 +3799,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.d</member>
-			<member name="last_addr" type="uint32">0x200123FC</member>
+			<member name="last_addr" type="uint32">0x20012404</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3846,7 +3848,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.bp</member>
-			<member name="last_addr" type="uint32">0x20012404</member>
+			<member name="last_addr" type="uint32">0x2001240C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3895,7 +3897,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.input_max_err</member>
-			<member name="last_addr" type="uint32">0x2001240C</member>
+			<member name="last_addr" type="uint32">0x20012414</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3944,7 +3946,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.integral_higher_limit</member>
-			<member name="last_addr" type="uint32">0x20012414</member>
+			<member name="last_addr" type="uint32">0x2001241C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -3993,7 +3995,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.param.cp</member>
-			<member name="last_addr" type="uint32">0x20012408</member>
+			<member name="last_addr" type="uint32">0x20012410</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4042,7 +4044,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.pos_rot_pid.set</member>
-			<member name="last_addr" type="uint32">0x200123D4</member>
+			<member name="last_addr" type="uint32">0x200123DC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4091,7 +4093,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.ready_flag</member>
-			<member name="last_addr" type="uint32">0x200123C1</member>
+			<member name="last_addr" type="uint32">0x200123C9</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4140,7 +4142,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.hcan</member>
-			<member name="last_addr" type="uint32">0x20012420</member>
+			<member name="last_addr" type="uint32">0x20012428</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4189,7 +4191,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.velocity.speedX</member>
-			<member name="last_addr" type="uint32">0x200123C4</member>
+			<member name="last_addr" type="uint32">0x200123CC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4238,7 +4240,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.velocity.speedY</member>
-			<member name="last_addr" type="uint32">0x200123C8</member>
+			<member name="last_addr" type="uint32">0x200123D0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4287,7 +4289,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.velocity.speedSpin</member>
-			<member name="last_addr" type="uint32">0x200123CC</member>
+			<member name="last_addr" type="uint32">0x200123D4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4336,7 +4338,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.iout</member>
-			<member name="last_addr" type="uint32">0x200124F0</member>
+			<member name="last_addr" type="uint32">0x200124F8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4385,7 +4387,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.pout</member>
-			<member name="last_addr" type="uint32">0x200124EC</member>
+			<member name="last_addr" type="uint32">0x200124F4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4434,7 +4436,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.last_err</member>
-			<member name="last_addr" type="uint32">0x200124E4</member>
+			<member name="last_addr" type="uint32">0x200124EC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4483,7 +4485,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.out</member>
-			<member name="last_addr" type="uint32">0x20012520</member>
+			<member name="last_addr" type="uint32">0x20012528</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4532,7 +4534,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.enable</member>
-			<member name="last_addr" type="uint32">0x200124D4</member>
+			<member name="last_addr" type="uint32">0x200124DC</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4581,7 +4583,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.penultimate_err</member>
-			<member name="last_addr" type="uint32">0x200124E8</member>
+			<member name="last_addr" type="uint32">0x200124F0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4630,7 +4632,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.err</member>
-			<member name="last_addr" type="uint32">0x200124E0</member>
+			<member name="last_addr" type="uint32">0x200124E8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4679,7 +4681,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.get</member>
-			<member name="last_addr" type="uint32">0x200124DC</member>
+			<member name="last_addr" type="uint32">0x200124E4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4728,7 +4730,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.dout</member>
-			<member name="last_addr" type="uint32">0x200124F4</member>
+			<member name="last_addr" type="uint32">0x200124FC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4777,7 +4779,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.p</member>
-			<member name="last_addr" type="uint32">0x200124F8</member>
+			<member name="last_addr" type="uint32">0x20012500</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4826,7 +4828,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.i</member>
-			<member name="last_addr" type="uint32">0x200124FC</member>
+			<member name="last_addr" type="uint32">0x20012504</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4875,7 +4877,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.integral_lower_limit</member>
-			<member name="last_addr" type="uint32">0x2001251C</member>
+			<member name="last_addr" type="uint32">0x20012524</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4924,7 +4926,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.max_out</member>
-			<member name="last_addr" type="uint32">0x20012514</member>
+			<member name="last_addr" type="uint32">0x2001251C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -4973,7 +4975,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.ap</member>
-			<member name="last_addr" type="uint32">0x20012504</member>
+			<member name="last_addr" type="uint32">0x2001250C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5022,7 +5024,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.d</member>
-			<member name="last_addr" type="uint32">0x20012500</member>
+			<member name="last_addr" type="uint32">0x20012508</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5071,7 +5073,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.bp</member>
-			<member name="last_addr" type="uint32">0x20012508</member>
+			<member name="last_addr" type="uint32">0x20012510</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5120,7 +5122,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.input_max_err</member>
-			<member name="last_addr" type="uint32">0x20012510</member>
+			<member name="last_addr" type="uint32">0x20012518</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5169,7 +5171,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.integral_higher_limit</member>
-			<member name="last_addr" type="uint32">0x20012518</member>
+			<member name="last_addr" type="uint32">0x20012520</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5218,7 +5220,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.param.cp</member>
-			<member name="last_addr" type="uint32">0x2001250C</member>
+			<member name="last_addr" type="uint32">0x20012514</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5267,7 +5269,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].pospid.set</member>
-			<member name="last_addr" type="uint32">0x200124D8</member>
+			<member name="last_addr" type="uint32">0x200124E0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5316,7 +5318,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].is_using_external_speed</member>
-			<member name="last_addr" type="uint32">0x200125A8</member>
+			<member name="last_addr" type="uint32">0x200125B0</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5365,7 +5367,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].is_zero_offset</member>
-			<member name="last_addr" type="uint32">0x20012575</member>
+			<member name="last_addr" type="uint32">0x2001257D</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5414,7 +5416,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lost_flag</member>
-			<member name="last_addr" type="uint32">0x20012576</member>
+			<member name="last_addr" type="uint32">0x2001257E</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5463,7 +5465,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].stall_flag</member>
-			<member name="last_addr" type="uint32">0x20012577</member>
+			<member name="last_addr" type="uint32">0x2001257F</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5512,7 +5514,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].raw_data.temperature</member>
-			<member name="last_addr" type="uint32">0x2001243C</member>
+			<member name="last_addr" type="uint32">0x20012444</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5561,7 +5563,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].raw_data.torque_current</member>
-			<member name="last_addr" type="uint32">0x2001243A</member>
+			<member name="last_addr" type="uint32">0x20012442</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5610,7 +5612,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].raw_data.speed_rpm</member>
-			<member name="last_addr" type="uint32">0x20012438</member>
+			<member name="last_addr" type="uint32">0x20012440</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5659,7 +5661,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].raw_data.encoder</member>
-			<member name="last_addr" type="uint32">0x20012436</member>
+			<member name="last_addr" type="uint32">0x2001243E</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5708,7 +5710,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.iout</member>
-			<member name="last_addr" type="uint32">0x200124A0</member>
+			<member name="last_addr" type="uint32">0x200124A8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5757,7 +5759,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.pout</member>
-			<member name="last_addr" type="uint32">0x2001249C</member>
+			<member name="last_addr" type="uint32">0x200124A4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5806,7 +5808,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.last_err</member>
-			<member name="last_addr" type="uint32">0x20012494</member>
+			<member name="last_addr" type="uint32">0x2001249C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5855,7 +5857,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.out</member>
-			<member name="last_addr" type="uint32">0x200124D0</member>
+			<member name="last_addr" type="uint32">0x200124D8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5904,7 +5906,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.enable</member>
-			<member name="last_addr" type="uint32">0x20012484</member>
+			<member name="last_addr" type="uint32">0x2001248C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -5953,7 +5955,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.penultimate_err</member>
-			<member name="last_addr" type="uint32">0x20012498</member>
+			<member name="last_addr" type="uint32">0x200124A0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6002,7 +6004,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.err</member>
-			<member name="last_addr" type="uint32">0x20012490</member>
+			<member name="last_addr" type="uint32">0x20012498</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6051,7 +6053,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.get</member>
-			<member name="last_addr" type="uint32">0x2001248C</member>
+			<member name="last_addr" type="uint32">0x20012494</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6100,7 +6102,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.dout</member>
-			<member name="last_addr" type="uint32">0x200124A4</member>
+			<member name="last_addr" type="uint32">0x200124AC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6149,7 +6151,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.p</member>
-			<member name="last_addr" type="uint32">0x200124A8</member>
+			<member name="last_addr" type="uint32">0x200124B0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6198,7 +6200,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.i</member>
-			<member name="last_addr" type="uint32">0x200124AC</member>
+			<member name="last_addr" type="uint32">0x200124B4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6247,7 +6249,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.integral_lower_limit</member>
-			<member name="last_addr" type="uint32">0x200124CC</member>
+			<member name="last_addr" type="uint32">0x200124D4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6296,7 +6298,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.max_out</member>
-			<member name="last_addr" type="uint32">0x200124C4</member>
+			<member name="last_addr" type="uint32">0x200124CC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6345,7 +6347,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.ap</member>
-			<member name="last_addr" type="uint32">0x200124B4</member>
+			<member name="last_addr" type="uint32">0x200124BC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6394,7 +6396,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.d</member>
-			<member name="last_addr" type="uint32">0x200124B0</member>
+			<member name="last_addr" type="uint32">0x200124B8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6443,7 +6445,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.bp</member>
-			<member name="last_addr" type="uint32">0x200124B8</member>
+			<member name="last_addr" type="uint32">0x200124C0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6492,7 +6494,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.input_max_err</member>
-			<member name="last_addr" type="uint32">0x200124C0</member>
+			<member name="last_addr" type="uint32">0x200124C8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6541,7 +6543,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.integral_higher_limit</member>
-			<member name="last_addr" type="uint32">0x200124C8</member>
+			<member name="last_addr" type="uint32">0x200124D0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6590,7 +6592,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.param.cp</member>
-			<member name="last_addr" type="uint32">0x200124BC</member>
+			<member name="last_addr" type="uint32">0x200124C4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6639,7 +6641,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].velpid.set</member>
-			<member name="last_addr" type="uint32">0x20012488</member>
+			<member name="last_addr" type="uint32">0x20012490</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6688,7 +6690,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].ready_flag</member>
-			<member name="last_addr" type="uint32">0x20012574</member>
+			<member name="last_addr" type="uint32">0x2001257C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6737,7 +6739,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].current_set</member>
-			<member name="last_addr" type="uint32">0x20012480</member>
+			<member name="last_addr" type="uint32">0x20012488</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6786,7 +6788,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].msg_cnt</member>
-			<member name="last_addr" type="uint32">0x2001242C</member>
+			<member name="last_addr" type="uint32">0x20012434</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6835,7 +6837,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_id</member>
-			<member name="last_addr" type="uint32">0x2001258C</member>
+			<member name="last_addr" type="uint32">0x20012594</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6884,7 +6886,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.tx_member.len</member>
-			<member name="last_addr" type="uint32">0x200125A0</member>
+			<member name="last_addr" type="uint32">0x200125A8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6933,7 +6935,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.tx_member.buf_data</member>
-			<member name="last_addr" type="uint32">0x200125A1</member>
+			<member name="last_addr" type="uint32">0x200125A9</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -6982,7 +6984,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.tx_member.id</member>
-			<member name="last_addr" type="uint32">0x2001259C</member>
+			<member name="last_addr" type="uint32">0x200125A4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7031,7 +7033,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.index</member>
-			<member name="last_addr" type="uint32">0x20012598</member>
+			<member name="last_addr" type="uint32">0x200125A0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7080,7 +7082,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.hcan</member>
-			<member name="last_addr" type="uint32">0x20012590</member>
+			<member name="last_addr" type="uint32">0x20012598</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7129,7 +7131,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_manager</member>
-			<member name="last_addr" type="uint32">0x20012584</member>
+			<member name="last_addr" type="uint32">0x2001258C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7178,7 +7180,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_invoker</member>
-			<member name="last_addr" type="uint32">0x20012588</member>
+			<member name="last_addr" type="uint32">0x20012590</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7227,7 +7229,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_functor._M_unused._M_function_pointer</member>
-			<member name="last_addr" type="uint32">0x2001257C</member>
+			<member name="last_addr" type="uint32">0x20012584</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7276,7 +7278,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_functor._M_unused._M_object</member>
-			<member name="last_addr" type="uint32">0x2001257C</member>
+			<member name="last_addr" type="uint32">0x20012584</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7325,7 +7327,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_functor._M_unused._M_const_object</member>
-			<member name="last_addr" type="uint32">0x2001257C</member>
+			<member name="last_addr" type="uint32">0x20012584</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7374,7 +7376,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_functor._M_unused._M_member_pointer</member>
-			<member name="last_addr" type="uint32">0x2001257C</member>
+			<member name="last_addr" type="uint32">0x20012584</member>
 			<member name="byte_size" type="sint32">0</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7423,7 +7425,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_callback._M_functor._M_pod_data[0]</member>
-			<member name="last_addr" type="uint32">0x2001257C</member>
+			<member name="last_addr" type="uint32">0x20012584</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7472,7 +7474,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].can_device.rx_sem</member>
-			<member name="last_addr" type="uint32">0x20012594</member>
+			<member name="last_addr" type="uint32">0x2001259C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7521,7 +7523,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].reverse_flag</member>
-			<member name="last_addr" type="uint32">0x20012428</member>
+			<member name="last_addr" type="uint32">0x20012430</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7570,7 +7572,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lost_num</member>
-			<member name="last_addr" type="uint32">0x20012578</member>
+			<member name="last_addr" type="uint32">0x20012580</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7619,7 +7621,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].low_pass_alpha</member>
-			<member name="last_addr" type="uint32">0x20012570</member>
+			<member name="last_addr" type="uint32">0x20012578</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7668,7 +7670,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].id</member>
-			<member name="last_addr" type="uint32">0x20012430</member>
+			<member name="last_addr" type="uint32">0x20012438</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7717,7 +7719,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.sigmoid_gain</member>
-			<member name="last_addr" type="uint32">0x20012560</member>
+			<member name="last_addr" type="uint32">0x20012568</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7766,7 +7768,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.i_max</member>
-			<member name="last_addr" type="uint32">0x20012538</member>
+			<member name="last_addr" type="uint32">0x20012540</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7815,7 +7817,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.Kd</member>
-			<member name="last_addr" type="uint32">0x20012528</member>
+			<member name="last_addr" type="uint32">0x20012530</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7864,7 +7866,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.prev_target</member>
-			<member name="last_addr" type="uint32">0x20012540</member>
+			<member name="last_addr" type="uint32">0x20012548</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7913,7 +7915,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.i_max_ratio</member>
-			<member name="last_addr" type="uint32">0x2001253C</member>
+			<member name="last_addr" type="uint32">0x20012544</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -7962,7 +7964,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.out</member>
-			<member name="last_addr" type="uint32">0x2001254C</member>
+			<member name="last_addr" type="uint32">0x20012554</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8011,7 +8013,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.i_term</member>
-			<member name="last_addr" type="uint32">0x2001255C</member>
+			<member name="last_addr" type="uint32">0x20012564</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8060,7 +8062,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.d_term</member>
-			<member name="last_addr" type="uint32">0x20012550</member>
+			<member name="last_addr" type="uint32">0x20012558</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8109,7 +8111,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.Kp</member>
-			<member name="last_addr" type="uint32">0x20012524</member>
+			<member name="last_addr" type="uint32">0x2001252C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8158,7 +8160,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.error</member>
-			<member name="last_addr" type="uint32">0x20012564</member>
+			<member name="last_addr" type="uint32">0x2001256C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8207,7 +8209,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.target_vel_est</member>
-			<member name="last_addr" type="uint32">0x20012544</member>
+			<member name="last_addr" type="uint32">0x2001254C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8256,7 +8258,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.Kff</member>
-			<member name="last_addr" type="uint32">0x20012530</member>
+			<member name="last_addr" type="uint32">0x20012538</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8305,7 +8307,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.get</member>
-			<member name="last_addr" type="uint32">0x2001256C</member>
+			<member name="last_addr" type="uint32">0x20012574</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8354,7 +8356,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.integral</member>
-			<member name="last_addr" type="uint32">0x20012548</member>
+			<member name="last_addr" type="uint32">0x20012550</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8403,7 +8405,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.max_out</member>
-			<member name="last_addr" type="uint32">0x20012534</member>
+			<member name="last_addr" type="uint32">0x2001253C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8452,7 +8454,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.ff_term</member>
-			<member name="last_addr" type="uint32">0x20012554</member>
+			<member name="last_addr" type="uint32">0x2001255C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8501,7 +8503,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.p_term</member>
-			<member name="last_addr" type="uint32">0x20012558</member>
+			<member name="last_addr" type="uint32">0x20012560</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8550,7 +8552,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.Ki</member>
-			<member name="last_addr" type="uint32">0x2001252C</member>
+			<member name="last_addr" type="uint32">0x20012534</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8599,7 +8601,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].lqr.set</member>
-			<member name="last_addr" type="uint32">0x20012568</member>
+			<member name="last_addr" type="uint32">0x20012570</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8648,7 +8650,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].type</member>
-			<member name="last_addr" type="uint32">0x20012434</member>
+			<member name="last_addr" type="uint32">0x2001243C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8697,7 +8699,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.stall_cnt</member>
-			<member name="last_addr" type="uint32">0x20012470</member>
+			<member name="last_addr" type="uint32">0x20012478</member>
 			<member name="byte_size" type="sint32">8</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8746,7 +8748,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.total_rounds</member>
-			<member name="last_addr" type="uint32">0x20012448</member>
+			<member name="last_addr" type="uint32">0x20012450</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8795,7 +8797,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.stall_speed_min</member>
-			<member name="last_addr" type="uint32">0x2001246C</member>
+			<member name="last_addr" type="uint32">0x20012474</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8844,7 +8846,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.zero_offset_round</member>
-			<member name="last_addr" type="uint32">0x20012460</member>
+			<member name="last_addr" type="uint32">0x20012468</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8893,7 +8895,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.last_round</member>
-			<member name="last_addr" type="uint32">0x2001245C</member>
+			<member name="last_addr" type="uint32">0x20012464</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8942,7 +8944,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.stall_current_max</member>
-			<member name="last_addr" type="uint32">0x20012468</member>
+			<member name="last_addr" type="uint32">0x20012470</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -8991,7 +8993,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.raw_current_speed</member>
-			<member name="last_addr" type="uint32">0x20012454</member>
+			<member name="last_addr" type="uint32">0x2001245C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9040,7 +9042,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.last_speed</member>
-			<member name="last_addr" type="uint32">0x20012450</member>
+			<member name="last_addr" type="uint32">0x20012458</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9089,7 +9091,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.round_cnt</member>
-			<member name="last_addr" type="uint32">0x20012440</member>
+			<member name="last_addr" type="uint32">0x20012448</member>
 			<member name="byte_size" type="sint32">8</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9138,7 +9140,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.current_round</member>
-			<member name="last_addr" type="uint32">0x20012458</member>
+			<member name="last_addr" type="uint32">0x20012460</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9187,7 +9189,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.offset_current</member>
-			<member name="last_addr" type="uint32">0x20012478</member>
+			<member name="last_addr" type="uint32">0x20012480</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9236,7 +9238,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.torque_current</member>
-			<member name="last_addr" type="uint32">0x20012464</member>
+			<member name="last_addr" type="uint32">0x2001246C</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9285,7 +9287,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.external_speed</member>
-			<member name="last_addr" type="uint32">0x2001247C</member>
+			<member name="last_addr" type="uint32">0x20012484</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9334,7 +9336,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.wheel[0].data.current_speed</member>
-			<member name="last_addr" type="uint32">0x2001244C</member>
+			<member name="last_addr" type="uint32">0x20012454</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9383,7 +9385,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.enable_flag</member>
-			<member name="last_addr" type="uint32">0x200123C0</member>
+			<member name="last_addr" type="uint32">0x200123C8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9432,7 +9434,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_chassis.super_rotate_flag</member>
-			<member name="last_addr" type="uint32">0x200123C3</member>
+			<member name="last_addr" type="uint32">0x200123CB</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9481,7 +9483,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.filtered_buff[0]</member>
-			<member name="last_addr" type="uint32">0x20012B94</member>
+			<member name="last_addr" type="uint32">0x20012B9C</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9530,7 +9532,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.is_holding</member>
-			<member name="last_addr" type="uint32">0x20012BDC</member>
+			<member name="last_addr" type="uint32">0x20012BE4</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9579,7 +9581,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.block_current_min</member>
-			<member name="last_addr" type="uint32">0x20012BD8</member>
+			<member name="last_addr" type="uint32">0x20012BE0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9628,7 +9630,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.holding_time</member>
-			<member name="last_addr" type="uint32">0x20012BCC</member>
+			<member name="last_addr" type="uint32">0x20012BD4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9677,7 +9679,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.pump_on_time</member>
-			<member name="last_addr" type="uint32">0x20012BC8</member>
+			<member name="last_addr" type="uint32">0x20012BD0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9726,7 +9728,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.measuring_current</member>
-			<member name="last_addr" type="uint32">0x20012BD0</member>
+			<member name="last_addr" type="uint32">0x20012BD8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9775,7 +9777,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.change_time</member>
-			<member name="last_addr" type="uint32">0x20012BC4</member>
+			<member name="last_addr" type="uint32">0x20012BCC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9824,7 +9826,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.left_pump_judge_holding.block_current_max</member>
-			<member name="last_addr" type="uint32">0x20012BD4</member>
+			<member name="last_addr" type="uint32">0x20012BDC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9873,7 +9875,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.hadc</member>
-			<member name="last_addr" type="uint32">0x20012B9C</member>
+			<member name="last_addr" type="uint32">0x20012BA4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9922,7 +9924,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.adc_buff[0]</member>
-			<member name="last_addr" type="uint32">0x20012B88</member>
+			<member name="last_addr" type="uint32">0x20012B90</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -9971,7 +9973,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.is_holding</member>
-			<member name="last_addr" type="uint32">0x20012BF8</member>
+			<member name="last_addr" type="uint32">0x20012C00</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10020,7 +10022,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.block_current_min</member>
-			<member name="last_addr" type="uint32">0x20012BF4</member>
+			<member name="last_addr" type="uint32">0x20012BFC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10069,7 +10071,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.holding_time</member>
-			<member name="last_addr" type="uint32">0x20012BE8</member>
+			<member name="last_addr" type="uint32">0x20012BF0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10118,7 +10120,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.pump_on_time</member>
-			<member name="last_addr" type="uint32">0x20012BE4</member>
+			<member name="last_addr" type="uint32">0x20012BEC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10167,7 +10169,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.measuring_current</member>
-			<member name="last_addr" type="uint32">0x20012BEC</member>
+			<member name="last_addr" type="uint32">0x20012BF4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10216,7 +10218,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.change_time</member>
-			<member name="last_addr" type="uint32">0x20012BE0</member>
+			<member name="last_addr" type="uint32">0x20012BE8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10265,7 +10267,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.right_pump_judge_holding.block_current_max</member>
-			<member name="last_addr" type="uint32">0x20012BF0</member>
+			<member name="last_addr" type="uint32">0x20012BF8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10314,7 +10316,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.is_lost</member>
-			<member name="last_addr" type="uint32">0x20012BFC</member>
+			<member name="last_addr" type="uint32">0x20012C04</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10363,7 +10365,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.is_holding</member>
-			<member name="last_addr" type="uint32">0x20012BC0</member>
+			<member name="last_addr" type="uint32">0x20012BC8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10412,7 +10414,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.block_current_min</member>
-			<member name="last_addr" type="uint32">0x20012BBC</member>
+			<member name="last_addr" type="uint32">0x20012BC4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10461,7 +10463,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.holding_time</member>
-			<member name="last_addr" type="uint32">0x20012BB0</member>
+			<member name="last_addr" type="uint32">0x20012BB8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10510,7 +10512,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.pump_on_time</member>
-			<member name="last_addr" type="uint32">0x20012BAC</member>
+			<member name="last_addr" type="uint32">0x20012BB4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10559,7 +10561,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.measuring_current</member>
-			<member name="last_addr" type="uint32">0x20012BB4</member>
+			<member name="last_addr" type="uint32">0x20012BBC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10608,7 +10610,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.change_time</member>
-			<member name="last_addr" type="uint32">0x20012BA8</member>
+			<member name="last_addr" type="uint32">0x20012BB0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10657,7 +10659,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.arm_pump_judge_holding.block_current_max</member>
-			<member name="last_addr" type="uint32">0x20012BB8</member>
+			<member name="last_addr" type="uint32">0x20012BC0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10706,7 +10708,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_open_state.left</member>
-			<member name="last_addr" type="uint32">0x20012BA1</member>
+			<member name="last_addr" type="uint32">0x20012BA9</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10755,7 +10757,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_open_state.arm</member>
-			<member name="last_addr" type="uint32">0x20012BA0</member>
+			<member name="last_addr" type="uint32">0x20012BA8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10804,7 +10806,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_open_state.right</member>
-			<member name="last_addr" type="uint32">0x20012BA2</member>
+			<member name="last_addr" type="uint32">0x20012BAA</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10853,7 +10855,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_holding_state.left</member>
-			<member name="last_addr" type="uint32">0x20012BA4</member>
+			<member name="last_addr" type="uint32">0x20012BAC</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10902,7 +10904,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_holding_state.arm</member>
-			<member name="last_addr" type="uint32">0x20012BA3</member>
+			<member name="last_addr" type="uint32">0x20012BAB</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -10951,7 +10953,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">100</member>
 			<member name="address" type="string">g_pump.data.pump_holding_state.right</member>
-			<member name="last_addr" type="uint32">0x20012BA5</member>
+			<member name="last_addr" type="uint32">0x20012BAD</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11000,7 +11002,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.last_buff[0]</member>
-			<member name="last_addr" type="uint32">0x20012B8E</member>
+			<member name="last_addr" type="uint32">0x20012B96</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11049,7 +11051,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.filtered_buff[1]</member>
-			<member name="last_addr" type="uint32">0x20012B96</member>
+			<member name="last_addr" type="uint32">0x20012B9E</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11098,7 +11100,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_pump.filtered_buff[2]</member>
-			<member name="last_addr" type="uint32">0x20012B98</member>
+			<member name="last_addr" type="uint32">0x20012BA0</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11147,7 +11149,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.cmd[0]</member>
-			<member name="last_addr" type="uint32">0x20012A54</member>
+			<member name="last_addr" type="uint32">0x20012A5C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11196,7 +11198,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.is_zero_offset</member>
-			<member name="last_addr" type="uint32">0x20012B20</member>
+			<member name="last_addr" type="uint32">0x20012B28</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11245,7 +11247,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.rx_id</member>
-			<member name="last_addr" type="uint32">0x20012A50</member>
+			<member name="last_addr" type="uint32">0x20012A58</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11294,7 +11296,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.is_using_accel</member>
-			<member name="last_addr" type="uint32">0x20012A85</member>
+			<member name="last_addr" type="uint32">0x20012A8D</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11343,7 +11345,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_id</member>
-			<member name="last_addr" type="uint32">0x20012A4C</member>
+			<member name="last_addr" type="uint32">0x20012A54</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11392,7 +11394,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.msg_cnt</member>
-			<member name="last_addr" type="uint32">0x20012B24</member>
+			<member name="last_addr" type="uint32">0x20012B2C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11441,7 +11443,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.is_using_quaternion</member>
-			<member name="last_addr" type="uint32">0x20012A84</member>
+			<member name="last_addr" type="uint32">0x20012A8C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11490,7 +11492,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_id</member>
-			<member name="last_addr" type="uint32">0x20012A68</member>
+			<member name="last_addr" type="uint32">0x20012A70</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11539,7 +11541,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.tx_member.len</member>
-			<member name="last_addr" type="uint32">0x20012A7C</member>
+			<member name="last_addr" type="uint32">0x20012A84</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11588,7 +11590,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.tx_member.buf_data</member>
-			<member name="last_addr" type="uint32">0x20012A7D</member>
+			<member name="last_addr" type="uint32">0x20012A85</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11637,7 +11639,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.tx_member.id</member>
-			<member name="last_addr" type="uint32">0x20012A78</member>
+			<member name="last_addr" type="uint32">0x20012A80</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11686,7 +11688,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.index</member>
-			<member name="last_addr" type="uint32">0x20012A74</member>
+			<member name="last_addr" type="uint32">0x20012A7C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11735,7 +11737,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.hcan</member>
-			<member name="last_addr" type="uint32">0x20012A6C</member>
+			<member name="last_addr" type="uint32">0x20012A74</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11784,7 +11786,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_manager</member>
-			<member name="last_addr" type="uint32">0x20012A60</member>
+			<member name="last_addr" type="uint32">0x20012A68</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11833,7 +11835,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_invoker</member>
-			<member name="last_addr" type="uint32">0x20012A64</member>
+			<member name="last_addr" type="uint32">0x20012A6C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11882,7 +11884,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_functor._M_unused._M_function_pointer</member>
-			<member name="last_addr" type="uint32">0x20012A58</member>
+			<member name="last_addr" type="uint32">0x20012A60</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11931,7 +11933,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_functor._M_unused._M_object</member>
-			<member name="last_addr" type="uint32">0x20012A58</member>
+			<member name="last_addr" type="uint32">0x20012A60</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -11980,7 +11982,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_functor._M_unused._M_const_object</member>
-			<member name="last_addr" type="uint32">0x20012A58</member>
+			<member name="last_addr" type="uint32">0x20012A60</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12029,7 +12031,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_functor._M_unused._M_member_pointer</member>
-			<member name="last_addr" type="uint32">0x20012A58</member>
+			<member name="last_addr" type="uint32">0x20012A60</member>
 			<member name="byte_size" type="sint32">0</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12078,7 +12080,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_callback._M_functor._M_pod_data[0]</member>
-			<member name="last_addr" type="uint32">0x20012A58</member>
+			<member name="last_addr" type="uint32">0x20012A60</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12127,7 +12129,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.can_device.rx_sem</member>
-			<member name="last_addr" type="uint32">0x20012A70</member>
+			<member name="last_addr" type="uint32">0x20012A78</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12176,7 +12178,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.hcan</member>
-			<member name="last_addr" type="uint32">0x20012A48</member>
+			<member name="last_addr" type="uint32">0x20012A50</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12225,7 +12227,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.lost_num</member>
-			<member name="last_addr" type="uint32">0x20012B18</member>
+			<member name="last_addr" type="uint32">0x20012B20</member>
 			<member name="byte_size" type="sint32">8</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12274,7 +12276,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.is_lost</member>
-			<member name="last_addr" type="uint32">0x20012B14</member>
+			<member name="last_addr" type="uint32">0x20012B1C</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12323,7 +12325,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.gyro[0]</member>
-			<member name="last_addr" type="uint32">0x20012AE8</member>
+			<member name="last_addr" type="uint32">0x20012AF0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12372,7 +12374,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.pitch</member>
-			<member name="last_addr" type="uint32">0x20012A88</member>
+			<member name="last_addr" type="uint32">0x20012A90</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12421,7 +12423,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.accel[0]</member>
-			<member name="last_addr" type="uint32">0x20012AF4</member>
+			<member name="last_addr" type="uint32">0x20012AFC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12470,7 +12472,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.roll_cnt</member>
-			<member name="last_addr" type="uint32">0x20012AE4</member>
+			<member name="last_addr" type="uint32">0x20012AEC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12519,7 +12521,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.yaw_cnt</member>
-			<member name="last_addr" type="uint32">0x20012AE0</member>
+			<member name="last_addr" type="uint32">0x20012AE8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12568,7 +12570,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.roll</member>
-			<member name="last_addr" type="uint32">0x20012A8C</member>
+			<member name="last_addr" type="uint32">0x20012A94</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12617,7 +12619,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.yaw</member>
-			<member name="last_addr" type="uint32">0x20012A90</member>
+			<member name="last_addr" type="uint32">0x20012A98</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12666,7 +12668,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.total_rounds</member>
-			<member name="last_addr" type="uint32">0x20012AA4</member>
+			<member name="last_addr" type="uint32">0x20012AAC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12715,7 +12717,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.current_ang</member>
-			<member name="last_addr" type="uint32">0x20012A94</member>
+			<member name="last_addr" type="uint32">0x20012A9C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12764,7 +12766,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.last_ang</member>
-			<member name="last_addr" type="uint32">0x20012A98</member>
+			<member name="last_addr" type="uint32">0x20012AA0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12813,7 +12815,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.zero_offset_deg</member>
-			<member name="last_addr" type="uint32">0x20012AA8</member>
+			<member name="last_addr" type="uint32">0x20012AB0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12862,7 +12864,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.round_cnt</member>
-			<member name="last_addr" type="uint32">0x20012AA0</member>
+			<member name="last_addr" type="uint32">0x20012AA8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12911,7 +12913,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.pitch.delta_ang</member>
-			<member name="last_addr" type="uint32">0x20012A9C</member>
+			<member name="last_addr" type="uint32">0x20012AA4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -12960,7 +12962,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.total_rounds</member>
-			<member name="last_addr" type="uint32">0x20012ABC</member>
+			<member name="last_addr" type="uint32">0x20012AC4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13009,7 +13011,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.current_ang</member>
-			<member name="last_addr" type="uint32">0x20012AAC</member>
+			<member name="last_addr" type="uint32">0x20012AB4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13058,7 +13060,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.last_ang</member>
-			<member name="last_addr" type="uint32">0x20012AB0</member>
+			<member name="last_addr" type="uint32">0x20012AB8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13107,7 +13109,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.zero_offset_deg</member>
-			<member name="last_addr" type="uint32">0x20012AC0</member>
+			<member name="last_addr" type="uint32">0x20012AC8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13156,7 +13158,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.round_cnt</member>
-			<member name="last_addr" type="uint32">0x20012AB8</member>
+			<member name="last_addr" type="uint32">0x20012AC0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13205,7 +13207,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.roll.delta_ang</member>
-			<member name="last_addr" type="uint32">0x20012AB4</member>
+			<member name="last_addr" type="uint32">0x20012ABC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13254,7 +13256,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.total_rounds</member>
-			<member name="last_addr" type="uint32">0x20012AD4</member>
+			<member name="last_addr" type="uint32">0x20012ADC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13303,7 +13305,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.current_ang</member>
-			<member name="last_addr" type="uint32">0x20012AC4</member>
+			<member name="last_addr" type="uint32">0x20012ACC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13352,7 +13354,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.last_ang</member>
-			<member name="last_addr" type="uint32">0x20012AC8</member>
+			<member name="last_addr" type="uint32">0x20012AD0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13401,7 +13403,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.zero_offset_deg</member>
-			<member name="last_addr" type="uint32">0x20012AD8</member>
+			<member name="last_addr" type="uint32">0x20012AE0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13450,7 +13452,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.round_cnt</member>
-			<member name="last_addr" type="uint32">0x20012AD0</member>
+			<member name="last_addr" type="uint32">0x20012AD8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13499,7 +13501,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.euler.yaw.delta_ang</member>
-			<member name="last_addr" type="uint32">0x20012ACC</member>
+			<member name="last_addr" type="uint32">0x20012AD4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13548,7 +13550,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.pitch_cnt</member>
-			<member name="last_addr" type="uint32">0x20012ADC</member>
+			<member name="last_addr" type="uint32">0x20012AE4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13597,7 +13599,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.cur_temp</member>
-			<member name="last_addr" type="uint32">0x20012B10</member>
+			<member name="last_addr" type="uint32">0x20012B18</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
@@ -13646,13 +13648,111 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">g_imu.data.q[0]</member>
-			<member name="last_addr" type="uint32">0x20012B00</member>
+			<member name="last_addr" type="uint32">0x20012B08</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="description" type="string"/>
 			<member name="comment" type="string"/>
 			<member name="virtual" type="sint32">0</member>
 			<member name="virtual_default" type="string">0</member>
 			<member name="treat_as" type="sint32">2</member>
+			<member name="type_fmt" type="string"/>
+			<member name="bit_shift" type="sint32">0</member>
+			<member name="bit_mask" type="string">no mask (-1)</member>
+			<member name="value_trf" type="CObject_ptr">NULL</member>
+			<member name="enum_enabled" type="sint32">0</member>
+			<member name="enum_num_always" type="sint32">0</member>
+			<member name="enum_default_val" type="string">unknown</member>
+			<member name="enum_num_with_default" type="sint32">1</member>
+			<member name="enum" type="string"/>
+			<member name="show_as" type="sint32">0</member>
+			<member name="show_val" type="sint32">1</member>
+			<member name="show_max" type="sint32">0</member>
+			<member name="show_min" type="sint32">0</member>
+			<member name="show_num_fixed_digs" type="sint32">2147483647</member>
+			<member name="show_num_lzero_fill" type="sint32">0</member>
+			<member name="show_num_afp_digs" type="sint32">2147483647</member>
+			<member name="show_num_exp" type="sint32">0</member>
+			<member name="show_ascii_zterm" type="sint32">0</member>
+			<member name="show_ascii_rev" type="sint32">0</member>
+			<member name="show_ascii_hex" type="sint32">1</member>
+			<member name="show_ascii_chwdt" type="sint32">1</member>
+			<member name="filt_enabled" type="sint32">0</member>
+			<member name="filt_reset_onmod" type="sint32">1</member>
+			<member name="filt_time" type="uint32">0x1388</member>
+			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_edit_mode" type="sint32">2</member>
+			<member name="modif_set_mode" type="sint32">0</member>
+			<member name="modif_auto_fin" type="sint32">1</member>
+			<member name="modif_auto_hide" type="sint32">1</member>
+			<member name="modif_predefs_modes" type="uint32">0x1</member>
+			<member name="modif_predefs_other" type="string"/>
+			<member name="modif_set_min" type="string"/>
+			<member name="modif_set_max" type="string"/>
+			<member name="modif_set_step" type="string"/>
+			<member name="modif_address" type="string"/>
+			<member name="modif_last_addr" type="uint32">0x0</member>
+		</object>
+		<object name="ObjId0404" type="CVariable">
+			<member name="name" type="string">result</member>
+			<member name="unit" type="string">unit</member>
+			<member name="period" type="sint32">1000</member>
+			<member name="address" type="string">result</member>
+			<member name="last_addr" type="uint32">0x20012370</member>
+			<member name="byte_size" type="sint32">1</member>
+			<member name="description" type="string"/>
+			<member name="comment" type="string"/>
+			<member name="virtual" type="sint32">0</member>
+			<member name="virtual_default" type="string">0</member>
+			<member name="treat_as" type="sint32">0</member>
+			<member name="type_fmt" type="string"/>
+			<member name="bit_shift" type="sint32">0</member>
+			<member name="bit_mask" type="string">no mask (-1)</member>
+			<member name="value_trf" type="CObject_ptr">NULL</member>
+			<member name="enum_enabled" type="sint32">0</member>
+			<member name="enum_num_always" type="sint32">0</member>
+			<member name="enum_default_val" type="string">unknown</member>
+			<member name="enum_num_with_default" type="sint32">1</member>
+			<member name="enum" type="string"/>
+			<member name="show_as" type="sint32">0</member>
+			<member name="show_val" type="sint32">1</member>
+			<member name="show_max" type="sint32">0</member>
+			<member name="show_min" type="sint32">0</member>
+			<member name="show_num_fixed_digs" type="sint32">2147483647</member>
+			<member name="show_num_lzero_fill" type="sint32">0</member>
+			<member name="show_num_afp_digs" type="sint32">2147483647</member>
+			<member name="show_num_exp" type="sint32">0</member>
+			<member name="show_ascii_zterm" type="sint32">0</member>
+			<member name="show_ascii_rev" type="sint32">0</member>
+			<member name="show_ascii_hex" type="sint32">1</member>
+			<member name="show_ascii_chwdt" type="sint32">1</member>
+			<member name="filt_enabled" type="sint32">0</member>
+			<member name="filt_reset_onmod" type="sint32">1</member>
+			<member name="filt_time" type="uint32">0x1388</member>
+			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_edit_mode" type="sint32">2</member>
+			<member name="modif_set_mode" type="sint32">0</member>
+			<member name="modif_auto_fin" type="sint32">1</member>
+			<member name="modif_auto_hide" type="sint32">1</member>
+			<member name="modif_predefs_modes" type="uint32">0x1</member>
+			<member name="modif_predefs_other" type="string"/>
+			<member name="modif_set_min" type="string"/>
+			<member name="modif_set_max" type="string"/>
+			<member name="modif_set_step" type="string"/>
+			<member name="modif_address" type="string"/>
+			<member name="modif_last_addr" type="uint32">0x0</member>
+		</object>
+		<object name="ObjId0405" type="CVariable">
+			<member name="name" type="string">flag</member>
+			<member name="unit" type="string">unit</member>
+			<member name="period" type="sint32">1000</member>
+			<member name="address" type="string">flag</member>
+			<member name="last_addr" type="uint32">0x2001236C</member>
+			<member name="byte_size" type="sint32">4</member>
+			<member name="description" type="string"/>
+			<member name="comment" type="string"/>
+			<member name="virtual" type="sint32">0</member>
+			<member name="virtual_default" type="string">0</member>
+			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
@@ -13759,6 +13859,8 @@
 			<member name="item0" type="CObject_ptr">ObjId0030</member>
 			<member name="item1" type="CObject_ptr">ObjId0046</member>
 			<member name="item2" type="CObject_ptr">ObjId0059</member>
+			<member name="item3" type="CObject_ptr">ObjId0404</member>
+			<member name="item4" type="CObject_ptr">ObjId0405</member>
 		</object>
 		<object name="ObjId0214" type="CObList"/>
 		<object name="ObjId0215" type="CObList"/>
@@ -13774,33 +13876,33 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId0217" type="CObArray" length="5">
-			<member name="index0" type="CObject_ptr">ObjId0369</member>
-			<member name="index1" type="CObject_ptr">ObjId0370</member>
-			<member name="index2" type="CObject_ptr">ObjId0371</member>
-			<member name="index3" type="CObject_ptr">ObjId0372</member>
-			<member name="index4" type="CObject_ptr">ObjId0373</member>
+			<member name="index0" type="CObject_ptr">ObjId0406</member>
+			<member name="index1" type="CObject_ptr">ObjId0407</member>
+			<member name="index2" type="CObject_ptr">ObjId0408</member>
+			<member name="index3" type="CObject_ptr">ObjId0409</member>
+			<member name="index4" type="CObject_ptr">ObjId0410</member>
 		</object>
-		<object name="ObjId0369" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0406" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">290</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId0370" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0407" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId0371" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0408" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId0372" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0409" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">70</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
-		<object name="ObjId0373" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId0410" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">200</member>
 			<member name="column_ix" type="sint32">4</member>
@@ -13812,6 +13914,10 @@
 			<member name="value1" type="CObject_ptr">ObjId0226</member>
 			<member name="key2" type="CObject_ptr">ObjId0059</member>
 			<member name="value2" type="CObject_ptr">ObjId0376</member>
+			<member name="key3" type="CObject_ptr">ObjId0404</member>
+			<member name="value3" type="CObject_ptr">ObjId0411</member>
+			<member name="key4" type="CObject_ptr">ObjId0405</member>
+			<member name="value4" type="CObject_ptr">ObjId0413</member>
 		</object>
 		<object name="ObjId0224" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
@@ -13828,6 +13934,16 @@
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0377</member>
 		</object>
 		<object name="ObjId0377" type="CObArray" length="0"/>
+		<object name="ObjId0411" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId0412</member>
+		</object>
+		<object name="ObjId0412" type="CObArray" length="0"/>
+		<object name="ObjId0413" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId0414</member>
+		</object>
+		<object name="ObjId0414" type="CObArray" length="0"/>
 		<object name="ObjId0228" type="CPrjItemBlock">
 			<member name="parent_item" type="CObject_ptr">ObjId0208</member>
 			<member name="tree_expand" type="sint32">1</member>

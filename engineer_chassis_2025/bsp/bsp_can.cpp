@@ -65,7 +65,8 @@ void CAN1Send_Task(void *argument) {
 //        taskEXIT_CRITICAL();
     }
 }
-
+HAL_StatusTypeDef result;
+uint32_t flag = 0;
 void CAN2Send_Task(void *argument) {
     can_device_transmit_member msg;
     uint32_t tx_mailbox;
@@ -78,7 +79,8 @@ void CAN2Send_Task(void *argument) {
         osMessageQueueGet(CAN2SendQueueHandle, &msg, 0, osWaitForever);
         tx_header.StdId = msg.id;
         tx_header.DLC = msg.len;
-        HAL_CAN_AddTxMessage(&hcan2, &tx_header, msg.buf_data, &tx_mailbox);
+        result =  HAL_CAN_AddTxMessage(&hcan2, &tx_header, msg.buf_data, &tx_mailbox);
+        flag++;
 //        taskEXIT_CRITICAL();
     }
 }

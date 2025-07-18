@@ -19,7 +19,7 @@ void imu_task(void *argument) {
     osDelay(200);
     for (;;) {
 #if DM_IMU
-        g_imu.request_imu_data();
+//        g_imu.request_imu_data();
 #endif
         osDelay(3);
     }

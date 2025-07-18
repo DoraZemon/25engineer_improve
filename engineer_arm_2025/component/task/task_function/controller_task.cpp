@@ -19,7 +19,7 @@ void controller_task(void *argument) {
     g_controller.init();
     for (;;) {
 
-        controller_status = osSemaphoreAcquire(customRxBinarySemHandle, 50);
+        controller_status = osSemaphoreAcquire(customRxBinarySemHandle, 500);
 
         if (controller_status == osOK) {
             g_controller.set_connected();

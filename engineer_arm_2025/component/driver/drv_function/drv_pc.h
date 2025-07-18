@@ -25,8 +25,9 @@ extern "C" {
 #include "drv_rc.h"
 #include "drv_controller.h"
 #include "drv_communicate.h"
-#include "drv_dm_Imu.h"
+//#include "drv_dm_Imu.h"
 #include "drv_gimbal.h"
+#include "drv_hi229um.h"
 
 enum robot_error_type {
   remote = 0,
@@ -171,12 +172,12 @@ class pc_device {
                    arm_device &arm,
                    controller_device &controller,
                    communicate_device &communicate,
-                   dm_imu_device &imu, gimbal_device &gimbal); //更新数据
+                    gimbal_device &gimbal); //更新数据
   void transmit_data(rc_device &rc,
                      arm_device &arm,
                      controller_device &controller,
                      communicate_device &communicate,
-                     dm_imu_device &imu, gimbal_device &gimbal); //发送数据到PC
+                     hi229um_device &hi229, gimbal_device &gimbal); //发送数据到PC
   void set_lost();
 
   void set_connected();
