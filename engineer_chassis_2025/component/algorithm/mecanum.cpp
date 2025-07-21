@@ -10,10 +10,10 @@
 
 
 #include "mecanum.h"
+float speeds[4];
 
 //无功率环
 __RAM_FUNC void chassisMotorSolverSet(dji_motor_device wheels[], float vel_x, float vel_y, float spin) {
-    float speeds[4];
     float speed_correction = 1;//这个是限制轮子的最大速度不是车体的速度,也可以直接在这里限制车速
     float w = 0.8f;
     float v;
@@ -24,8 +24,8 @@ __RAM_FUNC void chassisMotorSolverSet(dji_motor_device wheels[], float vel_x, fl
     //其实这一步可以没有，因为有这一步其实是改变了w和x和y的比例分配问题（最大功率有限制），实际上可以改spin的值来做
     if (v > 1) {
         float theta = atanf(vel_y / vel_x);
-        vel_x = arm_cos_f32(theta);
-        vel_y = arm_sin_f32(theta);
+        vel_x = vel_x / fabsf(vel_x) * fabsf(arm_cos_f32(theta));
+        vel_y = vel_y / fabsf(vel_y) * fabsf(arm_sin_f32(theta));
     }
     //逆时针
 

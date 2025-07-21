@@ -72,7 +72,7 @@ constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 
 constexpr float Arm_Motor1_Torque_Compensation = 0.0f; //电机1力矩补偿`
 constexpr float Arm_Motor2_Torque_Compensation = 0.03f; //电机2力矩补偿
-constexpr float Arm_Motor3_Torque_Compensation = -0.2f; //电机3力矩补偿
+constexpr float Arm_Motor3_Torque_Compensation = -0.1f; //电机3力矩补偿
 constexpr float Arm_Motor4_Torque_Compensation = 0.0f; //电机4力矩补偿
 constexpr float Arm_Motor5_Torque_Compensation = 0.0f; //电机5力矩补偿
 constexpr float Arm_Motor6_Torque_Compensation = 0.0f; //电机6力矩补偿

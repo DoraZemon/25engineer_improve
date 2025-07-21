@@ -26,7 +26,7 @@ extern "C" {
 
 constexpr float Arm_Motor1_Offset = 0.8711f; //电机1偏置
 constexpr float Arm_Motor2_Offset = -0.5938f; //电机2偏置
-constexpr float Arm_Motor3_Offset = -0.2289f; //电机3偏置
+constexpr float Arm_Motor3_Offset = -0.3680f; //电机3偏置
 constexpr float Arm_Motor4_Offset = 0.2413f; //电机4偏置
 constexpr float Arm_Motor5_Offset = -0.5805f; //电机5偏置
 constexpr float Arm_Motor6_Offset = 0.f; //电机6偏置
@@ -125,6 +125,8 @@ class arm_device {
   void init();
 
   void update_control(bool is_enable);
+
+  void recover_dm();
 
   void send_msg();
 

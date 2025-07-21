@@ -26,6 +26,7 @@ void arm_task(void *argument) {
 //        osDelay(1);
 //    }
     for (;;) {
+        g_arm.recover_dm();
         g_arm.update_control(g_rc.check_ready() && !g_pc.check_lost());
 //        g_arm.update_control(false);
 //

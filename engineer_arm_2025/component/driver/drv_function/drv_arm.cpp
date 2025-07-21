@@ -306,6 +306,16 @@ void arm_device::check_motor_loss() {
 }
 
 
+void arm_device::recover_dm() {
+    motor.motor1.recover_the_motor();
+    motor.motor2.recover_the_motor();
+    motor.motor3.recover_the_motor();
+    motor.motor4.recover_the_motor();
+    motor.motor5.recover_the_motor();
+
+}
+
+
 void arm_device::limit_motor_pos() {
     if (isnan(data.motor_pos_set.motor1)) {
         data.motor_pos_set.motor1 = data.motor_pos_get.motor1;
