@@ -23,18 +23,18 @@ extern "C" {
 #include "drv_dji_motor.h"
 #include "drv_dm_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.2531f; //电机1偏置
-constexpr float Arm_Motor2_Offset = -0.0749f; //电机2偏置
+constexpr float Arm_Motor1_Offset = 0.9162f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.7075f; //电机2偏置
 constexpr float Arm_Motor3_Offset = 0.3750f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.4991f; //电机4偏置
-constexpr float Arm_Motor5_Offset = 0.5036f; //电机5偏置
+constexpr float Arm_Motor4_Offset = 0.6902f; //电机4偏置
+constexpr float Arm_Motor5_Offset = -0.7831f; //电机5偏置
 constexpr float Arm_Motor6_Offset = 0.3184f; //电机6偏置
 
 #define Arm_Motor1_Can (hcan1)
 #define Arm_Motor2_Can (hcan1)
 #define Arm_Motor3_Can (hcan1)
 
-#define Arm_Motor4_Can (hcan1)
+#define Arm_Motor4_Can (hcan2)
 #define Arm_Motor5_Can (hcan2)
 #define Arm_Motor6_Can (hcan2)
 
@@ -47,8 +47,8 @@ constexpr uint32_t Arm_Motor3_Id = 2;
 constexpr uint32_t Arm_Motor4_Master_Id = 0x04;
 constexpr uint32_t Arm_Motor4_Slave_Id = 0x03;
 
-constexpr uint32_t Arm_Motor5_Master_Id = 0x00;
-constexpr uint32_t Arm_Motor5_Slave_Id = 0x02;
+constexpr uint32_t Arm_Motor5_Master_Id = 0x06;
+constexpr uint32_t Arm_Motor5_Slave_Id = 0x07;
 
 constexpr uint32_t Arm_Motor6_Id = 1;
 
@@ -156,6 +156,8 @@ class arm_device {
   void set_joint6_target(float set);
 
   void check_motor_loss();
+
+  void update_tx_life_flag();
 
   uint8_t *get_controller_tx_data();
 

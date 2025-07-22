@@ -97,6 +97,8 @@ void pc_device::transmit_data(rc_device &rc,
     error.imu = false;
 #endif
 
+    error.controller = controller.check_lost();
+
     normal_tx_data.frame_head = PC_Normal_Frame_Head;
     normal_tx_data.is_rc_online = rc.check_ready();
 //    normal_tx_data.is_rc_online = true;

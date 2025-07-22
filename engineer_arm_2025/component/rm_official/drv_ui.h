@@ -57,6 +57,7 @@ class ui_device {
       "remote" ,
       "pc",
       "comm",
+      "ctrl",
       "arm1",
       "arm2",
       "arm3",

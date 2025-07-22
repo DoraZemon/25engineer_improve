@@ -111,12 +111,12 @@ void ui_device::character_init(ext_client_custom_character_t *_character) {
     _character_init_case = (_character_init_case + 1) % 6;
 
     if (_character_init_case < 3) {//30
-        character_config(&_character->grapic_data_struct, "C1", ui_add, 2, ui_cyan, 15, 9, 2, 1500, 850);
+        character_config(&_character->grapic_data_struct, "C1", ui_add, 2, ui_cyan, 25, 9, 2, 1500, 850);
         strcat(_character->data, "Error\n\n");
         strcat(_character->data, "State\n\n");
 
     } else if (_character_init_case < 6) {
-        character_config(&_character->grapic_data_struct, "C2", ui_add, 2, ui_cyan, 15, 9, 2, 1700, 850);
+        character_config(&_character->grapic_data_struct, "C2", ui_add, 2, ui_cyan, 25, 9, 2, 1700, 850);
         strcat(_character->data, "None\n\n");
         strcat(_character->data, "None\n\n");
 
@@ -136,9 +136,9 @@ void ui_device::character_update(ext_client_custom_character_t *_character) {
 //    if (_character_update_case % 2 == 0) {
 
         if(data.error.code == 0){
-            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_orange, 15, 9, 2, 1700, 850);
+            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_orange, 25, 9, 2, 1700, 850);
         }else {
-            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_yellow, 15, 9, 2, 1700, 850);
+            character_config(&_character->grapic_data_struct, "C2", ui_modify, 2, ui_yellow, 25, 9, 2, 1700, 850);
         }
 
         strcat(_character->data, error_types[this->get_error_type()].c_str());

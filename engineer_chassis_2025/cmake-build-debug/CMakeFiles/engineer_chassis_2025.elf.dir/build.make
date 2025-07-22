@@ -141,10 +141,24 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/gpio.c.s"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\gpio.c -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\gpio.c.s
 
+CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/iwdg.c
+CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\iwdg.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\iwdg.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\iwdg.c
+
+CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\iwdg.c > CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\iwdg.c.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\iwdg.c -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\iwdg.c.s
+
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/main.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\main.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\main.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\main.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.i: cmake_force
@@ -158,7 +172,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_msp.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_msp.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\stm32f4xx_hal_msp.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
@@ -172,7 +186,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_f
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/stm32f4xx_hal_timebase_tim.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\stm32f4xx_hal_timebase_tim.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.i: cmake_force
@@ -186,7 +200,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.s
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/stm32f4xx_it.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_it.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\stm32f4xx_it.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\stm32f4xx_it.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
@@ -200,7 +214,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/syscalls.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\syscalls.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\syscalls.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\syscalls.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -214,7 +228,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/sysmem.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\sysmem.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\sysmem.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\sysmem.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.i: cmake_force
@@ -228,7 +242,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/system_stm32f4xx.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\system_stm32f4xx.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\system_stm32f4xx.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\system_stm32f4xx.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
@@ -242,7 +256,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.s: cmake_fo
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Src/usart.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\usart.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Src\usart.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Src\usart.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.i: cmake_force
@@ -255,7 +269,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/usart.c.s: cmake_force
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Core/Startup/startup_stm32f407vetx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building ASM object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building ASM object CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\engineer_chassis_2025.elf.dir\Core\Startup\startup_stm32f407vetx.s.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Core\Startup\startup_stm32f407vetx.s
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.i: cmake_force
@@ -269,7 +283,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Core/Startup/startup_stm32f407vetx.s.s:
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
@@ -283,7 +297,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.i: cmake_force
@@ -297,7 +311,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.i: cmake_force
@@ -311,7 +325,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i: cmake_force
@@ -325,7 +339,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
@@ -339,7 +353,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
@@ -353,7 +367,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
@@ -367,7 +381,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
@@ -381,7 +395,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
@@ -395,7 +409,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
@@ -409,7 +423,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
@@ -423,7 +437,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
@@ -434,10 +448,24 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.s
 
+CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
+CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c
+CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c
+
+CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c > CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c.i
+
+CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c.s
+
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
@@ -451,7 +479,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
@@ -465,7 +493,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
@@ -479,7 +507,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
@@ -493,7 +521,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
@@ -507,7 +535,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
@@ -521,7 +549,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
@@ -535,7 +563,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.i: cmake_force
@@ -549,7 +577,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i: cmake_force
@@ -563,7 +591,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\croutine.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i: cmake_force
@@ -577,7 +605,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i: cmake_force
@@ -591,7 +619,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/list.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\list.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i: cmake_force
@@ -605,7 +633,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.i: cmake_force
@@ -619,7 +647,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i: cmake_force
@@ -633,7 +661,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/queue.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\queue.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i: cmake_force
@@ -647,7 +675,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i: cmake_force
@@ -661,7 +689,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\tasks.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i: cmake_force
@@ -675,7 +703,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/timers.c
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\timers.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i: cmake_force
@@ -689,7 +717,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_can.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_can.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_can.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.i: cmake_force
@@ -703,7 +731,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_can.cpp.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_dwt.c
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_dwt.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_dwt.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.i: cmake_force
@@ -717,7 +745,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_dwt.c.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/bsp/bsp_usart.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\bsp\bsp_usart.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\bsp\bsp_usart.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.i: cmake_force
@@ -731,7 +759,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/bsp/bsp_usart.cpp.s: cmake_force
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/crc.c
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\crc.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\crc.c
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.i: cmake_force
@@ -745,7 +773,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/crc.c.s: cmake_forc
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/mecanum.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\mecanum.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\mecanum.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.i: cmake_force
@@ -759,7 +787,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/mecanum.cpp.s: cmak
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/algorithm/spd_plan.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\algorithm\spd_plan.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\algorithm\spd_plan.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.i: cmake_force
@@ -773,7 +801,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/algorithm/spd_plan.cpp.s: cma
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_chassis.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_chassis.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_chassis.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chassis.cpp.i: cmake_force
@@ -787,7 +815,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_chass
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_communicate.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_communicate.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_communicate.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_communicate.cpp.i: cmake_force
@@ -801,7 +829,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_commu
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_function/drv_pump.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_function\drv_pump.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_function\drv_pump.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.cpp.i: cmake_force
@@ -815,7 +843,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_function/drv_pump.
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dji_motor.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dji_motor.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.i: cmake_force
@@ -829,7 +857,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dji
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_imu.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_imu.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.i: cmake_force
@@ -843,7 +871,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/driver/drv_peripheral/drv_dm_motor.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\driver\drv_peripheral\drv_dm_motor.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.i: cmake_force
@@ -857,7 +885,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/driver/drv_peripheral/drv_dm_
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/chassis_task.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\chassis_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\chassis_task.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_task.cpp.i: cmake_force
@@ -871,7 +899,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/chassis_ta
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/communicate_task.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\communicate_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\communicate_task.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicate_task.cpp.i: cmake_force
@@ -885,7 +913,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/communicat
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_function/pump_task.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_function\pump_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_function\pump_task.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.cpp.i: cmake_force
@@ -899,7 +927,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_function/pump_task.
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/task/task_peripheral/lost_check_task.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\task\task_peripheral\lost_check_task.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.i: cmake_force
@@ -913,7 +941,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/task/task_peripheral/lost_che
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/compatible.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\compatible.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\compatible.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.i: cmake_force
@@ -927,7 +955,7 @@ CMakeFiles/engineer_chassis_2025.elf.dir/component/user/compatible.cpp.s: cmake_
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/flags.make
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/component/user/user_lib.cpp
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.obj -MF CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.obj.d -o CMakeFiles\engineer_chassis_2025.elf.dir\component\user\user_lib.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\component\user\user_lib.cpp
 
 CMakeFiles/engineer_chassis_2025.elf.dir/component/user/user_lib.cpp.i: cmake_force
@@ -945,6 +973,7 @@ engineer_chassis_2025_elf_OBJECTS = \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/dma.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/freertos.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/gpio.c.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj" \
@@ -966,6 +995,7 @@ engineer_chassis_2025_elf_OBJECTS = \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
+"CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
 "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
@@ -1011,6 +1041,7 @@ engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/can
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/dma.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/freertos.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/gpio.c.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/iwdg.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/main.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
@@ -1032,6 +1063,7 @@ engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM3
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
@@ -1071,7 +1103,7 @@ engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/component/us
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/build.make
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/objects1.rsp
 engineer_chassis_2025.elf: CMakeFiles/engineer_chassis_2025.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable engineer_chassis_2025.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Linking CXX executable engineer_chassis_2025.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\engineer_chassis_2025.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/cmake-build-debug/engineer_chassis_2025.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_chassis_2025/cmake-build-debug/engineer_chassis_2025.bin"

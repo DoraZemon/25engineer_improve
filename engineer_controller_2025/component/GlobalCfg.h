@@ -18,7 +18,7 @@ extern "C" {
 #define CAN_SEND        1
 
 
-#define JUDGEMENT_UART  (huart6)
+#define JUDGEMENT_UART  (huart1)
 
 
 #ifdef __cplusplus

@@ -41,6 +41,10 @@ void communicate_device::update(chassis_device &chassis, pump_device &pump) {
 
 }
 
+
+bool communicate_device::check_lost() {
+    return is_lost;
+}
 void communicate_device::update_rx_data(uint8_t *rx_data) {
     if (rx_data[0] != COMMUNICATE_FRAME_HEAD) {
         return; //帧头不匹配，丢弃数据

@@ -72,6 +72,7 @@ void judge_power_UartTxCpltCallBack(UART_HandleTypeDef *huart) {
 void refereeupdate_task(void *argument) {
     osDelay(2000);
     for (;;) {
+        g_arm.update_tx_life_flag();
         g_judgement_power.data_packet_pack_image_tran_chain(CUSTOM_CONTROLLER_ID,
                                                             g_arm.get_controller_tx_data(),
                                                             sizeof(ext_custom_interactive_data_t));

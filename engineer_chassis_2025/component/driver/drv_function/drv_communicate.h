@@ -100,6 +100,8 @@ class communicate_device {
 
   void update_rx_data(uint8_t *rx_data);
 
+  bool check_lost();
+
 
   CAN_HandleTypeDef *hcan;
 

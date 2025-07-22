@@ -30,7 +30,7 @@ void chassis_task(void *argument) {
     }
     for (;;) {
         g_chassis.update_ready();
-        if (g_communicate.check_is_rc_online() && g_chassis.check_enable()) {
+        if (g_communicate.check_is_rc_online() && g_chassis.check_enable() && !g_communicate.check_lost()) {
             if (g_chassis.check_can_use()) {//仅开机做一次自检，后续只管offset
                 g_chassis.update_speed_control();
             } else {

@@ -116,10 +116,10 @@ void dji_motor_device::update_data(uint8_t *rx_data) {
     raw->torque_current = (int16_t) (rx_data[4] << 8 | rx_data[5]);
     raw->temperature = rx_data[6];
 
-    if (this->lost_flag) {
-        this->msg_cnt = 0;
-        this->is_zero_offset = false;
-    }
+//    if (this->lost_flag) {
+//        this->msg_cnt = 0;
+//        this->is_zero_offset = false;
+//    }
     if (this->msg_cnt < 50 && !this->is_zero_offset) {
         switch (this->type) {
             case DJI_M3508:data->current_speed = (float) raw->speed_rpm / DJI_MOTOR_MAX_SPEED_M3508;

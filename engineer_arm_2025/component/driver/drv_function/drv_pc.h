@@ -33,6 +33,7 @@ enum robot_error_type {
   remote = 0,
   pc,
   communicate,
+  ctrl,
   arm_motor1,
   arm_motor2,
   arm_motor3,
@@ -65,6 +66,7 @@ union robot_error_u {
     uint32_t remote: 1;
     uint32_t pc: 1;
     uint32_t communicate: 1;
+    uint32_t controller: 1;
     uint32_t arm_motor1: 1;
     uint32_t arm_motor2: 1;
     uint32_t arm_motor3: 1;
@@ -76,7 +78,7 @@ union robot_error_u {
     uint32_t chassis_motor2: 1;
     uint32_t chassis_motor3: 1;
     uint32_t chassis_motor4: 1;
-    uint32_t reserve: 18; //保留位
+    uint32_t reserve: 17; //保留位
   };
 };
 

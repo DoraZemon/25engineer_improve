@@ -27,7 +27,7 @@ void arm_device::init() {
                       Arm_Motor5_Slave_Id,
                       Arm_Motor5_Master_Id,
                       DM_MIT,
-                      false,
+                      true,
                       DM_J3507_2EC,
                       ArmMotor5UpdateBinarySemHandle);
     motor.motor6.init(&Arm_Motor6_Can, false, Arm_Motor6_Id, DJI_M2006, ArmMotor6UpdateBinarySemHandle);
@@ -151,7 +151,11 @@ void arm_device::update_data() {
 //                                       motor.motor2.check_ready() &&
 //                                       motor.motor3.check_ready() &&
 //                                       motor.motor4.check_ready() ;
-    controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
+//    controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
+}
+
+void arm_device::update_tx_life_flag() {
+    controller_tx_data.life_flag = (HAL_GetTick() / 35) % 256; //生命检测标志位，每10ms变化一次
 }
 
 void arm_device::update_control(bool is_enable) {
@@ -239,6 +243,9 @@ void arm_device::send_msg() {
     motor.motor4.send_can_msg();
     motor.motor5.send_can_msg();
     motor.motor6.send_can_msg();
+
+//    motor.motor5.set_motor_enable();
+//    motor.motor5.recover_the_motor();
 }
 
 
