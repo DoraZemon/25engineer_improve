@@ -21,10 +21,12 @@ void controller_device::update() {
 
 void controller_device::set_lost() {
     is_lost = true;
+    lost_num++;
 }
 
 void controller_device::set_connected() {
     is_lost = false;
+    lost_num = 0;
 }
 
 bool controller_device::check_lost() const {
@@ -47,6 +49,10 @@ bool controller_device::judge_transfer_rx_callback(custom_judge_raw_msg *judge_r
 
     if (ABS(raw_data.life_flag - last_life_flag) < 1) {
         last_life_flag = raw_data.life_flag; //更新生命检测标志位
+
+        if(lost_num > 10){
+            last_life_flag = 0;//置0重新判断
+        }
         return false; //数据没有变化
     }
 

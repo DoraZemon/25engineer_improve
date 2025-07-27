@@ -24,11 +24,11 @@ extern "C" {
 #include "median_filter.h"
 #include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.8729f; //电机1偏置
-constexpr float Arm_Motor2_Offset = -0.5938f; //电机2偏置
-constexpr float Arm_Motor3_Offset = -0.3691f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.2467f; //电机4偏置
-constexpr float Arm_Motor5_Offset = -0.5805f; //电机5偏置
+constexpr float Arm_Motor1_Offset = 0.8715f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.8177f; //电机2偏置
+constexpr float Arm_Motor3_Offset = -0.2022f; //电机3偏置
+constexpr float Arm_Motor4_Offset = 0.2426f; //电机4偏置
+constexpr float Arm_Motor5_Offset = -0.5733f; //电机5偏置
 constexpr float Arm_Motor6_Offset = 0.f; //电机6偏置
 
 #define Arm_Motor1_Can (hcan1)

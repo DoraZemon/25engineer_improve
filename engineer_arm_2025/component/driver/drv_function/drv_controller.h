@@ -56,6 +56,7 @@ class controller_device {
   uint8_t last_life_flag = 0; //上一次生命检测标志位
   controller_raw_data_t last_valid_raw_data; //上一次接收到的数据
   bool is_lost = true;
+  uint32_t lost_num = 0;
 
   bool judge_transfer_rx_callback(custom_judge_raw_msg *judge_raw_msg);
 
