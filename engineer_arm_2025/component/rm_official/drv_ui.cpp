@@ -55,12 +55,14 @@ robot_error_type ui_device::get_error_type() {
 void ui_device::add() {
     static uint8_t _ui_add_case = 0;
 
-    _ui_add_case = (_ui_add_case + 1) % 30;
+    _ui_add_case = (_ui_add_case + 1) % 36;
     if (_ui_add_case < 6) {
         draw_pump(ui_add);
     } else if (_ui_add_case < 12) {
         draw_assistant(ui_add);
-    } else if (_ui_add_case < 30) {
+    }else if(_ui_add_case < 18){
+        draw_arm_angle(ui_add);
+    } else if (_ui_add_case < 36) {
         this->character_init(&Character_Graph);
 
     } else {
@@ -70,9 +72,11 @@ void ui_device::add() {
 
 void ui_device::update() {
     static uint8_t _ui_update_case = 0;
-    _ui_update_case = (_ui_update_case + 1) % 24;
+    _ui_update_case = (_ui_update_case + 1) % 30;
     if (_ui_update_case < 6) {
         draw_pump(ui_modify);
+    }else if(_ui_update_case < 12){
+        draw_arm_angle(ui_modify);
     } else if (_ui_update_case < 18) {
         this->character_update(&Character_Graph);
     } else {
@@ -155,8 +159,14 @@ void ui_device::character_update(ext_client_custom_character_t *_character) {
                                 student_interactive_header);
 }
 
-void ui_device::draw_arm(ui_operation operation_) {
+void ui_device::draw_arm_angle(ui_operation operation_) {
 
+    show_rectangle(&Double_Graph.grapic_data_struct[0],"M1",operation_,ui_green,1,5,300,700,200,600);
+    show_line(&Double_Graph.grapic_data_struct[1],"M2",operation_,ui_purple,1,5,250,650,250 + 80 * sinf(-data.joint_states.joint1),650 + 80 *
+                                                                                                                                              cosf(data.joint_states.joint1));
+    student_interactive_header.data_cmd_id = STU_CUSTOM_TWO_PICTURE_ID;
+    judgement->data_packet_pack(STU_INTERACTIVE_ID, (uint8_t *) &Double_Graph, sizeof(Double_Graph),
+                                student_interactive_header);
 }
 
 void ui_device::draw_pump(ui_operation operation_) {

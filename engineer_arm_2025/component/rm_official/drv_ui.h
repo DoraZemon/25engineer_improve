@@ -109,7 +109,7 @@ class ui_device {
 
   void ptr_init(judgement_device *judgement_ptr);
 
-  void draw_arm(ui_operation operation_);
+  void draw_arm_angle(ui_operation operation_);
 
   void draw_assistant(ui_operation operation_);
 
