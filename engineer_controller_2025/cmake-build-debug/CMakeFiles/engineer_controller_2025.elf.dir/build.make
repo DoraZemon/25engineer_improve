@@ -938,10 +938,24 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_ar
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.s"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_function\drv_arm.cpp -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_function\drv_arm.cpp.s
 
+CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
+CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/driver/drv_peripheral/drv_JY_ME02.cpp
+CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_JY_ME02.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_JY_ME02.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_JY_ME02.cpp
+
+CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.i"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_JY_ME02.cpp > CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_JY_ME02.cpp.i
+
+CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.s"
+	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_JY_ME02.cpp -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_JY_ME02.cpp.s
+
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/driver/drv_peripheral/drv_dji_motor.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dji_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_dji_motor.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.i: cmake_force
@@ -955,7 +969,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/driver/drv_peripheral/drv_dm_imu.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dm_imu.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_dm_imu.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.i: cmake_force
@@ -969,7 +983,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/driver/drv_peripheral/drv_dm_motor.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\driver\drv_peripheral\drv_dm_motor.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral\drv_dm_motor.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.i: cmake_force
@@ -983,7 +997,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/rm_official/bsp_rm_usart.c
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\bsp_rm_usart.c.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\bsp_rm_usart.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\rm_official\bsp_rm_usart.c
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c.i: cmake_force
@@ -997,7 +1011,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/bsp_rm_usart.c
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/rm_official/drv_data_fifo.c
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\drv_data_fifo.c.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\drv_data_fifo.c.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\rm_official\drv_data_fifo.c
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.c.i: cmake_force
@@ -1011,7 +1025,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_data_fifo.
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/rm_official/drv_judgement.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\drv_judgement.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\drv_judgement.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\rm_official\drv_judgement.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.cpp.i: cmake_force
@@ -1025,7 +1039,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/drv_judgement.
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/rm_official/task_communicate.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\task_communicate.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\rm_official\task_communicate.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\rm_official\task_communicate.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communicate.cpp.i: cmake_force
@@ -1039,7 +1053,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communica
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/task/task_function/arm_task.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\task\task_function\arm_task.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\task\task_function\arm_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\task\task_function\arm_task.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_task.cpp.i: cmake_force
@@ -1053,7 +1067,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_function/arm_tas
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/task/task_peripheral/lost_check_task.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\task\task_peripheral\lost_check_task.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\task\task_peripheral\lost_check_task.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_check_task.cpp.i: cmake_force
@@ -1067,7 +1081,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/task/task_peripheral/lost_
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/user/compatible.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\user\compatible.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\user\compatible.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\user\compatible.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.i: cmake_force
@@ -1081,7 +1095,7 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/user/compatible.cpp.s: cma
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/flags.make
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj: D:/robomaster/25_season/engineer_2025/engineer_controller_2025/component/user/user_lib.cpp
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj: CMakeFiles/engineer_controller_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj"
 	D:\programing\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.obj -MF CMakeFiles\engineer_controller_2025.elf.dir\component\user\user_lib.cpp.obj.d -o CMakeFiles\engineer_controller_2025.elf.dir\component\user\user_lib.cpp.obj -c D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\user\user_lib.cpp
 
 CMakeFiles/engineer_controller_2025.elf.dir/component/user/user_lib.cpp.i: cmake_force
@@ -1156,6 +1170,7 @@ engineer_controller_2025_elf_OBJECTS = \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/algorithm/crc.c.obj" \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/algorithm/spd_plan.cpp.obj" \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.obj" \
+"CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj" \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj" \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj" \
 "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj" \
@@ -1233,6 +1248,7 @@ engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/bsp/bs
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/algorithm/crc.c.obj
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/algorithm/spd_plan.cpp.obj
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.obj
+engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_motor.cpp.obj
@@ -1247,7 +1263,7 @@ engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/compon
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/build.make
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/objects1.rsp
 engineer_controller_2025.elf: CMakeFiles/engineer_controller_2025.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Linking CXX executable engineer_controller_2025.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\robomaster\25_season\engineer_2025\engineer_controller_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking CXX executable engineer_controller_2025.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\engineer_controller_2025.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_controller_2025/cmake-build-debug/engineer_controller_2025.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/robomaster/25_season/engineer_2025/engineer_controller_2025/cmake-build-debug/engineer_controller_2025.bin"

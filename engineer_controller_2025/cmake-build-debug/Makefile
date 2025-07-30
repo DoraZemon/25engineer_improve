@@ -1607,6 +1607,30 @@ component/driver/drv_function/drv_arm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_controller_2025.elf.dir\build.make CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.s
 .PHONY : component/driver/drv_function/drv_arm.cpp.s
 
+component/driver/drv_peripheral/drv_JY_ME02.obj: component/driver/drv_peripheral/drv_JY_ME02.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.obj
+
+# target to build an object file
+component/driver/drv_peripheral/drv_JY_ME02.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_controller_2025.elf.dir\build.make CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.cpp.obj
+
+component/driver/drv_peripheral/drv_JY_ME02.i: component/driver/drv_peripheral/drv_JY_ME02.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.i
+
+# target to preprocess a source file
+component/driver/drv_peripheral/drv_JY_ME02.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_controller_2025.elf.dir\build.make CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.i
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.cpp.i
+
+component/driver/drv_peripheral/drv_JY_ME02.s: component/driver/drv_peripheral/drv_JY_ME02.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.s
+
+# target to generate assembly for a file
+component/driver/drv_peripheral/drv_JY_ME02.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\engineer_controller_2025.elf.dir\build.make CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.s
+.PHONY : component/driver/drv_peripheral/drv_JY_ME02.cpp.s
+
 component/driver/drv_peripheral/drv_dji_motor.obj: component/driver/drv_peripheral/drv_dji_motor.cpp.obj
 .PHONY : component/driver/drv_peripheral/drv_dji_motor.obj
 
@@ -2065,6 +2089,9 @@ help:
 	@echo ... component/driver/drv_function/drv_arm.obj
 	@echo ... component/driver/drv_function/drv_arm.i
 	@echo ... component/driver/drv_function/drv_arm.s
+	@echo ... component/driver/drv_peripheral/drv_JY_ME02.obj
+	@echo ... component/driver/drv_peripheral/drv_JY_ME02.i
+	@echo ... component/driver/drv_peripheral/drv_JY_ME02.s
 	@echo ... component/driver/drv_peripheral/drv_dji_motor.obj
 	@echo ... component/driver/drv_peripheral/drv_dji_motor.i
 	@echo ... component/driver/drv_peripheral/drv_dji_motor.s

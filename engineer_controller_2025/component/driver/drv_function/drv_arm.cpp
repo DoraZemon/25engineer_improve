@@ -12,6 +12,77 @@
 #include "drv_arm.h"
 #include "rtos_inc.h"
 
+#if JY_ME02
+float wrapTo180(float angle_deg) {
+    // 保证角度在 [0, 360)
+    angle_deg = fmodf(angle_deg, 360.0);
+    if (angle_deg < 0) angle_deg += 360.0;
+
+    // 映射到 [-180, 180)
+    if (angle_deg >= 180.0)
+        angle_deg -= 360.0;
+
+    return angle_deg;
+}
+
+
+void arm_device::init() {
+    encoder.encoder1.init(&Arm_Encoder1_Can,Arm_Encoder1_Id,ArmMotor1UpdateBinarySemHandle);
+    encoder.encoder2.init(&Arm_Encoder2_Can,Arm_Encoder2_Id,ArmMotor2UpdateBinarySemHandle);
+    encoder.encoder3.init(&Arm_Encoder3_Can,Arm_Encoder3_Id,ArmMotor3UpdateBinarySemHandle);
+    encoder.encoder4.init(&Arm_Encoder4_Can,Arm_Encoder4_Id,ArmMotor4UpdateBinarySemHandle);
+    encoder.encoder5.init(&Arm_Encoder5_Can,Arm_Encoder5_Id,ArmMotor5UpdateBinarySemHandle);
+    encoder.encoder6.init(&Arm_Encoder6_Can,Arm_Encoder6_Id,ArmMotor6UpdateBinarySemHandle);
+
+    data.encoder_offset = {Arm_Joint1_Offset,Arm_Joint2_Offset,Arm_Joint3_Offset,Arm_Joint4_Offset,Arm_Joint5_Offset,Arm_Joint6_Offset};
+
+}
+
+void arm_device::update_control(bool is_enable) {
+    update_data();
+}
+void arm_device::update_data() {
+    data.encoder_pos_get.encoder1 = wrapTo180(encoder.encoder1.get_angle());
+    data.encoder_pos_get.encoder2 = wrapTo180(encoder.encoder2.get_angle());
+    data.encoder_pos_get.encoder3 = wrapTo180(encoder.encoder3.get_angle());
+    data.encoder_pos_get.encoder4 = wrapTo180(encoder.encoder4.get_angle()) ;//减速比
+    data.encoder_pos_get.encoder5 = wrapTo180(encoder.encoder5.get_angle());
+    data.encoder_pos_get.encoder6 = encoder.encoder6.get_total_angle();
+
+    data.joint_states.joint1 = data.encoder_pos_get.encoder1 * 2 * PI / 360.f;
+    data.joint_states.joint2 = data.encoder_pos_get.encoder2 * 2 * PI / 360.f;
+    data.joint_states.joint3 = data.encoder_pos_get.encoder3 * 2 * PI / 360.f;
+    data.joint_states.joint4 = data.encoder_pos_get.encoder4 * 2 * PI / 360.f;
+    data.joint_states.joint5 = data.encoder_pos_get.encoder5 * 2 * PI / 360.f;
+    data.joint_states.joint6 = data.encoder_pos_get.encoder6 * 2 * PI / 360.f;
+
+
+    controller_tx_data.joint1 = data.joint_states.joint1;
+    controller_tx_data.joint2 = data.joint_states.joint2;
+    controller_tx_data.joint3 = data.joint_states.joint3;
+    controller_tx_data.joint4 = data.joint_states.joint4;
+    controller_tx_data.joint5 = data.joint_states.joint5;
+    controller_tx_data.joint6 = data.joint_states.joint6;
+    controller_tx_data.is_data_valid = !encoder.encoder1.check_lost() &&
+                                       !encoder.encoder2.check_lost() &&
+        !encoder.encoder3.check_lost() &&
+        !encoder.encoder4.check_lost() &&
+        !encoder.encoder5.check_lost() &&
+        !encoder.encoder6.check_lost();
+}
+
+void arm_device::check_motor_loss() {
+    encoder.encoder1.check_for_loss();
+    encoder.encoder2.check_for_loss();
+    encoder.encoder3.check_for_loss();
+    encoder.encoder4.check_for_loss();
+    encoder.encoder5.check_for_loss();
+    encoder.encoder6.check_for_loss();
+
+}
+
+#else
+
 void arm_device::init() {
     motor.motor1.init(&Arm_Motor1_Can, false, Arm_Motor1_Id, DJI_GM6020, ArmMotor1UpdateBinarySemHandle);
     motor.motor2.init(&Arm_Motor2_Can, true, Arm_Motor2_Id, DJI_GM6020, ArmMotor2UpdateBinarySemHandle);
@@ -154,9 +225,6 @@ void arm_device::update_data() {
 //    controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
 }
 
-void arm_device::update_tx_life_flag() {
-    controller_tx_data.life_flag = (HAL_GetTick() / 35) % 256; //生命检测标志位，每10ms变化一次
-}
 
 void arm_device::update_control(bool is_enable) {
 
@@ -258,7 +326,12 @@ void arm_device::check_motor_loss() {
     motor.motor6.check_motor_for_loss();
 }
 
+#endif
 
 uint8_t *arm_device::get_controller_tx_data() {
     return (uint8_t *) &controller_tx_data;
+}
+
+void arm_device::update_tx_life_flag() {
+    controller_tx_data.life_flag = (HAL_GetTick() / 35) % 256; //生命检测标志位，每10ms变化一次
 }

@@ -122,6 +122,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/engineer_controller_2025.elf.dir/component/algorithm/spd_plan.cpp.obj.d"
   "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.obj"
   "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_function/drv_arm.cpp.obj.d"
+  "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj"
+  "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_JY_ME02.cpp.obj.d"
   "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj"
   "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dji_motor.cpp.obj.d"
   "CMakeFiles/engineer_controller_2025.elf.dir/component/driver/drv_peripheral/drv_dm_imu.cpp.obj"

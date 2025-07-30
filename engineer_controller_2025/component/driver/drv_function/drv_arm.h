@@ -22,6 +22,104 @@ extern "C" {
 //C++
 #include "drv_dji_motor.h"
 #include "drv_dm_motor.h"
+#include "drv_JY_ME02.h"
+#include "GlobalCfg.h"
+
+#pragma pack(1)
+struct arm_controller_tx_data_t {
+  uint8_t is_data_valid; //数据是否有效
+  float joint1; //关节1角度
+  float joint2; //关节2角度
+  float joint3; //关节3角度
+  float joint4; //关节4角度
+  float joint5; //关节5角度
+  float joint6; //关节6角度
+  float reserve_1; //保留
+  uint8_t life_flag; //保留
+};
+#pragma pack()
+
+#if JY_ME02
+constexpr float Arm_Joint1_Offset = 0.9162f; //电机1偏置
+constexpr float Arm_Joint2_Offset = -0.7075f; //电机2偏置
+constexpr float Arm_Joint3_Offset = 0.3750f; //电机3偏置
+constexpr float Arm_Joint4_Offset = 0.6902f; //电机4偏置
+constexpr float Arm_Joint5_Offset = -0.7831f; //电机5偏置
+constexpr float Arm_Joint6_Offset = 0.3184f; //电机6偏置
+
+#define Arm_Encoder1_Can (hcan2)
+#define Arm_Encoder2_Can (hcan2)
+#define Arm_Encoder3_Can (hcan2)
+#define Arm_Encoder4_Can (hcan2)
+#define Arm_Encoder5_Can (hcan2)
+#define Arm_Encoder6_Can (hcan2)
+
+constexpr uint32_t Arm_Encoder1_Id = 0x01;
+constexpr uint32_t Arm_Encoder2_Id = 0x02;
+constexpr uint32_t Arm_Encoder3_Id = 0x05;
+constexpr uint32_t Arm_Encoder4_Id = 0x04;
+constexpr uint32_t Arm_Encoder5_Id = 0x03;
+constexpr uint32_t Arm_Encoder6_Id = 0x06;
+
+
+
+
+class arm_device {
+  struct joint_t {
+    float joint1; //关节1角度
+    float joint2; //关节2角度
+    float joint3; //关节3角度
+    float joint4; //关节4角度
+    float joint5; //关节5角度
+    float joint6; //关节6角度
+  };
+
+  struct encoder_t {
+    float encoder1; //电机1角度
+    float encoder2; //电机2角度
+    float encoder3; //电机3角度
+    float encoder4; //电机4角度
+    float encoder5; //电机5角度
+    float encoder6; //电机6角度
+  };
+
+  struct {
+    JY_ME02_encoder_device encoder1; //关节1电机
+    JY_ME02_encoder_device encoder2; //关节2电机
+    JY_ME02_encoder_device encoder3; //关节3电机
+    JY_ME02_encoder_device encoder4; //关节4电机
+    JY_ME02_encoder_device encoder5; //关节5电机
+    JY_ME02_encoder_device encoder6; //关节6电机
+  } encoder;
+
+  arm_controller_tx_data_t controller_tx_data;
+
+  bool is_ctrl_enable = true;
+
+  bool is_enable_last = false; //上一次是否使能，遥控器是否开启
+ public:
+  arm_device() = default;
+
+  void init();
+
+  void update_control(bool is_enable);
+
+  void update_data();
+
+  void check_motor_loss();
+
+  void update_tx_life_flag();
+
+  uint8_t *get_controller_tx_data();
+
+  struct {
+    joint_t joint_states;
+    encoder_t encoder_offset;
+    encoder_t encoder_pos_get;
+  } data;
+};
+
+#else
 
 constexpr float Arm_Motor1_Offset = 0.9162f; //电机1偏置
 constexpr float Arm_Motor2_Offset = -0.7075f; //电机2偏置
@@ -84,20 +182,6 @@ constexpr float Arm_Motor4_Compensation_Angle_Offset = 0.0f; //电机4补偿角�
 constexpr float Arm_Motor5_Compensation_Angle_Offset = 0.0f; //电机5补偿角度偏置（即水平面角度差值）
 constexpr float Arm_Motor6_Compensation_Angle_Offset = 0.0f; //电机6补偿角度偏置（即水平面角度差值）
 
-
-#pragma pack(1)
-struct arm_controller_tx_data_t {
-  uint8_t is_data_valid; //数据是否有效
-  float joint1; //关节1角度
-  float joint2; //关节2角度
-  float joint3; //关节3角度
-  float joint4; //关节4角度
-  float joint5; //关节5角度
-  float joint6; //关节6角度
-  float reserve_1; //保留
-  uint8_t life_flag; //保留
-};
-#pragma pack()
 
 class arm_device {
   struct joint_t {
@@ -175,5 +259,7 @@ class arm_device {
     } joint_limit;
   } data;
 };
+
+#endif
 
 #endif //DRV_ARM_H_

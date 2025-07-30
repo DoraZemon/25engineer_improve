@@ -181,4 +181,5 @@ CMakeFiles/engineer_controller_2025.elf.dir/component/rm_official/task_communica
  D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\user/compatible.h \
  D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\user/rtos_inc.h \
  D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral/drv_dm_motor.h \
+ D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component\driver\drv_peripheral/drv_JY_ME02.h \
  D:\robomaster\25_season\engineer_2025\engineer_controller_2025\component/GlobalCfg.h

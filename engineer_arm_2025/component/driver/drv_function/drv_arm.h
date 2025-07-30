@@ -25,7 +25,7 @@ extern "C" {
 #include "drv_dji_motor.h"
 
 constexpr float Arm_Motor1_Offset = 0.8752f; //电机1偏置
-constexpr float Arm_Motor2_Offset = -0.8464f; //电机2偏置
+constexpr float Arm_Motor2_Offset = -0.7604f; //电机2偏置
 constexpr float Arm_Motor3_Offset = -0.2045f; //电机3偏置
 constexpr float Arm_Motor4_Offset = 0.2402f; //电机4偏置
 constexpr float Arm_Motor5_Offset = -0.5807f; //电机5偏置
