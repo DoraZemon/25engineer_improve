@@ -102,6 +102,9 @@ void arm_device::init() {
     motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
     motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
     motor.motor6.reset_total_rounds_zero_offset(0.0f);
+
+
+    is_initial = true;
 }
 
 void arm_device::set_joint1_target(float set) {
@@ -212,19 +215,20 @@ void arm_device::update_control(bool is_enable) {
 #else
         data.motor_pos_set.motor1 = data.joint_filtered_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
         data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI) / 2.f * 3.f;
-        data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.joint_filtered_target.joint2 / (2 * PI);
+        data.motor_pos_set.motor3 =
+            data.joint_filtered_target.joint3 / (2 * PI) + data.joint_filtered_target.joint2 / (2 * PI);
         data.motor_pos_set.motor4 = data.joint_filtered_target.joint4 / (2 * PI);
         data.motor_pos_set.motor5 = data.joint_filtered_target.joint5 / (2 * PI);
         data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI) * (36.f * 2.f);
 #endif
     }
 #if ARM_REMOTE_CONTROL_PROTECT
-    is_ctrl_enable = is_enable ;
+    is_ctrl_enable = is_enable;
 #endif
 
     limit_motor_pos();//限制电机位置
 
-    if (is_ctrl_enable && is_ctrl_enable_from_pc) {
+    if (is_ctrl_enable && is_ctrl_enable_from_pc && !is_ctrl_disable_to_reset_pitch) {
 
         motor.motor1.set_offset_current(data.motor_torque_compensation.motor1 / motor.motor1.basic_info.t_max);
         motor.motor2.set_offset_current(
@@ -265,6 +269,23 @@ void arm_device::update_control(bool is_enable) {
 //        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
 
 
+    } else if (is_ctrl_disable_to_reset_pitch) {
+        data.motor_pos_set = data.motor_pos_get;//如果遥控器断开，电机位置设为当前电机位置
+
+        motor.motor1.set_offset_current(0.0);
+        motor.motor2.set_offset_current(Arm_Pitch_Reset_Motor2_Torque);
+        motor.motor3.set_offset_current(Arm_Pitch_Reset_Motor3_Torque);
+        motor.motor4.set_offset_current(0.0);
+        motor.motor5.set_offset_current(0.0);
+        motor.motor6.set_offset_current(0.0);
+
+        motor.motor2.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
+
+        motor.motor1.set_free();
+        motor.motor4.set_free();
+        motor.motor5.set_free();
+        motor.motor6.set_free();
     } else {
         data.motor_pos_set = data.motor_pos_get;//如果遥控器断开，电机位置设为当前电机位置
 
@@ -282,9 +303,8 @@ void arm_device::update_control(bool is_enable) {
         motor.motor5.set_free();
         motor.motor6.set_free();
     }
-
-
 }
+
 
 void arm_device::send_msg() {
     motor.motor1.send_can_msg();
@@ -354,4 +374,27 @@ void arm_device::limit_motor_pos() {
 
 bool arm_device::check_lost() {
     return is_lost;
+}
+
+bool arm_device::check_initial() {
+    return is_initial;
+}
+
+void arm_device::set_to_reset_pitch(bool is_enable) {
+    is_to_reset_pitch = is_enable;
+}
+
+void arm_device::check_reset_pitch() {
+    if (is_to_reset_pitch && !last_is_to_reset_pitch) {
+        is_ctrl_disable_to_reset_pitch = true;
+        osDelay(2000);
+        motor.motor2.reset_total_rounds_zero_offset(-0.01f);
+        motor.motor3.reset_total_rounds_zero_offset(0);
+        osDelay(500);
+        is_ctrl_disable_to_reset_pitch = false;
+        is_to_reset_pitch = false;
+        reset_pitch_num++;
+    }
+
+    last_is_to_reset_pitch = is_to_reset_pitch;
 }

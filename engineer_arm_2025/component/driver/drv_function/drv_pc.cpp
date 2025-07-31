@@ -40,6 +40,8 @@ void pc_device::update_data(rc_device &rc,
 
     arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
 
+    arm.set_to_reset_pitch(rx_data.arm_reset_pitch_enable);
+
     arm.set_joint1_compensation(rx_data.joint1_compensation);
     arm.set_joint2_compensation(rx_data.joint2_compensation);
     arm.set_joint3_compensation(rx_data.joint3_compensation);
@@ -56,7 +58,6 @@ void pc_device::update_data(rc_device &rc,
 
     auto_situation = (robot_auto_situation_e) rx_data.auto_situation;
 
-    gimbal.set_yaw_target(rx_data.gimbal_yaw);
     gimbal.set_pitch_target(rx_data.gimbal_pitch);
 //    gimbal.set_pitch_target(500);
 //    gimbal.set_yaw_target(500);

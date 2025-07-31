@@ -24,11 +24,11 @@ extern "C" {
 #include "median_filter.h"
 #include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.8752f; //电机1偏置
-constexpr float Arm_Motor2_Offset = -0.7604f; //电机2偏置
-constexpr float Arm_Motor3_Offset = -0.2045f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.2402f; //电机4偏置
-constexpr float Arm_Motor5_Offset = -0.5807f; //电机5偏置
+constexpr float Arm_Motor1_Offset = 0.5577f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.7885f; //电机2偏置
+constexpr float Arm_Motor3_Offset = -0.2006f; //电机3偏置
+constexpr float Arm_Motor4_Offset = 0.7135f; //电机4偏置
+constexpr float Arm_Motor5_Offset = -0.6997f; //电机5偏置
 constexpr float Arm_Motor6_Offset = 0.f; //电机6偏置
 
 #define Arm_Motor1_Can (hcan1)
@@ -93,6 +93,10 @@ constexpr float Arm_Motor6_Pos_Max = Arm_Joint6_Max / (2 * PI) * (36.f * 2.f); /
 constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI) * (36.f * 2.f); //电机6最小角度
 
 
+constexpr float Arm_Pitch_Reset_Motor2_Torque = -0.005f;
+constexpr float Arm_Pitch_Reset_Motor3_Torque = 0.01f;
+
+
 class arm_device {
   struct joint_t {
     float joint1; //关节1角度
@@ -114,11 +118,22 @@ class arm_device {
 
   bool is_ctrl_enable = true;
 
+  bool is_ctrl_disable_to_reset_pitch = false;
+
   bool is_ctrl_enable_from_pc = true;
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
 
   bool is_lost = false;
+
+  bool is_to_reset_pitch = false;
+
+  bool last_is_to_reset_pitch = false;
+
+  bool is_initial = false;
+
+  uint64_t reset_pitch_num = 0;
+
  public:
   arm_device();
 
@@ -163,6 +178,12 @@ class arm_device {
   void limit_motor_pos();
 
   bool check_lost();
+
+  void check_reset_pitch();
+
+  void set_to_reset_pitch(bool is_enable);
+
+  bool check_initial();
 
   struct {
     joint_t joint_states;

@@ -167,6 +167,13 @@ const osThreadAttr_t hi229umtask_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for arm_resettask */
+osThreadId_t arm_resettaskHandle;
+const osThreadAttr_t arm_resettask_attributes = {
+  .name = "arm_resettask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -300,6 +307,7 @@ void communicate_task(void *argument);
 void servo_ctrl_task(void *argument);
 void gimbal_task(void *argument);
 void hi229um_task(void *argument);
+void arm_reset_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -443,6 +451,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of hi229umtask */
   hi229umtaskHandle = osThreadNew(hi229um_task, NULL, &hi229umtask_attributes);
+
+  /* creation of arm_resettask */
+  arm_resettaskHandle = osThreadNew(arm_reset_task, NULL, &arm_resettask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -768,6 +779,24 @@ __weak void hi229um_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END hi229um_task */
+}
+
+/* USER CODE BEGIN Header_arm_reset_task */
+/**
+* @brief Function implementing the arm_resettask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_arm_reset_task */
+__weak void arm_reset_task(void *argument)
+{
+  /* USER CODE BEGIN arm_reset_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END arm_reset_task */
 }
 
 /* Private application code --------------------------------------------------*/

@@ -150,7 +150,8 @@ struct pc_rx_data_t {
   int16_t chassis_x;
   int16_t chassis_y;
   uint8_t arm_ctrl_enable; //机械臂使能
-  int16_t gimbal_yaw;
+  uint8_t arm_reset_pitch_enable;
+  uint8_t reserve;
   int16_t gimbal_pitch;
   uint8_t auto_situation; //自动情况
   uint8_t frame_tail; //帧尾

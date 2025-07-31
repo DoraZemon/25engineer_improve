@@ -16,6 +16,7 @@ extern "C" {
 #endif
 //C
 void arm_task(void *argument);
+void arm_reset_task(void * argument);
 #ifdef __cplusplus
 }
 #endif

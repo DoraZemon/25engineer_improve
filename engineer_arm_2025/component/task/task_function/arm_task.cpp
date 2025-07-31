@@ -34,3 +34,16 @@ void arm_task(void *argument) {
         osDelay(2);
     }
 }
+
+
+void arm_reset_task(void * argument){
+    while(!g_arm.check_initial()){
+        osDelay(1);
+    }
+
+    for(;;){
+        g_arm.check_reset_pitch();
+        osDelay(1);
+    }
+
+}

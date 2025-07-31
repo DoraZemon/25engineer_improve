@@ -284,8 +284,8 @@ bool hi229um_device::check_enable() {
 }
 
 void hi229um_device::set_lost() {
-    this->data.msg_cnt = 0;
-    this->zero_offset_flag = false;
+//    this->data.msg_cnt = 0;
+//    this->zero_offset_flag = false;// 丢失之后不重置陀螺仪，因为上位机会发生突变
     this->lost_flag = true;
 }
 
