@@ -25,22 +25,47 @@ bool pc_device::check_lost() {
     return is_lost;
 }
 
+bool pc_device::check_pc_ctrl() {
+    return is_ctrl_from_pc;
+}
+
+void pc_device::enable_pc_ctrl(){
+    is_ctrl_from_pc = true;
+}
+
+
+void pc_device::disable_pc_ctrl() {
+    is_ctrl_from_pc = false;
+}
+
 void pc_device::update_data(rc_device &rc,
                             arm_device &arm,
                             controller_device &controller,
                             communicate_device &communicate,
                              gimbal_device &gimbal) {
-    arm.set_joint1_target(rx_data.joint1);
-    arm.set_joint2_target(rx_data.joint2);
-    arm.set_joint3_target(rx_data.joint3);
-    arm.set_joint4_target(rx_data.joint4);
-    arm.set_joint5_target(rx_data.joint5);
-    arm.set_joint6_target(rx_data.joint6);
 
+    if(is_ctrl_from_pc){
+        arm.set_joint1_target(rx_data.joint1);
+        arm.set_joint2_target(rx_data.joint2);
+        arm.set_joint3_target(rx_data.joint3);
+        arm.set_joint4_target(rx_data.joint4);
+        arm.set_joint5_target(rx_data.joint5);
+        arm.set_joint6_target(rx_data.joint6);
 
-    arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
+        arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
+        arm.set_to_reset_pitch(rx_data.arm_reset_pitch_enable);
 
-    arm.set_to_reset_pitch(rx_data.arm_reset_pitch_enable);
+        communicate.set_pump_ctrl(rx_data.is_arm_pump_on,
+                                  rx_data.is_left_pump_on,
+                                  rx_data.is_right_pump_on);
+
+        communicate.set_chassis_ctrl(rx_data.chassis_x,
+                                     rx_data.chassis_y, rx_data.chassis_spin);
+
+        auto_situation = (robot_auto_situation_e) rx_data.auto_situation;
+
+        gimbal.set_pitch_target(rx_data.gimbal_pitch);
+    }
 
     arm.set_joint1_compensation(rx_data.joint1_compensation);
     arm.set_joint2_compensation(rx_data.joint2_compensation);
@@ -49,16 +74,6 @@ void pc_device::update_data(rc_device &rc,
     arm.set_joint5_compensation(rx_data.joint5_compensation);
     arm.set_joint6_compensation(rx_data.joint6_compensation);
 
-    communicate.set_pump_ctrl(rx_data.is_arm_pump_on,
-                              rx_data.is_left_pump_on,
-                              rx_data.is_right_pump_on);
-
-    communicate.set_chassis_ctrl(rx_data.chassis_x,
-                                 rx_data.chassis_y, rx_data.chassis_spin);
-
-    auto_situation = (robot_auto_situation_e) rx_data.auto_situation;
-
-    gimbal.set_pitch_target(rx_data.gimbal_pitch);
 //    gimbal.set_pitch_target(500);
 //    gimbal.set_yaw_target(500);
 }

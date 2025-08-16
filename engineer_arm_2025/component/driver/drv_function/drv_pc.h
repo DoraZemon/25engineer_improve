@@ -171,6 +171,8 @@ class pc_device {
   robot_error_u error;
   robot_auto_situation_e auto_situation ;
 
+  bool is_ctrl_from_pc = true;//是否采用上位机控制
+
   void update_data(rc_device &rc,
                    arm_device &arm,
                    controller_device &controller,
@@ -186,6 +188,12 @@ class pc_device {
   void set_connected();
 
   bool check_lost();
+
+  bool check_pc_ctrl();
+
+  void enable_pc_ctrl();
+
+  void disable_pc_ctrl();
 
  private:
   bool is_lost = true;

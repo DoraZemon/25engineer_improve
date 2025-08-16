@@ -24,11 +24,11 @@ extern "C" {
 #include "median_filter.h"
 #include "drv_dji_motor.h"
 
-constexpr float Arm_Motor1_Offset = 0.5577f; //电机1偏置
-constexpr float Arm_Motor2_Offset = -0.7885f; //电机2偏置
-constexpr float Arm_Motor3_Offset = -0.2006f; //电机3偏置
-constexpr float Arm_Motor4_Offset = 0.7135f; //电机4偏置
-constexpr float Arm_Motor5_Offset = -0.6997f; //电机5偏置
+constexpr float Arm_Motor1_Offset = 0.5586f; //电机1偏置
+constexpr float Arm_Motor2_Offset = -0.5944f; //电机2偏置
+constexpr float Arm_Motor3_Offset = -0.2323f; //电机3偏置
+constexpr float Arm_Motor4_Offset = 0.7094f; //电机4偏置
+constexpr float Arm_Motor5_Offset = -0.7058f; //电机5偏置
 constexpr float Arm_Motor6_Offset = 0.f; //电机6偏置
 
 #define Arm_Motor1_Can (hcan1)
@@ -98,6 +98,8 @@ constexpr float Arm_Pitch_Reset_Motor3_Torque = 0.01f;
 
 
 class arm_device {
+
+ public:
   struct joint_t {
     float joint1; //关节1角度
     float joint2; //关节2角度
@@ -115,6 +117,8 @@ class arm_device {
     float motor5; //电机5角度
     float motor6; //电机6角度
   };
+
+ private:
 
   bool is_ctrl_enable = true;
 

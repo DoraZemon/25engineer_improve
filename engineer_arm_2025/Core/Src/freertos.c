@@ -174,6 +174,27 @@ const osThreadAttr_t arm_resettask_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for self_ctrltask */
+osThreadId_t self_ctrltaskHandle;
+const osThreadAttr_t self_ctrltask_attributes = {
+  .name = "self_ctrltask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for self_kb_stateta */
+osThreadId_t self_kb_statetaHandle;
+const osThreadAttr_t self_kb_stateta_attributes = {
+  .name = "self_kb_stateta",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for self_kb_eventta */
+osThreadId_t self_kb_eventtaHandle;
+const osThreadAttr_t self_kb_eventta_attributes = {
+  .name = "self_kb_eventta",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -308,6 +329,9 @@ void servo_ctrl_task(void *argument);
 void gimbal_task(void *argument);
 void hi229um_task(void *argument);
 void arm_reset_task(void *argument);
+void self_ctrl_task(void *argument);
+void self_kb_state_task(void *argument);
+void self_kb_event_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -454,6 +478,15 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of arm_resettask */
   arm_resettaskHandle = osThreadNew(arm_reset_task, NULL, &arm_resettask_attributes);
+
+  /* creation of self_ctrltask */
+  self_ctrltaskHandle = osThreadNew(self_ctrl_task, NULL, &self_ctrltask_attributes);
+
+  /* creation of self_kb_stateta */
+  self_kb_statetaHandle = osThreadNew(self_kb_state_task, NULL, &self_kb_stateta_attributes);
+
+  /* creation of self_kb_eventta */
+  self_kb_eventtaHandle = osThreadNew(self_kb_event_task, NULL, &self_kb_eventta_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -797,6 +830,60 @@ __weak void arm_reset_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END arm_reset_task */
+}
+
+/* USER CODE BEGIN Header_self_ctrl_task */
+/**
+* @brief Function implementing the self_ctrltask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_self_ctrl_task */
+__weak void self_ctrl_task(void *argument)
+{
+  /* USER CODE BEGIN self_ctrl_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END self_ctrl_task */
+}
+
+/* USER CODE BEGIN Header_self_kb_state_task */
+/**
+* @brief Function implementing the self_kb_stateta thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_self_kb_state_task */
+__weak void self_kb_state_task(void *argument)
+{
+  /* USER CODE BEGIN self_kb_state_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END self_kb_state_task */
+}
+
+/* USER CODE BEGIN Header_self_kb_event_task */
+/**
+* @brief Function implementing the self_kb_eventta thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_self_kb_event_task */
+__weak void self_kb_event_task(void *argument)
+{
+  /* USER CODE BEGIN self_kb_event_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END self_kb_event_task */
 }
 
 /* Private application code --------------------------------------------------*/

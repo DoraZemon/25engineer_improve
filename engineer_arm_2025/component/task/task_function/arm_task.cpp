@@ -27,7 +27,11 @@ void arm_task(void *argument) {
 //    }
     for (;;) {
         g_arm.recover_dm();
-        g_arm.update_control(g_rc.check_ready() && !g_pc.check_lost());
+        if(g_pc.check_pc_ctrl()){
+            g_arm.update_control(g_rc.check_ready() && !g_pc.check_lost());
+        }else{
+            g_arm.update_control(g_rc.check_ready());
+        }
 //        g_arm.update_control(false);
 //
         g_arm.send_msg();
