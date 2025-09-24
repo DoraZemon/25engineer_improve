@@ -33,6 +33,7 @@ extern osSemaphoreId_t ArmMotor4UpdateBinarySemHandle;
 extern osSemaphoreId_t ArmMotor5UpdateBinarySemHandle;
 extern osSemaphoreId_t ArmMotor6UpdateBinarySemHandle;
 extern osSemaphoreId_t RCUpdateBinarySemHandle;
+extern osSemaphoreId_t VTRCUpdateBinarySemHandle;
 extern osSemaphoreId_t PCUpdateBinarySemHandle;
 
 extern osSemaphoreId_t CustomBinarySemHandle;

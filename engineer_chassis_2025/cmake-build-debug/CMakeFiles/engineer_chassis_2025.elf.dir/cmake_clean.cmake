@@ -52,8 +52,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj.d"
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj.d"
-  "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj"
-  "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj.d"
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj.d"
   "CMakeFiles/engineer_chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"

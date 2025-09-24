@@ -195,6 +195,13 @@ const osThreadAttr_t self_kb_eventta_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for VT_rctask */
+osThreadId_t VT_rctaskHandle;
+const osThreadAttr_t VT_rctask_attributes = {
+  .name = "VT_rctask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -285,6 +292,11 @@ osSemaphoreId_t hi229umRxBinarySemHandle;
 const osSemaphoreAttr_t hi229umRxBinarySem_attributes = {
   .name = "hi229umRxBinarySem"
 };
+/* Definitions for VTRCUpdateBinarySem */
+osSemaphoreId_t VTRCUpdateBinarySemHandle;
+const osSemaphoreAttr_t VTRCUpdateBinarySem_attributes = {
+  .name = "VTRCUpdateBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -332,6 +344,7 @@ void arm_reset_task(void *argument);
 void self_ctrl_task(void *argument);
 void self_kb_state_task(void *argument);
 void self_kb_event_task(void *argument);
+void VT_rc_task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -395,6 +408,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of hi229umRxBinarySem */
   hi229umRxBinarySemHandle = osSemaphoreNew(1, 0, &hi229umRxBinarySem_attributes);
+
+  /* creation of VTRCUpdateBinarySem */
+  VTRCUpdateBinarySemHandle = osSemaphoreNew(1, 0, &VTRCUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -487,6 +503,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of self_kb_eventta */
   self_kb_eventtaHandle = osThreadNew(self_kb_event_task, NULL, &self_kb_eventta_attributes);
+
+  /* creation of VT_rctask */
+  VT_rctaskHandle = osThreadNew(VT_rc_task, NULL, &VT_rctask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -884,6 +903,24 @@ __weak void self_kb_event_task(void *argument)
     osDelay(1);
   }
   /* USER CODE END self_kb_event_task */
+}
+
+/* USER CODE BEGIN Header_VT_rc_task */
+/**
+* @brief Function implementing the VT_rctask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_VT_rc_task */
+__weak void VT_rc_task(void *argument)
+{
+  /* USER CODE BEGIN VT_rc_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END VT_rc_task */
 }
 
 /* Private application code --------------------------------------------------*/

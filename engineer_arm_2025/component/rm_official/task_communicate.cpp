@@ -103,6 +103,7 @@ void updateUIData_task(void *argument) {
 void judge_transfer_UartRxCallBack(struct __UART_HandleTypeDef *huart, uint16_t Pos) {
     if (g_judgment_transfer.usart.uart_dma_rxdata.buff[0] == Trans_Remote_Header_First &&
         g_judgment_transfer.usart.uart_dma_rxdata.buff[1] == Trans_Remote_Header_Second) {
+        osSemaphoreRelease(VTRCUpdateBinarySemHandle);
         return;
     }
     g_judgment_transfer.usart_rx_processed(Pos);

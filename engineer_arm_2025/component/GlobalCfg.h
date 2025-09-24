@@ -28,6 +28,7 @@ extern "C" {
 #define RC_UART        huart1
 #define JUDGEMENT_POWER_UART  huart3
 #define JUDGEMENT_TRANSFER_UART huart6
+#define VT_RC_UART   huart6
 #define SERVO_UART huart8
 #define HI229UM_UART            (huart7)
 

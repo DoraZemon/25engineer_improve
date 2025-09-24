@@ -38,6 +38,7 @@ void pc_device::disable_pc_ctrl() {
     is_ctrl_from_pc = false;
 }
 
+//接收PC发送的数据
 void pc_device::update_data(rc_device &rc,
                             arm_device &arm,
                             controller_device &controller,
@@ -78,12 +79,13 @@ void pc_device::update_data(rc_device &rc,
 //    gimbal.set_yaw_target(500);
 }
 
-
-void pc_device::transmit_data(rc_device &rc,
-                              arm_device &arm,
-                              controller_device &controller,
-                              communicate_device &communicate,
-                              hi229um_device &hi229, gimbal_device &gimbal) {
+//发送数据到PC
+void pc_device::transmit_data(rc_device &rc,//遥控器
+                              arm_device &arm,//机械臂电机
+                              controller_device &controller,//控制器
+                              communicate_device &communicate,//通信（底盘&泵）
+                              hi229um_device &hi229,//陀螺仪
+                              gimbal_device &gimbal ) {
 
     error.remote = rc.check_lost();
     error.pc = is_lost;

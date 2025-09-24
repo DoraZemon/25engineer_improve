@@ -24,6 +24,7 @@ extern "C" {
 #include "rtos_inc.h"
 
 #define DR16_BUFF_SIZE 18
+#define VT_RC_BUFF_SIZE 21
 
 /*拨杆状态变化事件的相关宏*/
 #define RC_SW_L_AREA 0x0F
@@ -117,6 +118,7 @@ typedef struct {
   float z;
   enum RC_BUTTON left_button;
   enum RC_BUTTON right_button;
+  // enum RC_BUTTON middle_button;
 } rc_mouse_t;
 
 typedef struct {
@@ -145,6 +147,7 @@ typedef struct {
   enum RC_SW left_sw;
   enum RC_SW right_sw;
   rc_mouse_t mouse;
+
   union {
     uint16_t key_code;
     rc_key_bit_t key_bit_state;//代表键盘按下的状态
@@ -185,6 +188,36 @@ typedef union {
 } rc_raw_data_t;
 #pragma pack()
 
+#pragma pack(1)
+typedef union {
+  struct {
+    uint8_t header1;      // 帧头1: 0xA9
+    uint8_t header2;      // 帧头2: 0x53
+    uint16_t ch0 : 11;    // 通道0: 右摇杆水平 (364-1684)
+    uint16_t ch1 : 11;    // 通道1: 右摇杆垂直 (364-1684)
+    uint16_t ch2 : 11;    // 通道2: 左摇杆垂直 (364-1684)
+    uint16_t ch3 : 11;    // 通道3: 左摇杆水平 (364-1684)
+    uint8_t mode_switch : 2;     // 模式开关: C=0, N=1, S=2
+    uint8_t pause_button : 1;    // 暂停按键
+    uint8_t custom_left : 1;     // 自定义左键
+    uint8_t custom_right : 1;    // 自定义右键
+    uint16_t dial : 11;   // 拨轮 (364-1684)
+    uint8_t trigger : 1;  // 扳机键
+    uint8_t reserved1 : 3; // 保留位(填充到字节边界)
+    int16_t mouse_x;      // 鼠标X轴 (-32768~32767)
+    int16_t mouse_y;      // 鼠标Y轴 (-32768~32767)
+    int16_t mouse_z;      // 鼠标Z轴 (-32768~32767)
+    uint8_t mouse_left : 2;    // 鼠标左键
+    uint8_t mouse_right : 2;   // 鼠标右键
+    uint8_t mouse_middle : 2;  // 鼠标中键
+    uint8_t reserved2 : 2;     // 保留位
+    uint16_t keyboard;    // 键盘按键状态 (16位位图)
+    uint16_t crc;         // CRC校验
+  };
+  uint8_t buff[VT_RC_BUFF_SIZE];
+} vt_rc_raw_data_t;
+#pragma pack()
+
 class rc_device {
  private:
   bool lost_flag;
@@ -198,10 +231,13 @@ class rc_device {
 
   UART_HandleTypeDef *huart;
   rc_raw_data_t raw_data;
+  vt_rc_raw_data_t vt_raw_data;
 
   rc_device(UART_HandleTypeDef *huart);
 
   void update_data();
+
+  void vt_update_data();
 
   void update_event();
 

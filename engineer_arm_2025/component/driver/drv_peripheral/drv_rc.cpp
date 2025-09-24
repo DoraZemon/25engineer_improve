@@ -78,6 +78,85 @@ void rc_device::update_data() {
     taskEXIT_CRITICAL();
 }
 
+void rc_device::vt_update_data()
+{
+    taskENTER_CRITICAL();
+    memcpy(&this->last_data, &this->data, sizeof(rc_data_t));
+
+    // 检查帧头
+    if (this->vt_raw_data.header1 != 0xA9 || this->vt_raw_data.header2 != 0x53) {
+        taskEXIT_CRITICAL();
+        return;
+    }
+
+    // 摇杆通道死区处理
+    if (this->vt_raw_data.ch0 < 1044 && this->vt_raw_data.ch0 > 1004) this->vt_raw_data.ch0 = 1024;
+    if (this->vt_raw_data.ch1 < 1044 && this->vt_raw_data.ch1 > 1004) this->vt_raw_data.ch1 = 1024;
+    if (this->vt_raw_data.ch2 < 1044 && this->vt_raw_data.ch2 > 1004) this->vt_raw_data.ch2 = 1024;
+    if (this->vt_raw_data.ch3 < 1044 && this->vt_raw_data.ch3 > 1004) this->vt_raw_data.ch3 = 1024;
+    if (this->vt_raw_data.dial < 1044 && this->vt_raw_data.dial > 1004) this->vt_raw_data.dial = 1024;
+
+    // 通道范围检查
+    if (this->vt_raw_data.ch0 > 1684 || this->vt_raw_data.ch0 < 364 ||
+        this->vt_raw_data.ch1 > 1684 || this->vt_raw_data.ch1 < 364 ||
+        this->vt_raw_data.ch2 > 1684 || this->vt_raw_data.ch2 < 364 ||
+        this->vt_raw_data.ch3 > 1684 || this->vt_raw_data.ch3 < 364 ||
+        this->vt_raw_data.dial > 1684 || this->vt_raw_data.dial < 364) {
+        taskEXIT_CRITICAL();
+        return;
+    }
+
+    // 摇杆数据归一化 (-1.0 ~ 1.0)
+    this->data.right_rocker.x = (float(this->vt_raw_data.ch0) - 1024.0f) / 660.0f;
+    ABS_LIMIT(this->data.right_rocker.x, 1);
+    this->data.right_rocker.y = (float(this->vt_raw_data.ch1) - 1024.0f) / 660.0f;
+    ABS_LIMIT(this->data.right_rocker.y, 1);
+    this->data.left_rocker.x = (float(this->vt_raw_data.ch3) - 1024.0f) / 660.0f;  // 注意：ch3是左摇杆水平
+    ABS_LIMIT(this->data.left_rocker.x, 1);
+    this->data.left_rocker.y = (float(this->vt_raw_data.ch2) - 1024.0f) / 660.0f;  // 注意：ch2是左摇杆垂直
+    ABS_LIMIT(this->data.left_rocker.y, 1);
+
+    // 开关和按键
+    // this->data.left_sw = (enum RC_SW) this->vt_raw_data.mode_switch;  // 模式开关作为左开关
+    // this->data.right_sw = (enum RC_SW) (this->vt_raw_data.pause_button ? 2 : 0);  // 暂停按键作为右开关
+
+    // 自定义按键
+    // this->data.custom_left = (enum RC_BUTTON) this->vt_raw_data.custom_left;
+    // this->data.custom_right = (enum RC_BUTTON) this->vt_raw_data.custom_right;
+    // this->data.trigger = (enum RC_BUTTON) this->vt_raw_data.trigger;
+
+    // 拨轮归一化
+    // this->data.dial = (float(this->vt_raw_data.dial) - 1024.0f) / 660.0f;
+    // ABS_LIMIT(this->data.dial, 1);
+
+    // 鼠标数据
+    this->data.mouse.x = float(this->vt_raw_data.mouse_x) / 32768.0f;
+    ABS_LIMIT(this->data.mouse.x, 1);
+    this->data.mouse.y = float(this->vt_raw_data.mouse_y) / 32768.0f;
+    ABS_LIMIT(this->data.mouse.y, 1);
+    this->data.mouse.z = float(this->vt_raw_data.mouse_z) / 32768.0f;
+    ABS_LIMIT(this->data.mouse.z, 1);
+
+    // 鼠标按键
+    this->data.mouse.left_button = (enum RC_BUTTON) (this->vt_raw_data.mouse_left & 0x01);
+    this->data.mouse.right_button = (enum RC_BUTTON) (this->vt_raw_data.mouse_right & 0x01);
+    // this->data.mouse.middle_button = (enum RC_BUTTON) (this->vt_raw_data.mouse_middle & 0x01);
+
+    // 键盘数据
+    this->data.kb.key_code = this->vt_raw_data.keyboard;
+
+    // 判断是否使用键鼠
+    if (this->vt_raw_data.mouse_x == 0 && this->vt_raw_data.mouse_y == 0 && this->vt_raw_data.mouse_z == 0 &&
+        this->vt_raw_data.mouse_left == 0 && this->vt_raw_data.mouse_right == 0 &&
+        this->vt_raw_data.mouse_middle == 0 && this->vt_raw_data.keyboard == 0) {
+        this->using_kb_flag = false;
+        } else {
+            this->using_kb_flag = true;
+        }
+
+    taskEXIT_CRITICAL();
+}
+
 void rc_device::update_event() {
     if (lost_flag) {
         return;
