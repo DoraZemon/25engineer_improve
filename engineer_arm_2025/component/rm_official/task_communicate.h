@@ -28,7 +28,6 @@ void judge_transfer_UartTxCpltCallBack(UART_HandleTypeDef *huart);
 #define UART_TX_SIGNAL      ( 1 << 2 )
 #define UART_IDLE_SIGNAL    ( 1 << 1 )
 
-#define Trans_Remote_Header_First 0xA9
-#define Trans_Remote_Header_Second 0x53
+
 
 #endif //ENGINEER_CHASSIS_2024_TASK_COMMUNICATE_H

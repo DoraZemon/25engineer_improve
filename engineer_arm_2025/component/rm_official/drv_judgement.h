@@ -19,6 +19,11 @@ extern "C" {
 #define UART_RX_DMA_SIZE    (1024)
 #define JUDGE_FIFO_BUF_LEN  (1024)
 
+
+#define Trans_Remote_Header_First 0xA9
+#define Trans_Remote_Header_Second 0x53
+
+
 class judgement_device {
  public:
   usart_param_t usart;
@@ -81,7 +86,7 @@ class judgement_device {
   lidar_send_struct lidar_data;
   ext_student_interactive_header_data_t lidar_robot_interactive_header;
 
-  uint8_t Rx_buf_pos = 0;    //本次回调接收的数据在缓冲区的起点
+  uint32_t Rx_buf_pos = 0;    //本次回调接收的数据在缓冲区的起点
   uint32_t Rx_length;    //本次回调接收数据的长度
  public:
   void init(UART_HandleTypeDef *huart,
@@ -118,6 +123,8 @@ class judgement_device {
   void lidar_send_init();
 
   void usart_rx_processed(uint16_t Size);//接受串口原始数据
+  bool usart_rx_processed(uint16_t Size,uint8_t* target_add);//接受串口原始数据
+
 };
 
 #endif //ENGINEER_CHASSIS_2024_DRV_JUDGEMENT_H

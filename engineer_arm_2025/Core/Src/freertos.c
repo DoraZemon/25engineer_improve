@@ -122,7 +122,7 @@ const osThreadAttr_t updateUIDatatas_attributes = {
 osThreadId_t judgeCtrltaskHandle;
 const osThreadAttr_t judgeCtrltask_attributes = {
   .name = "judgeCtrltask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for controllertask */

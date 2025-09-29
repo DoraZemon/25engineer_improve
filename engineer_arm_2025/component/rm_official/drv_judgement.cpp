@@ -432,3 +432,64 @@ void judgement_device::usart_rx_processed(uint16_t Size) {
         osEventFlagsSet(_param->event,UART_IDLE_SIGNAL);
     }*/
 }
+
+
+
+bool judgement_device::usart_rx_processed(uint16_t Size, uint8_t* target_add)
+{
+
+    bool is_rc = false;
+    static uint8_t temp_buff[1024];
+
+    memset(temp_buff,0,1024);//初始化临时数组
+
+    auto _param = &this->usart;
+
+    /* Check if number of received data in recpetion buffer has changed */
+    if (Size != this->Rx_buf_pos) {
+        /* Check if position of index in reception buffer has simply be increased
+           of if end of buffer has been reached */
+        if (Size > this->Rx_buf_pos) {
+            /* Current position is higher than previous one */
+            Rx_length = Size - this->Rx_buf_pos;
+            /* Copy received data in "User" buffer for evacuation */
+            fifo_s_puts(_param->uart_dma_rxdata.data_fifo, &_param->uart_dma_rxdata.buff[Rx_buf_pos], this->Rx_length);
+            if (_param->uart_dma_rxdata.buff[Rx_buf_pos] == Trans_Remote_Header_First &&
+                _param->uart_dma_rxdata.buff[Rx_buf_pos+1] == Trans_Remote_Header_Second)
+            {
+                memcpy(target_add, &_param->uart_dma_rxdata.buff[Rx_buf_pos], this->Rx_length);
+                is_rc = true;
+            }
+        } else {
+            /* Current position is lower than previous one : end of buffer has been reached */
+            /* First copy data from current position till end of buffer */
+            this->Rx_length = _param->uart_dma_rxdata.buff_size - this->Rx_buf_pos;
+            /* Copy received data in "User" buffer for evacuation */
+            fifo_s_puts(_param->uart_dma_rxdata.data_fifo, &_param->uart_dma_rxdata.buff[Rx_buf_pos], this->Rx_length);
+            /* Check and continue with beginning of buffer */
+            if (Size > 0) {
+                fifo_s_puts(_param->uart_dma_rxdata.data_fifo, &_param->uart_dma_rxdata.buff[0], Size);
+                this->Rx_length += Size;
+            }
+
+            memcpy(temp_buff, &_param->uart_dma_rxdata.buff[Rx_buf_pos], this->Rx_length - Size);
+            if (Size >0){
+                memcpy(&temp_buff[this->Rx_length], &_param->uart_dma_rxdata.buff[0], Size);
+            }
+
+            if (temp_buff[0] == Trans_Remote_Header_First &&
+                temp_buff[1] == Trans_Remote_Header_Second)
+            {
+                memcpy(target_add, temp_buff, this->Rx_length + Size);
+                is_rc = true;
+            }
+        }
+    }
+    /* Update old_pos as new reference of position in User Rx buffer that
+       indicates position to which data have been processed */
+    this->Rx_buf_pos = Size;
+    osEventFlagsSet(_param->event, UART_IDLE_SIGNAL);
+    return is_rc;
+}
+
+

@@ -220,7 +220,8 @@ typedef union {
 
 class rc_device {
  private:
-  bool lost_flag;
+  bool dr_lost_flag;
+  bool vt_lost_flag;
   bool ready_flag;
   //    uint8_t raw_buff[DR16_BUFF_SIZE];
 
@@ -230,11 +231,12 @@ class rc_device {
   friend class kb_mu_device;
 
   UART_HandleTypeDef *huart;
+  UART_HandleTypeDef *vt_huart;
+
   rc_raw_data_t raw_data;
   vt_rc_raw_data_t vt_raw_data;
 
-  rc_device(UART_HandleTypeDef *huart);
-
+  rc_device(UART_HandleTypeDef *huart,UART_HandleTypeDef *vt_huart);
   void update_data();
 
   void vt_update_data();
@@ -245,9 +247,15 @@ class rc_device {
 
   bool check_ready();
 
+  bool get_dr_lost();
+
   void set_lost();
 
+  void vt_set_lost();
+
   void set_connect();
+
+  void vt_set_connect();
 
   bool check_lost() const;
 

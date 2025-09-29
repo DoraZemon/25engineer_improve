@@ -99,14 +99,21 @@ void updateUIData_task(void *argument) {
 }
 
 #endif
-
+uint8_t zsz = 0;
+uint8_t dyz = 0;
+extern rc_device g_rc;
 void judge_transfer_UartRxCallBack(struct __UART_HandleTypeDef *huart, uint16_t Pos) {
-    if (g_judgment_transfer.usart.uart_dma_rxdata.buff[0] == Trans_Remote_Header_First &&
-        g_judgment_transfer.usart.uart_dma_rxdata.buff[1] == Trans_Remote_Header_Second) {
+    // if (g_judgment_transfer.usart.uart_dma_rxdata.buff[0] == Trans_Remote_Header_First &&
+    //     g_judgment_transfer.usart.uart_dma_rxdata.buff[1] == Trans_Remote_Header_Second) {
+    //     memcpy(&g_rc.vt_raw_data, g_judgment_transfer.usart.uart_dma_rxdata.buff, VT_RC_BUFF_SIZE);
+    //
+    //     return;
+    // }
+
+    if (g_judgment_transfer.usart_rx_processed(Pos,g_rc.vt_raw_data.buff))
+    {
         osSemaphoreRelease(VTRCUpdateBinarySemHandle);
-        return;
     }
-    g_judgment_transfer.usart_rx_processed(Pos);
 
 }
 

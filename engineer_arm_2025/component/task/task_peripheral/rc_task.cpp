@@ -12,7 +12,7 @@
 #include "rc_task.h"
 #include "GlobalCfg.h"
 
-rc_device g_rc(&RC_UART);
+rc_device g_rc(&RC_UART,&VT_RC_UART);
 
 void rc_task(void *argument) {
     static osStatus_t s_stat;

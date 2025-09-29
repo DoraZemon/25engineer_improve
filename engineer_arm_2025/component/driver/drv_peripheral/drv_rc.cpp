@@ -11,8 +11,8 @@
 
 #include "drv_rc.h"
 
-rc_device::rc_device(UART_HandleTypeDef *huart)
-    : lost_flag(true), huart(huart), using_kb_flag(false) {}
+rc_device::rc_device(UART_HandleTypeDef *huart,UART_HandleTypeDef *vt_huart)
+    : dr_lost_flag(true), vt_lost_flag(true), huart(huart), vt_huart(vt_huart), using_kb_flag(false) {}
 
 void rc_device::update_data() {
     taskENTER_CRITICAL();
@@ -117,9 +117,8 @@ void rc_device::vt_update_data()
     ABS_LIMIT(this->data.left_rocker.y, 1);
 
     // 开关和按键
-    // this->data.left_sw = (enum RC_SW) this->vt_raw_data.mode_switch;  // 模式开关作为左开关
-    // this->data.right_sw = (enum RC_SW) (this->vt_raw_data.pause_button ? 2 : 0);  // 暂停按键作为右开关
-
+    this->data.left_sw = RC_SW_NONE;  //图传链路不看拨杆
+    this->data.right_sw = RC_SW_NONE;
     // 自定义按键
     // this->data.custom_left = (enum RC_BUTTON) this->vt_raw_data.custom_left;
     // this->data.custom_right = (enum RC_BUTTON) this->vt_raw_data.custom_right;
@@ -128,6 +127,9 @@ void rc_device::vt_update_data()
     // 拨轮归一化
     // this->data.dial = (float(this->vt_raw_data.dial) - 1024.0f) / 660.0f;
     // ABS_LIMIT(this->data.dial, 1);
+
+    // this->data.left_sw = (enum RC_SW) this->raw_data.s2;
+    // this->data.right_sw = (enum RC_SW) this->raw_data.s1;
 
     // 鼠标数据
     this->data.mouse.x = float(this->vt_raw_data.mouse_x) / 32768.0f;
@@ -147,18 +149,17 @@ void rc_device::vt_update_data()
 
     // 判断是否使用键鼠
     if (this->vt_raw_data.mouse_x == 0 && this->vt_raw_data.mouse_y == 0 && this->vt_raw_data.mouse_z == 0 &&
-        this->vt_raw_data.mouse_left == 0 && this->vt_raw_data.mouse_right == 0 &&
-        this->vt_raw_data.mouse_middle == 0 && this->vt_raw_data.keyboard == 0) {
+        this->vt_raw_data.mouse_left == 0 && this->vt_raw_data.mouse_right == 0 && this->vt_raw_data.keyboard == 0) {
         this->using_kb_flag = false;
         } else {
             this->using_kb_flag = true;
         }
-
+    this->data.wheel = 0.f; // vt遥控器不支持滚轮
     taskEXIT_CRITICAL();
 }
 
 void rc_device::update_event() {
-    if (lost_flag) {
+    if (dr_lost_flag && vt_lost_flag) {
         return;
     }
     taskENTER_CRITICAL();
@@ -202,7 +203,7 @@ void rc_device::update_event() {
 }
 
 void rc_device::update_ready() {
-    if (!this->lost_flag) {
+    if (!this->dr_lost_flag && !this->vt_lost_flag) {
         this->ready_flag = true;
     } else {
         this->ready_flag = false;
@@ -362,16 +363,29 @@ bool rc_device::check_ready() {
     return this->ready_flag;
 }
 
+bool rc_device::get_dr_lost() {
+    return this->dr_lost_flag;
+}
+
 void rc_device::set_lost() {
-    this->lost_flag = true;
+    this->dr_lost_flag = true;
+}
+
+void rc_device::vt_set_lost() {
+    this->vt_lost_flag = true;
 }
 
 void rc_device::set_connect() {
-    this->lost_flag = false;
+    this->dr_lost_flag = false;
+}
+
+void rc_device::vt_set_connect()
+{
+    this->vt_lost_flag = false;
 }
 
 bool rc_device::check_lost() const {
-    return this->lost_flag;
+    return this->dr_lost_flag & this->vt_lost_flag;
 }
 
 float rc_device::get_mouse_x() const {

@@ -89,7 +89,7 @@ struct pc_normal_tx_data_t {
   uint8_t frame_head; //帧头
   uint8_t is_rc_online; //遥控器在线状态
   uint8_t is_from_dt7; //是否来自DT7
-  uint8_t remote_ctrl[18]; //遥控器数据
+  uint8_t remote_ctrl[21]; //遥控器数据
   float joint1;
   float joint2;
   float joint3;

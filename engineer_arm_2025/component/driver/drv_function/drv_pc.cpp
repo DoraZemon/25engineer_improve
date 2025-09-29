@@ -120,8 +120,20 @@ void pc_device::transmit_data(rc_device &rc,//遥控器
     normal_tx_data.frame_head = PC_Normal_Frame_Head;
     normal_tx_data.is_rc_online = rc.check_ready();
 //    normal_tx_data.is_rc_online = true;
-    normal_tx_data.is_from_dt7 = true;
-    memcpy(normal_tx_data.remote_ctrl, rc.raw_data.buff, sizeof(normal_tx_data.remote_ctrl));
+    normal_tx_data.is_from_dt7 = !rc.get_dr_lost();
+    memset(normal_tx_data.remote_ctrl, 0, sizeof(normal_tx_data.remote_ctrl));
+    if (normal_tx_data.is_from_dt7)
+    {
+        memcpy(normal_tx_data.remote_ctrl, rc.raw_data.buff, 18);
+    }
+    else if (!normal_tx_data.is_from_dt7 && rc.check_ready())
+    {
+        memcpy(normal_tx_data.remote_ctrl, rc.vt_raw_data.buff, 21);
+    }
+    else
+    {
+        memset(normal_tx_data.remote_ctrl, 0, 18);
+    }
     normal_tx_data.joint1 = arm.data.joint_states.joint1;
     normal_tx_data.joint2 = arm.data.joint_states.joint2;
     normal_tx_data.joint3 = arm.data.joint_states.joint3;
