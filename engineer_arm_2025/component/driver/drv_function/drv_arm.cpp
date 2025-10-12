@@ -80,6 +80,13 @@ void arm_device::init() {
         {Arm_Joint1_Min, Arm_Joint2_Min, Arm_Joint3_Min, Arm_Joint4_Min, Arm_Joint5_Min, Arm_Joint6_Min},
         {Arm_Joint1_Max, Arm_Joint2_Max, Arm_Joint3_Max, Arm_Joint4_Max, Arm_Joint5_Max, Arm_Joint6_Max}};
 
+    data.joint_torque_limit = {
+        {Arm_Joint1_Torque_Min, Arm_Joint2_Torque_Min, Arm_Joint3_Torque_Min, Arm_Joint4_Torque_Min,
+         Arm_Joint5_Torque_Min, Arm_Joint6_Torque_Min},
+        {Arm_Joint1_Torque_Max, Arm_Joint2_Torque_Max, Arm_Joint3_Torque_Max, Arm_Joint4_Torque_Max,
+         Arm_Joint5_Torque_Max, Arm_Joint6_Torque_Max}
+    };
+
     data.motor_pos_limit = {
         {Arm_Motor1_Pos_Min, Arm_Motor2_Pos_Min, Arm_Motor3_Pos_Min, Arm_Motor4_Pos_Min, Arm_Motor5_Pos_Min,
          Arm_Motor6_Pos_Min},
@@ -135,6 +142,36 @@ void arm_device::set_joint5_target(float set) {
 void arm_device::set_joint6_target(float set) {
     data.joint_target.joint6 = set;
     VAL_LIMIT(data.joint_target.joint6, data.joint_limit.min.joint6, data.joint_limit.max.joint6);
+}
+
+void arm_device::set_joint1_target_torque(float set) {
+    data.joint_target_torque.torque_joint1 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint1, data.joint_torque_limit.min.torque_joint1, data.joint_torque_limit.max.torque_joint1);
+}
+
+void arm_device::set_joint2_target_torque(float set) {
+    data.joint_target_torque.torque_joint2 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint2, data.joint_torque_limit.min.torque_joint2, data.joint_torque_limit.max.torque_joint2);
+}
+
+void arm_device::set_joint3_target_torque(float set) {
+    data.joint_target_torque.torque_joint3 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint3, data.joint_torque_limit.min.torque_joint3, data.joint_torque_limit.max.torque_joint3);
+}
+
+void arm_device::set_joint4_target_torque(float set) {
+    data.joint_target_torque.torque_joint4 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint4, data.joint_torque_limit.min.torque_joint4, data.joint_torque_limit.max.torque_joint4);
+}
+
+void arm_device::set_joint5_target_torque(float set) {
+    data.joint_target_torque.torque_joint5 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint5, data.joint_torque_limit.min.torque_joint5, data.joint_torque_limit.max.torque_joint5);
+}
+
+void arm_device::set_joint6_target_torque(float set) {
+    data.joint_target_torque.torque_joint6 = set;
+    VAL_LIMIT(data.joint_target_torque.torque_joint6, data.joint_torque_limit.min.torque_joint6, data.joint_torque_limit.max.torque_joint6);
 }
 
 void arm_device::set_joint1_compensation(float set) {
@@ -237,36 +274,45 @@ void arm_device::update_control(bool is_enable) {
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4 / motor.motor4.basic_info.t_max);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5 / motor.motor5.basic_info.t_max);
 
-        motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
-                                                                                         motor.motor1.get_speed(),
-                                                                                         data.motor_pos_set.motor1,
-                                                                                         0.002));
-        motor.motor2.MIT_inter_set_motor_normalization_torque(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
-                                                                                         motor.motor2.get_speed(),
-                                                                                         data.motor_pos_set.motor2,
-                                                                                         0.002));
-        motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
-                                                                                         motor.motor3.get_speed(),
-                                                                                         data.motor_pos_set.motor3,
-                                                                                         0.002));
-        motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
-                                                                                         motor.motor4.get_speed(),
-                                                                                         data.motor_pos_set.motor4,
-                                                                                         0.002));
-        motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
-                                                                                         motor.motor5.get_speed(),
-                                                                                         data.motor_pos_set.motor5,
-                                                                                         0.002));
-        motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
-                                                            motor.motor6.get_speed(),
-                                                            data.motor_pos_set.motor6,
-                                                            0.002));
-//
-//        motor.motor1.MIT_inter_set_motor_normalization_torque(0);
-//        motor.motor2.MIT_inter_set_motor_normalization_torque(0);
-//        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
-//        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
-//        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
+        // motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
+        //                                                                                  motor.motor1.get_speed(),
+        //                                                                                  data.motor_pos_set.motor1,
+        //                                                                                  0.002));
+        // motor.motor2.MIT_inter_set_motor_normalization_torque(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
+        //                                                                                  motor.motor2.get_speed(),
+        //                                                                                  data.motor_pos_set.motor2,
+        //                                                                                  0.002));
+        // motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
+        //                                                                                  motor.motor3.get_speed(),
+        //                                                                                  data.motor_pos_set.motor3,
+        //                                                                                  0.002));
+        // motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
+        //                                                                                  motor.motor4.get_speed(),
+        //                                                                                  data.motor_pos_set.motor4,
+        //                                                                                  0.002));
+        // motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
+        //                                                                                  motor.motor5.get_speed(),
+        //                                                                                  data.motor_pos_set.motor5,
+        //                                                                                  0.002));
+        // motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
+        //                                                     motor.motor6.get_speed(),
+        //                                                     data.motor_pos_set.motor6,
+        //                                                     0.002));
+
+        // motor.motor1.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint1);
+        // motor.motor2.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint2);
+        // motor.motor3.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint3);
+        // motor.motor4.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint4);
+        // motor.motor5.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint5);
+        // motor.motor6.set_current(data.joint_target_torque.torque_joint6);
+
+        //保护
+        motor.motor1.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor2.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor6.set_current(data.joint_target_torque.torque_joint6);
 
 
     } else if (is_ctrl_disable_to_reset_pitch) {

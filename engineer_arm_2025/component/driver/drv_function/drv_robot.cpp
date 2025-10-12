@@ -56,17 +56,20 @@ void robot_device::update_control(pc_device &pc,
         }else{
             communicate.set_chassis_ctrl(0,0,0);
         }
+//        communicate.set_chassis_ctrl(0,0,0);
 
         communicate.set_pump_ctrl(is_arm_pump_on,false,false);
 
     }
+//    communicate.set_pump_ctrl(false,false,false);
 
 }
-
+uint16_t zsz = 0;
 void robot_device::do_check_state(rc_device &rc) {
     if(rc.check_sw_state(RC_SW_R_DOWN) && rc.check_sw_state(RC_SW_L_DOWN)){
         is_ctrl_from_pc = false;
 
+        zsz++;
         chassis_vel.vel_x = rc.get_left_rocker_y();
         chassis_vel.vel_y = -rc.get_left_rocker_x();
         chassis_vel.vel_spin = -0.3f*rc.get_right_rocker_x();

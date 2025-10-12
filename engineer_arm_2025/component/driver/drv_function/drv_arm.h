@@ -74,6 +74,24 @@ constexpr float Arm_Joint5_Max = 1.5707f; //关节5最大角度
 constexpr float Arm_Joint6_Min = -6.28f; //关节6最小角度
 constexpr float Arm_Joint6_Max = 6.28f; //关节6最大角度
 
+constexpr float Arm_Joint1_Torque_Min = -18.0f; //关节1最小力矩
+constexpr float Arm_Joint1_Torque_Max = 18.0f; //关节1最大力矩
+
+constexpr float Arm_Joint2_Torque_Min = -18.0f; //关节2最小力矩
+constexpr float Arm_Joint2_Torque_Max = 18.0f; //关节
+
+constexpr float Arm_Joint3_Torque_Min = -18.0f; //关节3最小力矩
+constexpr float Arm_Joint3_Torque_Max = 18.0f; //关节
+
+constexpr float Arm_Joint4_Torque_Min = -8.0f; //关节4最小力矩
+constexpr float Arm_Joint4_Torque_Max = 8.0f; //关节
+
+constexpr float Arm_Joint5_Torque_Min = -8.0f; //关节5最小力矩
+constexpr float Arm_Joint5_Torque_Max = 8.0f; //关节
+
+constexpr float Arm_Joint6_Torque_Min = -2.0f; //关节6最小力矩
+constexpr float Arm_Joint6_Torque_Max = 2.0f; //关节
+
 constexpr float Arm_Motor1_Pos_Max = Arm_Joint1_Max / (2 * PI); //电机1最大角度
 constexpr float Arm_Motor1_Pos_Min = Arm_Joint1_Min / (2 * PI); //电机1最小角度
 
@@ -107,6 +125,16 @@ class arm_device {
     float joint4; //关节4角度
     float joint5; //关节5角度
     float joint6; //关节6角度
+  };
+
+  struct joint_torque_t
+  {
+    float torque_joint1;
+    float torque_joint2;
+    float torque_joint3;
+    float torque_joint4;
+    float torque_joint5;
+    float torque_joint6;
   };
 
   struct motor_t {
@@ -163,6 +191,18 @@ class arm_device {
 
   void set_joint6_target(float set);
 
+  void set_joint1_target_torque(float set);
+
+  void set_joint2_target_torque(float set);
+
+  void set_joint3_target_torque(float set);
+
+  void set_joint4_target_torque(float set);
+
+  void set_joint5_target_torque(float set);
+
+  void set_joint6_target_torque(float set);
+
   void set_joint1_compensation(float set);
 
   void set_joint2_compensation(float set);
@@ -192,6 +232,7 @@ class arm_device {
   struct {
     joint_t joint_states;
     joint_t joint_target; //关节目标角度
+    joint_torque_t joint_target_torque; //关节目标力矩
     joint_t joint_filtered_target; //关节滤波角度
     motor_t motor_offset;
     motor_t motor_pos_get;
@@ -201,6 +242,12 @@ class arm_device {
       joint_t min;
       joint_t max; //关节角度限制
     } joint_limit;
+
+    struct
+    {
+      joint_torque_t min;
+      joint_torque_t max; //关节力矩限制
+    } joint_torque_limit;
 
     struct {
       motor_t min;

@@ -33,7 +33,6 @@ void arm_task(void *argument) {
             g_arm.update_control(g_rc.check_ready());
         }
 //        g_arm.update_control(false);
-//
         g_arm.send_msg();
         osDelay(2);
     }

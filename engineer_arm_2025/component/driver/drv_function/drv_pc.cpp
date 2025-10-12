@@ -46,12 +46,19 @@ void pc_device::update_data(rc_device &rc,
                              gimbal_device &gimbal) {
 
     if(is_ctrl_from_pc){
-        arm.set_joint1_target(rx_data.joint1);
-        arm.set_joint2_target(rx_data.joint2);
-        arm.set_joint3_target(rx_data.joint3);
-        arm.set_joint4_target(rx_data.joint4);
-        arm.set_joint5_target(rx_data.joint5);
-        arm.set_joint6_target(rx_data.joint6);
+        // arm.set_joint1_target(rx_data.joint1);
+        // arm.set_joint2_target(rx_data.joint2);
+        // arm.set_joint3_target(rx_data.joint3);
+        // arm.set_joint4_target(rx_data.joint4);
+        // arm.set_joint5_target(rx_data.joint5);
+        // arm.set_joint6_target(rx_data.joint6);
+
+        arm.set_joint1_target_torque(rx_data.joint1);
+        arm.set_joint2_target_torque(rx_data.joint2);
+        arm.set_joint3_target_torque(rx_data.joint3);
+        arm.set_joint4_target_torque(rx_data.joint4);
+        arm.set_joint5_target_torque(rx_data.joint5);
+        arm.set_joint6_target_torque(rx_data.joint6);
 
         arm.set_arm_ctrl_enable(rx_data.arm_ctrl_enable);
         arm.set_to_reset_pitch(rx_data.arm_reset_pitch_enable);

@@ -99,8 +99,8 @@ void updateUIData_task(void *argument) {
 }
 
 #endif
-uint8_t zsz = 0;
-uint8_t dyz = 0;
+
+
 extern rc_device g_rc;
 void judge_transfer_UartRxCallBack(struct __UART_HandleTypeDef *huart, uint16_t Pos) {
     // if (g_judgment_transfer.usart.uart_dma_rxdata.buff[0] == Trans_Remote_Header_First &&

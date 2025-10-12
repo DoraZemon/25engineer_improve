@@ -117,8 +117,8 @@ void rc_device::vt_update_data()
     ABS_LIMIT(this->data.left_rocker.y, 1);
 
     // 开关和按键
-    this->data.left_sw = RC_SW_NONE;  //图传链路不看拨杆
-    this->data.right_sw = RC_SW_NONE;
+    this->data.left_sw = RC_SW_DOWN;  //图传链路不看拨杆
+    this->data.right_sw = RC_SW_DOWN;
     // 自定义按键
     // this->data.custom_left = (enum RC_BUTTON) this->vt_raw_data.custom_left;
     // this->data.custom_right = (enum RC_BUTTON) this->vt_raw_data.custom_right;
@@ -203,7 +203,7 @@ void rc_device::update_event() {
 }
 
 void rc_device::update_ready() {
-    if (!this->dr_lost_flag && !this->vt_lost_flag) {
+    if (!this->dr_lost_flag || !this->vt_lost_flag) {
         this->ready_flag = true;
     } else {
         this->ready_flag = false;
@@ -385,7 +385,7 @@ void rc_device::vt_set_connect()
 }
 
 bool rc_device::check_lost() const {
-    return this->dr_lost_flag & this->vt_lost_flag;
+    return this->dr_lost_flag * this->vt_lost_flag;
 }
 
 float rc_device::get_mouse_x() const {
