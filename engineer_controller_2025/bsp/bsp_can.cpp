@@ -113,7 +113,7 @@ void can_device_t::init_rx(CAN_HandleTypeDef *hcan_,
                            std::function<void(uint8_t *)> callback,
                            osSemaphoreId_t rx_sem_) {
     taskENTER_CRITICAL();
-    if (hcan && rx_id) {
+    if (hcan && rx_id) {//已经初始化过，直接退出
         taskEXIT_CRITICAL();
         return;
     }

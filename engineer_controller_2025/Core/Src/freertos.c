@@ -73,7 +73,7 @@ const osThreadAttr_t CAN2_Send_Task_attributes = {
 osThreadId_t judgeCtrltaskHandle;
 const osThreadAttr_t judgeCtrltask_attributes = {
   .name = "judgeCtrltask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for armtask */

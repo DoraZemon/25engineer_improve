@@ -20,7 +20,7 @@ extern "C" {
 
 #define JUDGEMENT_UART  (huart1)
 
-#define JY_ME02 1
+#define JY_ME02 0
 
 
 #ifdef __cplusplus

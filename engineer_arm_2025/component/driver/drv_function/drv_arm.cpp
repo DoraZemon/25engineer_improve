@@ -10,9 +10,10 @@
 
 
 #include "drv_arm.h"
+#include "arm_math.h"
 #include "rtos_inc.h"
 #include "GlobalCfg.h"
-
+float k1 = 2.f;
 arm_device::arm_device() : joint1_filter(5), joint2_filter(5), joint3_filter(5), joint4_filter(5), joint5_filter(5),
                            joint6_filter(5) {}
 
@@ -230,10 +231,38 @@ void arm_device::update_data() {
 
 }
 
+void arm_device::update_gravity_compensation()
+{
+    float theta1 = data.joint_states.joint2 - PI/2.f;
+    float theta2 = data.joint_states.joint3 + PI + 0.28f;
+    float theta3 = data.joint_states.joint5;
+    float theta4 = data.joint_states.joint4;
+    float theta5 = asinf(arm_sin_f32(theta3)*arm_sin_f32(theta4));
+
+    float T_Compensation1_p = - k1*lm1*arm_sin_f32(theta1)*m1 - (l1*arm_sin_f32(theta1) + lm2*arm_sin_f32(theta1 + theta2))*m2 - (l1*arm_sin_f32(theta1) + l2*arm_sin_f32(theta1 + theta2) + lm3*arm_sin_f32(theta1 + theta2 + theta5))*m3;
+    T_Compensation1_p *= g;
+
+    float T_Compensation2_p = - lm2*m2*arm_sin_f32(theta1 + theta2) - (l2*arm_sin_f32(theta1 + theta2) + lm3*arm_sin_f32(theta1 + theta2 + theta5))*m3;
+    T_Compensation2_p *= g;
+
+    float T_Compensation3_p = - lm3*m3*arm_sin_f32(theta1 + theta2 + theta5)*arm_cos_f32(theta3)*arm_cos_f32(theta4)/sqrt(1 - arm_sin_f32(theta3)*arm_sin_f32(theta3)*arm_cos_f32(theta4)*arm_cos_f32(theta4));
+    T_Compensation3_p *= g;
+
+    float T_Compensation_r = - m3*lm3*arm_cos_f32(theta3)*arm_cos_f32(theta4)*arm_sin_f32(theta1 + theta2);
+    T_Compensation_r *= g;
+
+    data.motor_torque_compensation.motor1 = 0.f;
+    data.motor_torque_compensation.motor2 = T_Compensation1_p;
+    data.motor_torque_compensation.motor3 = T_Compensation2_p;
+    data.motor_torque_compensation.motor4 = T_Compensation_r;
+    data.motor_torque_compensation.motor5 = T_Compensation3_p;
+    data.motor_torque_compensation.motor6 = 0.f;
+}
+
 void arm_device::update_control(bool is_enable) {
 
     update_data();//更新数据
-
+    update_gravity_compensation();
     if (is_enable_last && !is_enable) {
         data.motor_pos_set = data.motor_pos_get;//如果遥控器断开，电机位置设为当前电机位置
     }
@@ -274,6 +303,12 @@ void arm_device::update_control(bool is_enable) {
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4 / motor.motor4.basic_info.t_max);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5 / motor.motor5.basic_info.t_max);
 
+        motor.motor1.set_offset_current(0);
+        // motor.motor2.set_offset_current(0);
+        // motor.motor3.set_offset_current(0);
+        // motor.motor4.set_offset_current(0);
+        // motor.motor5.set_offset_current(0);
+
         // motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
         //                                                                                  motor.motor1.get_speed(),
         //                                                                                  data.motor_pos_set.motor1,
@@ -312,7 +347,7 @@ void arm_device::update_control(bool is_enable) {
         motor.motor3.MIT_inter_set_motor_normalization_torque(0);
         motor.motor4.MIT_inter_set_motor_normalization_torque(0);
         motor.motor5.MIT_inter_set_motor_normalization_torque(0);
-        motor.motor6.set_current(data.joint_target_torque.torque_joint6);
+        motor.motor6.set_current(0);
 
 
     } else if (is_ctrl_disable_to_reset_pitch) {

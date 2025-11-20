@@ -102,7 +102,7 @@ struct pc_normal_tx_data_t {
   uint8_t is_right_pump_holding_on;
   uint32_t error_code;
   uint8_t frame_tail; //帧尾
-};
+};//59字节
 
 struct pc_controller_tx_data_t {
   uint8_t frame_head; //帧头
@@ -124,10 +124,13 @@ struct pc_controller_tx_data_t {
   float reserve_1; //保留
   float reserve_2; //保留
   float reserve_3; //保留
-  uint16_t reserve_4; //保留
-  uint32_t reserve_5; //保留
+  uint8_t reserve_4;
+  uint8_t reserve_5;
+  uint8_t reserve_6;
+  uint16_t reserve_7; //保留
+  uint32_t reserve_8; //保留
   uint8_t frame_tail; //帧尾
-};
+};//54字节
 
 struct pc_rx_data_t {
   uint8_t frame_head; //帧头

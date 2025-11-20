@@ -110,7 +110,6 @@ void dji_motor_device::check_motor_for_stall() {
 void dji_motor_device::update_data(uint8_t *rx_data) {
     dji_motor_data_t *data = &(this->data);
     dji_motor_raw_data_t *raw = &(this->raw_data);
-
     raw->encoder = (uint16_t) (rx_data[0] << 8 | rx_data[1]);
     raw->speed_rpm = (int16_t) (rx_data[2] << 8 | rx_data[3]);
     raw->torque_current = (int16_t) (rx_data[4] << 8 | rx_data[5]);

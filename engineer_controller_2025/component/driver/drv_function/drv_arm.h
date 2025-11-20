@@ -136,6 +136,8 @@ constexpr float Arm_Motor6_Offset = 0.3184f; //电机6偏置
 #define Arm_Motor5_Can (hcan2)
 #define Arm_Motor6_Can (hcan2)
 
+#define g 9.81f
+
 constexpr uint32_t Arm_Motor1_Id = 4;
 
 constexpr uint32_t Arm_Motor2_Id = 1;
@@ -182,6 +184,15 @@ constexpr float Arm_Motor4_Compensation_Angle_Offset = 0.0f; //电机4补偿角�
 constexpr float Arm_Motor5_Compensation_Angle_Offset = 0.0f; //电机5补偿角度偏置（即水平面角度差值）
 constexpr float Arm_Motor6_Compensation_Angle_Offset = 0.0f; //电机6补偿角度偏置（即水平面角度差值）
 
+constexpr float l1 = 0.200f; //连杆1长度
+constexpr float l2 = 0.220f; //连杆2长度
+constexpr float l3 = 0.155f; //连杆3长度
+constexpr float lm1 = 0.008f;//连杆1质心到关节距离
+constexpr float lm2 = 0.095f;//连杆2质心到关节距离
+constexpr float lm3 = 0.071f;//连杆3质心到关节距离
+constexpr float m1 = 1.315f;   //连杆1质量
+constexpr float m2 = 1.083f;   //连杆2质量
+constexpr float m3 = 0.161;   //连杆3质量
 
 class arm_device {
   struct joint_t {
@@ -213,7 +224,7 @@ class arm_device {
 
   arm_controller_tx_data_t controller_tx_data;
 
-  bool is_ctrl_enable = true;
+  bool is_ctrl_enable = false;
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
  public:
@@ -242,6 +253,8 @@ class arm_device {
   void check_motor_loss();
 
   void update_tx_life_flag();
+
+  void update_gravity_compensation();
 
   uint8_t *get_controller_tx_data();
 

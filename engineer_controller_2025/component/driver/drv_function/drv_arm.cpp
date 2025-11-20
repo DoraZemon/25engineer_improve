@@ -10,8 +10,18 @@
 
 
 #include "drv_arm.h"
+
+#include "arm_math.h"
 #include "rtos_inc.h"
 
+float T_Compensation1_p;
+float T_Compensation2_p;
+float T_Compensation3_p;
+float T_Compensation_r;
+float k1 = 0.8f;
+float k2 = 1.4f;
+float k3 = 1.f;
+float k4 = 1.f;
 #if JY_ME02
 float wrapTo180(float angle_deg) {
     // 保证角度在 [0, 360)
@@ -225,7 +235,7 @@ void arm_device::update_data() {
 //    controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
 }
 
-
+float T_test = 1.f;
 void arm_device::update_control(bool is_enable) {
 
     update_data();//更新数据
@@ -235,6 +245,8 @@ void arm_device::update_control(bool is_enable) {
     }
 
     is_enable_last = is_enable;
+
+    update_gravity_compensation();
 
     if (is_enable) {//遥控器在线
         data.motor_pos_set.motor1 = data.joint_target.joint1 / (2 * PI);// 关节值与电机位置值的换算关系
@@ -246,41 +258,54 @@ void arm_device::update_control(bool is_enable) {
     }
 
     if (is_ctrl_enable) {
-        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
-        motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
-            data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
-                                        (data.motor_torque_compensation.motor3 *
-                                         cosf((-data.joint_states.joint2 - data.joint_states.joint3))) * (-1));
-        motor.motor3.set_offset_current(
-            data.motor_torque_compensation.motor3 * cosf(-data.joint_states.joint2 - data.joint_states.joint3));
-        motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
-        motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
+        // motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);//力矩补偿可能与关节角度有关，补偿到每个关节再换算到每个电机
+        // motor.motor2.set_offset_current(data.motor_torque_compensation.motor2 * cosf(
+        //     data.joint_states.joint2 + data.motor_compensation_angle_offset.motor2 / 180.f * PI) +
+        //                                 (data.motor_torque_compensation.motor3 *
+        //                                  cosf((-data.joint_states.joint2 - data.joint_states.joint3))) * (-1));
+        // motor.motor3.set_offset_current(
+        //     data.motor_torque_compensation.motor3 * cosf(-data.joint_states.joint2 - data.joint_states.joint3));
+        // motor.motor4.set_offset_current(data.motor_torque_compensation.motor4);
+        // motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
+        // motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
+
+        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);
+        motor.motor2.set_offset_current(T_Compensation1_p/2.223f);
+        motor.motor3.set_offset_current(T_Compensation2_p/2.223f);
+        motor.motor4.set_offset_current(T_Compensation_r/DM_J4310_2EC_T_MAX);
+        motor.motor5.set_offset_current(T_Compensation3_p/DM_J3507_2EC_T_MAX);
         motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
 
-        motor.motor1.set_current(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
-                                                            motor.motor1.get_speed(),
-                                                            data.motor_pos_set.motor1,
-                                                            0.001));
-        motor.motor2.set_current(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
-                                                            motor.motor2.get_speed(),
-                                                            data.motor_pos_set.motor2,
-                                                            0.001));
-        motor.motor3.set_current(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
-                                                            motor.motor3.get_speed(),
-                                                            data.motor_pos_set.motor3,
-                                                            0.001));
-        motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
-                                                            motor.motor4.get_speed(),
-                                                            data.motor_pos_set.motor4,
-                                                            0.001));
-        motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
-                                                            motor.motor5.get_speed(),
-                                                            data.motor_pos_set.motor5,
-                                                            0.001));
-        motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
-                                                            motor.motor6.get_speed() / 36.f,
-                                                            data.motor_pos_set.motor6,
-                                                            0.001));
+        // motor.motor1.set_current(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
+        //                                                     motor.motor1.get_speed(),
+        //                                                     data.motor_pos_set.motor1,
+        //                                                     0.001));
+        // motor.motor2.set_current(motor.motor2.lqr.calculate(data.motor_pos_get.motor2,
+        //                                                     motor.motor2.get_speed(),
+        //                                                     data.motor_pos_set.motor2,
+        //                                                     0.001));
+        // motor.motor3.set_current(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
+        //                                                     motor.motor3.get_speed(),
+        //                                                     data.motor_pos_set.motor3,
+        //                                                     0.001));
+        // motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
+        //                                                     motor.motor4.get_speed(),
+        //                                                     data.motor_pos_set.motor4,
+        //                                                     0.001));
+        // motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
+        //                                                     motor.motor5.get_speed(),
+        //                                                     data.motor_pos_set.motor5,
+        //                                                     0.001));
+        // motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
+        //                                                     motor.motor6.get_speed() / 36.f,
+        //                                                     data.motor_pos_set.motor6,
+        //                                                     0.001));
+        motor.motor1.set_current(0);
+        motor.motor2.set_current(0);
+        motor.motor3.set_current(0);
+        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
+        motor.motor6.set_current(0);
 
 
     } else {
@@ -334,4 +359,26 @@ uint8_t *arm_device::get_controller_tx_data() {
 
 void arm_device::update_tx_life_flag() {
     controller_tx_data.life_flag = (HAL_GetTick() / 35) % 256; //生命检测标志位，每10ms变化一次
+}
+
+void arm_device::update_gravity_compensation()
+{
+    float theta1 = data.joint_states.joint2 - 1.36f;//PI/2
+    float theta2 = data.joint_states.joint3 + PI;
+    float theta3 = data.joint_states.joint5;
+    float theta4 = data.joint_states.joint4;
+    float theta5 = asinf(arm_sin_f32(theta3)*arm_cos_f32(theta4));
+    // float Lm2 = lm2*k2;
+    // float Lm3 = lm3*k3;
+    T_Compensation1_p = - lm1*arm_sin_f32(theta1)*m1 - (l1*arm_sin_f32(theta1) + lm2*arm_sin_f32(theta1 + theta2))*m2 - (l1*arm_sin_f32(theta1) + l2*arm_sin_f32(theta1 + theta2) + lm3*arm_sin_f32(theta1 + theta2 + theta5))*m3;
+    T_Compensation1_p *= g*k1;
+
+    T_Compensation2_p = - k2*lm2*m2*arm_sin_f32(theta1 + theta2) - (l2*arm_sin_f32(theta1 + theta2) + lm3*arm_sin_f32(theta1 + theta2 + theta5))*m3;
+    T_Compensation2_p *= g;
+
+    T_Compensation3_p = - lm3*m3*arm_sin_f32(theta1 + theta2 + theta5)*arm_cos_f32(theta3)*arm_cos_f32(theta4)/sqrt(1 - arm_sin_f32(theta3)*arm_sin_f32(theta3)*arm_cos_f32(theta4)*arm_cos_f32(theta4));
+    T_Compensation3_p *= g;
+
+    T_Compensation_r = - m3*lm3*arm_cos_f32(theta3)*arm_cos_f32(theta4)*arm_sin_f32(theta1 + theta2);
+    T_Compensation_r *= g;
 }

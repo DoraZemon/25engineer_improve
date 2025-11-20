@@ -100,7 +100,7 @@ int main(void)
   MX_CAN2_Init();
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
-  MX_IWDG_Init();
+  // MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
     DWT_Init(168);
     bsp_can_init();

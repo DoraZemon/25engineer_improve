@@ -70,18 +70,18 @@ void dji_motor_device::init(CAN_HandleTypeDef *_hcan,
         if (_hcan == &hcan1) {
             if (_id <= 4) {
                 this->can_device.tx_member.buf_data = can1_tx_buff_0x1ff;
-                this->can_device.tx_member.id = 0x1ff;
+                this->can_device.tx_member.id = 0x1FE;
             } else {
                 this->can_device.tx_member.buf_data = can1_tx_buff_0x2ff;
-                this->can_device.tx_member.id = 0x2ff;
+                this->can_device.tx_member.id = 0x2FE;
             }
         } else if (_hcan == &hcan2) {
             if (_id <= 4) {
                 this->can_device.tx_member.buf_data = can2_tx_buff_0x1ff;
-                this->can_device.tx_member.id = 0x1ff;
+                this->can_device.tx_member.id = 0x1FE;
             } else {
                 this->can_device.tx_member.buf_data = can2_tx_buff_0x2ff;
-                this->can_device.tx_member.id = 0x2ff;
+                this->can_device.tx_member.id = 0x2FE;
             }
         }
         this->can_device.tx_member.len = 8;

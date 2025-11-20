@@ -12,7 +12,6 @@
 #include "drv_communicate.h"
 #include "GlobalCfg.h"
 
-
 void communicate_device::init(CAN_HandleTypeDef *hcan_, uint32_t tx_id, uint32_t rx_id, osSemaphoreId_t rxsem) {
     this->hcan = hcan_;
     can_device.init_rx(hcan, rx_id, std::bind(&communicate_device::update_rx_data, this, std::placeholders::_1), rxsem);

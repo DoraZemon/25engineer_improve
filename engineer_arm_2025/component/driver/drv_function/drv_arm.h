@@ -114,6 +114,18 @@ constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI) * (36.f * 2.f); /
 constexpr float Arm_Pitch_Reset_Motor2_Torque = -0.005f;
 constexpr float Arm_Pitch_Reset_Motor3_Torque = 0.01f;
 
+constexpr float l1 = 0.400f; //连杆1长度
+constexpr float l2 = 0.41658f; //连杆2长度
+constexpr float l3 = 0.08124f; //连杆3长度
+constexpr float lm1 = 0.155215f;//连杆1质心到关节距离
+constexpr float lm2 = 0.111038f;//连杆2质心到关节距离
+constexpr float lm3 = 0.0207489f;//连杆3质心到关节距离
+constexpr float m1 = 1.811;   //连杆1质量
+constexpr float m2 = 2.147;   //连杆2质量
+constexpr float m3 = 0.28;   //连杆3质量
+
+constexpr float g = 9.80665f;
+
 
 class arm_device {
 
@@ -178,6 +190,8 @@ class arm_device {
   void send_msg();
 
   void update_data();
+
+  void update_gravity_compensation();
 
   void set_joint1_target(float set);
 

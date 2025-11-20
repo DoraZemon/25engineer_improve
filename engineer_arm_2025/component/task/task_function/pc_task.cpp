@@ -10,7 +10,7 @@
 
 
 #include "pc_task.h"
-
+#include "bsp_dwt.h"
 
 uint8_t pc_raw_data[64];
 extern rc_device g_rc;
@@ -40,10 +40,12 @@ void pc_receive_task(void *argument) {
         osDelay(1);
     }
 }
-
+uint32_t transmit_count = 0;
+float transmit_Fre;
 void pc_transmit_task(void *argument) {
     osDelay(1000);
     for (;;) {
+        transmit_Fre = 1.f / DWT_GetDeltaT(&transmit_count);
         g_pc.transmit_data(g_rc, g_arm, g_controller, g_communicate, g_hi229um,g_gimbal);
         osDelay(1); // Delay for demonstration purposes
     }

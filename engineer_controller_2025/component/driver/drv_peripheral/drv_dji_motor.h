@@ -31,7 +31,7 @@ extern "C" {
 /*-----------------大疆电机的最大电流-------------------------*/
 #define DJI_MOTOR_MAX_CURRENT_M3508 16384
 #define DJI_MOTOR_MAX_CURRENT_M2006 10000
-#define DJI_MOTOR_MAX_CURRENT_GM6020 30000
+#define DJI_MOTOR_MAX_CURRENT_GM6020 16384
 
 #define ENCODER_TO_ROUND (0.0001220703125f)         // 1/8192.0
 
