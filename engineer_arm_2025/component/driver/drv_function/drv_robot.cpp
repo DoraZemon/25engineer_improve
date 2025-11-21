@@ -10,7 +10,7 @@
 
 
 #include "drv_robot.h"
-
+extern arm_device g_arm;
 
 void robot_device::update_control(pc_device &pc,
                                   rc_device &rc,
@@ -19,15 +19,65 @@ void robot_device::update_control(pc_device &pc,
                                   communicate_device &communicate,
                                   hi229um_device &hi229,
                                   gimbal_device &gimbal) {
+    if (is_ctrl_from_controller)
+    {
+        if(!controller.check_lost() && controller.raw_data.is_data_valid){
+            joint_set.joint1 = controller.raw_data.joint1;
+            joint_set.joint2 = controller.raw_data.joint2;
+            joint_set.joint3 = controller.raw_data.joint3;
+            joint_set.joint4 = controller.raw_data.joint4;
+            joint_set.joint5 = controller.raw_data.joint5;
+            joint_set.joint6 = controller.raw_data.joint6;
+        }
+        else
+        {
 
-    if(!controller.check_lost() && controller.raw_data.is_data_valid){
-        joint_set.joint1 = controller.raw_data.joint1;
-        joint_set.joint2 = controller.raw_data.joint2;
-        joint_set.joint3 = controller.raw_data.joint3;
-        joint_set.joint4 = controller.raw_data.joint4;
-        joint_set.joint5 = controller.raw_data.joint5;
-        joint_set.joint6 = controller.raw_data.joint6;
+        }
     }
+    else if (is_ctrl_from_joint)
+    {
+        if (rc.check_ready())
+        {
+            if (rc.check_sw_state(RC_SW_L_UP))
+            {
+                joint_states_ctrl.joint5 += rc.data.right_rocker.y * 0.001f * (-1.f);
+                joint_states_ctrl.joint6 += rc.data.right_rocker.x * 0.001f;
+            }
+            else if (rc.check_sw_state(RC_SW_L_MID))
+            {
+                joint_states_ctrl.joint3 += rc.data.right_rocker.y * 0.001f * (-1.f);
+                joint_states_ctrl.joint4 += rc.data.right_rocker.x * 0.001f;
+            }
+            else if (rc.check_sw_state(RC_SW_L_DOWN))
+            {
+                joint_states_ctrl.joint1 += rc.data.right_rocker.x * 0.001f;
+                joint_states_ctrl.joint2 += rc.data.right_rocker.y * 0.001f;
+            }
+
+            VAL_LIMIT(joint_states_ctrl.joint1, Arm_Joint1_Min, Arm_Joint1_Max);
+            VAL_LIMIT(joint_states_ctrl.joint2, 0, Arm_Joint2_Max);
+            VAL_LIMIT(joint_states_ctrl.joint3, Arm_Joint3_Min, Arm_Joint3_Max);
+            VAL_LIMIT(joint_states_ctrl.joint4, Arm_Joint4_Min, Arm_Joint4_Max);
+            VAL_LIMIT(joint_states_ctrl.joint5, Arm_Joint5_Min, Arm_Joint5_Max);
+            VAL_LIMIT(joint_states_ctrl.joint6, Arm_Joint6_Min, Arm_Joint6_Max);
+
+            joint_set.joint1 = joint_states_ctrl.joint1;
+            joint_set.joint2 = joint_states_ctrl.joint2;
+            joint_set.joint3 = joint_states_ctrl.joint3 + joint_states_ctrl.joint2;
+            joint_set.joint4 = joint_states_ctrl.joint4;
+            joint_set.joint5 = joint_states_ctrl.joint5;
+            joint_set.joint6 = joint_states_ctrl.joint6;
+
+        }
+    }
+
+    VAL_LIMIT(joint_set.joint1 , Arm_Joint1_Min , Arm_Joint1_Max);
+    VAL_LIMIT(joint_set.joint2 , Arm_Joint2_Min , Arm_Joint2_Max);
+    VAL_LIMIT(joint_set.joint3 , Arm_Joint3_Min , Arm_Joint3_Max);
+    VAL_LIMIT(joint_set.joint4 , Arm_Joint4_Min , Arm_Joint4_Max);
+    VAL_LIMIT(joint_set.joint5 , Arm_Joint5_Min , Arm_Joint5_Max);
+    VAL_LIMIT(joint_set.joint6 , Arm_Joint6_Min , Arm_Joint6_Max);
+
     low_pass(filtered_joint_set.joint1,joint_set.joint1,0.01);
     low_pass(filtered_joint_set.joint2,joint_set.joint2,0.01);
     low_pass(filtered_joint_set.joint3,joint_set.joint3,0.01);
@@ -63,23 +113,46 @@ void robot_device::update_control(pc_device &pc,
     }
 //    communicate.set_pump_ctrl(false,false,false);
 
+    if (!is_ctrl_from_joint)
+    {
+        joint_states_ctrl.joint1 = g_arm.data.joint_states.joint1;
+        joint_states_ctrl.joint2 = g_arm.data.joint_states.joint2;
+        joint_states_ctrl.joint3 = g_arm.data.joint_states.joint3 + 0.28f;
+        joint_states_ctrl.joint4 = g_arm.data.joint_states.joint4;
+        joint_states_ctrl.joint5 = g_arm.data.joint_states.joint5;
+        joint_states_ctrl.joint6 = g_arm.data.joint_states.joint6;
+    }
+
 }
 
 void robot_device::do_check_state(rc_device &rc) {
-    if(rc.check_sw_state(RC_SW_R_DOWN) && rc.check_sw_state(RC_SW_L_DOWN)){
+    //控制来源切换
+    if(rc.check_sw_state(RC_SW_R_DOWN))
+    {
         is_ctrl_from_pc = false;
+        is_ctrl_from_controller = true;
+        is_ctrl_from_joint = false;
 
+        //底盘运动控制
         chassis_vel.vel_x = rc.get_left_rocker_y();
         chassis_vel.vel_y = -rc.get_left_rocker_x();
         chassis_vel.vel_spin = -0.3f*rc.get_right_rocker_x();
-
-        if(rc.check_wheel_state(RC_WHEEL_UP)){
-            is_arm_pump_on = false;
-        }else if(rc.check_wheel_state(RC_WHEEL_DOWN)){
-            is_arm_pump_on = false;
-        }
-    }else{
+    }
+    else if (rc.check_sw_state(RC_SW_R_MID))
+    {
         is_ctrl_from_pc = false;
+        is_ctrl_from_controller = false;
+        is_ctrl_from_joint = true;
+    }
+    else{
+        is_ctrl_from_pc = false;
+    }
+
+    //气泵控制
+    if(rc.check_wheel_state(RC_WHEEL_UP)){
+        is_arm_pump_on = false;
+    }else if(rc.check_wheel_state(RC_WHEEL_DOWN)){
+        is_arm_pump_on = false;
     }
 }
 

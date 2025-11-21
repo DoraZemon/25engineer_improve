@@ -27,6 +27,8 @@ extern "C" {
 
 class robot_device{
   bool is_ctrl_from_pc = true;
+  bool is_ctrl_from_controller = false;
+  bool is_ctrl_from_joint = false;
 
   struct{
     float vel_x;
@@ -38,6 +40,8 @@ class robot_device{
   bool is_arm_pump_on = true;
 
   arm_device::joint_t joint_set = {0,0,0,0,0,0};
+
+  arm_device::joint_t joint_states_ctrl = {0,0,0,0,0,0};
 
   arm_device::joint_t filtered_joint_set = {0,0,0,0,0,0};
 

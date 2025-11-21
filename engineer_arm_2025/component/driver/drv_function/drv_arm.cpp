@@ -66,7 +66,7 @@ void arm_device::init() {
                          Arm_Motor5_Offset,
                          Arm_Motor6_Offset};
 
-    motor.motor1.lqr.reset_lqr(10.0, 10.0, 0.0, 0.0, 0.0, 1.0);
+    motor.motor1.lqr.reset_lqr(20.0, 0.0, 0.0, 0.0, 0.0, 1.0);
     motor.motor2.lqr.reset_lqr(10.0, 0.0, 0.05, 0.0, 0.1, 1.0);
     motor.motor3.lqr.reset_lqr(10.0, 2.0, 0.05, 0.0, 0.1, 1.0);
     motor.motor4.lqr.reset_lqr(20.0, 3.0, 0.0, 0.0, 0.0, 1.0);
@@ -303,12 +303,6 @@ void arm_device::update_control(bool is_enable) {
         motor.motor4.set_offset_current(data.motor_torque_compensation.motor4 / motor.motor4.basic_info.t_max);
         motor.motor5.set_offset_current(data.motor_torque_compensation.motor5 / motor.motor5.basic_info.t_max);
 
-        motor.motor1.set_offset_current(0);
-        // motor.motor2.set_offset_current(0);
-        // motor.motor3.set_offset_current(0);
-        // motor.motor4.set_offset_current(0);
-        // motor.motor5.set_offset_current(0);
-
         // motor.motor1.MIT_inter_set_motor_normalization_torque(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
         //                                                                                  motor.motor1.get_speed(),
         //                                                                                  data.motor_pos_set.motor1,
@@ -317,37 +311,30 @@ void arm_device::update_control(bool is_enable) {
         //                                                                                  motor.motor2.get_speed(),
         //                                                                                  data.motor_pos_set.motor2,
         //                                                                                  0.002));
-        // motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
-        //                                                                                  motor.motor3.get_speed(),
-        //                                                                                  data.motor_pos_set.motor3,
-        //                                                                                  0.002));
-        // motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
-        //                                                                                  motor.motor4.get_speed(),
-        //                                                                                  data.motor_pos_set.motor4,
-        //                                                                                  0.002));
-        // motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
-        //                                                                                  motor.motor5.get_speed(),
-        //                                                                                  data.motor_pos_set.motor5,
-        //                                                                                  0.002));
-        // motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
-        //                                                     motor.motor6.get_speed(),
-        //                                                     data.motor_pos_set.motor6,
-        //                                                     0.002));
-
-        // motor.motor1.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint1);
-        // motor.motor2.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint2);
-        // motor.motor3.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint3);
-        // motor.motor4.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint4);
-        // motor.motor5.MIT_inter_set_motor_normalization_torque(data.joint_target_torque.torque_joint5);
-        // motor.motor6.set_current(data.joint_target_torque.torque_joint6);
+        motor.motor3.MIT_inter_set_motor_normalization_torque(motor.motor3.lqr.calculate(data.motor_pos_get.motor3,
+                                                                                         motor.motor3.get_speed(),
+                                                                                         data.motor_pos_set.motor3,
+                                                                                         0.002));
+        motor.motor4.MIT_inter_set_motor_normalization_torque(motor.motor4.lqr.calculate(data.motor_pos_get.motor4,
+                                                                                         motor.motor4.get_speed(),
+                                                                                         data.motor_pos_set.motor4,
+                                                                                         0.002));
+        motor.motor5.MIT_inter_set_motor_normalization_torque(motor.motor5.lqr.calculate(data.motor_pos_get.motor5,
+                                                                                         motor.motor5.get_speed(),
+                                                                                         data.motor_pos_set.motor5,
+                                                                                         0.002));
+        motor.motor6.set_current(motor.motor6.lqr.calculate(data.motor_pos_get.motor6,
+                                                            motor.motor6.get_speed(),
+                                                            data.motor_pos_set.motor6,
+                                                            0.002));
 
         //保护
         motor.motor1.MIT_inter_set_motor_normalization_torque(0);
         motor.motor2.MIT_inter_set_motor_normalization_torque(0);
-        motor.motor3.MIT_inter_set_motor_normalization_torque(0);
-        motor.motor4.MIT_inter_set_motor_normalization_torque(0);
-        motor.motor5.MIT_inter_set_motor_normalization_torque(0);
-        motor.motor6.set_current(0);
+        // motor.motor3.MIT_inter_set_motor_normalization_torque(0);
+        // motor.motor4.MIT_inter_set_motor_normalization_torque(0);
+        // motor.motor5.MIT_inter_set_motor_normalization_torque(0);
+        // motor.motor6.set_current(0);
 
 
     } else if (is_ctrl_disable_to_reset_pitch) {
