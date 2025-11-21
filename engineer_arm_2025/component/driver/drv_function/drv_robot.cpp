@@ -10,7 +10,6 @@
 
 
 #include "drv_robot.h"
-extern arm_device g_arm;
 
 void robot_device::update_control(pc_device &pc,
                                   rc_device &rc,
@@ -40,33 +39,19 @@ void robot_device::update_control(pc_device &pc,
         {
             if (rc.check_sw_state(RC_SW_L_UP))
             {
-                joint_states_ctrl.joint5 += rc.data.right_rocker.y * 0.001f * (-1.f);
-                joint_states_ctrl.joint6 += rc.data.right_rocker.x * 0.001f;
+                joint_set.joint5 += rc.data.right_rocker.y * 0.001f * (-1.f);
+                joint_set.joint6 += rc.data.right_rocker.x * 0.001f;
             }
             else if (rc.check_sw_state(RC_SW_L_MID))
             {
-                joint_states_ctrl.joint3 += rc.data.right_rocker.y * 0.001f * (-1.f);
-                joint_states_ctrl.joint4 += rc.data.right_rocker.x * 0.001f;
+                joint_set.joint3 += rc.data.right_rocker.y * 0.001f * (-1.f);
+                joint_set.joint4 += rc.data.right_rocker.x * 0.001f;
             }
             else if (rc.check_sw_state(RC_SW_L_DOWN))
             {
-                joint_states_ctrl.joint1 += rc.data.right_rocker.x * 0.001f;
-                joint_states_ctrl.joint2 += rc.data.right_rocker.y * 0.001f;
+                joint_set.joint1 += rc.data.right_rocker.x * 0.001f * (-1.f);
+                joint_set.joint2 += rc.data.right_rocker.y * 0.001f;
             }
-
-            VAL_LIMIT(joint_states_ctrl.joint1, Arm_Joint1_Min, Arm_Joint1_Max);
-            VAL_LIMIT(joint_states_ctrl.joint2, 0, Arm_Joint2_Max);
-            VAL_LIMIT(joint_states_ctrl.joint3, Arm_Joint3_Min, Arm_Joint3_Max);
-            VAL_LIMIT(joint_states_ctrl.joint4, Arm_Joint4_Min, Arm_Joint4_Max);
-            VAL_LIMIT(joint_states_ctrl.joint5, Arm_Joint5_Min, Arm_Joint5_Max);
-            VAL_LIMIT(joint_states_ctrl.joint6, Arm_Joint6_Min, Arm_Joint6_Max);
-
-            joint_set.joint1 = joint_states_ctrl.joint1;
-            joint_set.joint2 = joint_states_ctrl.joint2;
-            joint_set.joint3 = joint_states_ctrl.joint3 + joint_states_ctrl.joint2;
-            joint_set.joint4 = joint_states_ctrl.joint4;
-            joint_set.joint5 = joint_states_ctrl.joint5;
-            joint_set.joint6 = joint_states_ctrl.joint6;
 
         }
     }
@@ -113,15 +98,6 @@ void robot_device::update_control(pc_device &pc,
     }
 //    communicate.set_pump_ctrl(false,false,false);
 
-    if (!is_ctrl_from_joint)
-    {
-        joint_states_ctrl.joint1 = g_arm.data.joint_states.joint1;
-        joint_states_ctrl.joint2 = g_arm.data.joint_states.joint2;
-        joint_states_ctrl.joint3 = g_arm.data.joint_states.joint3 + 0.28f;
-        joint_states_ctrl.joint4 = g_arm.data.joint_states.joint4;
-        joint_states_ctrl.joint5 = g_arm.data.joint_states.joint5;
-        joint_states_ctrl.joint6 = g_arm.data.joint_states.joint6;
-    }
 
 }
 

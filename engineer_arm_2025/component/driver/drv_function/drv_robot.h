@@ -41,8 +41,6 @@ class robot_device{
 
   arm_device::joint_t joint_set = {0,0,0,0,0,0};
 
-  arm_device::joint_t joint_states_ctrl = {0,0,0,0,0,0};
-
   arm_device::joint_t filtered_joint_set = {0,0,0,0,0,0};
 
   bool is_arm_ctrl_enable = true;
