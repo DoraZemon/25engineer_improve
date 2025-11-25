@@ -18,8 +18,8 @@ float T_Compensation1_p;
 float T_Compensation2_p;
 float T_Compensation3_p;
 float T_Compensation_r;
-float k1 = 0.8f;
-float k2 = 1.4f;
+float k1 = 0.4f;//0.8
+float k2 = 1.f;//1.4
 float k3 = 1.f;
 float k4 = 1.f;
 #if JY_ME02
@@ -235,7 +235,6 @@ void arm_device::update_data() {
 //    controller_tx_data.life_flag = (HAL_GetTick() / 10) % 10; //生命检测标志位，每10ms变化一次
 }
 
-float T_test = 1.f;
 void arm_device::update_control(bool is_enable) {
 
     update_data();//更新数据
@@ -269,12 +268,12 @@ void arm_device::update_control(bool is_enable) {
         // motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
         // motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
 
-        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);
-        motor.motor2.set_offset_current(T_Compensation1_p/2.223f);
-        motor.motor3.set_offset_current(T_Compensation2_p/2.223f);
-        motor.motor4.set_offset_current(T_Compensation_r/DM_J4310_2EC_T_MAX);
-        motor.motor5.set_offset_current(T_Compensation3_p/DM_J3507_2EC_T_MAX);
-        motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
+        // motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);
+        // motor.motor2.set_offset_current(T_Compensation1_p/2.223f);
+        // motor.motor3.set_offset_current(T_Compensation2_p/2.223f);
+        // motor.motor4.set_offset_current(T_Compensation_r/DM_J4310_2EC_T_MAX);
+        // motor.motor5.set_offset_current(T_Compensation3_p/DM_J3507_2EC_T_MAX);
+        // motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
 
         // motor.motor1.set_current(motor.motor1.lqr.calculate(data.motor_pos_get.motor1,
         //                                                     motor.motor1.get_speed(),
@@ -300,6 +299,13 @@ void arm_device::update_control(bool is_enable) {
         //                                                     motor.motor6.get_speed() / 36.f,
         //                                                     data.motor_pos_set.motor6,
         //                                                     0.001));
+
+        motor.motor1.set_offset_current(0);
+        motor.motor2.set_offset_current(0);
+        motor.motor3.set_offset_current(0);
+        motor.motor4.set_offset_current(0);
+        motor.motor5.set_offset_current(0);
+        motor.motor6.set_offset_current(0);
         motor.motor1.set_current(0);
         motor.motor2.set_current(0);
         motor.motor3.set_current(0);

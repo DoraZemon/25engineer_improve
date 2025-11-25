@@ -224,7 +224,7 @@ class arm_device {
 
   arm_controller_tx_data_t controller_tx_data;
 
-  bool is_ctrl_enable = false;
+  bool is_ctrl_enable = true;
 
   bool is_enable_last = false; //上一次是否使能，遥控器是否开启
  public:
