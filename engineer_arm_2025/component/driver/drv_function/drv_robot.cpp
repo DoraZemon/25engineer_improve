@@ -88,12 +88,14 @@ void robot_device::update_control(pc_device &pc,
 
         if(!rc.check_lost()){
             communicate.set_chassis_ctrl(chassis_vel.vel_x * powf(2.0,15.f),chassis_vel.vel_y* powf(2.0,15.f),chassis_vel.vel_spin* powf(2.0,7.f));
+            communicate.set_pump_ctrl(is_arm_pump_on,false,false);
         }else{
             communicate.set_chassis_ctrl(0,0,0);
+            communicate.set_pump_ctrl(false,false,false);
         }
 //        communicate.set_chassis_ctrl(0,0,0);
 
-        communicate.set_pump_ctrl(false,false,false);
+
 
     }
 //    communicate.set_pump_ctrl(false,false,false);
@@ -126,7 +128,7 @@ void robot_device::do_check_state(rc_device &rc) {
 
     //气泵控制
     if(rc.check_wheel_state(RC_WHEEL_UP)){
-        is_arm_pump_on = false;
+        is_arm_pump_on = true;
     }else if(rc.check_wheel_state(RC_WHEEL_DOWN)){
         is_arm_pump_on = false;
     }

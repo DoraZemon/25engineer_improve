@@ -37,7 +37,7 @@ class robot_device{
   }chassis_vel;
 
 
-  bool is_arm_pump_on = true;
+  bool is_arm_pump_on = false;
 
   arm_device::joint_t joint_set = {0,0,0,0,0,0};
 

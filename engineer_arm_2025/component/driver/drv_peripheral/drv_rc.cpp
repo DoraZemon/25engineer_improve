@@ -203,7 +203,7 @@ void rc_device::update_event() {
 }
 
 void rc_device::update_ready() {
-    if (!this->dr_lost_flag || !this->vt_lost_flag) {
+    if (!this->dr_lost_flag ) {//|| !this->vt_lost_flag暂时关闭vt的控制
         this->ready_flag = true;
     } else {
         this->ready_flag = false;
