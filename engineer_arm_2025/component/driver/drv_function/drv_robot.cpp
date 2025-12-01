@@ -115,23 +115,26 @@ void robot_device::do_check_state(rc_device &rc) {
         chassis_vel.vel_x = rc.get_left_rocker_y();
         chassis_vel.vel_y = -rc.get_left_rocker_x();
         chassis_vel.vel_spin = -0.3f*rc.get_right_rocker_x();
+        //气泵控制
+        if(rc.check_sw_state(RC_SW_L_UP)){
+            is_arm_pump_on = true;
+        }else{
+            is_arm_pump_on = false;
+        }
     }
     else if (rc.check_sw_state(RC_SW_R_MID))
     {
         is_ctrl_from_pc = false;
         is_ctrl_from_controller = false;
         is_ctrl_from_joint = true;
+        is_arm_pump_on = false;
     }
     else{
         is_ctrl_from_pc = false;
-    }
-
-    //气泵控制
-    if(rc.check_wheel_state(RC_WHEEL_UP)){
-        is_arm_pump_on = true;
-    }else if(rc.check_wheel_state(RC_WHEEL_DOWN)){
         is_arm_pump_on = false;
     }
+
+
 }
 
 

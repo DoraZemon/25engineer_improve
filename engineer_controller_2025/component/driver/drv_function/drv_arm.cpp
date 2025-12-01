@@ -155,13 +155,13 @@ void arm_device::init() {
         osDelay(10);
     }
 
-    motor.motor1.reset_total_rounds_zero_offset(motor.motor1.get_current_round() - data.motor_offset.motor1);
-    motor.motor2.reset_total_rounds_zero_offset(motor.motor2.get_current_round() - data.motor_offset.motor2);
-    motor.motor3.reset_total_rounds_zero_offset(motor.motor3.get_current_round() - data.motor_offset.motor3);
-    //2006随机编码器
-    motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
-    motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
-    motor.motor6.reset_total_rounds_zero_offset(0);
+    // motor.motor1.reset_total_rounds_zero_offset(motor.motor1.get_current_round() - data.motor_offset.motor1);
+    // motor.motor2.reset_total_rounds_zero_offset(motor.motor2.get_current_round() - data.motor_offset.motor2);
+    // motor.motor3.reset_total_rounds_zero_offset(motor.motor3.get_current_round() - data.motor_offset.motor3);
+    // //2006随机编码器
+    // motor.motor4.reset_total_rounds_zero_offset(motor.motor4.get_current_round() - data.motor_offset.motor4);
+    // motor.motor5.reset_total_rounds_zero_offset(motor.motor5.get_current_round() - data.motor_offset.motor5);
+    // motor.motor6.reset_total_rounds_zero_offset(0);
 }
 
 void arm_device::set_joint1_target(float set) {
@@ -204,7 +204,7 @@ void arm_device::update_data() {
 
     data.joint_states.joint1 = data.motor_pos_get.motor1 * 2 * PI;
     data.joint_states.joint2 = data.motor_pos_get.motor2 * 2 * PI;
-    data.joint_states.joint3 = data.motor_pos_get.motor3 * 2 * PI - 0.67f;
+    data.joint_states.joint3 = data.motor_pos_get.motor3 * 2 * PI;
     data.joint_states.joint4 = data.motor_pos_get.motor4 * 2 * PI;
     data.joint_states.joint5 = data.motor_pos_get.motor5 * 2 * PI;
     data.joint_states.joint6 = data.motor_pos_get.motor6 * 2 * PI;

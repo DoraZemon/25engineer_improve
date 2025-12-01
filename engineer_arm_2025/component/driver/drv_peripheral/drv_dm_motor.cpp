@@ -393,7 +393,8 @@ void dm_motor_device::update_data(uint8_t *can_rx_data) {
         ptr->last_round = ptr->current_round;//电机编码反馈值
         ptr->current_round = (uint_to_float(raw->pos_rad, -basic_info.p_max, basic_info.p_max, 16) + basic_info.p_max)
                              * RAD2ROUND; // (-3.14,3.14) //电机编码反馈值
-        ptr->zero_offset_round = ptr->current_round;
+        ptr->zero_offset_round = (uint_to_float(raw->pos_rad, -basic_info.p_max, basic_info.p_max, 16) + basic_info.p_max)
+                             * RAD2ROUND;//ptr->current_round;
 
         //speed
         ptr->last_speed = ptr->current_speed;
