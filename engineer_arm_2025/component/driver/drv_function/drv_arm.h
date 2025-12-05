@@ -114,6 +114,26 @@ constexpr float Arm_Motor6_Pos_Min = Arm_Joint6_Min / (2 * PI) * (36.f * 2.f); /
 constexpr float Arm_Pitch_Reset_Motor2_Torque = -0.005f;
 constexpr float Arm_Pitch_Reset_Motor3_Torque = 0.01f;
 
+constexpr float Admittance_Parament_Kd_Motor1 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor1 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor1 = 0.0001f;
+constexpr float Admittance_Parament_Kd_Motor2 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor2 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor2 = 0.0001f;
+constexpr float Admittance_Parament_Kd_Motor3 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor3 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor3 = 0.0001f;
+constexpr float Admittance_Parament_Kd_Motor4 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor4 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor4 = 0.0001f;
+constexpr float Admittance_Parament_Kd_Motor5 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor5 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor5 = 0.0001f;
+constexpr float Admittance_Parament_Kd_Motor6 = 0.0001f;
+constexpr float Admittance_Parament_Dd_Motor6 = 0.0002f;
+constexpr float Admittance_Parament_Md_Motor6 = 0.0001f;
+
+
 constexpr float l1 = 0.400f; //连杆1长度
 constexpr float l2 = 0.41658f; //连杆2长度
 constexpr float l3 = 0.08124f; //连杆3长度
@@ -183,7 +203,7 @@ class arm_device {
 
   void init();
 
-  void update_control(bool is_enable);
+  void update_control(bool is_enable , float dt);
 
   void recover_dm();
 
@@ -192,6 +212,10 @@ class arm_device {
   void update_data();
 
   void update_gravity_compensation();
+
+  void update_admittance_control(float dt);
+
+  void reset_admittance_state();
 
   void set_joint1_target(float set);
 
@@ -247,7 +271,8 @@ class arm_device {
     joint_t joint_states;
     joint_t joint_target; //关节目标角度
     joint_torque_t joint_target_torque; //关节目标力矩
-    joint_t joint_filtered_target; //关节滤波角度
+    joint_t joint_filtered_target; //关节滤波目标角度
+    joint_t joint_admittance_target; //关节导纳控制目标
     motor_t motor_offset;
     motor_t motor_pos_get;
     motor_t motor_pos_set;
@@ -283,7 +308,14 @@ class arm_device {
     dm_motor_device motor5; //关节5电机
     dji_motor_device motor6; //关节6电机
   } motor;
-
+  struct
+  {
+    float LQR_Kp[6];
+    float LQR_Kd[6];
+    float Kd[6];
+    float Dd[6];
+    float Md[6];
+  } admittance_params;
 };
 
 #endif //DRV_ARM_H_

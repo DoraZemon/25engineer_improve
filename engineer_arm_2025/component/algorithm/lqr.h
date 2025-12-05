@@ -24,11 +24,7 @@ extern "C" {
 
 class SimpleLQR {
  private:
-  // 可调参数（通过注释说明每个参数的影响）
-  float Kp;       // 位置误差增益：越大回正越快，但可能引发超调
-  float Kd;       // 速度阻尼增益：增大可抑制振荡，建议Kd ≈ 0.3*Kp开始调试
-  float Ki;       // 积分增益：消除稳态误差，从0.1*Kp开始尝试
-  float Kff;      // 前馈增益：提升跟踪响应，建议0.5~1.0之间
+
 
   float max_out;  // 最大输出限制（根据执行器能力设定）
   float i_max;
@@ -51,6 +47,11 @@ class SimpleLQR {
   float get = 0;
 
  public:
+    // 可调参数（通过注释说明每个参数的影响）
+  float Kp;       // 位置误差增益：越大回正越快，但可能引发超调
+  float Kd;       // 速度阻尼增益：增大可抑制振荡，建议Kd ≈ 0.3*Kp开始调试
+  float Ki;       // 积分增益：消除稳态误差，从0.1*Kp开始尝试
+  float Kff;      // 前馈增益：提升跟踪响应，建议0.5~1.0之间
   SimpleLQR() = default;
 
 

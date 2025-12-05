@@ -14,6 +14,9 @@
 #include "rtos_inc.h"
 #include "GlobalCfg.h"
 float anti_mutation = 0.5f;
+static float pos_err_adm[6] = {0};
+static float vel_err_adm[6] = {0};
+float F_ext_est[6];
 arm_device::arm_device() : joint1_filter(5), joint2_filter(5), joint3_filter(5), joint4_filter(5), joint5_filter(5),
                            joint6_filter(5) {}
 
@@ -95,7 +98,27 @@ void arm_device::init() {
          Arm_Motor6_Pos_Max}
     };
 
-    data.motor_torque_compensation = {
+    admittance_params = {
+        {
+            motor.motor1.lqr.Kp, motor.motor2.lqr.Kp, motor.motor3.lqr.Kp,
+            motor.motor4.lqr.Kp, motor.motor5.lqr.Kp, motor.motor6.lqr.Kp
+        },
+        {
+            motor.motor1.lqr.Kd, motor.motor2.lqr.Kd, motor.motor3.lqr.Kd,
+            motor.motor4.lqr.Kd, motor.motor5.lqr.Kd, motor.motor6.lqr.Kd
+        },
+        {
+            Admittance_Parament_Kd_Motor1, Admittance_Parament_Kd_Motor2, Admittance_Parament_Kd_Motor3,
+            Admittance_Parament_Kd_Motor4, Admittance_Parament_Kd_Motor5, Admittance_Parament_Kd_Motor6
+        },
+        {
+            Admittance_Parament_Dd_Motor1, Admittance_Parament_Dd_Motor2, Admittance_Parament_Dd_Motor3,
+            Admittance_Parament_Dd_Motor4, Admittance_Parament_Dd_Motor5, Admittance_Parament_Dd_Motor6
+        },
+        {
+        Admittance_Parament_Md_Motor1, Admittance_Parament_Md_Motor2, Admittance_Parament_Md_Motor3,
+        Admittance_Parament_Md_Motor4, Admittance_Parament_Md_Motor5, Admittance_Parament_Md_Motor6
+        }
     };
 
 
@@ -260,7 +283,57 @@ void arm_device::update_gravity_compensation()
     data.motor_torque_compensation.motor6 = 0.f;
 }
 
-void arm_device::update_control(bool is_enable) {
+void arm_device::update_admittance_control(float dt)
+{
+    //1.计算当前位置与速度误差
+    float position_error[6];
+    float velocity_error[6];
+    position_error[0] = data.joint_states.joint1 - data.joint_admittance_target.joint1;
+    position_error[1] = data.joint_states.joint2 - data.joint_admittance_target.joint2;
+    position_error[2] = data.joint_states.joint3 - data.joint_admittance_target.joint3;
+    position_error[3] = data.joint_states.joint4 - data.joint_admittance_target.joint4;
+    position_error[4] = (data.joint_states.joint5 - data.joint_admittance_target.joint5)/ (2 * PI);
+    position_error[5] = (data.joint_states.joint6 - data.joint_admittance_target.joint6)/ (2 * PI) * (36.f * 2.f);
+    velocity_error[0] = motor.motor1.get_speed();
+    velocity_error[1] = motor.motor2.get_speed();
+    velocity_error[2] = motor.motor3.get_speed();
+    velocity_error[3] = motor.motor4.get_speed();
+    velocity_error[4] = motor.motor5.get_speed();
+    velocity_error[5] = motor.motor6.get_speed();
+
+    //2.估计外力
+
+    for (int i = 0; i < 6; i++)
+    {
+        F_ext_est[i] = -admittance_params.LQR_Kp[i] * position_error[i] - admittance_params.LQR_Kd[i] * velocity_error[i];
+    }
+
+    //3.导纳控制，柔顺目标调整
+    for (int i = 0; i < 6; i++)
+    {
+        float acc = (F_ext_est[i] - admittance_params.Dd[i] * vel_err_adm[i] - admittance_params.Kd[i] * pos_err_adm[i]) / admittance_params.Md[i];
+        vel_err_adm[i] += acc * dt;
+        pos_err_adm[i] += vel_err_adm[i] * dt;
+    }
+
+    data.joint_admittance_target.joint1 = data.joint_filtered_target.joint1 + pos_err_adm[0];
+    data.joint_admittance_target.joint2 = data.joint_filtered_target.joint2 + pos_err_adm[1];
+    data.joint_admittance_target.joint3 = data.joint_filtered_target.joint3 + pos_err_adm[2];
+    data.joint_admittance_target.joint4 = data.joint_filtered_target.joint4 + pos_err_adm[3];
+    data.joint_admittance_target.joint5 = data.joint_filtered_target.joint5 - pos_err_adm[4];
+    data.joint_admittance_target.joint6 = data.joint_filtered_target.joint6 - pos_err_adm[5];
+
+}
+
+void arm_device::reset_admittance_state() {
+    for (int i = 0; i < 6; ++i) {
+        pos_err_adm[i] = 0;
+        vel_err_adm[i] = 0;
+    }
+    data.joint_admittance_target = data.joint_filtered_target;
+}
+
+void arm_device::update_control(bool is_enable , float dt) {
 
     update_data();//更新数据
     update_gravity_compensation();
@@ -276,6 +349,7 @@ void arm_device::update_control(bool is_enable) {
     data.joint_filtered_target.joint4 = joint4_filter.addData(data.joint_target.joint4);
     data.joint_filtered_target.joint5 = joint5_filter.addData(data.joint_target.joint5);
     data.joint_filtered_target.joint6 = joint6_filter.addData(data.joint_target.joint6);
+    update_admittance_control(dt);
 
     if (is_enable) {//遥控器在线
 #if ARM_DEBUG_MODE
@@ -284,8 +358,8 @@ void arm_device::update_control(bool is_enable) {
         data.motor_pos_set.motor2 = data.joint_filtered_target.joint2 / (2 * PI) / 2.f * 3.f                                    ;
         data.motor_pos_set.motor3 = data.joint_filtered_target.joint3 / (2 * PI) + data.joint_filtered_target.joint2 / (2 * PI) ;
         data.motor_pos_set.motor4 = data.joint_filtered_target.joint4 / (2 * PI)                                                ;
-        data.motor_pos_set.motor5 = data.joint_filtered_target.joint5 / (2 * PI)                                                ;
-        data.motor_pos_set.motor6 = data.joint_filtered_target.joint6 / (2 * PI) * (36.f * 2.f)                                 ;
+        data.motor_pos_set.motor5 = data.joint_admittance_target.joint5 / (2 * PI)                                                ;
+        data.motor_pos_set.motor6 = data.joint_admittance_target.joint6 / (2 * PI) * (36.f * 2.f)                                 ;
 #endif
     }
 #if ARM_REMOTE_CONTROL_PROTECT
@@ -360,6 +434,13 @@ void arm_device::update_control(bool is_enable) {
         motor.motor4.set_free();
         motor.motor5.set_free();
         motor.motor6.set_free();
+
+        data.joint_admittance_target.joint1 = data.joint_states.joint1;
+        data.joint_admittance_target.joint2 = data.joint_states.joint2;
+        data.joint_admittance_target.joint3 = data.joint_states.joint3;
+        data.joint_admittance_target.joint4 = data.joint_states.joint4;
+        data.joint_admittance_target.joint5 = data.joint_states.joint5;
+        data.joint_admittance_target.joint6 = data.joint_states.joint6;
     } else {
         data.motor_pos_set = data.motor_pos_get;//如果遥控器断开，电机位置设为当前电机位置
 
@@ -376,6 +457,13 @@ void arm_device::update_control(bool is_enable) {
         motor.motor4.set_free();
         motor.motor5.set_free();
         motor.motor6.set_free();
+
+        data.joint_admittance_target.joint1 = data.joint_states.joint1;
+        data.joint_admittance_target.joint2 = data.joint_states.joint2;
+        data.joint_admittance_target.joint3 = data.joint_states.joint3;
+        data.joint_admittance_target.joint4 = data.joint_states.joint4;
+        data.joint_admittance_target.joint5 = data.joint_states.joint5;
+        data.joint_admittance_target.joint6 = data.joint_states.joint6;
     }
 }
 

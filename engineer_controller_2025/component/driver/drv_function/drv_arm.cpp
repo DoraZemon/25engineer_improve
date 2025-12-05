@@ -268,9 +268,12 @@ void arm_device::update_control(bool is_enable) {
         // motor.motor5.set_offset_current(data.motor_torque_compensation.motor5);
         // motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
 
-        motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);
-        motor.motor2.set_offset_current(T_Compensation1_p/2.223f);
-        motor.motor3.set_offset_current(T_Compensation2_p/2.223f);
+        motor.motor1.set_offset_current(0);
+        motor.motor2.set_offset_current(0);
+        motor.motor3.set_offset_current(0);
+        // motor.motor1.set_offset_current(data.motor_torque_compensation.motor1);
+        // motor.motor2.set_offset_current(T_Compensation1_p/2.223f);
+        // motor.motor3.set_offset_current(T_Compensation2_p/2.223f);
         motor.motor4.set_offset_current(T_Compensation_r/DM_J4310_2EC_T_MAX);
         motor.motor5.set_offset_current(T_Compensation3_p/DM_J3507_2EC_T_MAX);
         motor.motor6.set_offset_current(data.motor_torque_compensation.motor6);
